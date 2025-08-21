@@ -2,320 +2,216 @@ import { createClient } from '@supabase/supabase-js'
 import { createHash } from 'crypto'
 import dotenv from 'dotenv'
 import { readdir, readFile, stat } from 'fs/promises'
-import GithubSlugger from 'github-slugger'
-import { fromMarkdown } from 'mdast-util-from-markdown'
-import { toMarkdown } from 'mdast-util-to-markdown'
-import { toString } from 'mdast-util-to-string'
 import matter from 'gray-matter'
-import { basename, dirname, join } from 'path'
-import { u } from 'unist-builder'
-import { inspect } from 'util'
+import { basename, dirname, join, sep } from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { Configuration, OpenAIApi } from 'openai'
+import OpenAI from 'openai'
 
 dotenv.config()
 
 const DOCS_DIR = 'src/app/docs/newsletters'
+const SOURCE = 'docs'
+const PAGE_TYPE = 'markdown'
+const MODEL = 'text-embedding-3-small'
+const ignoredFiles = []
 
-// Optional: ignore specific files (relative to project root)
-const ignoredFiles = [
-  // e.g., 'src/app/docs/newsletters/drafts/example.md'
-]
-
-/**
- * Split a mdast tree into multiple trees at nodes matching `predicate`.
- * The splitting node is included at the start of the new tree.
- */
-function splitTreeBy(tree, predicate) {
-  return tree.children.reduce((trees, node) => {
-    const [lastTree] = trees.slice(-1)
-    if (!lastTree || predicate(node)) {
-      const t = u('root', [node])
-      return trees.concat(t)
-    }
-    lastTree.children.push(node)
-    return trees
-  }, [])
+const toRoutePath = (absPath) => {
+  const norm = absPath.replaceAll(sep, '/')
+  const root = DOCS_DIR.replaceAll(sep, '/')
+  let p = norm.replace(new RegExp(`^${root}`), '').replace(/\.md$/i, '')
+  if (!p.startsWith('/')) p = `/${p}`
+  return p
 }
 
-/**
- * Process Markdown content:
- * - compute checksum
- * - parse optional YAML front-matter as `meta`
- * - strip any non-markdown (safety filter—handles edge cases)
- * - split into sections by headings
- */
-function processMarkdownForSearch(fileContents) {
-  // Extract YAML front-matter (if any)
-  const { content, data } = matter(fileContents)
-  const checksum = createHash('sha256').update(content).digest('base64')
+const slugify = (s) =>
+  s
+    ?.toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
 
-  const mdTree = fromMarkdown(content)
+const sha256b64 = (text) => createHash('sha256').update(text).digest('base64')
 
-  const cleanTree = mdTree
-
-  const sectionTrees = splitTreeBy(cleanTree, (node) => node.type === 'heading')
-  const slugger = new GithubSlugger()
-
-  const sections = sectionTrees.map((tree) => {
-    const [firstNode] = tree.children
-    const heading = firstNode?.type === 'heading' ? toString(firstNode) : undefined
-    const slug = heading ? slugger.slug(heading) : undefined
-    return {
-      content: toMarkdown(tree),
-      heading,
-      slug,
-    }
-  })
-
-  return {
-    checksum,
-    meta: Object.keys(data || {}).length ? data : undefined,
-    sections,
+function splitByHeadings(markdown) {
+  const lines = markdown.split('\n')
+  const sections = []
+  let current = []
+  const pushSection = () => {
+    if (current.length) sections.push(current.join('\n').trim())
+    current = []
   }
+  for (const line of lines) {
+    if (/^#{1,6}\s+/.test(line)) {
+      pushSection()
+      current.push(line)
+    } else {
+      current.push(line)
+    }
+  }
+  pushSection()
+  return sections.filter(Boolean)
 }
 
-/**
- * Recursively walk a directory, capturing files and optional parent doc path.
- * If a directory contains a doc named after the directory, we treat it as a parent.
- */
 async function walk(dir, parentPath) {
-  const immediateFiles = await readdir(dir)
-  const recursiveFiles = await Promise.all(
-    immediateFiles.map(async (file) => {
-      const path = join(dir, file)
-      const stats = await stat(path)
-      if (stats.isDirectory()) {
-        // A directory-level doc named like the directory establishes hierarchy
-        const docPath = `${basename(path)}.md`
-        return walk(
-          path,
-          immediateFiles.includes(docPath) ? join(dirname(path), docPath) : parentPath,
-        )
-      } else if (stats.isFile()) {
-        return [{ path, parentPath }]
-      } else {
-        return []
-      }
-    }),
-  )
-
-  const flattened = recursiveFiles.reduce((all, x) => all.concat(x), [])
-  return flattened.sort((a, b) => a.path.localeCompare(b.path))
+  const entries = await readdir(dir)
+  const out = []
+  for (const name of entries) {
+    const p = join(dir, name)
+    const s = await stat(p)
+    if (s.isDirectory()) {
+      const docName = `${basename(p)}.md`
+      const hasDirDoc = entries.includes(docName)
+      const newParent = hasDirDoc ? join(dirname(p), docName) : parentPath
+      out.push(...(await walk(p, newParent)))
+    } else if (s.isFile() && /\.md$/i.test(p)) {
+      out.push({ path: p, parentPath })
+    }
+  }
+  return out
+    .sort((a, b) => a.path.localeCompare(b.path))
+    .filter(({ path }) => !ignoredFiles.includes(path))
 }
 
-class BaseEmbeddingSource {
-  constructor(source, path, parentPath) {
-    this.source = source
-    this.path = path
-    this.parentPath = parentPath
-    this.checksum = undefined
-    this.meta = undefined
-    this.sections = undefined
-  }
-  async load() {
-    throw new Error('load() must be implemented by subclasses')
-  }
+function processMarkdown(content) {
+  const { content: md, data } = matter(content)
+  const checksum = sha256b64(md)
+  const rawSections = splitByHeadings(md)
+  const sections = rawSections.map((sec) => {
+    const headingMatch = sec.match(/^#{1,6}\s+(.+)$/m)
+    const heading = headingMatch ? headingMatch[1].trim() : undefined
+    const slug = heading ? slugify(heading) : undefined
+    return { heading, slug, content: sec }
+  })
+  return { checksum, meta: Object.keys(data || {}).length ? data : undefined, sections }
 }
 
-class MarkdownEmbeddingSource extends BaseEmbeddingSource {
-  type = 'markdown'
-  constructor(source, filePath, parentFilePath) {
-    // Convert a file system path inside DOCS_DIR to a route-like path
-    // e.g., src/app/docs/newsletters/2024/wk-01.md  ->  /2024/wk-01
-    const routePath = filePath.replace(new RegExp(`^${DOCS_DIR}`), '').replace(/\.md$/, '')
-    const parentRoutePath =
-      parentFilePath && parentFilePath.replace(new RegExp(`^${DOCS_DIR}`), '').replace(/\.md$/, '')
-    super(source, routePath, parentRoutePath)
-    this.filePath = filePath
-    this.parentFilePath = parentFilePath
-  }
-
-  async load() {
-    const contents = await readFile(this.filePath, 'utf8')
-    const { checksum, meta, sections } = processMarkdownForSearch(contents)
-    this.checksum = checksum
-    this.meta = meta
-    this.sections = sections
-    return { checksum, meta, sections }
-  }
-}
-
-async function generateEmbeddings() {
+async function main() {
   const argv = yargs(hideBin(process.argv)).option('refresh', {
     alias: 'r',
-    description: 'Refresh data',
     type: 'boolean',
+    description: 'Rebuild all pages (ignore checksum)',
   }).argv
 
-  const shouldRefresh = argv.refresh
-
-  if (
-    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    !process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    !process.env.OPENAI_KEY
-  ) {
-    console.log(
-      'Environment variables NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and OPENAI_KEY are required: skipping embeddings generation',
+  const { NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, OPENAI_KEY } = process.env
+  if (!NEXT_PUBLIC_SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !OPENAI_KEY) {
+    console.error(
+      'Missing required env vars: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, OPENAI_KEY',
     )
-    return
+    process.exit(1)
   }
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY,
-    { auth: { persistSession: false, autoRefreshToken: false } },
-  )
+  const supabase = createClient(NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  })
+  const openai = new OpenAI({ apiKey: OPENAI_KEY })
 
-  const discovered = (await walk(DOCS_DIR))
-    .filter(({ path }) => /\.md$/.test(path))
-    .filter(({ path }) => !ignoredFiles.includes(path))
+  const discovered = await walk(DOCS_DIR)
+  const mdFiles = discovered.filter(({ path }) => /\.md$/i.test(path))
+  console.log(`Discovered Markdown files: ${mdFiles.length} (root: ${DOCS_DIR})`)
+  console.log(argv.refresh ? 'Full refresh mode' : 'Processing new/changed pages')
 
-  const embeddingSources = discovered.map(
-    (entry) => new MarkdownEmbeddingSource('newsletter', entry.path, entry.parentPath),
-  )
-
-  console.log(`Discovered ${embeddingSources.length} Markdown files under ${DOCS_DIR}`)
-
-  console.log(
-    shouldRefresh
-      ? 'Refresh flag set, re-generating all pages'
-      : 'Checking which pages are new or have changed',
-  )
-
-  const configuration = new Configuration({ apiKey: process.env.OPENAI_KEY })
-  const openai = new OpenAIApi(configuration)
-
-  for (const embeddingSource of embeddingSources) {
-    const { type, source, path, parentPath } = embeddingSource
+  for (const entry of mdFiles) {
+    const filePath = entry.path
+    const parentFilePath = entry.parentPath
+    const routePath = toRoutePath(filePath)
+    const parentRoutePath = parentFilePath ? toRoutePath(parentFilePath) : null
 
     try {
-      const { checksum, meta, sections } = await embeddingSource.load()
+      const raw = await readFile(filePath, 'utf8')
+      const { checksum, meta, sections } = processMarkdown(raw)
 
-      // Look up existing page by path
-      const { error: fetchPageError, data: existingPage } = await supabase
+      const { data: existingPage, error: fetchErr } = await supabase
         .from('nods_page')
-        .select('id, path, checksum, parentPage:parent_page_id(id, path)')
-        .filter('path', 'eq', path)
-        .limit(1)
+        .select('id, path, checksum, parent_page_id')
+        .eq('path', routePath)
         .maybeSingle()
+      if (fetchErr) throw fetchErr
 
-      if (fetchPageError) throw fetchPageError
+      let parentPageId = null
+      if (parentRoutePath) {
+        const { data: parentPage, error: parentErr } = await supabase
+          .from('nods_page')
+          .select('id')
+          .eq('path', parentRoutePath)
+          .maybeSingle()
+        if (parentErr) throw parentErr
+        parentPageId = parentPage?.id ?? null
+      }
 
-      const existingParentPage = existingPage?.parentPage
-
-      if (!shouldRefresh && existingPage?.checksum === checksum) {
-        // Parent change only
-        if (existingParentPage?.path !== parentPath) {
-          console.log(`[${path}] Parent page changed -> '${parentPath}'`)
-          const { error: fetchParentPageError, data: parentPage } = await supabase
+      if (!argv.refresh && existingPage?.checksum === checksum) {
+        if (existingPage?.parent_page_id !== parentPageId) {
+          await supabase
             .from('nods_page')
-            .select()
-            .filter('path', 'eq', parentPath)
-            .limit(1)
-            .maybeSingle()
-          if (fetchParentPageError) throw fetchParentPageError
-
-          const { error: updatePageError } = await supabase
-            .from('nods_page')
-            .update({ parent_page_id: parentPage?.id })
-            .filter('id', 'eq', existingPage.id)
-          if (updatePageError) throw updatePageError
+            .update({ parent_page_id: parentPageId })
+            .eq('id', existingPage.id)
+          console.log(`[${routePath}] Updated parent relationship only`)
+        } else {
+          console.log(`[${routePath}] No changes; skipped`)
         }
         continue
       }
 
-      if (existingPage) {
-        console.log(
-          `[${path}] ${shouldRefresh ? 'Refreshing' : 'Changed'} -> deleting old sections`,
-        )
-        const { error: deleteSectionsErr } = await supabase
+      if (existingPage?.id) {
+        const { error: delErr } = await supabase
           .from('nods_page_section')
           .delete()
-          .filter('page_id', 'eq', existingPage.id)
-        if (deleteSectionsErr) throw deleteSectionsErr
+          .eq('page_id', existingPage.id)
+        if (delErr) throw delErr
       }
 
-      // Resolve parent page (if any)
-      const { error: fetchParentPageError, data: parentPage } = await supabase
-        .from('nods_page')
-        .select()
-        .filter('path', 'eq', parentPath)
-        .limit(1)
-        .maybeSingle()
-      if (fetchParentPageError) throw fetchParentPageError
-
-      // Upsert the page (blank checksum until sections are created)
-      const { error: upsertErr, data: page } = await supabase
+      const { data: page, error: upsertErr } = await supabase
         .from('nods_page')
         .upsert(
-          { checksum: null, path, type, source, meta, parent_page_id: parentPage?.id },
+          {
+            path: routePath,
+            type: PAGE_TYPE,
+            source: SOURCE,
+            meta,
+            parent_page_id: parentPageId,
+            checksum: null,
+          },
           { onConflict: 'path' },
         )
         .select()
-        .limit(1)
         .single()
       if (upsertErr) throw upsertErr
 
-      console.log(`[${path}] Adding ${sections.length} sections (with embeddings)`)
-
+      console.log(`[${routePath}] Inserting ${sections.length} sections with embeddings`)
       for (const { slug, heading, content } of sections) {
-        const input = content.replace(/\n/g, ' ')
-
-        try {
-          // Updated to a newer model
-          const embeddingResponse = await openai.createEmbedding({
-            model: 'text-embedding-3-small',
-            input,
-          })
-
-          if (embeddingResponse.status !== 200) {
-            throw new Error(inspect(embeddingResponse.data, false, 2))
-          }
-
-          const [responseData] = embeddingResponse.data.data
-
-          const { error: insertErr } = await supabase
-            .from('nods_page_section')
-            .insert({
-              page_id: page.id,
-              slug,
-              heading,
-              content,
-              token_count: embeddingResponse.data.usage.total_tokens,
-              embedding: responseData.embedding,
-            })
-            .select()
-            .limit(1)
-            .single()
-          if (insertErr) throw insertErr
-        } catch (err) {
-          console.error(
-            `Failed to generate embeddings for '${path}' section starting '${input.slice(0, 40)}...'`,
-          )
-          throw err
-        }
+        const input = content.replace(/\s+/g, ' ').trim()
+        const emb = await openai.embeddings.create({ model: MODEL, input })
+        const vector = emb.data[0].embedding
+        const tokens = emb.usage?.total_tokens ?? null
+        const { error: insErr } = await supabase.from('nods_page_section').insert({
+          page_id: page.id,
+          slug,
+          heading,
+          content,
+          token_count: tokens,
+          embedding: vector,
+        })
+        if (insErr) throw insErr
       }
 
-      const { error: updateChecksumErr } = await supabase
+      const { error: chkErr } = await supabase
         .from('nods_page')
         .update({ checksum })
-        .filter('id', 'eq', page.id)
-      if (updateChecksumErr) throw updateChecksumErr
-    } catch (err) {
-      console.error(
-        `Page '${path}' or one/multiple sections failed to store properly. Checksum left null to signal regeneration is needed.`,
-      )
-      console.error(err)
+        .eq('id', page.id)
+      if (chkErr) throw chkErr
+
+      console.log(`[${routePath}] Done`)
+    } catch (e) {
+      console.error(`[${routePath}] Error`)
+      console.error(e)
     }
   }
 
-  console.log('Embedding generation complete')
+  console.log('Embedding generation complete.')
 }
 
-async function main() {
-  await generateEmbeddings()
-}
-
-main().catch((err) => console.error(err))
+main().catch((e) => {
+  console.error(e)
+  process.exit(1)
+})
