@@ -39,7 +39,7 @@ function EpisodeEntry({ episode }) {
             id={`episode-${episode.id}-title`}
             className="mt-2 text-lg font-bold text-slate-900"
           >
-            <Link href={`/transmit/${episode.id}`}>{episode.title}</Link>
+            <Link href={`/podcasts/${episode.id}`}>{episode.title}</Link>
           </h2>
           <FormattedDate
             date={date}
@@ -94,9 +94,19 @@ export default async function Home() {
         <h1 className="text-2xl/7 font-bold text-slate-900">Episodes</h1>
       </Container>
       <div className="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
-        {episodes.map((episode) => (
-          <EpisodeEntry key={episode.id} episode={episode} />
-        ))}
+        {episodes.length > 0 ? (
+          episodes.map((episode) => (
+            <EpisodeEntry key={episode.id} episode={episode} />
+          ))
+        ) : (
+          <div className="py-10 sm:py-12">
+            <Container>
+              <p className="text-base/7 text-slate-700">
+                No episodes found. Please check your database connection and ensure the podcasts table exists.
+              </p>
+            </Container>
+          </div>
+        )}
       </div>
     </div>
   )
