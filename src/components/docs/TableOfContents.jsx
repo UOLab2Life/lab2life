@@ -26,6 +26,7 @@ export function TableOfContents({ tableOfContents }) {
   useEffect(() => {
     if (tableOfContents.length === 0) return
     let headings = getHeadings(tableOfContents)
+
     function onScroll() {
       let top = window.scrollY
       let current = headings[0].id
@@ -35,6 +36,9 @@ export function TableOfContents({ tableOfContents }) {
         } else {
           break
         }
+      }
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 5) {
+        current = headings[headings.length - 1].id
       }
       setCurrentSection(current)
     }
@@ -74,7 +78,7 @@ export function TableOfContents({ tableOfContents }) {
                       href={`#${section.id}`}
                       className={clsx(
                         isActive(section)
-                          ? 'text-sky-500'
+                          ? 'text-violet-500'
                           : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
                       )}
                     >
@@ -92,7 +96,7 @@ export function TableOfContents({ tableOfContents }) {
                             href={`#${subSection.id}`}
                             className={
                               isActive(subSection)
-                                ? 'text-sky-500'
+                                ? 'text-violet-500'
                                 : 'hover:text-slate-600 dark:hover:text-slate-300'
                             }
                           >

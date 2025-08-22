@@ -36,7 +36,7 @@ export function Hero() {
   return (
     <div className="overflow-hidden bg-slate-900 dark:-mt-19 dark:-mb-32 dark:pt-19 dark:pb-32">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
+        <div className="lg:max-w-8xl mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 md:text-center lg:text-left">
             <Image
               className="absolute right-full bottom-full -mr-72 -mb-56 opacity-50"
@@ -48,12 +48,12 @@ export function Hero() {
               priority
             />
             <div className="relative">
-              <p className="inline bg-linear-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+              <p className="font-display inline bg-linear-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text text-5xl tracking-tight text-transparent">
                 Never miss the cache again.
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Cache every single thing your app could ever do ahead of time,
-                so your code never even has to run at all.
+                Cache every single thing your app could ever do ahead of time, so your code never
+                even has to run at all.
               </p>
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 <Button href="/docs">Get started</Button>
@@ -134,28 +134,13 @@ export function Hero() {
                       language={codeLanguage}
                       theme={{ plain: {}, styles: [] }}
                     >
-                      {({
-                        className,
-                        style,
-                        tokens,
-                        getLineProps,
-                        getTokenProps,
-                      }) => (
-                        <pre
-                          className={clsx(
-                            className,
-                            'flex overflow-x-auto pb-6',
-                          )}
-                          style={style}
-                        >
+                      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                        <pre className={clsx(className, 'flex overflow-x-auto pb-6')} style={style}>
                           <code className="px-4">
                             {tokens.map((line, lineIndex) => (
                               <div key={lineIndex} {...getLineProps({ line })}>
                                 {line.map((token, tokenIndex) => (
-                                  <span
-                                    key={tokenIndex}
-                                    {...getTokenProps({ token })}
-                                  />
+                                  <span key={tokenIndex} {...getTokenProps({ token })} />
                                 ))}
                               </div>
                             ))}
