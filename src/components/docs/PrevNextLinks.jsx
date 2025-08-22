@@ -17,9 +17,6 @@ function ArrowIcon(props) {
 function PageLink({ title, href, dir = 'next', ...props }) {
   return (
     <div {...props}>
-      <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
-        {dir === 'next' ? 'Next' : 'Previous'}
-      </dt>
       <dd className="mt-1">
         <Link
           href={href}
@@ -30,10 +27,7 @@ function PageLink({ title, href, dir = 'next', ...props }) {
         >
           {title}
           <ArrowIcon
-            className={clsx(
-              'h-4 w-4 flex-none fill-current',
-              dir === 'previous' && '-scale-x-100',
-            )}
+            className={clsx('h-4 w-4 flex-none fill-current', dir === 'previous' && '-scale-x-100')}
           />
         </Link>
       </dd>

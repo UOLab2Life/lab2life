@@ -12,10 +12,10 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="mt-2 text-base/7 text-slate-700">
-          Sorry, we couldn’t find the page you’re looking for.
+          Sorry, we couldn't find the page you're looking for.
         </p>
         <Link
-          href="/transmit"
+          href="/podcasts"
           className="mt-4 text-sm/6 font-bold text-pink-500 hover:text-pink-700 active:text-pink-900"
         >
           Go back home
