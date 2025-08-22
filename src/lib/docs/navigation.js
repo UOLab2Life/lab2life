@@ -4,28 +4,48 @@ export const navigation = [
     links: [{ title: 'Getting started', href: '/docs' }],
   },
   {
+    title: 'Pediatrics',
+    links: [
+      { title: 'Pediatrics Introduction', href: '/docs/newsletters/pediatrics-introduction' },
+      { title: 'Pediatric Oncologist', href: '/docs/newsletters/pediatric-oncologists' },
+      { title: 'Neonatologist', href: '/docs/newsletters/neonatologists' },
+      {
+        title: 'Pediatric Speech-Language Pathologist',
+        href: '/docs/newsletters/pediatric-speech-pathologists',
+      },
+    ],
+  },
+  {
     title: 'Mental Health',
     links: [
-      { title: 'World Mental Health Day', href: '/docs/newsletters/understanding-caching' },
+      { title: 'Mental Health Day Special', href: '/docs/newsletters/mental-health-day-special' },
       {
         title: 'Psychiatrists',
-        href: '/docs/newsletters/predicting-user-behavior',
+        href: '/docs/newsletters/psychiatrists',
+      },
+      {
+        title: 'Criminal Psychologist',
+        href: '/docs/newsletters/criminal-psychologist',
+      },
+      {
+        title: 'Certified Mental Performance Coach',
+        href: '/docs/newsletters/mental-performance-coach',
       },
     ],
   },
   {
     title: 'Prosthetics & Rehabilitation',
     links: [
-      { title: 'Prosthetist', href: '/docs/newsletters/writing-plugins' },
-      { title: 'Orthotist', href: '/docs/newsletters/neuralink-integration' },
-      { title: 'Occupational Therapist', href: '/docs/newsletters/temporal-paradoxes' },
+      { title: 'Prosthetists', href: '/docs/newsletters/prosthetists' },
+      { title: 'Orthotists', href: '/docs/newsletters/orthotists' },
+      { title: 'Occupational Therapist', href: '/docs/newsletters/occupational-therapists' },
     ],
   },
   {
     title: 'Medical Law',
     links: [
-      { title: 'Introduction to Medical Law', href: '/docs/newsletters/cacheadvance-predict' },
-      { title: 'Legal Nurse Consultant', href: '/docs/newsletters/cacheadvance-flush' },
+      { title: 'Introduction to Medical Law', href: '/docs/newsletters/medical-law-introduction' },
+      { title: 'Legal Nurse Consultant', href: '/docs/newsletters/legal-nurse-consultant' },
     ],
   },
 ]
