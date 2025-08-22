@@ -7,22 +7,10 @@ const supabase = createClient(
 
 export async function getAllEpisodes() {
   try {
-    const { data: tables, error: tablesError } = await supabase
-      .from('information_schema.tables')
-      .select('table_name')
-      .eq('table_schema', 'public')
-
-    if (tablesError) {
-      console.error('Error fetching tables:', tablesError)
-    } else {
-      console.log('Available tables:', tables?.map(t => t.table_name))
-    }
-
-    // Try to fetch from the podcasts table
     const { data, error } = await supabase
-      .from('podcasts')
-      .select('podcast_id, release_date, title, description, category, audio_file')
-      .order('release_date', { ascending: false })
+      .from('Episodes')
+      .select('episode_id, release_date, title, description, category, audio_file_url')
+      .order('episode_id', { ascending: false })
 
     if (error) {
       console.error('Supabase error:', error)
@@ -30,16 +18,43 @@ export async function getAllEpisodes() {
     }
 
     return (data || []).map((item) => ({
-      id: item.podcast_id,
-      title: item.title,
+      id: item.episode_id,
+      title: `${item.episode_id}: ${item.title}`,
       published: new Date(item.release_date),
       description: item.description,
-      category: item.category,
-      audio: item.audio_file,
       content: item.description || '',
+      audio: {
+        src: item.audio_file_url,
+        type: 'audio/mp3',
+      },
     }))
   } catch (err) {
     console.error('Unexpected error:', err)
     return []
   }
 }
+
+// export async function testConnection() {
+//   try {
+//     const { data, error } = await supabase
+//       .from('Episodes')
+//       .select('*')
+//       .limit(1)
+
+//     if (error) {
+//       console.error('❌ Connection failed:', error)
+//       return { success: false, data: null }
+//     }
+
+//     if (!data || data.length === 0) {
+//       console.warn('⚠️ Connected, but no entries in Episodes table')
+//       return { success: true, data: [] }
+//     }
+
+//     console.log('✅ Supabase connection works! Sample row:', data[0])
+//     return { success: true, data }
+//   } catch (err) {
+//     console.error('❌ Unexpected error:', err)
+//     return { success: false, data: null }
+//   }
+// }

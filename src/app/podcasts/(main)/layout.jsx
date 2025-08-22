@@ -95,11 +95,12 @@ export default function MainLayout({ children }) {
           </Link>
           <div className="mt-10 text-center lg:mt-12 lg:text-left">
             <p className="text-xl font-bold text-slate-900">
-              <Link href="/transmit">Their Side</Link>
+              <Link href="/transmit">Lab2Life</Link>
             </p>
             <p className="mt-3 text-lg/8 font-medium text-slate-700">
-              Conversations with the most tragically misunderstood people of our
-              time.
+            Lab2Life supports students exploring careers in healthcare and medicine by providing resources, opportunities, and 
+            guidance through events, workshops, podcasts, and articles. Our goal is to build a community of aspiring professionals 
+            equipped with the skills, knowledge, and experiences to thrive in diverse career pathways.
             </p>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />

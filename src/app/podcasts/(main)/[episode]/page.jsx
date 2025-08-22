@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
   let episode = await getEpisode(episodeId)
 
   return {
-    title: episode.title,
+    title: `Lab2Life - ${episode.title}`,
   }
 }
 

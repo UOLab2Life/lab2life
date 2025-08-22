@@ -91,7 +91,7 @@ export default async function Home() {
   return (
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
       <Container>
-        <h1 className="text-2xl/7 font-bold text-slate-900">Episodes</h1>
+        <h1 className="text-2xl/7 font-bold text-slate-900">Lab2Life Episodes</h1>
       </Container>
       <div className="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
         {episodes.length > 0 ? (
@@ -102,7 +102,7 @@ export default async function Home() {
           <div className="py-10 sm:py-12">
             <Container>
               <p className="text-base/7 text-slate-700">
-                No episodes found. Please check your database connection and ensure the podcasts table exists.
+                No episodes found. Please check your database connection and ensure the Episodes table exists.
               </p>
             </Container>
           </div>
