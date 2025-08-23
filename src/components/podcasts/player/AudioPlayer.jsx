@@ -49,9 +49,9 @@ export function AudioPlayer() {
         <Link
           href={`/podcasts/${player.episode.id}`}
           className="truncate text-center text-sm/6 font-bold md:text-left"
-          title={player.episode.title}
+          title={`Episode ${player.episode.id}: ${player.episode.title}`}
         >
-          {player.episode.title}
+          Episode {player.episode.id}: {player.episode.title}
         </Link>
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">

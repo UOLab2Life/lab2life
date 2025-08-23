@@ -19,7 +19,7 @@ export async function getAllEpisodes() {
 
     return (data || []).map((item) => ({
       id: item.episode_id,
-      title: `${item.episode_id}: ${item.title}`,
+      title: item.title,
       published: new Date(item.release_date),
       description: item.description,
       content: item.description || '',
@@ -34,6 +34,7 @@ export async function getAllEpisodes() {
   }
 }
 
+//TEST TO CHECK IF DATABASE CONNECTION WORKS, PLEASE LEAVE IT UNTOUCHED
 // export async function testConnection() {
 //   try {
 //     const { data, error } = await supabase

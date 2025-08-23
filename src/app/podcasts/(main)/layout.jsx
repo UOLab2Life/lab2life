@@ -58,18 +58,18 @@ function PersonIcon(props) {
 }
 
 export default function MainLayout({ children }) {
-  let hosts = ['Eric Gordon', 'Wes Mantooth']
+  let hosts = ['Lab2Life']
 
   return (
     <AudioProvider>
-      <header className="bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-md lg:items-start lg:overflow-y-auto xl:w-120">
+      <header className="bg-[#003e3e] lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-md lg:items-start lg:overflow-y-auto xl:w-120">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:px-12 lg:text-sm/7 lg:whitespace-nowrap lg:[writing-mode:vertical-rl]">
-          <span className="font-mono text-slate-500">Hosted by</span>
-          <span className="mt-6 flex gap-6 font-bold text-slate-900">
+          <span className="font-mono text-[#99c96f]/70">Hosted by</span>
+          <span className="mt-6 flex gap-6 font-bold text-[#99c96f]">
             {hosts.map((host, hostIndex) => (
               <Fragment key={host}>
                 {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-slate-400">
+                  <span aria-hidden="true" className="text-[#99c96f]/50">
                     /
                   </span>
                 )}
@@ -78,9 +78,9 @@ export default function MainLayout({ children }) {
             ))}
           </span>
         </div>
-        <div className="relative z-10 mx-auto px-4 pt-10 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:px-8 lg:py-12 xl:px-12">
+        <div className="relative z-10 mx-auto px-4 pt-10 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-8 lg:py-12 xl:px-12">
           <Link
-            href="/transmit"
+            href="https://open.spotify.com/show/2WpTeVx4rtSx7w8ctthnKe?si=2bc5fe4cf3184d87"
             className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 shadow-xl shadow-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"
             aria-label="Homepage"
           >
@@ -94,10 +94,10 @@ export default function MainLayout({ children }) {
             <div className="absolute inset-0 rounded-lg ring-1 ring-black/10 ring-inset sm:rounded-xl lg:rounded-2xl" />
           </Link>
           <div className="mt-10 text-center lg:mt-12 lg:text-left">
-            <p className="text-xl font-bold text-slate-900">
+            <h2 className="text-3xl font-bold text-[#99c96f]">
               <Link href="/transmit">Lab2Life</Link>
-            </p>
-            <p className="mt-3 text-lg/8 font-medium text-slate-700">
+            </h2>
+            <p className="mt-3 text-lg/8 font-medium text-[#99c96f]">
             Lab2Life supports students exploring careers in healthcare and medicine by providing resources, opportunities, and 
             guidance through events, workshops, podcasts, and articles. Our goal is to build a community of aspiring professionals 
             equipped with the skills, knowledge, and experiences to thrive in diverse career pathways.
@@ -105,17 +105,17 @@ export default function MainLayout({ children }) {
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
           <section className="mt-10 lg:mt-12">
-            <h2 className="sr-only flex items-center font-mono text-sm/7 font-medium text-slate-900 lg:not-sr-only">
+            <h2 className="sr-only flex items-center font-mono text-sm/7 font-medium text-[#ffffff] lg:not-sr-only">
               <TinyWaveFormIcon
-                colors={['fill-indigo-300', 'fill-blue-300']}
+                colors={['fill-[#b184e9]', 'fill-[#8a5fc8]']}
                 className="h-2.5 w-2.5"
               />
               <span className="ml-2.5">Listen</span>
             </h2>
-            <div className="h-px bg-linear-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
+            <div className="h-px bg-linear-to-r from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
             <ul
               role="list"
-              className="mt-4 flex justify-center gap-10 text-base/7 font-medium text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
+              className="mt-4 flex justify-center gap-10 text-base/7 font-medium text-[#ffffff]/80 sm:gap-8 lg:flex-col lg:gap-4"
             >
               {[
                 ['Spotify', SpotifyIcon],
@@ -125,11 +125,11 @@ export default function MainLayout({ children }) {
               ].map(([label, Icon]) => (
                 <li key={label} className="flex">
                   <Link
-                    href="/transmit"
+                    href="https://open.spotify.com/show/2WpTeVx4rtSx7w8ctthnKe?si=2bc5fe4cf3184d87"
                     className="group flex items-center"
                     aria-label={label}
                   >
-                    <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
+                    <Icon className="h-8 w-8 fill-[#ffffff]/60 group-hover:fill-[#b184e9]" />
                     <span className="hidden sm:ml-3 sm:block">{label}</span>
                   </Link>
                 </li>
@@ -138,22 +138,22 @@ export default function MainLayout({ children }) {
           </section>
         </div>
       </header>
-      <main className="border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
+      <main className="border-t border-[#99c96f] lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
         <Waveform className="absolute top-0 left-0 h-20 w-full" />
         <div className="relative">{children}</div>
       </main>
-      <footer className="border-t border-slate-200 bg-slate-50 py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
+      <footer className="border-t border-[#99c96f] bg-[#99c96f] py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
         <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
           <AboutSection />
-          <h2 className="mt-8 flex items-center font-mono text-sm/7 font-medium text-slate-900">
-            <PersonIcon className="h-3 w-auto fill-slate-300" />
+          <h2 className="mt-8 flex items-center font-mono text-sm/7 font-medium text-[#99c96f]">
+            <PersonIcon className="h-3 w-auto fill-[#99c96f]/60" />
             <span className="ml-2.5">Hosted by</span>
           </h2>
-          <div className="mt-2 flex gap-6 text-sm/7 font-bold text-slate-900">
+          <div className="mt-2 flex gap-6 text-sm/7 font-bold text-[#2e4954]">
             {hosts.map((host, hostIndex) => (
               <Fragment key={host}>
                 {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-slate-400">
+                  <span aria-hidden="true" className="text-[#2e4954]/50">
                     /
                   </span>
                 )}
