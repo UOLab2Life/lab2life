@@ -6,12 +6,21 @@ export const navigation = [
   {
     title: 'Pediatrics',
     links: [
-      { title: 'Pediatrics Introduction', href: '/docs/newsletters/pediatrics-introduction' },
-      { title: 'Pediatric Oncologist', href: '/docs/newsletters/pediatric-oncologists' },
-      { title: 'Neonatologist', href: '/docs/newsletters/neonatologists' },
       {
-        title: 'Pediatric Speech-Language Pathologist',
-        href: '/docs/newsletters/pediatric-speech-pathologists',
+        title: 'The Essentials of Pediatrics',
+        href: '/docs/newsletters/the-essentials-of-pediatrics',
+      },
+      {
+        title: 'An Overview of Pediatric Oncology',
+        href: '/docs/newsletters/pediatric-oncology',
+      },
+      {
+        title: 'Neonatologists Lifesavers at Birth',
+        href: '/docs/newsletters/neonatologists',
+      },
+      {
+        title: 'The Role of Pediatric Speech-Language Pathologist',
+        href: '/docs/newsletters/pediatric-speech-language-pathologist',
       },
     ],
   },
@@ -30,6 +39,10 @@ export const navigation = [
       {
         title: 'Certified Mental Performance Coach',
         href: '/docs/newsletters/mental-performance-coach',
+      },
+        {
+        title: 'There Is No Health Without Mental Health  ',
+        href: '/docs/newsletters/mental-health-introduction',
       },
     ],
   },

@@ -1,18 +1,9 @@
 ---
 title: There Is No Health Without Mental Health  
-nextjs:
-  metadata:
-    title: CacheAdvance.predict()
-    description: Quidem magni aut exercitationem maxime rerum eos.
 ---
-
 
 *Written by Maria Bilat*  
 *October 3rd, 2024*  
-
----
-
-Welcome to the month of October! The theme for this month is **Mental Health**, and over the next couple of weeks, we will be exploring and highlighting a variety of exciting career options within the field. Let’s get started!  
 
 ---
 
