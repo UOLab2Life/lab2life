@@ -56,10 +56,15 @@ export function AudioProvider({ children }) {
             playerRef.current.pause()
             playerRef.current.playbackRate = playbackRate
             playerRef.current.currentTime = 0
+            
+            console.log('Loading audio from:', episode.audio.src)
           }
         }
-
-        playerRef.current?.play()
+        if (playerRef.current) {
+          playerRef.current.play().catch(error => {
+            console.error('Error playing audio:', error)
+          })
+        }
       },
       pause() {
         playerRef.current?.pause()
@@ -116,6 +121,16 @@ export function AudioProvider({ children }) {
             payload: Math.floor(event.currentTarget.duration),
           })
         }}
+        onError={(event) => {
+          console.error('Audio loading error:', event.currentTarget.error)
+        }}
+        onLoadStart={() => {
+          console.log('Audio loading started')
+        }}
+        onCanPlay={() => {
+          console.log('Audio can play')
+        }}
+        preload="metadata"
         muted={state.muted}
       />
     </>

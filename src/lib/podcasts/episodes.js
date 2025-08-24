@@ -1,41 +1,61 @@
-import { parse as parseFeed } from 'rss-to-json'
-import { array, number, object, parse, string } from 'valibot'
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
 
 export async function getAllEpisodes() {
-  let FeedSchema = object({
-    items: array(
-      object({
-        id: number(),
-        title: string(),
-        published: number(),
-        description: string(),
-        content: string(),
-        enclosures: array(
-          object({
-            url: string(),
-            type: string(),
-          }),
-        ),
-      }),
-    ),
-  })
+  try {
+    const { data, error } = await supabase
+      .from('Episodes')
+      .select('episode_id, release_date, title, description, category, audio_file_url')
+      .order('episode_id', { ascending: false })
 
-  let feed = await parseFeed('https://their-side-feed.vercel.app/api/feed')
-  let items = parse(FeedSchema, feed).items
+    if (error) {
+      console.error('Supabase error:', error)
+      return []
+    }
 
-  let episodes = items.map(
-    ({ id, title, description, content, enclosures, published }) => ({
-      id,
-      title: `${id}: ${title}`,
-      published: new Date(published),
-      description,
-      content,
-      audio: enclosures.map((enclosure) => ({
-        src: enclosure.url,
-        type: enclosure.type,
-      }))[0],
-    }),
-  )
-
-  return episodes
+    return (data || []).map((item) => ({
+      id: item.episode_id,
+      title: item.title,
+      published: new Date(item.release_date),
+      description: item.description,
+      content: item.description || '',
+      audio: {
+        src: item.audio_file_url,
+        type: 'audio/mp3',
+      },
+    }))
+  } catch (err) {
+    console.error('Unexpected error:', err)
+    return []
+  }
 }
+
+//TEST TO CHECK IF DATABASE CONNECTION WORKS, PLEASE LEAVE IT UNTOUCHED
+// export async function testConnection() {
+//   try {
+//     const { data, error } = await supabase
+//       .from('Episodes')
+//       .select('*')
+//       .limit(1)
+
+//     if (error) {
+//       console.error('❌ Connection failed:', error)
+//       return { success: false, data: null }
+//     }
+
+//     if (!data || data.length === 0) {
+//       console.warn('⚠️ Connected, but no entries in Episodes table')
+//       return { success: true, data: [] }
+//     }
+
+//     console.log('✅ Supabase connection works! Sample row:', data[0])
+//     return { success: true, data }
+//   } catch (err) {
+//     console.error('❌ Unexpected error:', err)
+//     return { success: false, data: null }
+//   }
+// }
