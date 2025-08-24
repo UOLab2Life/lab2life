@@ -20,7 +20,7 @@ export default function LayoutWrapper({ children }) {
   return (
     <section
       data-app="docs"
-      className={clsx('min-h-full bg-white dark:bg-slate-900', inter.variable, lexend.variable)}
+      className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}
     >
       <Providers>
         <Layout>{children}</Layout>

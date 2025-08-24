@@ -12,13 +12,6 @@ import { Navigation } from '@/components/docs/Navigation'
 import { Search } from '@/components/docs/Search'
 import { ThemeSelector } from '@/components/docs/ThemeSelector'
 
-function GoBackIcon(props) { // Modifiable icon with props
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-      <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-    </svg>
-  )
-}
 
 function Header() {
   let [isScrolled, setIsScrolled] = useState(false)
@@ -39,7 +32,7 @@ function Header() {
       className={clsx(
         'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 sm:px-6 lg:px-8 dark:shadow-none',
         isScrolled
-          ? 'dark:bg-slate-900/95 dark:backdrop-blur-sm dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
+          ? 'dark:bg-tea-900/95 dark:backdrop-blur-sm dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
           : 'dark:bg-transparent',
       )}
     >
@@ -58,9 +51,6 @@ function Header() {
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:grow">
         <ThemeSelector className="relative z-10" />
-        <Link href="/" className="group" aria-label="GoBack">
-          <GoBackIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
-        </Link>
       </div>
     </header>
   )

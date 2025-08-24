@@ -78,7 +78,7 @@ export function TableOfContents({ tableOfContents }) {
                       href={`#${section.id}`}
                       className={clsx(
                         isActive(section)
-                          ? 'text-violet-500'
+                          ? 'text-[#99c96f]'
                           : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
                       )}
                     >
@@ -96,7 +96,7 @@ export function TableOfContents({ tableOfContents }) {
                             href={`#${subSection.id}`}
                             className={
                               isActive(subSection)
-                                ? 'text-violet-500'
+                                ? 'text-[#99c96f]'
                                 : 'hover:text-slate-600 dark:hover:text-slate-300'
                             }
                           >

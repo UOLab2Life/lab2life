@@ -73,13 +73,13 @@ export function ThemeSelector(props) {
         <LightIcon
           className={clsx(
             'h-4 w-4 dark:hidden',
-            theme === 'system' ? 'fill-slate-400' : 'fill-violet-400',
+            theme === 'system' ? 'fill-slate-400' : 'fill-[#b184e9]',
           )}
         />
         <DarkIcon
           className={clsx(
             'hidden h-4 w-4 dark:block',
-            theme === 'system' ? 'fill-slate-400' : 'fill-violet-400',
+            theme === 'system' ? 'fill-slate-400' : 'fill-[#b184e9]',
           )}
         />
       </ListboxButton>
@@ -92,7 +92,7 @@ export function ThemeSelector(props) {
               clsx(
                 'flex cursor-pointer items-center rounded-[0.625rem] p-1 select-none',
                 {
-                  'text-violet-500': selected,
+                  'text-[#b184e9]': selected,
                   'text-slate-900 dark:text-white': focus && !selected,
                   'text-slate-700 dark:text-slate-400': !focus && !selected,
                   'bg-slate-100 dark:bg-slate-900/40': focus,
@@ -107,7 +107,7 @@ export function ThemeSelector(props) {
                     className={clsx(
                       'h-4 w-4',
                       selected
-                        ? 'fill-violet-400 dark:fill-violet-400'
+                        ? 'fill-[#b184e9] dark:fill-[#b184e9]'
                         : 'fill-slate-400',
                     )}
                   />
