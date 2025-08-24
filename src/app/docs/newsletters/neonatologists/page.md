@@ -24,7 +24,7 @@ Neonatologists usually work in the Neonatal Intensive Care Unit (NICU) in hospit
 - 4 years of undergraduate degree at a college or university  
 - 4 years of medical school  
 - 3 years of training in a pediatric residency program  
-- Additional fellowship training in neonatology 
+- Additional fellowship training in neonatology
 
 *A fellow is a doctor who has undergone specialty training after completing medical school and a residency¹*
 
@@ -47,7 +47,7 @@ Although pediatricians can solve most health problems in newborns, neonatologist
 
 Dr. Josephine Enciso, an associate clinical professor of pediatrics and neonatology at the David Geffen School of Medicine at UCLA, explains the difficult atmosphere of the NICU:  
 
-> The NICU is an overwhelming place. The babies are very sick, the nursing staff is very knowledgeable and high-intensity, and the work is extremely fast-paced². 
+> The NICU is an overwhelming place. The babies are very sick, the nursing staff is very knowledgeable and high-intensity, and the work is extremely fast-paced².
 
 Although stressful, she emphasizes the team-driven atmosphere in the NICU. Charge nurses, neonatal nurse practitioners, neonatology fellows, pediatric residents, and attendings all work together. This reflects the close-knit relationship among healthcare professionals, united by a shared goal: saving a baby’s life.  
 
@@ -57,7 +57,7 @@ Although stressful, she emphasizes the team-driven atmosphere in the NICU. Charg
 
 Along with providing treatment, neonatologists play a crucial role in providing emotional support to families. The stress that parents endure as they watch their child battle serious health conditions is unimaginable. Dr. Enciso highlights this by saying:  
 
-> The hardest part of the specialty is that we can't promise the parents we'll hand over a healthy baby to them in the end³. 
+> The hardest part of the specialty is that we can't promise the parents we'll hand over a healthy baby to them in the end³.
 
 Neonatologists must deliver difficult news with empathy and initiate conversations about outcomes that are often uncertain. The mental and emotional resilience required to handle these situations deserves immense appreciation. For parents of premature or critically ill babies, neonatologists are a beacon of hope, guiding their little ones toward a brighter, healthier future.  
 
@@ -67,15 +67,12 @@ Neonatologists must deliver difficult news with empathy and initiate conversatio
 
 It is evident that neonatologists are truly unsung heroes. Their specialized care, emotional support, and dedication to both newborns and their families are irreplaceable. The impact they make reaches far beyond the hospital walls, as they help shape the futures of countless children and families.  
 
-
 ### Footnotes  
 
 1. [KidsHealth](https://kidshealth.org/en/parents/hcp-neonatology.html#:~:text=A%20neonatologist%20) *Health care providers: neonatologists (for parents).*
 2. [David Geffen School of Medicine](https://medschool.ucla.edu/blog-post/what-does-a-neonatologist-do) (2023) *What does a neonatologist do? UCLA Medical School.*  
 3. [David Geffen School of Medicine](https://medschool.ucla.edu/blog-post/what-does-a-neonatologist-do) (2023) *What does a neonatologist do? UCLA Medical School.*
 
-
-### References 
+### References
 
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/articles/24471-neonatologist) (2024) *Neonatologist*.
-

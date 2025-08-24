@@ -50,10 +50,10 @@ By contrast, psychologists mainly focus on psychotherapy (talk therapy 🗪). Ps
 
 Seeking help can feel overwhelming, but it is crucial to gain the appropriate diagnosis and support. You should consider consulting a psychiatrist (or talking to your family doctor for a referral) if you experience:
 
-- 🎭 Inability to manage or control emotions   
-- 💢 Continuous or frequent anger/rage episodes 
-- 😱 Excessive or irrational fears 
-- ⚠️ Risky or dangerous behaviors 
+- 🎭 Inability to manage or control emotions
+- 💢 Continuous or frequent anger/rage episodes
+- 😱 Excessive or irrational fears
+- ⚠️ Risky or dangerous behaviors
 - 😔 Persistent worrying or sadness  
 - 🛌 Major changes in sleep patterns  
 - 💉 Substance use problems  
@@ -68,11 +68,9 @@ Seeking help can feel overwhelming, but it is crucial to gain the appropriate di
 
 Psychiatrists are skilled professionals whose expertise in diagnosing, treating, and managing complex mental health conditions allows individuals to regain control of their lives. In a world that increasingly recognizes the importance of mental health, psychiatrists play a vital role in guiding individuals toward healing, resilience, and hope.  
 
-
 ### Footnotes  
 
 1. [First Session](https://www.firstsession.com/resourcespsychiatrist-licensing-education-canada#:~:text=Becoming%20a%20psychiatrist%20in%20Canada%20typically%20takes%20approximately%2012%2D15,(4%2D7%20years)) Park, R. (2024). *Psychiatrist licensing and education in Canada*.
-
 
 ### References  
 

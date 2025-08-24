@@ -69,9 +69,9 @@ Although closely related to regular speech-pathologists, pediatric SLPs make a l
 
 ### Footnotes  
 
-1. [NIDCD – NIH.gov](https://www.nidcd.nih.gov/health/statistics/quick-statistics-voice-speech-language) (2024) Quick Statistics About Voice, Speech, Language 
+1. [NIDCD – NIH.gov](https://www.nidcd.nih.gov/health/statistics/quick-statistics-voice-speech-language) (2024) Quick Statistics About Voice, Speech, Language
 
-### References   
+### References
 
 - [American Speech-Language-Hearing Association](https://www.asha.org/students/speech-language-pathologists/) *Speech-language pathologists*  
 - [A to Z Speech](https://atozspeech.ca/speech-therapy/) *Speech therapy* 

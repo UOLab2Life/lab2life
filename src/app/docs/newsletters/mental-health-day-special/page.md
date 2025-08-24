@@ -36,7 +36,7 @@ These strategies can be done from the comfort of your home.
 
 It’s equally important to rely on credible sources to avoid misinformation that can increase stress. Trusted organizations include:  
 
-- The World Health Organization*
+- The World Health Organization
 - Health Canada  
 - Ontario Ministry of Health²
 
@@ -68,7 +68,7 @@ Mental health is vital, and the most important reminder is: you are not alone. T
 
 ### References
 
-- [HealthQuotes](https://healthquotes.ca/is-therapy-covered-by-ohip/#:~:text=Therapy%20is%20Covered%20By%20OHIP%20When%20Done%20By%20a%20Medical%20Doctor&text=Other%20mental%20health%20care%20providers,or%20an%20employee%20assistance%20program) DeKuyper (2023) *Is therapy covered by OHIP?*
+- [HealthQuotes](https://healthquotes.ca/is-therapy-covered-by-ohip#:~:text=Therapy%20is%20Covered%20By%20OHIP%20When%20Done%20By%20a%20Medical%20Doctor&text=Other%20mental%20health%20care%20providers,or%20an%20employee%20assistance%20program) DeKuyper (2023) *Is therapy covered by OHIP?*
 - [SAMHSA](https://www.samhsa.gov/find-support/how-to-cope) *How to cope With Mental Health, Drug, and Alcohol Issues*  
 - [CMHA Ontario](https://ontario.cmha.ca/documents/getting-help/#:~:text=You%20can%20make%20an%20appointment%20with%20a%20counsellor%20on%20your,t%20need%20a%20doctor's%20referral) *Mental Health and Addictions Getting help*  
 - [Mindful Health Solutions](https://mindfulhealthsolutions.com/10-coping-strategies-to-improve-your-mental-health-and-well-being/) *Godreau (2024) 10+ Coping Strategies to Improve Your Mental Health and Well-Being*
