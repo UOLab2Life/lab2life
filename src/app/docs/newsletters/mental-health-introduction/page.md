@@ -1,18 +1,9 @@
 ---
 title: There Is No Health Without Mental Health  
-nextjs:
-  metadata:
-    title: CacheAdvance.predict()
-    description: Quidem magni aut exercitationem maxime rerum eos.
 ---
-
 
 *Written by Maria Bilat*  
 *October 3rd, 2024*  
-
----
-
-Welcome to the month of October! The theme for this month is **Mental Health**, and over the next couple of weeks, we will be exploring and highlighting a variety of exciting career options within the field. Let’s get started!  
 
 ---
 
@@ -31,7 +22,8 @@ Mental health is just as important as our physical health, and the intricate rel
 ## Mental Health Care  
 
 Mental health care involves a range of services aimed at:  
-- Diagnosing mental health conditions  
+
+- Diagnosing mental health conditions
 - Treating and managing illnesses  
 - Promoting preventive care  
 
@@ -44,6 +36,7 @@ It not only focuses on treating mental illnesses but also helps individuals **bu
 The mental health field offers a **wide variety of career options**, each with unique specializations and educational backgrounds. Below is a brief overview of a few professions. (Stay tuned for upcoming articles where we’ll explore more career options in detail!)  
 
 ### 1. Psychiatrists  
+
 - Licensed medical doctors who specialize in mental health  
 - Diagnose conditions, prescribe and monitor medications, and provide therapy  
 - **Education Path**:  
@@ -53,6 +46,7 @@ The mental health field offers a **wide variety of career options**, each with u
   - 1–2 years Fellowship in a subspecialty  
 
 ### 2. Psychologists  
+
 - Experts in clinical psychology  
 - Evaluate and diagnose mental health conditions, provide individual and group therapy  
 - **Education Path**:  
@@ -62,6 +56,7 @@ The mental health field offers a **wide variety of career options**, each with u
   - 1-year internship  
 
 ### 3. Social Workers  
+
 - Work with individuals, families, groups, and communities to improve well-being  
 - Provide counseling, therapy, and referrals to supportive social services  
 - **Education Path**:  
