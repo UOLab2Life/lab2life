@@ -7,11 +7,7 @@ import { Highlight } from 'prism-react-renderer'
 
 export function Fence({ children, language }) {
   return (
-    <Highlight
-      code={children.trimEnd()}
-      language={language}
-      theme={{ plain: {}, styles: [] }}
-    >
+    <Highlight code={children.trimEnd()} language={language} theme={{ plain: {}, styles: [] }}>
       {({ className, style, tokens, getTokenProps }) => (
         <pre className={className} style={style}>
           <code>

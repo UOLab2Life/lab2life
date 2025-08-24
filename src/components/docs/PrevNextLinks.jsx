@@ -21,7 +21,7 @@ function PageLink({ title, href, dir = 'next', ...props }) {
         <Link
           href={href}
           className={clsx(
-            'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-200 dark:hover:text-[#b184e9]',
+            'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-[#b184e9] dark:text-slate-200 dark:hover:text-[#b184e9]',
             dir === 'previous' && 'flex-row-reverse',
           )}
         >

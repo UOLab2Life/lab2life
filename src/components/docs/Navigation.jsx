@@ -17,7 +17,7 @@ export function Navigation({ className, onLinkClick }) {
             </h2>
             <ul
               role="list"
-              className="mt-2 space-y-2 border-l-2 border-slate-100 lg:mt-4 lg:space-y-4 lg:border-slate-200 dark:border-[#b184e9]"
+              className="mt-2 space-y-2 border-l-2 border-slate-100 lg:mt-4 lg:space-y-4 lg:border-slate-200 dark:border-slate-300"
             >
               {section.links.map((link) => (
                 <li key={link.href} className="relative">
@@ -27,8 +27,8 @@ export function Navigation({ className, onLinkClick }) {
                     className={clsx(
                       'block w-full pl-3.5 before:pointer-events-none before:absolute before:top-1/2 before:-left-1 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full',
                       link.href === pathname
-                        ? 'font-semibold text-[#99c96f] before:bg-white'
-                        : 'text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-white dark:hover:text-slate-300',
+                        ? 'font-semibold text-[#b184e9] before:bg-white'
+                        : 'text-slate-500 before:hidden before:bg-slate-300 hover:text-[#b184e9] hover:before:block dark:text-slate-400 dark:before:bg-white dark:hover:text-slate-300',
                     )}
                   >
                     {link.title}

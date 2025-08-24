@@ -1,17 +1,7 @@
-import { Fragment } from 'react'
 import Image from 'next/image'
-import clsx from 'clsx'
-import { Highlight } from 'prism-react-renderer'
-
-import { Button } from '@/components/docs/Button'
 import { HeroBackground } from '@/components/docs/HeroBackground'
 import blurCyanImage from '@/assets/docs/images/blur-cyan.png'
 import blurIndigoImage from '@/assets/docs/images/blur-indigo.png'
-
-const tabs = [
-  { name: 'cache-advance.config.js', isActive: true },
-  { name: 'package.json', isActive: false },
-]
 
 export function Hero() {
   return (
@@ -29,12 +19,12 @@ export function Hero() {
               priority
             />
             <div className="relative">
-              <p className="font-display inline bg-linear-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text text-5xl tracking-tight text-transparent">
-                Never miss the cache again.
+              <p className="font-display inline bg-linear-to-r from-indigo-200 via-violet-400 to-indigo-200 bg-clip-text text-5xl tracking-tight text-transparent">
+                uOttawa Lab2Life
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Cache every single thing your app could ever do ahead of time, so your code never
-                even has to run at all.
+                Concise newsletters with perspectives, opportunities, and actionable advice to
+                support your journey.
               </p>
             </div>
           </div>
