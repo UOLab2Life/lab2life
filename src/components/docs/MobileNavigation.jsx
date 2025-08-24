@@ -82,11 +82,7 @@ export function MobileNavigation() {
       >
         <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 sm:px-6 dark:bg-teal-900">
           <div className="flex items-center">
-            <button
-              type="button"
-              onClick={() => close()}
-              aria-label="Close navigation"
-            >
+            <button type="button" onClick={() => close()} aria-label="Close navigation">
               <CloseIcon className="h-6 w-6 stroke-slate-500" />
             </button>
           </div>

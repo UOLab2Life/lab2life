@@ -38,10 +38,7 @@ function useAutocomplete({ close }) {
 
     router.push(itemUrl)
 
-    if (
-      itemUrl ===
-      window.location.pathname + window.location.search + window.location.hash
-    ) {
+    if (itemUrl === window.location.pathname + window.location.search + window.location.hash) {
       close(autocomplete)
     }
   }
@@ -95,14 +92,7 @@ function LoadingIcon(props) {
         d="M15.5 10a5.5 5.5 0 1 0-5.5 5.5"
       />
       <defs>
-        <linearGradient
-          id={id}
-          x1="13"
-          x2="9.5"
-          y1="9"
-          y2="15"
-          gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id={id} x1="13" x2="9.5" y1="9" y2="15" gradientUnits="userSpaceOnUse">
           <stop stopColor="currentColor" />
           <stop offset="1" stopColor="currentColor" stopOpacity="0" />
         </linearGradient>
@@ -128,9 +118,7 @@ function SearchResult({ result, autocomplete, collection, query }) {
   let sectionTitle = navigation.find((section) =>
     section.links.find((link) => link.href === result.url.split('#')[0]),
   )?.title
-  let hierarchy = [sectionTitle, result.pageTitle].filter(
-    (x) => typeof x === 'string',
-  )
+  let hierarchy = [sectionTitle, result.pageTitle].filter((x) => typeof x === 'string')
 
   return (
     <li
@@ -179,9 +167,7 @@ function SearchResults({ autocomplete, query, collection }) {
     return (
       <p className="px-4 py-8 text-center text-sm text-slate-700 dark:text-slate-400">
         No results for &ldquo;
-        <span className="break-words text-slate-900 dark:text-white">
-          {query}
-        </span>
+        <span className="break-words text-slate-900 dark:text-white">{query}</span>
         &rdquo;
       </p>
     )
@@ -308,7 +294,7 @@ function SearchDialog({ open, setOpen, className }) {
         <div className="fixed inset-0 bg-slate-900/25 backdrop-blur-sm" />
 
         <div className="fixed inset-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-20 md:py-32 lg:px-8 lg:py-[15vh]">
-          <DialogPanel className="mx-auto transform-gpu overflow-hidden rounded-xl bg-white shadow-xl sm:max-w-xl dark:bg-teal-800 dark:ring-1 dark:ring-">
+          <DialogPanel className="dark:ring- mx-auto transform-gpu overflow-hidden rounded-xl bg-white shadow-xl sm:max-w-xl dark:bg-teal-800 dark:ring-1">
             <div {...autocomplete.getRootProps({})}>
               <form
                 ref={formRef}
@@ -358,8 +344,7 @@ function useSearchProps() {
     dialogProps: {
       open,
       setOpen: useCallback((open) => {
-        let { width = 0, height = 0 } =
-          buttonRef.current?.getBoundingClientRect() ?? {}
+        let { width = 0, height = 0 } = buttonRef.current?.getBoundingClientRect() ?? {}
         if (!open || (width !== 0 && height !== 0)) {
           setOpen(open)
         }
@@ -373,9 +358,7 @@ export function Search() {
   let { buttonProps, dialogProps } = useSearchProps()
 
   useEffect(() => {
-    setModifierKey(
-      /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl ',
-    )
+    setModifierKey(/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl ')
   }, [])
 
   return (

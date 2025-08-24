@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import {
-  Label,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/react'
+import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import clsx from 'clsx'
 
 const themes = [
@@ -67,37 +61,34 @@ export function ThemeSelector(props) {
     <Listbox as="div" value={theme} onChange={setTheme} {...props}>
       <Label className="sr-only">Theme</Label>
       <ListboxButton
-        className="flex h-6 w-6 items-center justify-center rounded-lg shadow-md ring-1 shadow-black/5 ring-black/5 dark:bg-slate-700 dark:ring-white/5 dark:ring-inset"
+        className="flex h-10 w-10 items-center justify-center rounded-lg shadow-md ring-1 shadow-black/5 ring-black/5 dark:bg-slate-700 dark:ring-white/5 dark:ring-inset"
         aria-label="Theme"
       >
         <LightIcon
           className={clsx(
-            'h-4 w-4 dark:hidden',
+            'h-5 w-5 dark:hidden',
             theme === 'system' ? 'fill-slate-400' : 'fill-[#b184e9]',
           )}
         />
         <DarkIcon
           className={clsx(
-            'hidden h-4 w-4 dark:block',
+            'hidden h-5 w-5 dark:block',
             theme === 'system' ? 'fill-slate-400' : 'fill-[#b184e9]',
           )}
         />
       </ListboxButton>
-      <ListboxOptions className="absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md ring-1 shadow-black/5 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
+      <ListboxOptions className="absolute top-full right-0 z-50 mt-3 max-h-[min(60vh,20rem)] w-40 max-w-[calc(100vw-1rem)] overflow-auto rounded-xl bg-white p-3 text-sm font-medium shadow-md ring-1 shadow-black/5 ring-black/5 dark:bg-teal-900/75 dark:ring-white/5">
         {themes.map((theme) => (
           <ListboxOption
             key={theme.value}
             value={theme.value}
             className={({ focus, selected }) =>
-              clsx(
-                'flex cursor-pointer items-center rounded-[0.625rem] p-1 select-none',
-                {
-                  'text-[#b184e9]': selected,
-                  'text-slate-900 dark:text-white': focus && !selected,
-                  'text-slate-700 dark:text-slate-400': !focus && !selected,
-                  'bg-slate-100 dark:bg-slate-900/40': focus,
-                },
-              )
+              clsx('flex cursor-pointer items-center rounded-[0.625rem] p-1 select-none', {
+                'text-[#b184e9]': selected,
+                'text-slate-900 dark:text-white': focus && !selected,
+                'text-slate-700 dark:text-slate-400': !focus && !selected,
+                'bg-slate-100 dark:bg-slate-900/40': focus,
+              })
             }
           >
             {({ selected }) => (
@@ -106,9 +97,7 @@ export function ThemeSelector(props) {
                   <theme.icon
                     className={clsx(
                       'h-4 w-4',
-                      selected
-                        ? 'fill-[#b184e9] dark:fill-[#b184e9]'
-                        : 'fill-slate-400',
+                      selected ? 'fill-[#b184e9] dark:fill-[#b184e9]' : 'fill-slate-400',
                     )}
                   />
                 </div>

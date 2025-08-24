@@ -6,9 +6,7 @@ import { navigation } from '@/lib/docs/navigation'
 
 export function DocsHeader({ title }) {
   let pathname = usePathname()
-  let section = navigation.find((section) =>
-    section.links.find((link) => link.href === pathname),
-  )
+  let section = navigation.find((section) => section.links.find((link) => link.href === pathname))
 
   if (!title && !section) {
     return null
@@ -16,13 +14,9 @@ export function DocsHeader({ title }) {
 
   return (
     <header className="mb-9 space-y-1">
-      {section && (
-        <p className="font-display text-sm font-medium text-white">
-          {section.title}
-        </p>
-      )}
+      {section && <p className="font-display text-sm font-medium text-white">{section.title}</p>}
       {title && (
-        <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-[#99c96f]">
+        <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-[#b184e9]">
           {title}
         </h1>
       )}
