@@ -34,23 +34,23 @@ function EpisodeEntry({ episode }) {
        className="py-4 sm:py-6"
      >
       <Container>
-        <div className="flex flex-col items-start p-8 bg-white/50 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/70 hover:shadow-lg">
+        <div className="flex flex-col items-start p-8 bg-white/50 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/70 hover:shadow-lg w-full">
           <h2
             id={`episode-${episode.id}-title`}
-            className="mt-2 text-3xl font-bold text-[#2e4954]"
+            className="mt-2 text-3xl font-bold text-[#2e4954] w-full"
           >
-            <Link href={`/podcasts/${episode.id}`}>
-              Episode {episode.id}: {episode.title}
+            <Link href={`/podcasts/${episode.id}`} className="block w-full">
+              <span className="whitespace-nowrap overflow-hidden text-ellipsis block">Episode {episode.id}: {episode.title}</span>
             </Link>
           </h2>
           <FormattedDate
             date={date}
             className="order-first font-bold font-mono text-md/7 text-[#003e3e]/60"
           />
-          <p className="mt-1 text-base/7 text-[#2e4954]/80">
+          <p className="mt-1 text-base/7 text-[#2e4954]/80 w-full">
             {episode.description}
           </p>
-          <div className="mt-4 flex items-center gap-4">
+          <div className="mt-4 flex items-center gap-4 w-full">
             <EpisodePlayButton
               episode={episode}
               className="flex items-center gap-x-3 text-sm/6 font-bold text-[#b184e9] hover:text-[#9a6fd8] active:text-[#8a5fc8]"

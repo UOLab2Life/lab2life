@@ -1,13 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
-//import Link from 'next/link';
 import Header from '../general/Header';
 import Footer from '../general/Footer'
 
 export function Homepage() {
   useEffect(() => {
-    // Import and execute the script
     import('./script.js');
   }, []);
 
@@ -22,19 +20,19 @@ export function Homepage() {
           <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-[#b184e9] rounded-full opacity-15 animate-bounce" style={{animationDelay: '2s'}}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="max-w-8xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <h2 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Welcome to 
-                <span className="bg-gradient-to-r from-[#99c96f] to-[#b184e9] bg-clip-text text-transparent"> uO Lab2Life</span>
+                <span className="bg-gradient-to-r from-[#99c96f] to-[#b184e9] bg-clip-text text-transparent"> uOttawa Lab2Life</span>
               </h2>
               <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-                Transforming cutting-edge research at the University of Ottawa into real-world solutions that improve lives and drive innovation.
+                Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-[#99c96f] hover:bg-[#b184e9] text-[#003e3e] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105">
-                  Explore Research
+                  About Us
                 </button>
                 <button className="border-2 border-white text-white hover:bg-white hover:text-[#003e3e] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200">
                   Watch Our Story
@@ -69,10 +67,10 @@ export function Homepage() {
       </section>
 
       <section id="about" className="py-20 bg-[#003e3e]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 opacity-0 translate-y-8 animate-[fadeInUp_0.8s_ease-out_forwards]">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Bridging Innovation</h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               At UO Lab2Life, we connect brilliant minds with real-world challenges, transforming laboratory discoveries into solutions that matter.
             </p>
           </div>
@@ -118,10 +116,10 @@ export function Homepage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#003e3e] mb-6">Research Focus Areas</h2>
-            <p className="text-xl text-[#003e3e]/80 max-w-3xl mx-auto">
+            <p className="text-xl text-[#003e3e]/80 max-w-4xl mx-auto">
               Explore the cutting-edge research domains where we're making breakthrough discoveries.
             </p>
           </div>
@@ -148,7 +146,7 @@ export function Homepage() {
       </section>
 
       <section className="py-20 bg-gradient-to-r from-[#99c96f] to-[#b184e9]">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center px-6 lg:px-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-[#003e3e] mb-6">Ready to Transform Your Research?</h2>
           <p className="text-xl text-[#003e3e]/90 mb-8 leading-relaxed">
             Join our ecosystem of innovators, researchers, and industry partners working together to bring breakthrough discoveries to market.
