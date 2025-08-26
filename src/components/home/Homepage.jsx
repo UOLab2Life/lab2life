@@ -1,51 +1,33 @@
 'use client';
 
-export function Hero() {
+import { useEffect } from 'react';
+//import Link from 'next/link';
+import Header from '../general/Header';
+import Footer from '../general/Footer'
+
+export function Homepage() {
+  useEffect(() => {
+    // Import and execute the script
+    import('./script.js');
+  }, []);
+
   return (
     <div className="bg-white">
-      <nav className="navbar navbar-transparent w-full z-50" id="navbar">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-6">
-              <img
-                src="../assets/homepage/images/uolab2life_logo_no_bg.png"
-                alt="UO Lab2Life Logo"
-                className="w-10 h-10 rounded-lg shadow-md object-cover"
-              />
-              <div className="hidden sm:block">
-              </div>
-            </div>
-            
-            <div className="hidden lg:flex items-center space-x-6">
-              <a href="#home" className="text-white hover:text-[#99c96f] font-medium transition-colors duration-200 text-sm">Home</a>
-              <a href="#about" className="text-white hover:text-[#99c96f] font-medium transition-colors duration-200 text-sm">About Us</a>
-              <a href="#articles" className="text-white hover:text-[#99c96f] font-medium transition-colors duration-200 text-sm">Articles</a>
-              <a href="#podcasts" className="text-white hover:text-[#99c96f] font-medium transition-colors duration-200 text-sm">Podcasts</a>
-              <a href="#events" className="text-white hover:text-[#99c96f] font-medium transition-colors duration-200 text-sm">Events</a>
-              <a href="#contact" className="bg-[#99c96f] text-[#003e3e] px-4 py-2 rounded-lg hover:bg-[#b184e9] hover:text-white transition-colors duration-200 text-sm font-medium">Contact Us</a>
-            </div>
-            
-            <button className="lg:hidden p-2 text-white">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </nav>
+      
+      <Header />
 
-      <section id="home" className="hero-bg min-h-screen flex items-center relative overflow-hidden">
+      <section id="home" className="bg-gradient-to-br from-[#003e3e] via-[#004d4d] to-[#005a5a] min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#99c96f] rounded-full opacity-10 animate-float"></div>
-          <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-[#b184e9] rounded-full opacity-15 animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#99c96f] rounded-full opacity-10 animate-bounce"></div>
+          <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-[#b184e9] rounded-full opacity-15 animate-bounce" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <h2 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                From Lab to 
-                <span className="gradient-text">Life</span>
+                Welcome to 
+                <span className="bg-gradient-to-r from-[#99c96f] to-[#b184e9] bg-clip-text text-transparent"> uO Lab2Life</span>
               </h2>
               <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
                 Transforming cutting-edge research at the University of Ottawa into real-world solutions that improve lives and drive innovation.
@@ -88,7 +70,7 @@ export function Hero() {
 
       <section id="about" className="py-20 bg-[#003e3e]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16 section-fade-in">
+          <div className="text-center mb-16 opacity-0 translate-y-8 animate-[fadeInUp_0.8s_ease-out_forwards]">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Bridging Innovation</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               At UO Lab2Life, we connect brilliant minds with real-world challenges, transforming laboratory discoveries into solutions that matter.
@@ -96,7 +78,7 @@ export function Hero() {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
-            <div className="card-3d bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl">
               <div className="w-16 h-16 bg-[#99c96f]/20 rounded-2xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-[#99c96f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -108,7 +90,7 @@ export function Hero() {
               </p>
             </div>
             
-            <div className="card-3d bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl">
               <div className="w-16 h-16 bg-[#b184e9]/20 rounded-2xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-[#b184e9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -120,7 +102,7 @@ export function Hero() {
               </p>
             </div>
             
-            <div className="card-3d bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl">
               <div className="w-16 h-16 bg-[#99c96f]/20 rounded-2xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-[#99c96f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -182,158 +164,16 @@ export function Hero() {
         </div>
       </section>
 
-      <footer className="bg-[#003e3e] text-white py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Brand */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#99c96f] to-[#b184e9] rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">L2L</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">UO Lab2Life</h3>
-                  <p className="text-sm text-white/60">University of Ottawa</p>
-                </div>
-              </div>
-              <p className="text-white/80 max-w-md leading-relaxed">
-                Bridging the gap between groundbreaking research and real-world impact. Transforming discoveries into solutions that improve lives.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-lg mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#about" className="text-white/60 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#articles" className="text-white/60 hover:text-white transition-colors">Articles</a></li>
-                <li><a href="#podcasts" className="text-white/60 hover:text-white transition-colors">Podcasts</a></li>
-                <li><a href="#events" className="text-white/60 hover:text-white transition-colors">Events</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-lg mb-4">Get in Touch</h4>
-              <div className="space-y-2 text-white/60">
-                <p>University of Ottawa</p>
-                <p>Ottawa, ON, Canada</p>
-                <p><a href="mailto:info@lab2life.uottawa.ca" className="hover:text-white transition-colors">info@lab2life.uottawa.ca</a></p>
-                <p><a href="tel:+16135625700" className="hover:text-white transition-colors">(613) 562-5700</a></p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/60">&copy; 2025 UO Lab2Life. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <style jsx>{`
-        .navbar {
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .navbar-transparent {
-          background: rgba(0, 62, 62, 0.95);
-          backdrop-filter: blur(12px);
-          border-bottom: 1px solid rgba(153, 201, 111, 0.2);
-        }
-        .navbar-solid {
-          background: rgba(0, 62, 62, 0.98);
-          backdrop-filter: blur(12px);
-          border-bottom: 1px solid rgba(153, 201, 111, 0.3);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        .hero-bg {
-          background: linear-gradient(135deg, #003e3e 0%, #004d4d 25%, #005a5a 100%);
-        }
-        .gradient-text {
-          background: linear-gradient(135deg, #99c96f, #b184e9);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-        .section-fade-in {
-          opacity: 0;
-          transform: translateY(30px);
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
         @keyframes fadeInUp {
           to {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        .card-3d {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-3d:hover {
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
       `}</style>
-
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          // Navbar transparency effect
-          const navbar = document.getElementById('navbar');
-          
-          navbar.addEventListener('mouseenter', function() {
-            navbar.classList.remove('navbar-transparent');
-            navbar.classList.add('navbar-solid');
-          });
-          
-          navbar.addEventListener('mouseleave', function() {
-            navbar.classList.remove('navbar-solid');
-            navbar.classList.add('navbar-transparent');
-          });
-
-          // Smooth scrolling
-          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              const targetId = this.getAttribute('href').substring(1);
-              const targetElement = document.getElementById(targetId);
-              if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80;
-                window.scrollTo({
-                  top: offsetTop,
-                  behavior: 'smooth'
-                });
-              }
-            });
-          });
-
-          // Intersection Observer for animations
-          const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-          };
-
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.style.animationDelay = '0.2s';
-                entry.target.classList.add('section-fade-in');
-              }
-            });
-          }, observerOptions);
-
-          document.querySelectorAll('.card-3d').forEach(card => {
-            observer.observe(card);
-          });
-        `
-      }} />
     </div>
   );
 }

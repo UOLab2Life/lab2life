@@ -2,6 +2,8 @@ import localFont from 'next/font/local'
 import clsx from 'clsx'
 import { Providers } from './theme-provider'
 import { Layout } from '@/components/docs/Layout'
+import Header from '@/components/general/Header'
+import Footer from '@/components/general/Footer'
 
 const inter = localFont({
   src: [{ path: '../../assets/docs/fonts/inter.woff2', weight: '100 900', style: 'normal' }],
@@ -16,6 +18,7 @@ const lexend = localFont({
   display: 'swap',
   preload: true,
 })
+
 export default function LayoutWrapper({ children }) {
   return (
     <section
@@ -23,7 +26,9 @@ export default function LayoutWrapper({ children }) {
       className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}
     >
       <Providers>
+        <Header />
         <Layout>{children}</Layout>
+        <Footer />
       </Providers>
     </section>
   )

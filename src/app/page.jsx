@@ -1,10 +1,8 @@
 import '@/styles/tailwind.css'
-import { Hero } from '@/components/home/Hero'
+import { Homepage } from '@/components/home/Homepage'
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main>
-      <Hero />
-    </main>
+    <Homepage />
   )
 }
