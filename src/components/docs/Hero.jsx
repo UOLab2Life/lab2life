@@ -20,7 +20,7 @@ export function Hero() {
             />
             <div className="relative">
               <p className="font-display inline bg-linear-to-r from-indigo-200 via-violet-400 to-indigo-200 bg-clip-text text-5xl tracking-tight text-transparent">
-                uOttawa Lab2Life
+                Explore our newsletters
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
                 Concise newsletters with perspectives, opportunities, and actionable advice to
