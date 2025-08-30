@@ -1,1 +1,0 @@
-// Add Lab2Life Logo

@@ -9,6 +9,16 @@ import { MobileNavigation } from '@/components/docs/MobileNavigation'
 import { Navigation } from '@/components/docs/Navigation'
 import { Search } from '@/components/docs/Search'
 import { ThemeSelector } from '@/components/docs/ThemeSelector'
+import { Link } from '@/components/home/link'
+
+
+
+const links = [
+  { href: '/podcasts', label: 'Podcasts' },
+  { href: '/about', label: 'About Us' },
+  { href: 'https://docs.google.com/forms/d/e/1FAIpQLSewC51k_HA8eiH2uq7czDqACoDJOycguuuLbUzcqT1td8glkg/viewform', label: 'Sign Up' },
+]
+
 
 function Header() {
   let [isScrolled, setIsScrolled] = useState(false)
@@ -24,28 +34,85 @@ function Header() {
     }
   }, [])
 
-  return (
-    <header
-      className={clsx(
-        'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 sm:px-6 lg:px-8 dark:shadow-none',
-        isScrolled
-          ? 'dark:bg-teal-900/10 dark:backdrop-blur-sm dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/10'
-          : 'dark:bg-transparent',
-      )}
+  return ( 
+<header
+  className={clsx(
+    'sticky top-0 z-50 bg-white/95 backdrop-blur px-4 py-2 sm:px-6 lg:px-8 shadow-md shadow-slate-900/5 transition-[padding] duration-300 dark:shadow-none',
+    isScrolled
+      ? 'dark:bg-teal-900/10 dark:backdrop-blur-sm dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/10'
+      : 'dark:bg-transparent',
+  )}
+>
+  <div className="w-full">
+    <div className="grid w-full grid-cols-2 md:grid-cols-3 items-center gap-x-4 min-h-[48px]">
+
+      <div className="hidden md:flex items-center justify-start">
+<div className="hidden md:flex items-center justify-start">
+  <Link href="/" title="Home" className="group flex items-center gap-3">
+    <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-8 w-auto" />
+    <span
+      className="
+        font-display tracking-tight leading-none
+        text-lg lg:text-xl xl:text-2xl
+        text-slate-900
+        dark:text-transparent dark:bg-clip-text
+        dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300
+        transition-[background-size,color] duration-200
+        dark:group-hover:via-violet-500
+      "
     >
-      <div className="mr-6 flex lg:hidden">
-        <MobileNavigation />
+      Lab2Life
+    </span>
+  </Link>
+</div>
+
+
+
       </div>
-      <div className="relative flex grow basis-0 items-center" />
-      <div className="-my-5 mr-6 items-center sm:mr-8 md:mr-0">
-        <Search />
+
+      <div className="min-w-0 flex justify-center">
+        <div className="w-full max-w-lg">
+          <Search />
+        </div>
       </div>
-      <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:grow">
+
+      <div className="flex items-center justify-end gap-2">
+        <div className="mr-2 flex lg:hidden">
+          <MobileNavigation />
+        </div>
+
+<nav className="hidden items-center lg:flex gap-1">
+  {links.map(({ href, label }) => (
+    <Link
+      key={href}
+      href={href}
+      className="group relative flex items-center px-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 rounded-md"
+    >
+<span
+  className="
+    font-display tracking-tight leading-none text-lg
+    text-slate-900
+    dark:text-transparent dark:bg-clip-text
+    dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300
+    transition-[background-size] duration-200
+    dark:group-hover:via-violet-500
+  "
+>
+  {label}
+</span>
+
+
+    </Link>
+  ))}
+</nav>
+
+
         <ThemeSelector className="relative z-10" />
       </div>
-    </header>
-  )
-}
+    </div>
+  </div>
+</header> 
+)}
 
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false)
