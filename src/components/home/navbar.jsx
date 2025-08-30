@@ -15,7 +15,7 @@ const links = [
   { href: '/docs', label: 'Newsletters' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/about', label: 'About Us' },
-  { href: '/login', label: 'Sign Up' },
+  { href: 'https://docs.google.com/forms/d/e/1FAIpQLSewC51k_HA8eiH2uq7czDqACoDJOycguuuLbUzcqT1td8glkg/viewform', label: 'Sign Up' },
 ]
 
 function DesktopNav() {
