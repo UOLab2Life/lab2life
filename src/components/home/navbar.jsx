@@ -12,9 +12,11 @@ import { Logo } from './logo'
 import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
-  { href: '/docs', label: 'Newsletters' },
+  { href: '/about-us', label: 'About Us' },
+  { href: '/articles', label: 'Articles' },
   { href: '/podcasts', label: 'Podcasts' },
-  { href: '/login', label: 'Sign Up' },
+  { href: '/events', label: 'Events' },
+  { href: '/contact-us', label: 'Contact Us' },
 ]
 
 function DesktopNav() {
@@ -24,7 +26,7 @@ function DesktopNav() {
         <PlusGridItem key={href} className="relative flex">
           <Link
             href={href}
-            className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5"
+            className="flex items-center px-4 py-3 text-base font-inter-semibold text-white bg-blend-multiply data-hover:bg-white/10"
           >
             {label}
           </Link>
@@ -37,10 +39,10 @@ function DesktopNav() {
 function MobileNavButton() {
   return (
     <DisclosureButton
-      className="flex size-12 items-center justify-center self-center rounded-lg data-hover:bg-black/5 lg:hidden"
+      className="flex size-12 items-center justify-center self-center rounded-lg data-hover:bg-white/10 lg:hidden"
       aria-label="Open main menu"
     >
-      <Bars2Icon className="size-6" />
+      <Bars2Icon className="size-6 text-white" />
     </DisclosureButton>
   )
 }
@@ -60,7 +62,7 @@ function MobileNav() {
             }}
             key={href}
           >
-            <Link href={href} className="text-base font-medium text-gray-950">
+            <Link href={href} className="text-base font-inter-semibold text-white">
               {label}
             </Link>
           </motion.div>
