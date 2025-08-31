@@ -4,6 +4,7 @@ import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Keyboard } from '@/components/home/keyboard'
+import { LatestArticles } from '@/components/home/latest-articles'
 import { Link } from '@/components/home/link'
 import { LinkedAvatars } from '@/components/home/linked-avatars'
 import { LogoCloud } from '@/components/home/logo-cloud'
@@ -12,9 +13,10 @@ import { LogoTimeline } from '@/components/home/logo-timeline'
 import { Map } from '@/components/home/map'
 import { Navbar } from '@/components/home/navbar'
 import { Screenshot } from '@/components/home/screenshot'
-import { Testimonials } from '@/components/home/testimonials'
+import { MembersCarousel } from '@/components/home/members-carousel'
 import { Heading, Subheading } from '@/components/home/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import { Instagram } from '@/components/home/instagram'
 
 function Hero() {
   return (
@@ -25,25 +27,24 @@ function Hero() {
           banner={
             <Link
               href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
-              className="flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-fuchsia-950/30"
+              className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-3 py-0.5 text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
             >
-              Radiant raises $100M Series A from Tailwind Ventures
+              uOttawa Lab2Life Club Fair - September 3rd, 2025
               <ChevronRightIcon className="size-4" />
             </Link>
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-6xl/[0.9] font-medium tracking-tight text-balance text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-            Close every deal.
+          <h1 className="text-6xl/[0.9] font-inter-semibold tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
+            uOttawa Lab2Life
           </h1>
-          <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Radiant helps you sell more by revealing sensitive information about
-            your customers.
+          <p className="mt-8 max-w-2xl text-xl/7 font-inter-semibold text-white/90 sm:text-2xl/8">
+            Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="#">Get started</Button>
-            <Button variant="secondary" href="/pricing">
-              See pricing
+            <Button href="/about-us">About Us</Button>
+            <Button variant="secondary" href="/general-member-sign-up">
+              General Member Sign-Up
             </Button>
           </div>
         </div>
@@ -57,7 +58,7 @@ function FeatureSection() {
     <div className="overflow-hidden">
       <Container className="pb-24">
         <Heading as="h2" className="max-w-3xl">
-          A snapshot of your entire sales pipeline.
+          Explore Healthcare Career Opportunities.
         </Heading>
         <Screenshot
           width={1216}
@@ -73,16 +74,16 @@ function FeatureSection() {
 function BentoSection() {
   return (
     <Container>
-      <Subheading>Sales</Subheading>
+      <Subheading>Opportunities</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        Know more about your customers than they do.
+        Discover the diverse world of healthcare careers.
       </Heading>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
         <BentoCard
-          eyebrow="Insight"
-          title="Get perfect clarity"
-          description="Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+          eyebrow="Medicine"
+          title="Clinical Practice"
+          description="Explore various medical specialties from family medicine to surgery. Learn about patient care, diagnosis, and treatment in diverse healthcare settings."
           graphic={
             <div className="h-80 bg-[url(/screenshots/profile.png)] bg-size-[1000px_560px] bg-position-[left_-109px_top_-112px] bg-no-repeat" />
           }
@@ -90,9 +91,9 @@ function BentoSection() {
           className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
         />
         <BentoCard
-          eyebrow="Analysis"
-          title="Undercut your competitors"
-          description="With our advanced data mining, you’ll know which companies your leads are talking to and exactly how much they’re being charged."
+          eyebrow="Research"
+          title="Healthcare Innovation"
+          description="Discover opportunities in medical research, biotech, and pharmaceutical development. Join the effort to advance healthcare through scientific discovery."
           graphic={
             <div className="absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-size-[1100px_650px] bg-position-[left_-38px_top_-73px] bg-no-repeat" />
           }
@@ -100,9 +101,9 @@ function BentoSection() {
           className="lg:col-span-3 lg:rounded-tr-4xl"
         />
         <BentoCard
-          eyebrow="Speed"
-          title="Built for power users"
-          description="It’s never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
+          eyebrow="Technology"
+          title="Health Informatics"
+          description="Explore the intersection of healthcare and technology. Learn about electronic health records, data analysis, and digital health solutions."
           graphic={
             <div className="flex size-full pt-10 pl-10">
               <Keyboard highlighted={['LeftCommand', 'LeftShift', 'D']} />
@@ -111,16 +112,16 @@ function BentoSection() {
           className="lg:col-span-2 lg:rounded-bl-4xl"
         />
         <BentoCard
-          eyebrow="Source"
-          title="Get the furthest reach"
-          description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
+          eyebrow="Administration"
+          title="Healthcare Management"
+          description="Discover leadership roles in healthcare organizations. Learn about hospital administration, policy development, and healthcare economics."
           graphic={<LogoCluster />}
           className="lg:col-span-2"
         />
         <BentoCard
-          eyebrow="Limitless"
-          title="Sell globally"
-          description="Radiant helps you sell in locations currently under international embargo."
+          eyebrow="Global Health"
+          title="International Impact"
+          description="Explore global health initiatives and international medical missions. Make a difference in healthcare access worldwide."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
@@ -133,17 +134,17 @@ function DarkBentoSection() {
   return (
     <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
-        <Subheading dark>Outreach</Subheading>
+        <Subheading dark>Specializations</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
-          Customer outreach has never been easier.
+          Find your perfect healthcare specialty.
         </Heading>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
           <BentoCard
             dark
-            eyebrow="Networking"
-            title="Sell at the speed of light"
-            description="Our RadiantAI chat assistants analyze the sentiment of your conversations in real time, ensuring you're always one step ahead."
+            eyebrow="Mental Health"
+            title="Psychology & Counseling"
+            description="Explore careers in mental health, from clinical psychology to social work. Help individuals and communities achieve better mental wellness."
             graphic={
               <div className="h-80 bg-[url(/screenshots/networking.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
@@ -152,26 +153,25 @@ function DarkBentoSection() {
           />
           <BentoCard
             dark
-            eyebrow="Integrations"
-            title="Meet leads where they are"
-            description="With thousands of integrations, no one will be able to escape your cold outreach."
+            eyebrow="Therapy"
+            title="Rehabilitation Services"
+            description="Discover physical therapy, occupational therapy, and speech pathology careers. Help patients recover and regain independence."
             graphic={<LogoTimeline />}
-            // `overflow-visible!` is needed to work around a Chrome bug that disables the mask on the graphic.
             className="z-10 overflow-visible! lg:col-span-2 lg:rounded-tr-4xl"
           />
           <BentoCard
             dark
-            eyebrow="Meetings"
-            title="Smart call scheduling"
-            description="Automatically insert intro calls into your leads' calendars without their consent."
+            eyebrow="Nursing"
+            title="Patient Care Excellence"
+            description="Explore diverse nursing specialties from critical care to community health. Provide compassionate, evidence-based patient care."
             graphic={<LinkedAvatars />}
             className="lg:col-span-2 lg:rounded-bl-4xl"
           />
           <BentoCard
             dark
-            eyebrow="Engagement"
-            title="Become a thought leader"
-            description="RadiantAI automatically writes LinkedIn posts that relate current events to B2B sales, helping you build a reputation as a thought leader."
+            eyebrow="Public Health"
+            title="Community Wellness"
+            description="Learn about epidemiology, health promotion, and disease prevention. Work to improve population health and healthcare systems."
             graphic={
               <div className="h-80 bg-[url(/screenshots/engagement.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
@@ -197,8 +197,10 @@ export default function Home() {
           <BentoSection />
         </div>
         <DarkBentoSection />
+        <Instagram />
       </main>
-      <Testimonials />
+            <MembersCarousel />
+      <LatestArticles />
       <Footer />
     </div>
   )

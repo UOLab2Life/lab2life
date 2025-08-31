@@ -11,11 +11,6 @@ function CallToAction() {
     <div className="relative pt-20 pb-16 text-center sm:py-24">
       <hgroup>
         <Subheading>Get started</Subheading>
-        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to dive in?
-          <br />
-          Start your free trial today.
-        </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
         Get the cheat codes for selling and unlock your team&apos;s revenue
@@ -31,7 +26,7 @@ function CallToAction() {
 }
 
 function SitemapHeading({ children }) {
-  return <h3 className="text-sm/6 font-medium text-gray-950/50">{children}</h3>
+  return <h3 className="text-sm/6 font-inter-semibold text-gray-950/50">{children}</h3>
 }
 
 function SitemapLinks({ children }) {
@@ -43,7 +38,7 @@ function SitemapLink(props) {
     <li>
       <Link
         {...props}
-        className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        className="font-inter-semibold text-[#003e3e] data-hover:text-[#003e3e]/75"
       />
     </li>
   )
@@ -121,7 +116,7 @@ function SocialLinks() {
         href="https://facebook.com"
         target="_blank"
         aria-label="Visit us on Facebook"
-        className="text-gray-950 data-hover:text-gray-950/75"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75"
       >
         <SocialIconFacebook className="size-4" />
       </Link>
@@ -129,7 +124,7 @@ function SocialLinks() {
         href="https://x.com"
         target="_blank"
         aria-label="Visit us on X"
-        className="text-gray-950 data-hover:text-gray-950/75"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75"
       >
         <SocialIconX className="size-4" />
       </Link>
@@ -137,7 +132,7 @@ function SocialLinks() {
         href="https://linkedin.com"
         target="_blank"
         aria-label="Visit us on LinkedIn"
-        className="text-gray-950 data-hover:text-gray-950/75"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75"
       >
         <SocialIconLinkedIn className="size-4" />
       </Link>
@@ -148,7 +143,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Radiant Inc.
+      &copy; {new Date().getFullYear()} uOttawa Lab2Life
     </div>
   )
 }
@@ -165,7 +160,10 @@ export function Footer() {
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
                   <PlusGridItem className="pt-6 lg:pb-6">
-                    <Logo className="h-9" />
+                                         <div className="flex items-center gap-3">
+                       <img src="/images/home/uolab2life_logo_no_bg.png" alt="Lab2Life" className="h-9 w-auto" />
+                       <span className="font-inter-semibold text-[#003e3e] text-lg">Lab2Life</span>
+                     </div>
                   </PlusGridItem>
                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
