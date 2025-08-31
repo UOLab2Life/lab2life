@@ -2,11 +2,9 @@ import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { AboutSection } from '@/components/podcasts/AboutSection'
 import { AudioProvider } from '@/components/podcasts/AudioProvider'
 import { AudioPlayer } from '@/components/podcasts/player/AudioPlayer'
 import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
-import { Waveform } from '@/components/podcasts/Waveform'
 import posterImage from '@/assets/podcasts/images/poster.png'
 
 function SpotifyIcon(props) {
@@ -49,16 +47,10 @@ function RSSIcon(props) {
   )
 }
 
-function PersonIcon(props) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 11 12" {...props}>
-      <path d="M5.019 5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm3.29 7c1.175 0 2.12-1.046 1.567-2.083A5.5 5.5 0 0 0 5.019 7 5.5 5.5 0 0 0 .162 9.917C-.39 10.954.554 12 1.73 12h6.578Z" />
-    </svg>
-  )
-}
+
 
 export default function MainLayout({ children }) {
-  let hosts = ['Lab2Life']
+  let host = 'uOttawa Lab2Life'
 
   return (
     <AudioProvider>
@@ -66,22 +58,13 @@ export default function MainLayout({ children }) {
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:px-12 lg:text-sm/7 lg:whitespace-nowrap lg:[writing-mode:vertical-rl]">
           <span className="font-mono text-[#99c96f]/70">Hosted by</span>
           <span className="mt-6 flex gap-6 font-bold text-[#99c96f]">
-            {hosts.map((host, hostIndex) => (
-              <Fragment key={host}>
-                {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-[#99c96f]/50">
-                    /
-                  </span>
-                )}
-                {host}
-              </Fragment>
-            ))}
+            {host}
           </span>
         </div>
         <div className="relative z-10 mx-auto px-4 pt-10 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-8 lg:py-12 xl:px-12">
           <Link
             href="https://open.spotify.com/show/2WpTeVx4rtSx7w8ctthnKe?si=2bc5fe4cf3184d87"
-            className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 shadow-xl shadow-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"
+            className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"
             aria-label="Homepage"
           >
             <Image
@@ -95,15 +78,16 @@ export default function MainLayout({ children }) {
           </Link>
           <div className="mt-10 text-center lg:mt-12 lg:text-left">
             <h2 className="text-3xl font-bold text-[#99c96f]">
-              <Link href="/transmit">Lab2Life</Link>
+              <Link href="/transmit">The Career Catalyst</Link>
             </h2>
-            <p className="mt-3 text-lg/8 font-medium text-[#99c96f]">
-            Lab2Life supports students exploring careers in healthcare and medicine by providing resources, opportunities, and 
-            guidance through events, workshops, podcasts, and articles. Our goal is to build a community of aspiring professionals 
-            equipped with the skills, knowledge, and experiences to thrive in diverse career pathways.
+            <p className="mt-3 text-lg/8 font-medium text-white">
+            Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, 
+            and valuable advice for students and aspiring professionals. Tune in to discover the many professions and different pathways 
+            in research and science that shape our world!
             </p>
           </div>
-          <AboutSection className="mt-12 hidden lg:block" />
+          
+          
           <section className="mt-10 lg:mt-12">
             <h2 className="sr-only flex items-center font-mono text-sm/7 font-medium text-[#ffffff] lg:not-sr-only">
               <TinyWaveFormIcon
@@ -139,30 +123,9 @@ export default function MainLayout({ children }) {
         </div>
       </header>
       <main className="border-t border-[#99c96f] lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
-        <Waveform className="absolute top-0 left-0 h-20 w-full" />
+
         <div className="relative">{children}</div>
       </main>
-      <footer className="border-t border-[#99c96f] bg-[#99c96f] py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
-        <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
-          <AboutSection />
-          <h2 className="mt-8 flex items-center font-mono text-sm/7 font-medium text-[#99c96f]">
-            <PersonIcon className="h-3 w-auto fill-[#99c96f]/60" />
-            <span className="ml-2.5">Hosted by</span>
-          </h2>
-          <div className="mt-2 flex gap-6 text-sm/7 font-bold text-[#2e4954]">
-            {hosts.map((host, hostIndex) => (
-              <Fragment key={host}>
-                {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-[#2e4954]/50">
-                    /
-                  </span>
-                )}
-                {host}
-              </Fragment>
-            ))}
-          </div>
-        </div>
-      </footer>
       <div className="fixed inset-x-0 bottom-0 z-10 lg:left-112 xl:left-120">
         <AudioPlayer />
       </div>

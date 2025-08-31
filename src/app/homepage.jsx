@@ -73,7 +73,7 @@ function FeatureSection() {
 function BentoSection() {
   return (
     <Container>
-      <Subheading>Opportunities</Subheading>
+      <Subheading className="text-[#003e3e]">Opportunities</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
         Discover the diverse world of healthcare careers.
       </Heading>
@@ -133,7 +133,7 @@ function DarkBentoSection() {
   return (
     <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
-        <Subheading dark>Specializations</Subheading>
+        <Subheading dark className="text-[#003e3e]">Specializations</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
           Find your perfect healthcare specialty.
         </Heading>
@@ -183,7 +183,7 @@ function DarkBentoSection() {
   )
 }
 
-export default function Home() {
+export default function Homepage() {
   return (
     <div className="overflow-hidden">
       <Hero />
