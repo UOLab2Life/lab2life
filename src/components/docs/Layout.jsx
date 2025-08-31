@@ -48,7 +48,7 @@ function Header() {
 
       <div className="hidden md:flex items-center justify-start">
 <div className="hidden md:flex items-center justify-start">
-  <Link href="/" title="Home" className="group flex items-center gap-3">
+          <Link href="/" title="Home" className="group flex items-center gap-3">
     <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-8 w-auto" />
     <span
       className="
