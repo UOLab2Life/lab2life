@@ -14,7 +14,7 @@ import { Map } from '@/components/home/map'
 import { Navbar } from '@/components/home/navbar'
 import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
-import { ChevronRightIcon } from '@heroicons/react/16/solid'
+
 import { Instagram } from '@/components/home/instagram'
 
 function Hero() {
@@ -22,17 +22,7 @@ function Hero() {
     <div className="relative">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
-        <Navbar
-          banner={
-            <Link
-              href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
-              className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-3 py-0.5 text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
-            >
-              uOttawa Lab2Life Club Fair - September 3rd, 2025
-              <ChevronRightIcon className="size-4" />
-            </Link>
-          }
-        />
+        <Navbar />
                  <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48 text-center sm:text-left">
            <Heading as="h1" className="text-6xl/[0.9] font-inter-semibold tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
              uOttawa Lab2Life
