@@ -13,7 +13,6 @@ import { LogoTimeline } from '@/components/home/logo-timeline'
 import { Map } from '@/components/home/map'
 import { Navbar } from '@/components/home/navbar'
 import { Screenshot } from '@/components/home/screenshot'
-import { MembersCarousel } from '@/components/home/members-carousel'
 import { Heading, Subheading } from '@/components/home/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import { Instagram } from '@/components/home/instagram'
@@ -34,20 +33,20 @@ function Hero() {
             </Link>
           }
         />
-        <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="text-6xl/[0.9] font-inter-semibold tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-            uOttawa Lab2Life
-          </h1>
-          <p className="mt-8 max-w-2xl text-xl/7 font-inter-semibold text-white/90 sm:text-2xl/8">
-            Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.
-          </p>
-          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/about-us">About Us</Button>
-            <Button variant="secondary" href="/general-member-sign-up">
-              General Member Sign-Up
-            </Button>
-          </div>
-        </div>
+                 <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48 text-center sm:text-left">
+           <Heading as="h1" className="text-6xl/[0.9] font-inter-semibold tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
+             uOttawa Lab2Life
+           </Heading>
+           <p className="mt-8 max-w-2xl text-xl/7 font-inter-semibold text-white/90 sm:text-2xl/8 mx-auto sm:mx-0">
+             Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.
+           </p>
+           <div className="mt-12 flex flex-row gap-3 sm:gap-6 justify-center sm:justify-start">
+             <Button href="/about-us" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3">About Us</Button>
+             <Button variant="secondary" href="/general-member-sign-up" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3">
+               General Member Sign-Up
+             </Button>
+           </div>
+         </div>
       </Container>
     </div>
   )
@@ -184,7 +183,7 @@ function DarkBentoSection() {
   )
 }
 
-export default function Home() {
+export default function Homepage() {
   return (
     <div className="overflow-hidden">
       <Hero />
@@ -199,7 +198,6 @@ export default function Home() {
         <DarkBentoSection />
         <Instagram />
       </main>
-            <MembersCarousel />
       <LatestArticles />
       <Footer />
     </div>

@@ -5,14 +5,14 @@ import { Heading } from '@/components/home/text'
 export function Instagram() {
   return (
     <div className="mt-16 relative">
-      <div className="mx-auto max-w-[99.25%] rounded-4xl bg-[#003e3e] px-8 py-16">
+      <div className="mx-auto max-w-[99.25%] bg-white px-8 py-16">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-7xl">
             <div className="text-center">
-              <Heading as="h3" className="mt-2 mb-4 text-white">
+              <Heading as="h3" className="mt-2 mb-4">
                 Follow Us on Instagram
               </Heading>
-              <p className="mt-4 text-lg/7 font-inter-semibold text-white/90 max-w-2xl mx-auto">
+              <p className="mt-4 text-lg/7 font-inter-semibold text-gray-700 max-w-2xl mx-auto">
                 Stay updated with our latest posts and behind-the-scenes content!
               </p>
             </div>
@@ -20,7 +20,7 @@ export function Instagram() {
             <div className="mt-8">
               <iframe
                 src="https://www.instagram.com/uolab2life/embed"
-                className="w-full h-[580px] rounded-3xl border-0 shadow-3xl"
+                className="w-full h-[580px] rounded-3xl border-0 shadow-3xl shadow-[#003e3e]/60 shadow-lg"
                 title="uOttawa Lab2Life Instagram Feed"
                 allowtransparency="true"
                 allowFullScreen={true}

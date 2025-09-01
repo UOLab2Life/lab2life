@@ -33,9 +33,28 @@ export default async function Episode({ params }) {
   let episode = await getEpisode(episodeId)
   let date = new Date(episode.published)
 
+  // Parse categories and create pills
+  const categories = episode.category ? episode.category.split(',').map(cat => cat.trim()).filter(cat => cat) : []
+
+  // Convert YouTube URL to embed URL
+  const getYouTubeEmbedUrl = (url) => {
+    if (!url) return null
+    
+    // Handle different YouTube URL formats
+    const videoIdMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/)
+    
+    if (videoIdMatch) {
+      return `https://www.youtube.com/embed/${videoIdMatch[1]}`
+    }
+    
+    return url
+  }
+
+  const embedUrl = getYouTubeEmbedUrl(episode.youtube_url)
+
   return (
     <article className="py-16 lg:py-36">
-      <Container>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="flex flex-col">
           <div className="flex items-center gap-6">
             <EpisodePlayButton
@@ -48,22 +67,51 @@ export default async function Episode({ params }) {
                 <PlayIcon className="h-9 w-9 fill-[#2e4954] group-active:fill-[#2e4954]/80" />
               }
             />
-                         <div className="flex flex-col">
-               <h1 className="mt-2 text-4xl font-bold text-[#2e4954]">
-                 Episode {episode.id}: {episode.title}
-               </h1>
-               <FormattedDate
-                 date={date}
-                 className="order-first font-mono text-sm/7 text-[#2e4954]/60"
-               />
-             </div>
+            <div className="flex flex-col">
+              <h1 className="mt-2 text-4xl font-bold text-[#2e4954]">
+                Episode {episode.id}: {episode.title}
+              </h1>
+              <FormattedDate
+                date={date}
+                className="order-first font-bold font-mono text-md/7 text-[#003e3e]/60"
+              />
+            </div>
           </div>
-                     <p className="mt-3 ml-24 text-lg/8 font-medium text-[#2e4954]/80">
-             {episode.description}
-           </p>
+          <p className="mt-3 ml-24 text-lg/8 font-medium text-[#2e4954]/80">
+            {episode.description}
+          </p>
+          
+          {/* Category Pills */}
+          {categories.length > 0 && (
+            <div className="mt-4 ml-24 flex flex-wrap gap-2">
+              {categories.map((category, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#003e3e] text-white"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+          )}
         </header>
-                 <hr className="my-12 border-[#99c96f]/20" />
-      </Container>
+        
+        {/* YouTube Video Embed */}
+        {episode.youtube_url && embedUrl && (
+          <div className="mt-12">
+            <div className="relative w-full max-w-5xl mx-auto" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={embedUrl}
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                title={`Episode ${episode.id} - ${episode.title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </article>
   )
 }

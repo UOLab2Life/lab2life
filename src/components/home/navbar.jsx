@@ -13,7 +13,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
   { href: '/about-us', label: 'About Us' },
-  { href: '/articles', label: 'Articles' },
+  { href: '/docs', label: 'Articles' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/events', label: 'Events' },
   { href: '/contact-us', label: 'Contact Us' },
