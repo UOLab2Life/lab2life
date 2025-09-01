@@ -6,8 +6,7 @@ import { Gradient, GradientBackground } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Lead, Subheading } from '@/components/home/text'
 import { MembersCarousel } from '@/app/about-us/components/members-carousel'
-import { Link } from '@/components/home/link'
-import { ChevronRightIcon } from '@heroicons/react/16/solid'
+
 
 
 export const metadata = {
@@ -458,17 +457,7 @@ export default function Company() {
       <div className="relative">
         <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
         <Container className="relative pb-12">
-          <Navbar
-            banner={
-              <Link
-                href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
-                className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-3 py-0.5 text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
-              >
-                uOttawa Lab2Life Club Fair - September 3rd, 2025
-                <ChevronRightIcon className="size-4" />
-              </Link>
-            }
-          />
+          <Navbar />
         </Container>
       </div>
       <Header />

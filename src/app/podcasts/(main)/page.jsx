@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { ChevronRightIcon } from '@heroicons/react/16/solid'
-
 import { Container } from '@/components/home/container'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
@@ -117,18 +115,7 @@ export default async function Home() {
       <div className="relative">
         <Gradient className="absolute inset-1 sm:inset-2 bottom-0 rounded-2xl sm:rounded-4xl ring-1 ring-black/5 ring-inset" />
         <Container className="relative pb-8 sm:pb-12">
-          <Navbar
-            banner={
-              <Link
-                href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
-                className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 sm:px-3 py-0.5 text-xs sm:text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
-              >
-                <span className="hidden xs:inline">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
-                <span className="xs:hidden">Club Fair - Sept 3rd, 2025</span>
-                <ChevronRightIcon className="size-3 sm:size-4" />
-              </Link>
-            }
-          />
+          <Navbar shortText={true} />
         </Container>
       </div>
              <div className="pt-16 pb-16 lg:pt-12">

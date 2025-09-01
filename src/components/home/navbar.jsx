@@ -6,6 +6,7 @@ import {
   DisclosurePanel,
 } from '@headlessui/react'
 import { Bars2Icon } from '@heroicons/react/24/solid'
+import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import { motion } from 'framer-motion'
 import { Link } from './link'
 import { Logo } from './logo'
@@ -76,7 +77,27 @@ function MobileNav() {
   )
 }
 
-export function Navbar({ banner }) {
+export function Navbar({ showBanner = true, shortText = false }) {
+  const defaultBanner = (
+    <Link
+      href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+      className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 sm:px-3 py-0.5 text-xs sm:text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
+    >
+      {shortText ? (
+        <>
+          <span className="hidden xs:inline">Club Fair - Sept 3rd, 2025</span>
+          <span className="xs:hidden">Club Fair - Sept 3rd, 2025</span>
+        </>
+      ) : (
+        <>
+          <span className="hidden xs:inline">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
+          <span className="xs:hidden">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
+        </>
+      )}
+      <ChevronRightIcon className="size-3 sm:size-4" />
+    </Link>
+  )
+
   return (
     <Disclosure as="header" className="pt-12 sm:pt-16">
       <PlusGrid>
@@ -87,9 +108,9 @@ export function Navbar({ banner }) {
                 <Logo className="h-9" />
               </Link>
             </PlusGridItem>
-            {banner && (
+            {showBanner && (
               <div className="relative hidden items-center py-3 lg:flex">
-                {banner}
+                {defaultBanner}
               </div>
             )}
           </div>
