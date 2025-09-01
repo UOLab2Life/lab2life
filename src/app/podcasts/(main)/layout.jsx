@@ -47,8 +47,6 @@ function RSSIcon(props) {
   )
 }
 
-
-
 export default function MainLayout({ children }) {
   let host = 'uOttawa Lab2Life'
 
@@ -122,7 +120,7 @@ export default function MainLayout({ children }) {
           </section>
         </div>
       </header>
-      <main className="border-t border-[#99c96f] lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
+      <main className="border-t border-[#99c96f] lg:relative lg:ml-112 lg:border-t-0 xl:ml-120">
 
         <div className="relative">{children}</div>
       </main>

@@ -4,7 +4,7 @@ import { Heading } from '@/components/home/text'
 
 export function Instagram() {
   return (
-    <div className="mt-16 relative">
+    <div className="mt-4 relative">
       <div className="mx-auto max-w-[99.25%] bg-white px-8 py-16">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-7xl">

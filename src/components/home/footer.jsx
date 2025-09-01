@@ -6,39 +6,39 @@ import { Link } from './link'
 import { Logo } from './logo'
 import { Subheading } from './text'
 
-function CallToAction() {
-  return (
-    <div className="relative pt-20 pb-16 text-center sm:py-24">
-      <hgroup>
-        <Subheading>Get started</Subheading>
-      </hgroup>
-      <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
-        Get the cheat codes for selling and unlock your team&apos;s revenue
-        potential.
-      </p>
-      <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="#">
-          Get started
-        </Button>
-      </div>
-    </div>
-  )
-}
+// function CallToAction() {
+//   return (
+//     <div className="relative pt-20 pb-16 text-center sm:py-24">
+//       <hgroup>
+//         <Subheading>Get started</Subheading>
+//       </hgroup>
+//       <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
+//         Get the cheat codes for selling and unlock your team&apos;s revenue
+//         potential.
+//       </p>
+//       <div className="mt-6">
+//         <Button className="w-full sm:w-auto" href="#">
+//           Get started
+//         </Button>
+//       </div>
+//     </div>
+//   )
+// }
 
 function SitemapHeading({ children }) {
   return <h3 className="text-sm/6 font-inter-semibold text-gray-950/50">{children}</h3>
 }
 
 function SitemapLinks({ children }) {
-  return <ul className="mt-6 space-y-4 text-sm/6">{children}</ul>
+  return <ul className="mt-6 space-y-4 text-base/6">{children}</ul>
 }
 
 function SitemapLink(props) {
   return (
     <li>
-      <Link
+      <a
         {...props}
-        className="font-inter-semibold text-[#003e3e] data-hover:text-[#003e3e]/75"
+        className="font-inter-semibold text-[#003e3e] hover:text-[#003e3e]/75 hover:scale-105 transition-transform duration-500 ease-out inline-block will-change-transform transform-gpu"
       />
     </li>
   )
@@ -48,33 +48,32 @@ function Sitemap() {
   return (
     <>
       <div>
-        <SitemapHeading>Product</SitemapHeading>
+        {/* <SitemapHeading>Product</SitemapHeading> */}
         <SitemapLinks>
-          <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="#">Analysis</SitemapLink>
-          <SitemapLink href="#">API</SitemapLink>
+          <SitemapLink href="/">Home</SitemapLink>
+          <SitemapLink href="/about-us">About Us</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
+        {/* <SitemapHeading>Company</SitemapHeading> */}
         <SitemapLinks>
-          <SitemapLink href="#">Careers</SitemapLink>
-          <SitemapLink href="/blog">Blog</SitemapLink>
-          <SitemapLink href="/company">Company</SitemapLink>
+          <SitemapLink href="/general-member-sign-up">General Sign-Up</SitemapLink>
+          <SitemapLink href="/docs">Articles</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Support</SitemapHeading>
+        {/* <SitemapHeading>Support</SitemapHeading> */}
         <SitemapLinks>
-          <SitemapLink href="#">Help center</SitemapLink>
-          <SitemapLink href="#">Community</SitemapLink>
+          <SitemapLink href="/podcasts">Podcasts</SitemapLink>
+          <SitemapLink href="/events">Events</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
+        {/* <SitemapHeading>Company</SitemapHeading> */}
         <SitemapLinks>
-          <SitemapLink href="#">Terms of service</SitemapLink>
-          <SitemapLink href="#">Privacy policy</SitemapLink>
+          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
+          <SitemapLink href="/">Privacy Policy</SitemapLink>
+          <SitemapLink href="/">Terms of Service</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -109,32 +108,48 @@ function SocialIconLinkedIn(props) {
   )
 }
 
+function SocialIconInstagram(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+  )
+}
+
 function SocialLinks() {
   return (
     <>
       <Link
-        href="https://facebook.com"
+        href="https://instagram.com/uolab2life"
         target="_blank"
-        aria-label="Visit us on Facebook"
-        className="text-[#003e3e] data-hover:text-[#003e3e]/75"
+        aria-label="Visit us on Instagram"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
       >
-        <SocialIconFacebook className="size-4" />
+        <SocialIconInstagram className="size-4.5" />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/company/uolab2life/"
+        target="_blank"
+        aria-label="Visit us on LinkedIn"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
+      >
+        <SocialIconLinkedIn className="size-4" />
       </Link>
       <Link
         href="https://x.com"
         target="_blank"
         aria-label="Visit us on X"
-        className="text-[#003e3e] data-hover:text-[#003e3e]/75"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
       >
         <SocialIconX className="size-4" />
       </Link>
       <Link
-        href="https://linkedin.com"
+        href="https://facebook.com"
         target="_blank"
-        aria-label="Visit us on LinkedIn"
-        className="text-[#003e3e] data-hover:text-[#003e3e]/75"
+        aria-label="Visit us on Facebook"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
       >
-        <SocialIconLinkedIn className="size-4" />
+        <SocialIconFacebook className="size-4" />
       </Link>
     </>
   )
@@ -142,7 +157,7 @@ function SocialLinks() {
 
 function Copyright() {
   return (
-    <div className="text-sm/6 text-gray-950">
+    <div className="text-base/6 text-[#003e3e]">
       &copy; {new Date().getFullYear()} uOttawa Lab2Life
     </div>
   )
@@ -154,18 +169,21 @@ export function Footer() {
       <Gradient className="relative">
         <div className="absolute inset-2 rounded-4xl bg-white/80" />
         <Container>
-          <CallToAction />
-          <PlusGrid className="pb-16">
+          {/* <CallToAction /> */}
+          <PlusGrid className="pt-16 pb-16">
             <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
-                <div className="col-span-2 flex">
-                  <PlusGridItem className="pt-6 lg:pb-6">
-                                         <div className="flex items-center gap-3">
-                       <img src="/images/home/uolab2life_logo_no_bg.png" alt="Lab2Life" className="h-9 w-auto" />
-                       <span className="font-inter-semibold text-[#003e3e] text-lg">Lab2Life</span>
-                     </div>
-                  </PlusGridItem>
-                </div>
+                  <div className="col-span-2 flex">
+                   <PlusGridItem className="pt-8 lg:pb-6">
+                      <div className="flex items-center gap-3">
+                        <img src="/images/home/uolab2life_logo_no_bg.png" alt="Lab2Life" className="h-11 w-auto" />
+                        <span className="font-inter-semibold text-[#003e3e] text-xl">uOttawa Lab2Life</span>
+                      </div>
+                      <p className="mt-4 text-base text-gray-600 max-w-xs">
+                        Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.
+                      </p>
+                   </PlusGridItem>
+                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
                   <Sitemap />
                 </div>
