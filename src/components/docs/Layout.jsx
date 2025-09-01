@@ -14,8 +14,10 @@ import { Link } from '@/components/home/link'
 
 
 const links = [
+  { href: '/about-us', label: 'About Us' },
   { href: '/podcasts', label: 'Podcasts' },
-  { href: '/about', label: 'About Us' },
+  { href: '/events', label: 'Events' },
+  { href: '/contact-us', label: 'Contact Us' },
   { href: 'https://docs.google.com/forms/d/e/1FAIpQLSewC51k_HA8eiH2uq7czDqACoDJOycguuuLbUzcqT1td8glkg/viewform', label: 'Sign Up' },
 ]
 
@@ -54,7 +56,7 @@ function Header() {
       className="
         font-display tracking-tight leading-none
         text-lg lg:text-xl xl:text-2xl
-        text-slate-900
+        text-slate-700
         dark:text-transparent dark:bg-clip-text
         dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300
         transition-[background-size,color] duration-200
@@ -86,12 +88,12 @@ function Header() {
     <Link
       key={href}
       href={href}
-      className="group relative flex items-center px-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 rounded-md"
+      className="group relative flex items-center px-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 rounded-md"
     >
 <span
   className="
     font-display tracking-tight leading-none text-lg
-    text-slate-900
+    text-slate-600
     dark:text-transparent dark:bg-clip-text
     dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300
     transition-[background-size] duration-200
