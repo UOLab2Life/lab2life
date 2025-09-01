@@ -7,6 +7,7 @@ import { FormattedDate } from '@/components/podcasts/FormattedDate'
 import { getAllEpisodes } from '@/lib/podcasts/episodes'
 import { Navbar } from '@/components/home/navbar'
 import { Gradient } from '@/components/home/gradient'
+import { Footer } from '@/components/home/footer'
 
 function PauseIcon(props) {
   return (
@@ -130,11 +131,11 @@ export default async function Home() {
           />
         </Container>
       </div>
-      <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+             <div className="pt-16 pb-16 lg:pt-12">
+        {/* <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl/7 font-bold text-[#003e3e] text-center sm:text-left">All Episodes</h1>
-        </div>
-        <div className="sm:mt-4 lg:mt-8">
+        </div> */}
+        <div className="mt-0">
           {episodes.length > 0 ? (
             episodes.map((episode) => (
               <EpisodeEntry key={episode.id} episode={episode} />
@@ -151,6 +152,7 @@ export default async function Home() {
           )}
         </div>
       </div>
+      <Footer />
     </>
   )
 }

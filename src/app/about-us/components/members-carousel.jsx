@@ -67,7 +67,7 @@ const members = [
     position: 'VP Events',
     education: '2nd Year | B.HSc Health Science',
     email: 'events.uol2l@gmail.com',
-    linkedin: ''
+    linkedin: 'https://www.linkedin.com/in/maeve-mcaneney-88259121b/'
   },
   {
     img: '/images/home/bharat.jpg',

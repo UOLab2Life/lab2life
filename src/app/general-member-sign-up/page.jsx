@@ -4,6 +4,7 @@ import { Container } from '@/components/home/container'
 import { Gradient } from '@/components/home/gradient'
 import { Link } from '@/components/home/link'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import { Heading } from '@/components/home/text'
 
 export default function GeneralMemberSignUp() {
     return (
@@ -28,9 +29,9 @@ export default function GeneralMemberSignUp() {
             <div className="py-16 sm:py-24">
                 <Container>
                     <div className="mx-auto max-w-6xl text-center">
-                        <h1 className="text-4xl font-bold text-[#003e3e] sm:text-6xl">
-                            General Member Sign Up
-                        </h1>
+                                         <Heading as="h2" className="max-w-3xl mx-auto">
+                       General Member Sign-Up
+                     </Heading>
                         <p className="mt-6 text-lg text-gray-600">
                             Join uOttawa Lab2Life and explore healthcare career opportunities with other passionate students.
                         </p>

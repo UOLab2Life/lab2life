@@ -40,12 +40,12 @@ function Hero() {
            <p className="mt-8 max-w-2xl text-xl/7 font-inter-semibold text-white/90 sm:text-2xl/8 mx-auto sm:mx-0">
              Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.
            </p>
-           <div className="mt-12 flex flex-row gap-3 sm:gap-6 justify-center sm:justify-start">
-             <Button href="/about-us" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3">About Us</Button>
-             <Button variant="secondary" href="/general-member-sign-up" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3">
-               General Member Sign-Up
-             </Button>
-           </div>
+                       <div className="mt-12 flex flex-row gap-3 sm:gap-6 justify-center sm:justify-start">
+              <Button href="/about-us" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3 text-center">About Us</Button>
+              <Button variant="secondary" href="/general-member-sign-up" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3 text-center">
+                General Member Sign-Up
+              </Button>
+            </div>
          </div>
       </Container>
     </div>
@@ -188,6 +188,8 @@ export default function Homepage() {
     <div className="overflow-hidden">
       <Hero />
       <main>
+        <Instagram />
+        <LatestArticles />
         <Container className="mt-10">
           <LogoCloud />
         </Container>
@@ -196,9 +198,7 @@ export default function Homepage() {
           <BentoSection />
         </div>
         <DarkBentoSection />
-        <Instagram />
       </main>
-      <LatestArticles />
       <Footer />
     </div>
   )
