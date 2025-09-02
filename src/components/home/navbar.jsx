@@ -78,9 +78,12 @@ function MobileNav() {
 }
 
 export function Navbar({ showBanner = true, shortText = false }) {
+  // paste Bounce Link Here
   const defaultBanner = (
     <Link
-      href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+      href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 sm:px-3 py-0.5 text-xs sm:text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
     >
       {shortText ? (

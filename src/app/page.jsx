@@ -16,6 +16,7 @@ import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
 
 import { Instagram } from '@/components/home/instagram'
+import { Countdown } from '@/components/home/countdown'
 
 function Hero() {
   return (
@@ -177,6 +178,7 @@ export default function Homepage() {
   return (
     <div className="overflow-hidden">
       <Hero />
+      <Countdown />
       <main>
         <Instagram />
         <LatestArticles />

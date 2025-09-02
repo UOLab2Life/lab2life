@@ -18,10 +18,9 @@ export const metadata = {
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1" className="text-[#003e3e]">Helping companies generate revenue.</Heading>
+      <Heading as="h1" className="text-[#003e3e]">Supporting students in their journey from classroom to career.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        We’re on a mission to transform revenue organizations by harnessing vast
-        amounts of illegally acquired customer data.
+        We are on a mission to allow students to connect with and explore various jobs in the field of healthcare and medicine.
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-2xl">

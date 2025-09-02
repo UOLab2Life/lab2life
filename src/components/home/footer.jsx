@@ -80,22 +80,18 @@ function Sitemap() {
   )
 }
 
-function SocialIconX(props) {
+function SocialIconTikTok(props) {
   return (
-    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-      <path d="M12.6 0h2.454l-5.36 6.778L16 16h-4.937l-3.867-5.594L2.771 16H.316l5.733-7.25L0 0h5.063l3.495 5.114L12.6 0zm-.86 14.376h1.36L4.323 1.539H2.865l8.875 12.837z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
     </svg>
   )
 }
 
-function SocialIconFacebook(props) {
+function SocialIconYouTube(props) {
   return (
-    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16 8.05C16 3.603 12.418 0 8 0S0 3.604 0 8.05c0 4.016 2.926 7.346 6.75 7.95v-5.624H4.718V8.05H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.95z"
-      />
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
     </svg>
   )
 }
@@ -128,6 +124,14 @@ function SocialLinks() {
         <SocialIconInstagram className="size-4.5" />
       </Link>
       <Link
+        href="https://www.tiktok.com/@uolab2life"
+        target="_blank"
+        aria-label="Visit us on TikTok"
+        className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
+      >
+        <SocialIconTikTok className="size-4" />
+      </Link>
+      <Link
         href="https://www.linkedin.com/company/uolab2life/"
         target="_blank"
         aria-label="Visit us on LinkedIn"
@@ -136,20 +140,12 @@ function SocialLinks() {
         <SocialIconLinkedIn className="size-4" />
       </Link>
       <Link
-        href="https://x.com"
+        href="https://www.youtube.com/@uOttawa-Lab2Life"
         target="_blank"
-        aria-label="Visit us on X"
+        aria-label="Visit us on YouTube"
         className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
       >
-        <SocialIconX className="size-4" />
-      </Link>
-      <Link
-        href="https://facebook.com"
-        target="_blank"
-        aria-label="Visit us on Facebook"
-        className="text-[#003e3e] data-hover:text-[#003e3e]/75 hover:scale-110 transition-transform duration-300 ease-out"
-      >
-        <SocialIconFacebook className="size-4" />
+        <SocialIconYouTube className="size-4" />
       </Link>
     </>
   )
