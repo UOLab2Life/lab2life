@@ -75,11 +75,11 @@ export default function MainLayout({ children }) {
             <h2 className="text-3xl font-bold text-[#99c96f]">
               <Link href="/transmit">The Career Catalyst</Link>
             </h2>
-            <p className="mt-3 text-lg/8 font-medium text-white">
+            <p className="mt-3 text-lg/7.5 text-white">
               Through insightful conversations with professionals from various fields, we uncover
-              career journeys, industry advancements, and valuable advice for students and aspiring
-              professionals. Tune in to discover the many professions and different pathways in
-              research and science that shape our world!
+              career journeys, industry advancements, valuable advice for students and aspiring
+              professionals. Tune in to discover professions and different pathways in research and
+              science that shape our world!
             </p>
           </div>
 

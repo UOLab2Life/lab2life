@@ -11,17 +11,6 @@ import { Search } from '@/components/articles/Search'
 import { ThemeSelector } from '@/components/articles/ThemeSelector'
 import { Link } from '@/components/home/link'
 
-const links = [
-  { href: '/about-us', label: 'About Us' },
-  { href: '/podcasts', label: 'Podcasts' },
-  { href: '/events', label: 'Events' },
-  { href: '/contact-us', label: 'Contact Us' },
-  {
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSewC51k_HA8eiH2uq7czDqACoDJOycguuuLbUzcqT1td8glkg/viewform',
-    label: 'Sign Up',
-  },
-]
-
 function Header() {
   let [isScrolled, setIsScrolled] = useState(false)
 
@@ -50,10 +39,12 @@ function Header() {
           <div className="hidden items-center justify-start md:flex">
             <div className="hidden items-center justify-start md:flex">
               <Link href="/" title="Home" className="group flex items-center gap-3">
-                <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-8 w-auto" />
-                <span className="font-display text-lg leading-none tracking-tight text-slate-700 transition-[background-size,color] duration-200 lg:text-xl xl:text-2xl dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300 dark:bg-clip-text dark:text-transparent dark:group-hover:via-violet-500">
-                  Lab2Life
-                </span>
+                <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-14 w-auto" />
+                <div className="group inline-block">
+                  <span className="inline-block origin-center transform-gpu bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-2xl font-semibold text-transparent transition-transform duration-300 ease-out group-hover:scale-110 group-hover:via-violet-500 motion-reduce:transition-none motion-reduce:hover:scale-100">
+                    Lab2Life
+                  </span>
+                </div>
               </Link>
             </div>
           </div>
@@ -68,20 +59,6 @@ function Header() {
             <div className="mr-2 flex lg:hidden">
               <MobileNavigation />
             </div>
-
-            <nav className="hidden items-center gap-1 lg:flex">
-              {links.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="group relative flex items-center rounded-md px-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60"
-                >
-                  <span className="font-display text-lg leading-none tracking-tight text-slate-600 transition-[background-size] duration-200 dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300 dark:bg-clip-text dark:text-transparent dark:group-hover:via-violet-500">
-                    {label}
-                  </span>
-                </Link>
-              ))}
-            </nav>
 
             <ThemeSelector className="relative z-10" />
           </div>
@@ -130,12 +107,12 @@ function ScrollToTopButton() {
 
 export function Layout({ children }) {
   let pathname = usePathname()
-  let isDocsPage = pathname === '/docs'
+  let isIntroPage = pathname === '/articles'
 
   return (
     <div className="flex w-full flex-col">
       <Header />
-      {isDocsPage && <Hero />}
+      {isIntroPage && <Hero />}
       <div className="relative mx-auto flex w-full max-w-8xl flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />

@@ -1,5 +1,5 @@
-import blurCyanImage from '@/assets/docs/images/blur-cyan.png'
-import blurIndigoImage from '@/assets/docs/images/blur-indigo.png'
+import blurCyanImage from '@/assets/articles/images/blur-cyan.png'
+import blurIndigoImage from '@/assets/articles/images/blur-indigo.png'
 import { HeroBackground } from '@/components/articles/HeroBackground'
 import Image from 'next/image'
 

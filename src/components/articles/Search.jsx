@@ -16,7 +16,7 @@ import {
 } from 'react'
 import Highlighter from 'react-highlight-words'
 
-import { navigation } from '@/lib/docs/navigation'
+import { navigation } from '@/lib/articles/navigation'
 
 function SearchIcon(props) {
   return (
@@ -58,7 +58,7 @@ function useAutocomplete({ close }) {
         navigate,
       },
       getSources({ query }) {
-        return import('@/lib/docs/markdoc/search.mjs').then(({ search }) => {
+        return import('@/markdoc/search.mjs').then(({ search }) => {
           return [
             {
               sourceId: 'documentation',
