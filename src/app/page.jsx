@@ -14,6 +14,7 @@ import { Map } from '@/components/home/map'
 import { Navbar } from '@/components/home/navbar'
 import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
+import { Countdown } from '@/components/home/countdown'
 
 function Hero() {
   return (
@@ -188,6 +189,7 @@ export default function Homepage() {
   return (
     <div className="overflow-hidden">
       <Hero />
+      <Countdown />
       <main>
         <Instagram />
         <LatestArticles />

@@ -102,7 +102,7 @@ const members = [
     position: 'Editor-in-Chief',
     education: '2nd Year | B.Sc. Biochemistry',
     email: 'editor.uol2l@gmail.com',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/maroun-tarabey-55a88b2a7/',
   },
   {
     img: '/images/home/bharat.jpg',
