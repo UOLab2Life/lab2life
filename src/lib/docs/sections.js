@@ -4,8 +4,7 @@ function isHeadingNode(node) {
   return (
     node.type === 'heading' &&
     [1, 2, 3, 4, 5, 6].includes(node.attributes.level) &&
-    (typeof node.attributes.id === 'string' ||
-      typeof node.attributes.id === 'undefined')
+    (typeof node.attributes.id === 'string' || typeof node.attributes.id === 'undefined')
   )
 }
 
@@ -38,9 +37,7 @@ export function collectSections(nodes, slugify = slugifyWithCounter()) {
         let id = slugify(title)
         if (isH3Node(node)) {
           if (!sections[sections.length - 1]) {
-            throw new Error(
-              'Cannot add `h3` to table of contents without a preceding `h2`',
-            )
+            throw new Error('Cannot add `h3` to table of contents without a preceding `h2`')
           }
           sections[sections.length - 1].children.push({
             ...node.attributes,

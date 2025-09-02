@@ -1,10 +1,10 @@
 'use client'
 
-import { Suspense, useCallback, useEffect, useState } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
 import { Dialog, DialogPanel } from '@headlessui/react'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { Suspense, useCallback, useEffect, useState } from 'react'
 
-import { Navigation } from '@/components/docs/Navigation'
+import { Navigation } from '@/components/articles/Navigation'
 
 function MenuIcon(props) {
   return (

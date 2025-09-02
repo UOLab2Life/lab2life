@@ -3,10 +3,10 @@ import { createHash } from 'crypto'
 import dotenv from 'dotenv'
 import { readdir, readFile, stat } from 'fs/promises'
 import matter from 'gray-matter'
+import OpenAI from 'openai'
 import { basename, dirname, join, sep } from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import OpenAI from 'openai'
 
 dotenv.config()
 

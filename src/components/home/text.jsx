@@ -1,46 +1,31 @@
 import { clsx } from 'clsx'
 
-export function Heading({
-  className,
-  as: Element = 'h2',
-  dark = false,
-  ...props
-}) {
+export function Heading({ className, as: Element = 'h2', dark = false, ...props }) {
   return (
     <Element
       {...props}
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'text-4xl font-inter-semibold tracking-tighter text-pretty text-[#003e3e] data-dark:text-white sm:text-6xl',
+        'text-4xl font-medium tracking-tighter text-pretty text-[#003e3e] data-dark:text-white sm:text-6xl',
       )}
     />
   )
 }
 
-export function Subheading({
-  className,
-  as: Element = 'h2',
-  dark = false,
-  ...props
-}) {
+export function Subheading({ className, as: Element = 'h2', dark = false, ...props }) {
   return (
     <Element
       {...props}
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'font-inter-semibold text-xs/5 tracking-widest text-gray-500 uppercase data-dark:text-gray-400',
+        'font-mono text-xs/5 font-medium tracking-widest text-gray-500 uppercase data-dark:text-gray-400',
       )}
     />
   )
 }
 
 export function Lead({ className, ...props }) {
-  return (
-    <p
-      className={clsx(className, 'text-2xl font-inter-semibold text-gray-500')}
-      {...props}
-    />
-  )
+  return <p className={clsx(className, 'text-2xl font-semibold text-gray-500')} {...props} />
 }

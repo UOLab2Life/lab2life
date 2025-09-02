@@ -3,9 +3,9 @@ import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
+import { Instagram } from '@/components/home/instagram'
 import { Keyboard } from '@/components/home/keyboard'
 import { LatestArticles } from '@/components/home/latest-articles'
-import { Link } from '@/components/home/link'
 import { LinkedAvatars } from '@/components/home/linked-avatars'
 import { LogoCloud } from '@/components/home/logo-cloud'
 import { LogoCluster } from '@/components/home/logo-cluster'
@@ -15,28 +15,39 @@ import { Navbar } from '@/components/home/navbar'
 import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
 
-import { Instagram } from '@/components/home/instagram'
-
 function Hero() {
   return (
     <div className="relative">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
         <Navbar />
-                 <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48 text-center sm:text-left">
-           <Heading as="h1" className="text-6xl/[0.9] font-inter-semibold tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-             uOttawa Lab2Life
-           </Heading>
-           <p className="mt-8 max-w-2xl text-xl/7 font-inter-semibold text-white/90 sm:text-2xl/8 mx-auto sm:mx-0">
-             Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.
-           </p>
-                       <div className="mt-12 flex flex-row gap-3 sm:gap-6 justify-center sm:justify-start">
-              <Button href="/about-us" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3 text-center">About Us</Button>
-              <Button variant="secondary" href="/general-member-sign-up" className="text-sm px-4 py-2 sm:text-base sm:px-6 sm:py-3 text-center">
-                General Member Sign-Up
-              </Button>
-            </div>
-         </div>
+        <div className="pt-16 pb-24 text-center sm:pt-24 sm:pb-32 sm:text-left md:pt-32 md:pb-48">
+          <Heading
+            as="h1"
+            className="text-6xl/[0.9] tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]"
+          >
+            uOttawa Lab2Life
+          </Heading>
+          <p className="font-inter-semibold mx-auto mt-8 max-w-2xl text-xl/7 text-white/90 sm:mx-0 sm:text-2xl/8">
+            Dedicated to promoting and helping students explore various careers in the field of
+            healthcare and medicine.
+          </p>
+          <div className="mt-12 flex flex-row justify-center gap-3 sm:justify-start sm:gap-6">
+            <Button
+              href="/about-us"
+              className="px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
+            >
+              About Us
+            </Button>
+            <Button
+              variant="secondary"
+              href="/general-member-sign-up"
+              className="px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
+            >
+              General Member Sign-Up
+            </Button>
+          </div>
+        </div>
       </Container>
     </div>
   )

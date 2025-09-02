@@ -1,8 +1,8 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import Link from 'next/link'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { useCallback, useEffect, useState } from 'react'
 
 export function TableOfContents({ tableOfContents }) {
   let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)

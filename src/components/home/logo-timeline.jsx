@@ -22,7 +22,7 @@ function Logo({ label, src, className }) {
       )}
     >
       <img alt="" src={src} className="size-4" />
-      <span className="text-sm/6 font-inter-semibold text-white">{label}</span>
+      <span className="text-sm/6 font-semibold text-white">{label}</span>
     </div>
   )
 }

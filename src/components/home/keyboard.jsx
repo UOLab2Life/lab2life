@@ -58,10 +58,7 @@ function Key({ name, width = 36, className, children }) {
 
 function KeyGroup(props) {
   return (
-    <div
-      {...props}
-      className="grid gap-px rounded-sm bg-black/10 ring-1 ring-black/10 *:ring-0"
-    />
+    <div {...props} className="grid gap-px rounded-sm bg-black/10 ring-1 ring-black/10 *:ring-0" />
   )
 }
 

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
 import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import clsx from 'clsx'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 const themes = [
   { name: 'Light', value: 'light', icon: LightIcon },

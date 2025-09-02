@@ -1,13 +1,7 @@
-import { useRef } from 'react'
-import {
-  mergeProps,
-  useFocusRing,
-  useSlider,
-  useSliderThumb,
-  VisuallyHidden,
-} from 'react-aria'
-import { useSliderState } from 'react-stately'
 import clsx from 'clsx'
+import { useRef } from 'react'
+import { mergeProps, useFocusRing, useSlider, useSliderThumb, VisuallyHidden } from 'react-aria'
+import { useSliderState } from 'react-stately'
 
 function parseTime(seconds) {
   let hours = Math.floor(seconds / 3600)
@@ -17,9 +11,7 @@ function parseTime(seconds) {
 }
 
 function formatTime(seconds, totalSeconds = seconds) {
-  let totalWithoutLeadingZeroes = totalSeconds.slice(
-    totalSeconds.findIndex((x) => x !== 0),
-  )
+  let totalWithoutLeadingZeroes = totalSeconds.slice(totalSeconds.findIndex((x) => x !== 0))
   return seconds
     .slice(seconds.length - totalWithoutLeadingZeroes.length)
     .map((x) => x.toString().padStart(2, '0'))
@@ -29,10 +21,7 @@ function formatTime(seconds, totalSeconds = seconds) {
 function Thumb(props) {
   let { state, trackRef, focusProps, isFocusVisible, index } = props
   let inputRef = useRef(null)
-  let { thumbProps, inputProps } = useSliderThumb(
-    { index, trackRef, inputRef },
-    state,
-  )
+  let { thumbProps, inputProps } = useSliderThumb({ index, trackRef, inputRef }, state)
 
   return (
     <div
@@ -69,11 +58,7 @@ function Thumb(props) {
 export function Slider(props) {
   let trackRef = useRef(null)
   let state = useSliderState(props)
-  let { groupProps, trackProps, labelProps, outputProps } = useSlider(
-    props,
-    state,
-    trackRef,
-  )
+  let { groupProps, trackProps, labelProps, outputProps } = useSlider(props, state, trackRef)
   let { focusProps, isFocusVisible } = useFocusRing()
 
   let currentTime = parseTime(state.getThumbValue(0))
@@ -105,18 +90,14 @@ export function Slider(props) {
         <div
           className={clsx(
             'h-2 md:rounded-l-xl md:rounded-r-md',
-            isFocusVisible || state.isThumbDragging(0)
-              ? 'bg-slate-900'
-              : 'bg-slate-700',
+            isFocusVisible || state.isThumbDragging(0) ? 'bg-slate-900' : 'bg-slate-700',
           )}
           style={{
             width:
               state.getThumbValue(0) === 0
                 ? 0
                 : `calc(${state.getThumbPercent(0) * 100}% - ${
-                    isFocusVisible || state.isThumbDragging(0)
-                      ? '0.3125rem'
-                      : '0.25rem'
+                    isFocusVisible || state.isThumbDragging(0) ? '0.3125rem' : '0.25rem'
                   })`,
           }}
         />

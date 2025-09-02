@@ -1,11 +1,10 @@
-import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import posterImage from '@/assets/podcasts/images/poster.png'
 import { AudioProvider } from '@/components/podcasts/AudioProvider'
 import { AudioPlayer } from '@/components/podcasts/player/AudioPlayer'
 import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
-import posterImage from '@/assets/podcasts/images/poster.png'
 
 function SpotifyIcon(props) {
   return (
@@ -55,9 +54,7 @@ export default function MainLayout({ children }) {
       <header className="bg-[#003e3e] lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-md lg:items-start lg:overflow-y-auto xl:w-120">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:px-12 lg:text-sm/7 lg:whitespace-nowrap lg:[writing-mode:vertical-rl]">
           <span className="font-mono text-[#99c96f]/70">Hosted by</span>
-          <span className="mt-6 flex gap-6 font-bold text-[#99c96f]">
-            {host}
-          </span>
+          <span className="mt-6 flex gap-6 font-bold text-[#99c96f]">{host}</span>
         </div>
         <div className="relative z-10 mx-auto px-4 pt-10 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-8 lg:py-12 xl:px-12">
           <Link
@@ -79,13 +76,13 @@ export default function MainLayout({ children }) {
               <Link href="/transmit">The Career Catalyst</Link>
             </h2>
             <p className="mt-3 text-lg/8 font-medium text-white">
-            Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, 
-            and valuable advice for students and aspiring professionals. Tune in to discover the many professions and different pathways 
-            in research and science that shape our world!
+              Through insightful conversations with professionals from various fields, we uncover
+              career journeys, industry advancements, and valuable advice for students and aspiring
+              professionals. Tune in to discover the many professions and different pathways in
+              research and science that shape our world!
             </p>
           </div>
-          
-          
+
           <section className="mt-10 lg:mt-12">
             <h2 className="sr-only flex items-center font-mono text-sm/7 font-medium text-[#ffffff] lg:not-sr-only">
               <TinyWaveFormIcon
@@ -121,7 +118,6 @@ export default function MainLayout({ children }) {
         </div>
       </header>
       <main className="border-t border-[#99c96f] lg:relative lg:ml-112 lg:border-t-0 xl:ml-120">
-
         <div className="relative">{children}</div>
       </main>
       <div className="fixed inset-x-0 bottom-0 z-10 lg:left-112 xl:left-120">

@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from 'framer-motion'
+import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 
 export function AnimatedNumber({ start, end, decimals = 0 }) {
@@ -22,7 +16,7 @@ export function AnimatedNumber({ start, end, decimals = 0 }) {
       const timer = setTimeout(() => {
         value.set(end)
       }, 1000)
-      
+
       return () => clearTimeout(timer)
     }
   }, [start, end, isInView, value])

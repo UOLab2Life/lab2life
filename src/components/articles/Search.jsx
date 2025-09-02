@@ -1,5 +1,9 @@
 'use client'
 
+import { createAutocomplete } from '@algolia/autocomplete-core'
+import { Dialog, DialogPanel } from '@headlessui/react'
+import clsx from 'clsx'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import {
   forwardRef,
   Fragment,
@@ -11,10 +15,6 @@ import {
   useState,
 } from 'react'
 import Highlighter from 'react-highlight-words'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { createAutocomplete } from '@algolia/autocomplete-core'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import clsx from 'clsx'
 
 import { navigation } from '@/lib/docs/navigation'
 
@@ -58,7 +58,7 @@ function useAutocomplete({ close }) {
         navigate,
       },
       getSources({ query }) {
-        return import('@/markdoc/search.mjs').then(({ search }) => {
+        return import('@/lib/docs/markdoc/search.mjs').then(({ search }) => {
           return [
             {
               sourceId: 'documentation',

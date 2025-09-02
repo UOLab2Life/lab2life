@@ -1,11 +1,11 @@
-import Link from 'next/link'
 import { Container } from '@/components/home/container'
+import { Footer } from '@/components/home/footer'
+import { Gradient } from '@/components/home/gradient'
+import { Navbar } from '@/components/home/navbar'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
 import { getAllEpisodes } from '@/lib/podcasts/episodes'
-import { Navbar } from '@/components/home/navbar'
-import { Gradient } from '@/components/home/gradient'
-import { Footer } from '@/components/home/footer'
+import Link from 'next/link'
 
 function PauseIcon(props) {
   return (
@@ -30,19 +30,21 @@ function PlayIcon(props) {
 function EpisodeEntry({ episode }) {
   let date = new Date(episode.published)
 
-  const categories = episode.category ? episode.category.split(',').map(cat => cat.trim()).filter(cat => cat) : []
+  const categories = episode.category
+    ? episode.category
+        .split(',')
+        .map((cat) => cat.trim())
+        .filter((cat) => cat)
+    : []
 
   return (
-    <article
-      aria-labelledby={`episode-${episode.id}-title`}
-      className="py-4 sm:py-6"
-    >
+    <article aria-labelledby={`episode-${episode.id}-title`} className="py-4 sm:py-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-start p-8 bg-white/50 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/70 hover:shadow-lg">
+        <div className="flex flex-col items-start rounded-2xl bg-white/50 p-8 transition-all duration-300 hover:scale-105 hover:bg-white/70 hover:shadow-lg">
           <div className="w-full pb-4 sm:pb-0">
             <h2
               id={`episode-${episode.id}-title`}
-              className="mt-2 text-3xl font-bold text-[#2e4954] mb-4"
+              className="mt-2 mb-4 text-3xl font-bold text-[#2e4954]"
             >
               <Link href={`/podcasts/${episode.id}`}>
                 Episode {episode.id}: {episode.title}
@@ -51,25 +53,23 @@ function EpisodeEntry({ episode }) {
           </div>
           <FormattedDate
             date={date}
-            className="order-first font-bold font-mono text-md/7 text-[#003e3e]/60 mb-4"
+            className="text-md/7 order-first mb-4 font-mono font-bold text-[#003e3e]/60"
           />
-          <p className="mt-1 text-base/7 text-[#2e4954]/80">
-            {episode.description}
-          </p>
-          
+          <p className="mt-1 text-base/7 text-[#2e4954]/80">{episode.description}</p>
+
           {categories.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
               {categories.map((category, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#003e3e] text-white"
+                  className="inline-flex items-center rounded-full bg-[#003e3e] px-3 py-1 text-sm font-medium text-white"
                 >
                   {category}
                 </span>
               ))}
             </div>
           )}
-          
+
           <div className="mt-4 flex items-center gap-4">
             <EpisodePlayButton
               episode={episode}
@@ -87,10 +87,7 @@ function EpisodeEntry({ episode }) {
                 </>
               }
             />
-            <span
-              aria-hidden="true"
-              className="text-sm font-bold text-[#2e4954]/40"
-            >
+            <span aria-hidden="true" className="text-sm font-bold text-[#2e4954]/40">
               |
             </span>
             <Link
@@ -113,26 +110,24 @@ export default async function Home() {
   return (
     <>
       <div className="relative">
-        <Gradient className="absolute inset-1 sm:inset-2 bottom-0 rounded-2xl sm:rounded-4xl ring-1 ring-black/5 ring-inset" />
+        <Gradient className="absolute inset-1 bottom-0 rounded-2xl ring-1 ring-black/5 ring-inset sm:inset-2 sm:rounded-4xl" />
         <Container className="relative pb-8 sm:pb-12">
           <Navbar shortText={true} />
         </Container>
       </div>
-             <div className="pt-16 pb-16 lg:pt-12">
+      <div className="pt-16 pb-16 lg:pt-12">
         {/* <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl/7 font-bold text-[#003e3e] text-center sm:text-left">All Episodes</h1>
         </div> */}
         <div className="mt-0">
           {episodes.length > 0 ? (
-            episodes.map((episode) => (
-              <EpisodeEntry key={episode.id} episode={episode} />
-            ))
+            episodes.map((episode) => <EpisodeEntry key={episode.id} episode={episode} />)
           ) : (
             <div className="py-10 sm:py-12">
               <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <p className="text-base/7 text-[#003e3e]/80">
-                  No episodes found. Please check your database connection and
-                  ensure the Episodes table exists.
+                  No episodes found. Please check your database connection and ensure the Episodes
+                  table exists.
                 </p>
               </div>
             </div>

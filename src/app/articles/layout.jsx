@@ -1,7 +1,7 @@
-import localFont from 'next/font/local'
+import { Layout } from '@/components/articles/Layout'
 import clsx from 'clsx'
+import localFont from 'next/font/local'
 import { Providers } from './theme-provider'
-import { Layout } from '@/components/docs/Layout'
 
 const inter = localFont({
   src: [{ path: '../../assets/docs/fonts/inter.woff2', weight: '100 900', style: 'normal' }],
