@@ -16,7 +16,7 @@ import {
 } from 'react'
 import Highlighter from 'react-highlight-words'
 
-import { navigation } from '@/lib/docs/navigation'
+import { navigation } from '@/lib/articles/navigation'
 
 function SearchIcon(props) {
   return (

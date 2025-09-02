@@ -10,8 +10,8 @@ import { hideBin } from 'yargs/helpers'
 
 dotenv.config()
 
-const DOCS_DIR = 'src/app/docs/newsletters'
-const SOURCE = 'docs'
+const DOCS_DIR = 'src/app/articles/newsletters'
+const SOURCE = 'articles'
 const PAGE_TYPE = 'markdown'
 const MODEL = 'text-embedding-3-small'
 const ignoredFiles = []
