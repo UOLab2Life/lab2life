@@ -1,7 +1,6 @@
-import { cache } from 'react'
 import { notFound } from 'next/navigation'
+import { cache } from 'react'
 
-import { Container } from '@/components/podcasts/Container'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
 import { PauseIcon } from '@/components/podcasts/PauseIcon'
@@ -34,19 +33,26 @@ export default async function Episode({ params }) {
   let date = new Date(episode.published)
 
   // Parse categories and create pills
-  const categories = episode.category ? episode.category.split(',').map(cat => cat.trim()).filter(cat => cat) : []
+  const categories = episode.category
+    ? episode.category
+        .split(',')
+        .map((cat) => cat.trim())
+        .filter((cat) => cat)
+    : []
 
   // Convert YouTube URL to embed URL
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return null
-    
+
     // Handle different YouTube URL formats
-    const videoIdMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/)
-    
+    const videoIdMatch = url.match(
+      /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+    )
+
     if (videoIdMatch) {
       return `https://www.youtube.com/embed/${videoIdMatch[1]}`
     }
-    
+
     return url
   }
 
@@ -73,21 +79,21 @@ export default async function Episode({ params }) {
               </h1>
               <FormattedDate
                 date={date}
-                className="order-first font-bold font-mono text-md/7 text-[#003e3e]/60"
+                className="text-md/7 order-first font-mono font-bold text-[#003e3e]/60"
               />
             </div>
           </div>
           <p className="mt-3 ml-24 text-lg/8 font-medium text-[#2e4954]/80">
             {episode.description}
           </p>
-          
+
           {/* Category Pills */}
           {categories.length > 0 && (
             <div className="mt-4 ml-24 flex flex-wrap gap-2">
               {categories.map((category, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#003e3e] text-white"
+                  className="inline-flex items-center rounded-full bg-[#003e3e] px-3 py-1 text-sm font-medium text-white"
                 >
                   {category}
                 </span>
@@ -95,14 +101,14 @@ export default async function Episode({ params }) {
             </div>
           )}
         </header>
-        
+
         {/* YouTube Video Embed */}
         {episode.youtube_url && embedUrl && (
           <div className="mt-12">
-            <div className="relative w-full max-w-5xl mx-auto" style={{ paddingBottom: '56.25%' }}>
+            <div className="relative mx-auto w-full max-w-5xl" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 src={embedUrl}
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                className="absolute top-0 left-0 h-full w-full rounded-lg"
                 title={`Episode ${episode.id} - ${episode.title}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

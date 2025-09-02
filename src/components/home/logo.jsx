@@ -5,12 +5,12 @@ import { clsx } from 'clsx'
 export function Logo({ className }) {
   return (
     <div className={clsx(className, 'flex items-center gap-3')}>
-      <img 
-        src="/images/home/uolab2life_logo_no_bg.png" 
-        alt="Lab2Life" 
-        className="h-15 w-auto"
-      />
-      <span className="font-inter-semibold text-white text-lg">Lab2Life</span>
+      <img src="/images/home/uolab2life_logo_no_bg.png" alt="Lab2Life" className="h-15 w-auto" />
+      <div className="group inline-block">
+        <span className="inline-block origin-center transform-gpu bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-2xl font-semibold text-transparent transition-transform duration-300 ease-out group-hover:scale-110 group-hover:via-violet-500 motion-reduce:transition-none motion-reduce:hover:scale-100">
+          Lab2Life
+        </span>
+      </div>
     </div>
   )
 }

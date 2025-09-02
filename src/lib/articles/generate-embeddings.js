@@ -3,15 +3,15 @@ import { createHash } from 'crypto'
 import dotenv from 'dotenv'
 import { readdir, readFile, stat } from 'fs/promises'
 import matter from 'gray-matter'
+import OpenAI from 'openai'
 import { basename, dirname, join, sep } from 'path'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import OpenAI from 'openai'
 
 dotenv.config()
 
-const DOCS_DIR = 'src/app/docs/newsletters'
-const SOURCE = 'docs'
+const DOCS_DIR = 'src/app/articles/newsletters'
+const SOURCE = 'articles'
 const PAGE_TYPE = 'markdown'
 const MODEL = 'text-embedding-3-small'
 const ignoredFiles = []

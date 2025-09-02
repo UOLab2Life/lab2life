@@ -1,10 +1,10 @@
 'use client'
 
+import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import clsx from 'clsx'
 
-import { navigation } from '@/lib/docs/navigation'
+import { navigation } from '@/lib/articles/navigation'
 
 function ArrowIcon(props) {
   return (
@@ -21,7 +21,7 @@ function PageLink({ title, href, dir = 'next', ...props }) {
         <Link
           href={href}
           className={clsx(
-            'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:text-[#b184e9] dark:text-slate-200 dark:hover:text-[#b184e9]',
+            'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:bg-gradient-to-r hover:from-indigo-300 hover:via-violet-400 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent hover:before:block dark:text-slate-200 dark:hover:bg-gradient-to-r dark:hover:from-indigo-300 dark:hover:via-violet-400 dark:hover:to-indigo-300 dark:hover:bg-clip-text dark:hover:text-transparent dark:hover:before:block',
             dir === 'previous' && 'flex-row-reverse',
           )}
         >

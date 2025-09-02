@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 
-import { navigation } from '@/lib/docs/navigation'
+import { navigation } from '@/lib/articles/navigation'
 
 export function DocsHeader({ title }) {
   let pathname = usePathname()
@@ -16,7 +16,7 @@ export function DocsHeader({ title }) {
     <header className="mb-9 space-y-1">
       {section && <p className="font-display text-sm font-medium text-white">{section.title}</p>}
       {title && (
-        <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-[#b184e9]">
+        <h1 className="text-3xl text-slate-900 dark:bg-gradient-to-r dark:from-indigo-300 dark:via-violet-400 dark:to-indigo-300 dark:bg-clip-text dark:font-display dark:text-3xl dark:font-semibold dark:tracking-tight dark:text-transparent">
           {title}
         </h1>
       )}

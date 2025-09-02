@@ -1,12 +1,8 @@
 'use client'
 
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react'
-import { Bars2Icon } from '@heroicons/react/24/solid'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import { Bars2Icon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 import { Link } from './link'
 import { Logo } from './logo'
@@ -14,7 +10,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
   { href: '/about-us', label: 'About Us' },
-  { href: '/docs', label: 'Articles' },
+  { href: '/articles', label: 'Articles' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/events', label: 'Events' },
   { href: '/contact-us', label: 'Contact Us' },
@@ -27,7 +23,7 @@ function DesktopNav() {
         <PlusGridItem key={href} className="relative flex">
           <Link
             href={href}
-            className="flex items-center px-4 py-3 text-base font-inter-semibold text-white bg-blend-multiply data-hover:bg-white/10"
+            className="flex items-center px-4 py-3 text-base font-semibold text-white bg-blend-multiply data-hover:bg-white/10"
           >
             {label}
           </Link>
@@ -63,7 +59,7 @@ function MobileNav() {
             }}
             key={href}
           >
-            <Link href={href} className="text-base font-inter-semibold text-white">
+            <Link href={href} className="text-base font-semibold text-white">
               {label}
             </Link>
           </motion.div>
@@ -83,17 +79,16 @@ export function Navbar({ showBanner = true, shortText = false }) {
     <Link
       href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
       target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 sm:px-3 py-0.5 text-xs sm:text-sm/6 font-inter-semibold text-white data-hover:bg-[#99c96f]/30"
+      className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white data-hover:bg-[#99c96f]/30 sm:px-3 sm:text-sm/6"
     >
       {shortText ? (
         <>
-          <span className="hidden xs:inline">Club Fair - Sept 3rd, 2025</span>
+          <span className="xs:inline hidden">Club Fair - Sept 3rd, 2025</span>
           <span className="xs:hidden">Club Fair - Sept 3rd, 2025</span>
         </>
       ) : (
         <>
-          <span className="hidden xs:inline">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
+          <span className="xs:inline hidden">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
           <span className="xs:hidden">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
         </>
       )}
@@ -112,9 +107,7 @@ export function Navbar({ showBanner = true, shortText = false }) {
               </Link>
             </PlusGridItem>
             {showBanner && (
-              <div className="relative hidden items-center py-3 lg:flex">
-                {defaultBanner}
-              </div>
+              <div className="relative hidden items-center py-3 lg:flex">{defaultBanner}</div>
             )}
           </div>
           <DesktopNav />

@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import clsx from 'clsx'
+import { useState } from 'react'
 
 import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
 
@@ -11,21 +11,14 @@ export function AboutSection(props) {
   return (
     <section {...props}>
       <h2 className="flex items-center font-mono text-sm/7 font-medium text-[#ffffff]">
-        <TinyWaveFormIcon
-          colors={['fill-[#b184e9]', 'fill-[#ffffff]']}
-          className="h-2.5 w-2.5"
-        />
+        <TinyWaveFormIcon colors={['fill-[#b184e9]', 'fill-[#ffffff]']} className="h-2.5 w-2.5" />
         <span className="ml-2.5">About</span>
       </h2>
-             <p
-         className={clsx(
-           'mt-2 text-base/7 text-[#ffffff]/80',
-           !isExpanded && 'lg:line-clamp-4',
-         )}
-       >
-      Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, 
-      and valuable advice for students and aspiring professionals. Tune in to discover the many professions and different pathways 
-      in research and science that shape our world!
+      <p className={clsx('mt-2 text-base/7 text-[#ffffff]/80', !isExpanded && 'lg:line-clamp-4')}>
+        Through insightful conversations with professionals from various fields, we uncover career
+        journeys, industry advancements, and valuable advice for students and aspiring
+        professionals. Tune in to discover the many professions and different pathways in research
+        and science that shape our world!
       </p>
       {!isExpanded && (
         <button

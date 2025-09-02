@@ -1,11 +1,11 @@
-import { AnimatedNumber } from '@/app/about-us/components/animated-number'
+import { AnimatedNumber } from '@/components/about-us/animated-number'
 import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient, GradientBackground } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Lead, Subheading } from '@/components/home/text'
-import { MembersCarousel } from '@/app/about-us/components/members-carousel'
+import { MembersCarousel } from '@/components/about-us/members-carousel'
 
 
 

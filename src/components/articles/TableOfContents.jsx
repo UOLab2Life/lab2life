@@ -1,8 +1,8 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import Link from 'next/link'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { useCallback, useEffect, useState } from 'react'
 
 export function TableOfContents({ tableOfContents }) {
   let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
@@ -78,7 +78,7 @@ export function TableOfContents({ tableOfContents }) {
                       href={`#${section.id}`}
                       className={clsx(
                         isActive(section)
-                          ? 'text-[#b184e9]'
+                          ? 'bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text font-inter-semibold text-transparent group-hover:via-violet-500'
                           : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
                       )}
                     >
@@ -96,7 +96,7 @@ export function TableOfContents({ tableOfContents }) {
                             href={`#${subSection.id}`}
                             className={
                               isActive(subSection)
-                                ? 'text-[#b184e9]'
+                                ? 'bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text font-semibold text-transparent group-hover:via-violet-500'
                                 : 'hover:text-slate-600 dark:hover:text-slate-300'
                             }
                           >

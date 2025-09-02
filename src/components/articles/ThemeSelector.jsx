@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
 import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import clsx from 'clsx'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 const themes = [
   { name: 'Light', value: 'light', icon: LightIcon },
@@ -61,7 +61,7 @@ export function ThemeSelector(props) {
     <Listbox as="div" value={theme} onChange={setTheme} {...props}>
       <Label className="sr-only">Theme</Label>
       <ListboxButton
-        className="flex h-10 w-10 items-center justify-center rounded-lg shadow-md ring-1 shadow-black/5 ring-black/5 dark:bg-slate-700 dark:ring-white/5 dark:ring-inset"
+        className="flex h-9 w-9 items-center justify-center rounded-lg shadow-md ring-1 shadow-black/5 ring-black/5 dark:bg-slate-700 dark:ring-white/5 dark:ring-inset"
         aria-label="Theme"
       >
         <LightIcon

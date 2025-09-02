@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 
 import { useAudioPlayer } from '@/components/podcasts/AudioProvider'
 import { ForwardButton } from '@/components/podcasts/player/ForwardButton'
