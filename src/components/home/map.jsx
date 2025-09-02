@@ -23,11 +23,7 @@ function Marker({ src, top, offset, delay }) {
           className="fill-white"
         />
       </svg>
-      <img
-        alt=""
-        src={src}
-        className="absolute top-[4px] left-[7px] size-6 rounded-full"
-      />
+      <img alt="" src={src} className="absolute top-[4px] left-[7px] size-6 rounded-full" />
     </motion.div>
   )
 }

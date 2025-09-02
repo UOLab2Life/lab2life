@@ -1,37 +1,22 @@
 import '@/styles/tailwind.css'
+import localFont from 'next/font/local'
 
 export const metadata = {
   title: 'uOttawa Lab2Life',
-  description: 'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
-  icons: {
-    icon: [
-      {
-        url: '/images/home/uolab2life_logo_no_bg.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/images/home/uolab2life_logo_no_bg.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-      {
-        url: '/images/home/uolab2life_logo_no_bg.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-    ],
-    apple: {
-      url: '/images/home/uolab2life_logo_no_bg.png',
-      sizes: '180x180',
-      type: 'image/png',
-    },
-  },
+  description:
+    'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
 }
+
+const switzer = localFont({
+  src: [{ path: '../assets/home/fonts/switzer.woff2', weight: '100 900', style: 'normal' }],
+  variable: '--font-switzer',
+  display: 'swap',
+  preload: true,
+})
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={switzer.variable}>
       <body className="text-gray-950 antialiased">{children}</body>
     </html>
   )

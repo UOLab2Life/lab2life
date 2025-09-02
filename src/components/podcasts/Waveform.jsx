@@ -18,10 +18,7 @@ export function Waveform(props) {
     maxHeight: 100,
   }
 
-  let barHeights = Array.from(
-    { length: bars.total },
-    randomBetween(bars.minHeight, bars.maxHeight),
-  )
+  let barHeights = Array.from({ length: bars.total }, randomBetween(bars.minHeight, bars.maxHeight))
 
   return (
     <svg aria-hidden="true" {...props}>

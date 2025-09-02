@@ -40,7 +40,7 @@ export const navigation = [
         title: 'Certified Mental Performance Coach',
         href: '/docs/newsletters/mental-performance-coach',
       },
-        {
+      {
         title: 'There Is No Health Without Mental Health  ',
         href: '/docs/newsletters/mental-health-introduction',
       },

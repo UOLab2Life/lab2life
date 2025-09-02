@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import { HeroBackground } from '@/components/docs/HeroBackground'
 import blurCyanImage from '@/assets/docs/images/blur-cyan.png'
 import blurIndigoImage from '@/assets/docs/images/blur-indigo.png'
+import { HeroBackground } from '@/components/articles/HeroBackground'
+import Image from 'next/image'
 
 export function Hero() {
   return (
     <div className="overflow-hidden bg-[#003e3e] dark:-mt-19 dark:-mb-32 dark:pt-19 dark:pb-32">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
-        <div className="lg:max-w-8xl mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 md:text-center lg:text-left">
             <Image
               className="absolute right-full bottom-full -mr-72 -mb-56 opacity-50"
@@ -19,7 +19,7 @@ export function Hero() {
               priority
             />
             <div className="relative">
-              <p className="font-display inline bg-linear-to-r from-indigo-200 via-violet-400 to-indigo-200 bg-clip-text text-5xl tracking-tight text-transparent">
+              <p className="inline bg-linear-to-r from-indigo-200 via-violet-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
                 Explore our newsletters
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">

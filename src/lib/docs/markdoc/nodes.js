@@ -2,8 +2,8 @@ import { nodes as defaultNodes, Tag } from '@markdoc/markdoc'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import yaml from 'js-yaml'
 
-import { DocsLayout } from '@/components/docs/DocsLayout'
-import { Fence } from '@/components/docs/Fence'
+import { DocsLayout } from '@/components/articles/DocsLayout'
+import { Fence } from '@/components/articles/Fence'
 
 let documentSlugifyMap = new Map()
 
@@ -33,11 +33,7 @@ const nodes = {
       let text = children.filter((child) => typeof child === 'string').join(' ')
       let id = attributes.id ?? slugify(text)
 
-      return new Tag(
-        `h${node.attributes.level}`,
-        { ...attributes, id },
-        children,
-      )
+      return new Tag(`h${node.attributes.level}`, { ...attributes, id }, children)
     },
   },
   th: {

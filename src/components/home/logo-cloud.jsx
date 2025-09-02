@@ -18,11 +18,7 @@ export function LogoCloud({ className }) {
         src="/logo-cloud/laravel.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
-      <img
-        alt="Tuple"
-        src="/logo-cloud/tuple.svg"
-        className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-      />
+      <img alt="Tuple" src="/logo-cloud/tuple.svg" className="h-9 max-sm:mx-auto sm:h-8 lg:h-12" />
       <img
         alt="Transistor"
         src="/logo-cloud/transistor.svg"
