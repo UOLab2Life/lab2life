@@ -5,6 +5,11 @@ import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
 
+export const metadata = {
+  title: 'Events - uOttawa Lab2Life',
+  description: 'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
+}
+
 export default function Events() {
   return (
     <main className="overflow-hidden">

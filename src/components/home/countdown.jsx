@@ -45,7 +45,7 @@ export function Countdown() {
   ]
 
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       <Container className="relative py-16 sm:py-16">
         <div className="mx-auto max-w-6xl text-center">
           <Subheading>Upcoming Event</Subheading>

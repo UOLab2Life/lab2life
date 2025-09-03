@@ -45,28 +45,28 @@ function Sitemap() {
   return (
     <>
       <div>
-        {/* <SitemapHeading>Product</SitemapHeading> */}
+        {/* Column 1 */}
         <SitemapLinks>
           <SitemapLink href="/">Home</SitemapLink>
           <SitemapLink href="/about-us">About Us</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        {/* <SitemapHeading>Company</SitemapHeading> */}
+        {/* Column 2 */}
         <SitemapLinks>
-          <SitemapLink href="/general-member-sign-up">General Sign-Up</SitemapLink>
           <SitemapLink href="/docs">Articles</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        {/* <SitemapHeading>Support</SitemapHeading> */}
-        <SitemapLinks>
           <SitemapLink href="/podcasts">Podcasts</SitemapLink>
-          <SitemapLink href="/events">Events</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        {/* <SitemapHeading>Company</SitemapHeading> */}
+        {/* Column 3 */}
+        <SitemapLinks>
+          <SitemapLink href="/events">Events</SitemapLink>
+          <SitemapLink href="/general-member-sign-up">General Sign-Up</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        {/* Column 4 */}
         <SitemapLinks>
           <SitemapLink href="/contact-us">Contact Us</SitemapLink>
           <SitemapLink href="/">Privacy Policy</SitemapLink>
@@ -168,14 +168,14 @@ export function Footer() {
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
                   <PlusGridItem className="pt-8 lg:pb-6">
-                    <div className="flex items-center gap-3">
+                    <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                       <img
                         src="/images/home/uolab2life_logo_no_bg.png"
                         alt="Lab2Life"
                         className="h-11 w-auto"
                       />
                       <span className="text-xl font-semibold text-[#003e3e]">uOttawa Lab2Life</span>
-                    </div>
+                    </Link>
                     <p className="mt-4 max-w-xs text-base text-gray-600">
                       Dedicated to promoting and helping students explore various careers in the
                       field of healthcare and medicine.

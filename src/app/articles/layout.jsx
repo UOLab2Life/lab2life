@@ -3,6 +3,11 @@ import clsx from 'clsx'
 import localFont from 'next/font/local'
 import { Providers } from './theme-provider'
 
+export const metadata = {
+  title: 'Articles - uOttawa Lab2Life',
+  description: 'Read our latest articles about healthcare careers, medical insights, and professional development.',
+}
+
 const inter = localFont({
   src: [{ path: '../../assets/articles/fonts/inter.woff2', weight: '100 900', style: 'normal' }],
   variable: '--font-inter',

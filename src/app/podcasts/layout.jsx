@@ -1,5 +1,10 @@
 import localFont from 'next/font/local'
 
+export const metadata = {
+  title: 'Podcasts - uOttawa Lab2Life',
+  description: 'Listen to our podcasts featuring healthcare professionals and career insights.',
+}
+
 const satoshi = localFont({
   src: [{ path: '../../assets/podcasts/fonts/satoshi.woff2', weight: '300 900', style: 'normal' }],
   variable: '--font-satoshi',

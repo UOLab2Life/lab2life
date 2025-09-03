@@ -16,6 +16,11 @@ import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
 import { Countdown } from '@/components/home/countdown'
 
+export const metadata = {
+  title: 'uOttawa Lab2Life',
+  description: 'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
+}
+
 function Hero() {
   return (
     <div className="relative">
@@ -189,10 +194,10 @@ export default function Homepage() {
   return (
     <div className="overflow-hidden">
       <Hero />
-      <Countdown />
       <main>
-        <Instagram />
+        <Countdown />
         <LatestArticles />
+        <Instagram />
         <Container className="mt-10">
           <LogoCloud />
         </Container>

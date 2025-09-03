@@ -3,7 +3,7 @@ import { Heading } from '@/components/home/text'
 
 export function LatestArticles() {
   return (
-    <div className="mt-8 bg-linear-to-t from-gray-100 pb-14">
+    <div className="mt-8 bg-white pb-14">
       <div className="px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-7xl">
           <div className="text-center">
