@@ -5,6 +5,9 @@ export const metadata = {
   title: 'uOttawa Lab2Life',
   description:
     'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
+  icons: {
+    icon: '/lab2life-no-bg.png',
+  },
 }
 
 const switzer = localFont({

@@ -7,12 +7,9 @@ import { Navbar } from '@/components/home/navbar'
 import { Heading, Lead, Subheading } from '@/components/home/text'
 import { MembersCarousel } from '@/components/about-us/members-carousel'
 
-
-
 export const metadata = {
-  title: 'Company',
-  description:
-    'We’re on a mission to transform revenue organizations by harnessing vast amounts of illegally acquired customer data.',
+  title: 'About Us - uOttawa Lab2Life',
+  description: 'Learn about uOttawa Lab2Life and our mission to help students explore healthcare careers.',
 }
 
 function Header() {

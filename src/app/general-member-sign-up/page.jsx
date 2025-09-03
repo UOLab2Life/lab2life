@@ -5,6 +5,11 @@ import { Navbar } from '@/components/home/navbar'
 
 import { Heading } from '@/components/home/text'
 
+export const metadata = {
+  title: 'General Member Sign-Up - uOttawa Lab2Life',
+  description: 'Join uOttawa Lab2Life as a general member and start exploring healthcare career opportunities.',
+}
+
 export default function GeneralMemberSignUp() {
   return (
     <main className="overflow-hidden">

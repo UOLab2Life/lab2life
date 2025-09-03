@@ -5,6 +5,11 @@ import { Navbar } from '@/components/home/navbar'
 
 import { Heading } from '@/components/home/text'
 
+export const metadata = {
+  title: 'Contact Us - uOttawa Lab2Life',
+  description: 'Get in touch with uOttawa Lab2Life for questions, partnerships, or general inquiries.',
+}
+
 export default function Events() {
   return (
     <main className="overflow-hidden">
