@@ -24,9 +24,8 @@ export default function LayoutWrapper({ children }) {
   return (
     <section
       data-app="articles"
-      className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}
-    >
-        <Layout>{children}</Layout>
+      className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}>
+      <Layout>{children}</Layout>
     </section>
   )
 }
