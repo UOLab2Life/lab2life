@@ -14,8 +14,7 @@ export function Countdown() {
     seconds: 0
   })
 
-  // Club Fair date: September 3rd, 2025 at 10:00 AM
-  const targetDate = new Date('2025-09-03T10:00:00').getTime()
+  const targetDate = new Date('2025-09-03T10:00:00-04:00').getTime()
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -57,7 +56,6 @@ export function Countdown() {
             to win amazing prizes!
           </p>
           
-          {/* Event Details with Icons */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
             <div className="flex items-center gap-3">
               <svg className="w-6 h-6 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
@@ -79,7 +77,6 @@ export function Countdown() {
             </div>
           </div>
           
-          {/* Countdown Timer */}
           <div className="mt-12 flex justify-center gap-4 sm:gap-8">
             {timeUnits.map((unit) => (
               <div key={unit.label} className="relative w-20 h-20 sm:w-24 sm:h-24">
@@ -96,7 +93,6 @@ export function Countdown() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
           <div className="mt-12 flex flex-col items-center justify-center gap-4">
             <Button 
               href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"

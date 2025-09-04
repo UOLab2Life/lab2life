@@ -73,7 +73,7 @@ export default function MainLayout({ children }) {
           </Link>
           <div className="mt-10 text-center lg:mt-12 lg:text-left">
             <h2 className="text-3xl font-bold text-[#99c96f]">
-              <Link href="/transmit">The Career Catalyst</Link>
+              The Career Catalyst
             </h2>
             <p className="mt-3 text-lg/7.5 text-white">
               Through insightful conversations with professionals from various fields, we uncover
