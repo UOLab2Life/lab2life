@@ -1,5 +1,6 @@
 import '@/styles/tailwind.css'
 import localFont from 'next/font/local'
+import Providers from './providers'
 
 export const metadata = {
   title: 'uOttawa Lab2Life',
@@ -19,8 +20,10 @@ const switzer = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={switzer.variable}>
-      <body className="text-gray-950 antialiased">{children}</body>
+    <html lang="en" className={switzer.variable} suppressHydrationWarning>
+      <body className="bg-white text-gray-950 antialiased">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

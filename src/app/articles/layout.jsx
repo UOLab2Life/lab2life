@@ -1,7 +1,6 @@
 import { Layout } from '@/components/articles/Layout'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
-import { Providers } from './theme-provider'
 
 export const metadata = {
   title: 'Articles - uOttawa Lab2Life',
@@ -27,9 +26,7 @@ export default function LayoutWrapper({ children }) {
       data-app="articles"
       className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}
     >
-      <Providers>
         <Layout>{children}</Layout>
-      </Providers>
     </section>
   )
 }
