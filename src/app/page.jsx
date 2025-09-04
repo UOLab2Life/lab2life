@@ -15,6 +15,8 @@ import { Navbar } from '@/components/home/navbar'
 import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
 import { Countdown } from '@/components/home/countdown'
+import { Bounce } from '@/components/home/bounce'
+import { PodcastPreview } from '@/components/home/podcast-preview'
 
 export const metadata = {
   title: 'uOttawa Lab2Life',
@@ -196,8 +198,10 @@ export default function Homepage() {
       <Hero />
       <main>
         <Countdown />
+        <PodcastPreview />
         <LatestArticles />
         <Instagram />
+        <Bounce />
         <Container className="mt-10">
           <LogoCloud />
         </Container>

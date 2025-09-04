@@ -1,6 +1,10 @@
 import { notFound } from 'next/navigation'
 import { cache } from 'react'
 
+import { Container } from '@/components/home/container'
+import { Footer } from '@/components/home/footer'
+import { Gradient } from '@/components/home/gradient'
+import { Navbar } from '@/components/home/navbar'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
 import { PauseIcon } from '@/components/podcasts/PauseIcon'
@@ -32,7 +36,6 @@ export default async function Episode({ params }) {
   let episode = await getEpisode(episodeId)
   let date = new Date(episode.published)
 
-  // Parse categories and create pills
   const categories = episode.category
     ? episode.category
         .split(',')
@@ -40,11 +43,9 @@ export default async function Episode({ params }) {
         .filter((cat) => cat)
     : []
 
-  // Convert YouTube URL to embed URL
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return null
 
-    // Handle different YouTube URL formats
     const videoIdMatch = url.match(
       /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
     )
@@ -59,8 +60,15 @@ export default async function Episode({ params }) {
   const embedUrl = getYouTubeEmbedUrl(episode.youtube_url)
 
   return (
-    <article className="py-16 lg:py-36">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <>
+      <div className="relative">
+        <Gradient className="absolute inset-1 bottom-0 rounded-2xl ring-1 ring-black/5 ring-inset sm:inset-2 sm:rounded-4xl" />
+        <Container className="relative pb-8 sm:pb-12">
+          <Navbar shortText={true} />
+        </Container>
+      </div>
+      <article className="py-12 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="flex flex-col">
           <div className="flex items-center gap-6">
             <EpisodePlayButton
@@ -87,7 +95,6 @@ export default async function Episode({ params }) {
             {episode.description}
           </p>
 
-          {/* Category Pills */}
           {categories.length > 0 && (
             <div className="mt-4 ml-24 flex flex-wrap gap-2">
               {categories.map((category, index) => (
@@ -102,7 +109,6 @@ export default async function Episode({ params }) {
           )}
         </header>
 
-        {/* YouTube Video Embed */}
         {episode.youtube_url && embedUrl && (
           <div className="mt-12">
             <div className="relative mx-auto w-full max-w-5xl" style={{ paddingBottom: '56.25%' }}>
@@ -117,7 +123,9 @@ export default async function Episode({ params }) {
             </div>
           </div>
         )}
-      </div>
-    </article>
+        </div>
+      </article>
+      <Footer />
+    </>
   )
 }
