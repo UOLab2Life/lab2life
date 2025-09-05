@@ -69,7 +69,11 @@ export function MobileNavigation() {
         className="relative"
         aria-label="Open navigation"
       >
-        <MenuIcon className="h-6 w-6 stroke-slate-500" />
+        <div className="relative w-4 h-4 flex items-center justify-center">
+          <span className={`absolute w-3 h-0.5 bg-slate-500 transform transition-all duration-300 ease-in-out ${isOpen ? 'rotate-45' : 'top-0'}`}></span>
+          <span className={`absolute w-3 h-0.5 bg-slate-500 transform transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0' : 'top-1.5'}`}></span>
+          <span className={`absolute w-3 h-0.5 bg-slate-500 transform transition-all duration-300 ease-in-out ${isOpen ? '-rotate-45' : 'top-3'}`}></span>
+        </div>
       </button>
       <Suspense fallback={null}>
         <CloseOnNavigation close={close} />
@@ -83,7 +87,10 @@ export function MobileNavigation() {
         <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 sm:px-6 dark:bg-teal-900">
           <div className="flex items-center">
             <button type="button" onClick={() => close()} aria-label="Close navigation">
-              <CloseIcon className="h-6 w-6 stroke-slate-500" />
+              <div className="relative w-4 h-4 flex items-center justify-center">
+                <span className="absolute w-3 h-0.5 bg-slate-500 transform rotate-45"></span>
+                <span className="absolute w-3 h-0.5 bg-slate-500 transform -rotate-45"></span>
+              </div>
             </button>
           </div>
           <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} />

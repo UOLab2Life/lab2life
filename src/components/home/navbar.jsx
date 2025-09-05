@@ -39,7 +39,13 @@ function MobileNavButton() {
       className="flex size-12 items-center justify-center self-center rounded-lg data-hover:bg-white/10 lg:hidden"
       aria-label="Open main menu"
     >
-      <Bars2Icon className="size-6 text-white" />
+      {({ open }) => (
+        <div className="relative w-4 h-4 flex items-center justify-center">
+          <span className={`absolute w-3 h-0.5 bg-white transform transition-all duration-300 ease-in-out ${open ? 'rotate-45' : 'top-0'}`}></span>
+          <span className={`absolute w-3 h-0.5 bg-white transform transition-all duration-300 ease-in-out ${open ? 'opacity-0' : 'top-1.5'}`}></span>
+          <span className={`absolute w-3 h-0.5 bg-white transform transition-all duration-300 ease-in-out ${open ? '-rotate-45' : 'top-3'}`}></span>
+        </div>
+      )}
     </DisclosureButton>
   )
 }

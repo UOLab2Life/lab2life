@@ -5,6 +5,7 @@ import posterImage from '@/assets/podcasts/images/poster.png'
 import { AudioProvider } from '@/components/podcasts/AudioProvider'
 import { AudioPlayer } from '@/components/podcasts/player/AudioPlayer'
 import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
+import { Navbar } from '@/components/home/navbar'
 
 function SpotifyIcon(props) {
   return (
@@ -56,7 +57,10 @@ export default function MainLayout({ children }) {
           <span className="font-mono text-[#99c96f]/70">Hosted by</span>
           <span className="mt-6 flex gap-6 font-bold text-[#99c96f]">{host}</span>
         </div>
-        <div className="relative z-10 mx-auto px-4 pt-10 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-8 lg:py-12 xl:px-12">
+        <div className="relative z-10 mx-auto px-4 pt-4 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-8 lg:py-12 xl:px-12">
+          <div className="lg:hidden mb-6">
+            <Navbar shortText={true} />
+          </div>
           <Link
             href="https://open.spotify.com/show/2WpTeVx4rtSx7w8ctthnKe?si=2bc5fe4cf3184d87"
             className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"

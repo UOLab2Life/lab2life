@@ -15,7 +15,7 @@ export function LatestArticles() {
             </p>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5" style={{boxShadow: '0 10px 25px -5px rgba(0, 62, 62, 0.1), 0 4px 6px -2px rgba(0, 62, 62, 0.05)'}}>
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
                 alt="A bunch of nurses"
                 className="aspect-3/2 w-full object-cover"
@@ -50,7 +50,7 @@ export function LatestArticles() {
               </div>
             </div>
 
-            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5" style={{boxShadow: '0 10px 25px -5px rgba(0, 62, 62, 0.1), 0 4px 6px -2px rgba(0, 62, 62, 0.05)'}}>
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
                 alt="Medical Law Introduction"
                 className="aspect-3/2 w-full object-cover"
@@ -85,7 +85,7 @@ export function LatestArticles() {
               </div>
             </div>
 
-            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5" style={{boxShadow: '0 10px 25px -5px rgba(0, 62, 62, 0.1), 0 4px 6px -2px rgba(0, 62, 62, 0.05)'}}>
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
                 alt="Occupational Therapists and Prosthetic Adaptation"
                 className="aspect-3/2 w-full object-cover"

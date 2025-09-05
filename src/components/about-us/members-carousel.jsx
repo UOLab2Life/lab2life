@@ -9,7 +9,7 @@ import { Heading } from '../home/text'
 
 const members = [
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Sanjay Sathees',
     position: 'Co-President and Founder',
     education: '4th Year | B.Sc. Biomedical Science',
@@ -17,7 +17,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/sanjay-sathees/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Bharat Yanala',
     position: 'Co-President',
     education: '4th Year | B.HSc. Health Science',
@@ -25,7 +25,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/bharatyanala/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Ann Ignatius',
     position: 'VP Internal Operations',
     education: '4th Year | B.Sc. Psychology',
@@ -33,7 +33,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/ann-ignatius-262b09288/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Maya Labbé',
     position: 'VP Finance',
     education: '4th Year | B.HSc. Health Science',
@@ -41,7 +41,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/maya-labb%C3%A9-85987a298/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Eshal Uddin',
     position: 'VP External Affairs',
     education: '4th Year | B.Sc. Biomedical Science',
@@ -49,7 +49,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/eshal-uddin-5019b9267/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Meera Harahsha',
     position: 'VP External Affairs',
     education: '2nd Year | B.HSc Health Science',
@@ -57,7 +57,7 @@ const members = [
     linkedin: '',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Maeve McAneney',
     position: 'VP Events',
     education: '2nd Year | B.HSc Health Science',
@@ -65,7 +65,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/maeve-mcaneney-88259121b/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Ghazal Farahmand',
     position: 'VP Marketing',
     education: '3rd Year | B.Sc. Biomedical Science',
@@ -73,7 +73,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/ghazal-farahmand-226600310/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Jasmin Yermashova',
     position: 'VP Graphic Design',
     education: '4th Year | B.Sc. Biology',
@@ -81,15 +81,15 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/jasmin-yermashova/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Nahiyan Ishtiaque',
-    position: 'Webmaster',
+    position: 'Senior Webmaster',
     education: '4th Year | B.Sc Computer Science',
     email: 'webmaster.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/nahiyan-ishtiaque/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Onur Onel',
     position: 'Webmaster',
     education: '2nd Year | B.Sc. Computer Science',
@@ -97,7 +97,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/onuronel13/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Maroun Tarabey',
     position: 'Editor-in-Chief',
     education: '2nd Year | B.Sc. Biochemistry',
@@ -105,7 +105,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/maroun-tarabey-55a88b2a7/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Maya Alali',
     position: 'Podcast Producer',
     education: '2nd Year | B.Sc. Biomedical Science',
@@ -113,7 +113,7 @@ const members = [
     linkedin: '',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Lacey Mullin',
     position: 'Upper Year Representative',
     education: '4th Year | B.Sc. Biopharmaceutical Science',
@@ -121,7 +121,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/lacey-mullin-209963327/',
   },
   {
-    img: '/images/home/bharat.jpg',
+    img: '/images/home/blank.webp',
     name: 'Anoosha Rehman',
     position: 'Lower Year Representative',
     education: '2nd Year | B.Sc. Biomedical Science',

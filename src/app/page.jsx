@@ -202,14 +202,14 @@ export default function Homepage() {
         <LatestArticles />
         <Instagram />
         <Bounce />
-        <Container className="mt-10">
+        {/* <Container className="mt-10">
           <LogoCloud />
         </Container>
         <div className="bg-linear-to-b from-white from-50% to-gray-100 py-32">
           <FeatureSection />
           <BentoSection />
         </div>
-        <DarkBentoSection />
+        <DarkBentoSection /> */}
       </main>
       <Footer />
     </div>

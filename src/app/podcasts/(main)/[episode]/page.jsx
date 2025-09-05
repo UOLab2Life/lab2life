@@ -61,7 +61,7 @@ export default async function Episode({ params }) {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative hidden lg:block">
         <Gradient className="absolute inset-1 bottom-0 rounded-2xl ring-1 ring-black/5 ring-inset sm:inset-2 sm:rounded-4xl" />
         <Container className="relative pb-8 sm:pb-12">
           <Navbar shortText={true} />
