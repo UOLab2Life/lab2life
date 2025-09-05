@@ -33,7 +33,7 @@ export function Bounce() {
                 rel="noopener noreferrer"
                 className="!bg-[#68b4f8] hover:!bg-white text-white hover:text-[#68b4f8] px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl"
               >
-                Visit Bounce Life
+                Follow Us on Bounce
               </Button>
             </div>
           </div>

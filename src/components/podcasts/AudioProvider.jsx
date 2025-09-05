@@ -92,6 +92,12 @@ export function AudioProvider({ children }) {
           ? state.playing && playerRef.current?.currentSrc === episode.audio.src
           : state.playing
       },
+      clear() {
+        dispatch({ type: ActionKind.SET_META, payload: null })
+        if (playerRef.current) {
+          playerRef.current.pause()
+        }
+      },
     }
   }, [state.playing])
 

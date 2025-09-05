@@ -43,7 +43,7 @@ function CustomAudioPlayer({ onClose }) {
   }
 
   const handleClose = () => {
-    player.pause()
+    player.clear()
     onClose()
   }
 
@@ -122,7 +122,7 @@ function PodcastPlayer({ mp3FileName }) {
     <div className="w-11/12 mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 shadow-[#003e3e]/20">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-[#003e3e]">Episode 4: Reading Between the Scans with Dr. Yale Erenberg</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#003e3e]">Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)</h3>
           <EpisodePlayButton
             episode={episode}
             className="group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2 focus:outline-hidden"
@@ -147,6 +147,7 @@ export function PodcastPreview({ mp3FileName = "episode-4-tcc-preview.mp3" }) {
 
   const handleCloseAudioPlayer = () => {
     setShowAudioPlayer(false)
+    setHasStartedPlaying(false)
   }
 
   const handlePlayStarted = () => {
@@ -223,7 +224,7 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
     <div className="w-11/12 mx-auto">
       <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 shadow-[#003e3e]/20">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-[#003e3e]">Episode 4: Reading Between the Scans with Dr. Yale Erenberg</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#003e3e]">Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)</h3>
           {!isPlaying && (
             <EpisodePlayButton
               episode={episode}
