@@ -1,6 +1,6 @@
 import blurCyanImage from '@/assets/articles/images/blur-cyan.png'
 import blurIndigoImage from '@/assets/articles/images/blur-indigo.png'
-import { HeroBackground } from '@/components/articles/HeroBackground'
+import { HeroBackground } from '@/components/articles/hero-background'
 import Image from 'next/image'
 
 export function Hero() {
@@ -20,11 +20,10 @@ export function Hero() {
             />
             <div className="relative">
               <p className="inline bg-linear-to-r from-indigo-200 via-violet-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
-                Explore our newsletters
+                Explore Featured Articles
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Concise newsletters with perspectives, opportunities, and actionable advice to
-                support your journey.
+                Find our monthly articles passionately written by our representatives covering diverse medical themes.
               </p>
             </div>
           </div>

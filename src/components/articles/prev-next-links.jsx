@@ -21,7 +21,7 @@ function PageLink({ title, href, dir = 'next', ...props }) {
         <Link
           href={href}
           className={clsx(
-            'flex items-center gap-x-1 text-base font-semibold text-slate-500 hover:bg-gradient-to-r hover:from-indigo-300 hover:via-violet-400 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent hover:before:block dark:text-slate-200 dark:hover:bg-gradient-to-r dark:hover:from-indigo-300 dark:hover:via-violet-400 dark:hover:to-indigo-300 dark:hover:bg-clip-text dark:hover:text-transparent dark:hover:before:block',
+            'flex items-center gap-x-1 text-base font-semibold text-gray-600 dark:text-white',
             dir === 'previous' && 'flex-row-reverse',
           )}
         >
@@ -47,7 +47,7 @@ export function PrevNextLinks() {
   }
 
   return (
-    <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
+    <dl className="mt-12 flex pt-6">
       {previousPage && <PageLink dir="previous" {...previousPage} />}
       {nextPage && <PageLink className="ml-auto text-right" {...nextPage} />}
     </dl>

@@ -4,6 +4,43 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement
+      const atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 10
+      setVisible(atBottom)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
+  return (
+    <button
+      type="button"
+      aria-label="Go to top"
+      onClick={scrollToTop}
+      className={clsx(
+        'fixed right-7 bottom-14 z-50 h-12 w-12 rounded-full',
+        'bg-white text-slate-700 shadow-md ring-1 ring-black/10 hover:shadow-lg',
+        'transition-all duration-200 focus:outline-none focus-visible:ring',
+        'dark:bg-teal-900/80 dark:text-white dark:ring-white/10',
+        visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0',
+      )}
+    >
+      <svg aria-hidden="true" viewBox="0 0 20 20" className="mx-auto h-6 w-6">
+        <path d="M10 4l6 6-1.4 1.4L11 7.8V16H9V7.8L5.4 11.4 4 10l6-6z" fill="currentColor" />
+      </svg>
+      <span className="sr-only">Go to top</span>
+    </button>
+  )
+}
+
 export function TableOfContents({ tableOfContents }) {
   let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
 
@@ -78,7 +115,7 @@ export function TableOfContents({ tableOfContents }) {
                       href={`#${section.id}`}
                       className={clsx(
                         isActive(section)
-                          ? 'bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text font-inter-semibold text-transparent group-hover:via-violet-500'
+                          ? 'font-inter-semibold bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-transparent group-hover:via-violet-500'
                           : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300',
                       )}
                     >

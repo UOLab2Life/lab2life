@@ -1,7 +1,7 @@
-import { DocsHeader } from '@/components/articles/DocsHeader'
-import { PrevNextLinks } from '@/components/articles/PrevNextLinks'
-import { Prose } from '@/components/articles/Prose'
-import { TableOfContents } from '@/components/articles/TableOfContents'
+import { DocsHeader } from '@/components/articles/docs-header'
+import { PrevNextLinks } from '@/components/articles/prev-next-links'
+import { Prose } from '@/components/articles/prose'
+import { TableOfContents } from '@/components/articles/table-of-contents'
 import { collectSections } from '@/lib/articles/sections'
 
 export function DocsLayout({ children, frontmatter: { title }, nodes }) {

@@ -4,37 +4,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { Suspense, useCallback, useEffect, useState } from 'react'
 
-import { Navigation } from '@/components/articles/Navigation'
-
-function MenuIcon(props) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      {...props}
-    >
-      <path d="M4 7h16M4 12h16M4 17h16" />
-    </svg>
-  )
-}
-
-function CloseIcon(props) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      {...props}
-    >
-      <path d="M5 5l14 14M19 5l-14 14" />
-    </svg>
-  )
-}
+import { Navigation } from '@/components/articles/navigation'
 
 function CloseOnNavigation({ close }) {
   let pathname = usePathname()
@@ -69,10 +39,16 @@ export function MobileNavigation() {
         className="relative"
         aria-label="Open navigation"
       >
-        <div className="relative w-4 h-4 flex items-center justify-center">
-          <span className={`absolute w-3 h-0.5 bg-slate-500 transform transition-all duration-300 ease-in-out ${isOpen ? 'rotate-45' : 'top-0'}`}></span>
-          <span className={`absolute w-3 h-0.5 bg-slate-500 transform transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0' : 'top-1.5'}`}></span>
-          <span className={`absolute w-3 h-0.5 bg-slate-500 transform transition-all duration-300 ease-in-out ${isOpen ? '-rotate-45' : 'top-3'}`}></span>
+        <div className="relative flex h-4 w-4 items-center justify-center">
+          <span
+            className={`absolute h-0.5 w-3 transform bg-slate-500 transition-all duration-300 ease-in-out ${isOpen ? 'rotate-45' : 'top-0'}`}
+          ></span>
+          <span
+            className={`absolute h-0.5 w-3 transform bg-slate-500 transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0' : 'top-1.5'}`}
+          ></span>
+          <span
+            className={`absolute h-0.5 w-3 transform bg-slate-500 transition-all duration-300 ease-in-out ${isOpen ? '-rotate-45' : 'top-3'}`}
+          ></span>
         </div>
       </button>
       <Suspense fallback={null}>
@@ -87,9 +63,9 @@ export function MobileNavigation() {
         <DialogPanel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 sm:px-6 dark:bg-teal-900">
           <div className="flex items-center">
             <button type="button" onClick={() => close()} aria-label="Close navigation">
-              <div className="relative w-4 h-4 flex items-center justify-center">
-                <span className="absolute w-3 h-0.5 bg-slate-500 transform rotate-45"></span>
-                <span className="absolute w-3 h-0.5 bg-slate-500 transform -rotate-45"></span>
+              <div className="relative flex h-4 w-4 items-center justify-center">
+                <span className="absolute h-0.5 w-3 rotate-45 transform bg-slate-500"></span>
+                <span className="absolute h-0.5 w-3 -rotate-45 transform bg-slate-500"></span>
               </div>
             </button>
           </div>
