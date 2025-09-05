@@ -2,8 +2,7 @@ import { nodes as defaultNodes, Tag } from '@markdoc/markdoc'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import yaml from 'js-yaml'
 
-import { DocsLayout } from '@/components/articles/DocsLayout'
-import { Fence } from '@/components/articles/Fence'
+import { DocsLayout } from '@/components/articles/docs-layout'
 
 let documentSlugifyMap = new Map()
 
@@ -43,14 +42,6 @@ const nodes = {
       scope: {
         type: String,
         default: 'col',
-      },
-    },
-  },
-  fence: {
-    render: Fence,
-    attributes: {
-      language: {
-        type: String,
       },
     },
   },

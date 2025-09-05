@@ -1,4 +1,4 @@
-import { Layout } from '@/components/articles/Layout'
+import { Layout } from '@/components/articles/layout'
 import clsx from 'clsx'
 import localFont from 'next/font/local'
 

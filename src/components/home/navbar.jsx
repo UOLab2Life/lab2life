@@ -2,7 +2,6 @@
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
-import { Bars2Icon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 import { Link } from './link'
 import { Logo } from './logo'
@@ -40,10 +39,16 @@ function MobileNavButton() {
       aria-label="Open main menu"
     >
       {({ open }) => (
-        <div className="relative w-4 h-4 flex items-center justify-center">
-          <span className={`absolute w-3 h-0.5 bg-white transform transition-all duration-300 ease-in-out ${open ? 'rotate-45' : 'top-0'}`}></span>
-          <span className={`absolute w-3 h-0.5 bg-white transform transition-all duration-300 ease-in-out ${open ? 'opacity-0' : 'top-1.5'}`}></span>
-          <span className={`absolute w-3 h-0.5 bg-white transform transition-all duration-300 ease-in-out ${open ? '-rotate-45' : 'top-3'}`}></span>
+        <div className="relative flex h-4 w-4 items-center justify-center">
+          <span
+            className={`absolute h-0.5 w-3 transform bg-white transition-all duration-300 ease-in-out ${open ? 'rotate-45' : 'top-0'}`}
+          ></span>
+          <span
+            className={`absolute h-0.5 w-3 transform bg-white transition-all duration-300 ease-in-out ${open ? 'opacity-0' : 'top-1.5'}`}
+          ></span>
+          <span
+            className={`absolute h-0.5 w-3 transform bg-white transition-all duration-300 ease-in-out ${open ? '-rotate-45' : 'top-3'}`}
+          ></span>
         </div>
       )}
     </DisclosureButton>
