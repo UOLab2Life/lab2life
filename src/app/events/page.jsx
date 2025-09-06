@@ -26,14 +26,13 @@ export default function Events() {
             <Heading as="h2" className="mx-auto max-w-3xl">
               Events
             </Heading>
-            <p className="mt-6 text-lg text-gray-600">
+            <p className="mt-6 mb-6 text-lg text-gray-600">
               Join uOttawa Lab2Life and for some amazing healthcare-related events!
             </p>
             <Calendar />
           </div>
         </Container>
       </div>
-
       <Footer />
     </main>
   )
