@@ -7,6 +7,7 @@ import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
 import { SuccessModal } from './modal'
+import { supabase } from '@/lib/supabase'
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ export default function ContactUs() {
   })
   const [errors, setErrors] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     if (formData.message === '') {
@@ -89,7 +91,7 @@ export default function ContactUs() {
     return newErrors
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     e.stopPropagation()
     
@@ -99,14 +101,41 @@ export default function ContactUs() {
       setErrors(newErrors)
       return
     }
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
-    setErrors({})
-    setIsModalOpen(true)
+
+    setIsSubmitting(true)
+
+    try {
+      const { data, error } = await supabase
+        .from('Questions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          }
+        ])
+
+      if (error) {
+        console.error('Error saving to Supabase:', error)
+        setErrors({ submit: 'Failed to send message. Please try again.' })
+        return
+      }
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+      setErrors({})
+      setIsModalOpen(true)
+    } catch (error) {
+      console.error('Error:', error)
+      setErrors({ submit: 'Failed to send message. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -210,12 +239,23 @@ export default function ContactUs() {
                 {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
               </div>
 
+              {errors.submit && (
+                <div className="pt-2">
+                  <p className="text-sm text-red-600">{errors.submit}</p>
+                </div>
+              )}
+
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-[#99c96f] hover:bg-white hover:border hover:border-[#003e3e] text-[#003e3e] font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-md"
+                  disabled={isSubmitting}
+                  className={`w-full font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-md ${
+                    isSubmitting
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                      : 'bg-[#99c96f] hover:bg-white hover:border hover:border-[#003e3e] text-[#003e3e]'
+                  }`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>
