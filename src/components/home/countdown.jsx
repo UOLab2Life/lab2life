@@ -52,8 +52,7 @@ export function Countdown() {
             uOttawa Lab2Life Club Fair
           </Heading>
           <p className="mt-6 text-lg/7 font-inter-semibold text-gray-600 max-w-5xl mx-auto">
-            Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance
-            to win amazing prizes!
+            We’re at the Club Fair this Wednesday! Stop by our table, learn about Lab2Life, and spin the wheel for a chance to win exciting prizes! 
           </p>
           
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">

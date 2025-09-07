@@ -110,7 +110,7 @@ const members = [
     position: 'Podcast Producer',
     education: '2nd Year | B.Sc. Biomedical Science',
     email: 'podcast.uol2l@gmail.com',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/maya-al-ali-676a31371/',
   },
   {
     img: '/images/home/blank.webp',

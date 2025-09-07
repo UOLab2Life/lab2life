@@ -51,14 +51,14 @@ function Header() {
             <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-32">
               <img
                 alt=""
-                src="/images/about-us/about-us-2.jpg"
+                src="/images/about-us/about-us-2.jpeg"
                 className="block size-full object-cover"
               />
             </div>
             <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
               <img
                 alt=""
-                src="/images/about-us/about-us-3.jpg"
+                src="/images/about-us/about-us-3.jpeg"
                 className="block size-full object-cover"
               />
             </div>
@@ -72,7 +72,7 @@ function Header() {
           </div>
         </div>
         <div className="max-lg:mt-16 lg:col-span-1">
-                     <Subheading className="text-[#003e3e]">uoLab2Life by the Numbers</Subheading>
+          <Subheading className="text-[#003e3e]">uoLab2Life by the Numbers</Subheading>
           <hr className="mt-6 border-t border-gray-200" />
           <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
