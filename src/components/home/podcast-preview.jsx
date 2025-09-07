@@ -200,8 +200,8 @@ export function PodcastPreview({ mp3FileName = "episode-4-tcc-preview.mp3" }) {
 function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying }) {
   const player = useAudioPlayer()
   const episode = {
-    id: 1,
-    title: "The Career Catalyst",
+    id: 4,
+    title: "Reading Between the Scans with Dr. Yale Erenberg (Preview)",
     audio: {
       src: mp3FileName ? `/podcast-previews/${mp3FileName}` : '/podcast-previews/episode-4-tcc-preview.mp3',
       type: 'audio/mp3',

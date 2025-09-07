@@ -40,12 +40,12 @@ export function LatestArticles() {
                   hospital...
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  {/* <img 
-                    alt="" 
-                    className="aspect-square size-6 rounded-full object-cover" 
-                    src="https://cdn.sanity.io/images/ssqh4ksj/production/cd1ee59e9e4c2ff30c303de6c7d1066c057419d5-7952x5304.jpg?rect=2370,0,5304,5304&w=64&h=64&auto=format"
-                  /> */}
-                  <div className="text-base/6 text-gray-700 font-medium">Author: Maroun Tarabey</div>
+                  <img 
+                    alt="Maroun Tarabey" 
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30" 
+                    src="/images/home/maroun-tarabey.avif"
+                  />
+                  <div className="text-base/6 text-gray-700 font-medium">Maroun Tarabey</div>
                 </div>
               </div>
             </div>
@@ -75,12 +75,12 @@ export function LatestArticles() {
                   that govern the healthcare industry...{' '}
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  {/* <img 
-                    alt="" 
-                    className="aspect-square size-6 rounded-full object-cover" 
-                    src="https://cdn.sanity.io/images/ssqh4ksj/production/2ec246be46d86c5d72e227e416b8de35f45fcd83-3569x5354.jpg?rect=0,417,3569,3569&w=64&h=64&auto=format"
-                  /> */}
-                  <div className="text-base/6 text-gray-700 font-medium">Author: Maria Bilat</div>
+                  <img 
+                    alt="Maria Bilat" 
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30" 
+                    src="/images/home/maria-bilat.avif"
+                  />
+                  <div className="text-base/6 text-gray-700 font-medium">Maria Bilat</div>
                 </div>
               </div>
             </div>
@@ -110,12 +110,12 @@ export function LatestArticles() {
                   emotional, and psychological challenges. Many patients struggle with the...
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  {/* <img 
-                    alt="" 
-                    className="aspect-square size-6 rounded-full object-cover" 
-                    src="https://cdn.sanity.io/images/ssqh4ksj/production/091dfa4bca0cf5699523de10d477ed260bf04eca-4928x3264.jpg?rect=832,0,3264,3264&w=64&h=64&auto=format"
-                  /> */}
-                  <div className="text-base/6 text-gray-700 font-medium">Author: Maria Bilat</div>
+                  <img 
+                    alt="Maria Bilat" 
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30" 
+                    src="/images/home/maria-bilat.avif"
+                  />
+                  <div className="text-base/6 text-gray-700 font-medium">Maria Bilat</div>
                 </div>
               </div>
             </div>

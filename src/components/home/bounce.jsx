@@ -19,13 +19,12 @@ export function Bounce() {
 
           <div className="flex-1 text-center lg:text-left lg:ml-16">
             <Heading as="h3" className="mb-4 text-3xl font-bold text-[#6bc5f7]">
-              Bounce Life
+              Stay connected with us through Bounce
             </Heading>
             <p className="text-lg text-gray-600 max-w-2xl mb-8">
               Discover exciting opportunities and connect with like-minded individuals through our comprehensive platform designed for students and professionals in healthcare and medicine.
             </p>
             
-            {/* Button underneath description */}
             <div className="flex justify-center lg:justify-start">
               <Button
                 href="https://www.bouncelife.com"

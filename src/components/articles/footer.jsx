@@ -159,9 +159,12 @@ export function Footer() {
                       uOttawa Lab2Life
                     </span>
                   </Link>
-                  <p className="mt-4 max-w-xs text-base text-gray-600 dark:text-white">
+                  <p className="mt-4 max-w-xs text-base text-[#003e3e] dark:text-[#003e3e]">
                     Dedicated to promoting and helping students explore various careers in the field
                     of healthcare and medicine.
+                  </p>
+                  <p className="mt-2 text-base font-bold text-[#003e3e] dark:text-[#003e3e]">
+                    Email: uolab2life@gmail.com
                   </p>
                 </PlusGridItem>
               </div>

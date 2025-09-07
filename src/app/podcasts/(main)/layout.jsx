@@ -62,9 +62,11 @@ export default function MainLayout({ children }) {
             <Navbar shortText={true} />
           </div>
           <Link
-            href="https://open.spotify.com/show/2WpTeVx4rtSx7w8ctthnKe?si=2bc5fe4cf3184d87"
+            href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
             className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"
             aria-label="Homepage"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Image
               className="w-full"
@@ -108,9 +110,11 @@ export default function MainLayout({ children }) {
               ].map(([label, Icon]) => (
                 <li key={label} className="flex">
                   <Link
-                    href="https://open.spotify.com/show/2WpTeVx4rtSx7w8ctthnKe?si=2bc5fe4cf3184d87"
+                    href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
                     className="group flex items-center"
                     aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Icon className="h-8 w-8 fill-[#ffffff]/60 group-hover:fill-[#b184e9]" />
                     <span className="hidden sm:ml-3 sm:block">{label}</span>
