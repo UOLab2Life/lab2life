@@ -1,20 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { SuccessModal } from '@/components/contact-us/modal'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
-import { SuccessModal } from './modal'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase/client'
+import { useEffect, useState } from 'react'
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   })
   const [errors, setErrors] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -36,15 +36,15 @@ export default function ContactUs() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }))
-    
+
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: '',
       }))
     }
   }
@@ -52,9 +52,9 @@ export default function ContactUs() {
   const handleEmailBlur = (e) => {
     const email = e.target.value.trim()
     if (email && !validateEmail(email)) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        email: 'Please enter a valid email address'
+        email: 'Please enter a valid email address',
       }))
     }
   }
@@ -63,9 +63,9 @@ export default function ContactUs() {
     e.preventDefault()
     const email = e.target.value.trim()
     if (email) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        email: e.target.validationMessage
+        email: e.target.validationMessage,
       }))
     }
   }
@@ -94,9 +94,9 @@ export default function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     e.stopPropagation()
-    
+
     const newErrors = validateForm()
-    
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
       return
@@ -105,16 +105,14 @@ export default function ContactUs() {
     setIsSubmitting(true)
 
     try {
-      const { data, error } = await supabase
-        .from('Questions')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message
-          }
-        ])
+      const { data, error } = await supabase.from('Questions').insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+      ])
 
       if (error) {
         console.error('Error saving to Supabase:', error)
@@ -126,7 +124,7 @@ export default function ContactUs() {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
       })
       setErrors({})
       setIsModalOpen(true)
@@ -150,7 +148,7 @@ export default function ContactUs() {
       <div className="py-16 sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <Heading as="h2" className="mx-auto max-w-3xl">
                 Contact Us
               </Heading>
@@ -161,7 +159,7 @@ export default function ContactUs() {
 
             <form onSubmit={handleSubmit} method="post" className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#003e3e] mb-2">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#003e3e]">
                   Name
                 </label>
                 <input
@@ -170,7 +168,7 @@ export default function ContactUs() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-white border rounded-lg text-[#003e3e] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Your full name"
@@ -179,7 +177,7 @@ export default function ContactUs() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#003e3e] mb-2">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#003e3e]">
                   Email
                 </label>
                 <input
@@ -190,7 +188,7 @@ export default function ContactUs() {
                   onChange={handleInputChange}
                   onBlur={handleEmailBlur}
                   onInvalid={handleEmailInvalid}
-                  className={`w-full px-4 py-3 bg-white border rounded-lg text-[#003e3e] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="your.email@example.com"
@@ -199,7 +197,7 @@ export default function ContactUs() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-[#003e3e] mb-2">
+                <label htmlFor="subject" className="mb-2 block text-sm font-medium text-[#003e3e]">
                   Subject
                 </label>
                 <input
@@ -208,7 +206,7 @@ export default function ContactUs() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-white border rounded-lg text-[#003e3e] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.subject ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="What's this about?"
@@ -217,7 +215,7 @@ export default function ContactUs() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#003e3e] mb-2">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#003e3e]">
                   Message
                 </label>
                 <textarea
@@ -226,14 +224,14 @@ export default function ContactUs() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
-                  className={`w-full px-4 py-3 bg-white border rounded-lg text-[#003e3e] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003e3e] focus:border-transparent resize-none overflow-hidden ${
+                  className={`w-full resize-none overflow-hidden rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.message ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Tell us more about your inquiry..."
                   style={{ minHeight: '120px' }}
                   onInput={(e) => {
-                    e.target.style.height = 'auto';
-                    e.target.style.height = e.target.scrollHeight + 'px';
+                    e.target.style.height = 'auto'
+                    e.target.style.height = e.target.scrollHeight + 'px'
                   }}
                 />
                 {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
@@ -249,10 +247,10 @@ export default function ContactUs() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-md ${
+                  className={`w-full rounded-full px-8 py-4 font-semibold shadow-md transition-all duration-300 ${
                     isSubmitting
-                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
-                      : 'bg-[#99c96f] hover:bg-white hover:border hover:border-[#003e3e] text-[#003e3e]'
+                      ? 'cursor-not-allowed bg-gray-400 text-gray-600'
+                      : 'bg-[#99c96f] text-[#003e3e] hover:border hover:border-[#003e3e] hover:bg-white'
                   }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -264,11 +262,8 @@ export default function ContactUs() {
       </div>
 
       <Footer />
-      
-      <SuccessModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+
+      <SuccessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   )
 }

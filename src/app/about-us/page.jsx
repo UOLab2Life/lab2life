@@ -1,42 +1,51 @@
 import { AnimatedNumber } from '@/components/about-us/animated-number'
+import { MembersCarousel } from '@/components/about-us/members-carousel'
 import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
-import { Gradient, GradientBackground } from '@/components/home/gradient'
+import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Lead, Subheading } from '@/components/home/text'
-import { MembersCarousel } from '@/components/about-us/members-carousel'
 
 export const metadata = {
   title: 'About Us - uOttawa Lab2Life',
-  description: 'Learn about uOttawa Lab2Life and our mission to help students explore healthcare careers.',
+  description:
+    'Learn about uOttawa Lab2Life and our mission to help students explore healthcare careers.',
 }
 
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1" className="text-[#003e3e]">Supporting students in their journey from classroom to career.</Heading>
+      <Heading as="h1" className="text-[#003e3e]">
+        Supporting students in their journey from classroom to career.
+      </Heading>
       <Lead className="mt-6 max-w-3xl">
-        We are on a mission to allow students to connect with and explore various jobs in the field of healthcare and medicine.
+        We are on a mission to allow students to connect with and explore various jobs in the field
+        of healthcare and medicine.
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-medium tracking-tight">Our mission</h2>
           <p className="mt-6 text-sm/6 text-gray-600">
-          uOttawa Lab2Life is dedicated to promoting and helping students explore various careers in the field of healthcare and medicine. 
-          We wish to support students interested in the field by providing them with information, resources, and opportunities to apply 
-          their academics to different careers.
+            uOttawa Lab2Life is dedicated to promoting and helping students explore various careers
+            in the field of healthcare and medicine. We wish to support students interested in the
+            field by providing them with information, resources, and opportunities to apply their
+            academics to different careers.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-          Through innovative events, professional development initiatives, podcast episodes with experts in various professions, articles 
-          about different careers, workshops about job applications and networking opportunities, we aim to guide students through their 
-          journey from the classroom to the lab. We hope to introduce students to diverse careers in the field and support them with potential 
-          career pathways such as jobs, graduate education or medical school.
+            Through innovative events, professional development initiatives, podcast episodes with
+            experts in various professions, articles about different careers, workshops about job
+            applications and networking opportunities, we aim to guide students through their
+            journey from the classroom to the lab. We hope to introduce students to diverse careers
+            in the field and support them with potential career pathways such as jobs, graduate
+            education or medical school.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-          We strive to create a community of aspiring professionals, equipped with the skills, knowledge and experiences to make a positive 
-          impact in their chosen pathways and professions. We wish to be inclusive of all degrees and will not be limited to just the sciences. 
-          Our goal is to support interested students navigate to their preferred profession in the ever-changing job market.
+            We strive to create a community of aspiring professionals, equipped with the skills,
+            knowledge and experiences to make a positive impact in their chosen pathways and
+            professions. We wish to be inclusive of all degrees and will not be limited to just the
+            sciences. Our goal is to support interested students navigate to their preferred
+            profession in the ever-changing job market.
           </p>
         </div>
         <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
@@ -77,29 +86,29 @@ function Header() {
           <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
               <dt className="text-sm/6 text-gray-600">General Members</dt>
-                             <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                 <AnimatedNumber start={0} end={275} />+
-               </dd>
+              <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
+                <AnimatedNumber start={0} end={275} />+
+              </dd>
             </div>
             <div className="flex flex-col gap-y-2">
               <dt className="text-sm/6 text-gray-600">Articles + Podcasts Released</dt>
-                             <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                 <AnimatedNumber start={0} end={18} />
-               </dd>
+              <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
+                <AnimatedNumber start={0} end={18} />
+              </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
               <dt className="text-sm/6 text-gray-600">Events Hosted</dt>
-                             <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                 <AnimatedNumber start={0} end={7} />
-               </dd>
+              <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
+                <AnimatedNumber start={0} end={7} />
+              </dd>
             </div>
             <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
               <dt className="text-sm/6 text-gray-600">Social Media Engagement</dt>
-                             <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                 <AnimatedNumber start={0} end={225} />K+
-               </dd>
+              <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
+                <AnimatedNumber start={0} end={225} />
+                K+
+              </dd>
             </div>
-           
           </dl>
         </div>
       </section>
@@ -122,31 +131,30 @@ function Person({ name, description, img }) {
 function Team() {
   return (
     <Container className="mt-32">
-             <h2 className="text-[#003e3e] font-display text-sm font-semibold uppercase tracking-wide">Meet the team</h2>
+      <h2 className="font-display text-sm font-semibold tracking-wide text-[#003e3e] uppercase">
+        Meet the team
+      </h2>
       <Heading as="h3" className="mt-2">
         Founded by an all-star team.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        Radiant is founded by two of the best sellers in the business and backed
-        by investors who look the other way.
+        Radiant is founded by two of the best sellers in the business and backed by investors who
+        look the other way.
       </Lead>
       <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="max-w-lg">
           <p className="text-sm/6 text-gray-600">
-            Years ago, while working as sales associates at rival companies,
-            Thomas, Ben, and Natalie were discussing a big client they had all
-            been competing for. Joking about seeing the terms of each other’s
-            offers, they had an idea: what if they shared data to win deals and
-            split the commission behind their companies’ backs? It turned out to
-            be an incredible success, and that idea became the kernel for
-            Radiant.
+            Years ago, while working as sales associates at rival companies, Thomas, Ben, and
+            Natalie were discussing a big client they had all been competing for. Joking about
+            seeing the terms of each other’s offers, they had an idea: what if they shared data to
+            win deals and split the commission behind their companies’ backs? It turned out to be an
+            incredible success, and that idea became the kernel for Radiant.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-            Today, Radiant transforms revenue organizations by harnessing
-            illegally acquired customer and competitor data, using it to provide
-            extraordinary leverage. More than 30,000 companies rely on Radiant
-            to undercut their competitors and extort their customers, all
-            through a single integrated platform.
+            Today, Radiant transforms revenue organizations by harnessing illegally acquired
+            customer and competitor data, using it to provide extraordinary leverage. More than
+            30,000 companies rely on Radiant to undercut their competitors and extort their
+            customers, all through a single integrated platform.
           </p>
           <div className="mt-6">
             <Button className="w-full sm:w-auto" href="#">
@@ -156,11 +164,7 @@ function Team() {
         </div>
         <div className="max-lg:order-first max-lg:max-w-lg">
           <div className="aspect-3/2 overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
-            <img
-              alt=""
-              src="/company/5.jpg"
-              className="block size-full object-cover"
-            />
+            <img alt="" src="/company/5.jpg" className="block size-full object-cover" />
           </div>
         </div>
       </div>
@@ -187,21 +191,13 @@ function Team() {
           description="Front-end Developer"
           img="/team/celeste-vandermark.jpg"
         />
-        <Person
-          name="Courtney Henry"
-          description="Designer"
-          img="/team/courtney-henry.jpg"
-        />
+        <Person name="Courtney Henry" description="Designer" img="/team/courtney-henry.jpg" />
         <Person
           name="Marcus Eldridge"
           description="Director of Product"
           img="/team/marcus-eldridge.jpg"
         />
-        <Person
-          name="Whitney Francis"
-          description="Copywriter"
-          img="/team/whitney-francis.jpg"
-        />
+        <Person name="Whitney Francis" description="Copywriter" img="/team/whitney-francis.jpg" />
         <Person
           name="Leonard Krasner"
           description="Senior Designer"
@@ -225,50 +221,41 @@ function Team() {
 function Investors() {
   return (
     <Container className="mt-32">
-             <Subheading className="text-[#003e3e]">Investors</Subheading>
+      <Subheading className="text-[#003e3e]">Investors</Subheading>
       <Heading as="h3" className="mt-2">
         Funded by industry-leaders.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        We are fortunate to be backed by the best investors in the industry —
-        both literal and metaphorical partners in crime.
+        We are fortunate to be backed by the best investors in the industry — both literal and
+        metaphorical partners in crime.
       </Lead>
-             <Subheading as="h3" className="mt-24 text-[#003e3e]">
-         Venture Capital
-       </Subheading>
+      <Subheading as="h3" className="mt-24 text-[#003e3e]">
+        Venture Capital
+      </Subheading>
       <hr className="mt-6 border-t border-gray-200" />
-      <ul
-        role="list"
-        className="mx-auto mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2"
-      >
+      <ul role="list" className="mx-auto mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
         <li>
-          <img
-            alt="Remington Schwartz"
-            src="/investors/remington-schwartz.svg"
-            className="h-14"
-          />
+          <img alt="Remington Schwartz" src="/investors/remington-schwartz.svg" className="h-14" />
           <p className="mt-6 max-w-lg text-sm/6 text-gray-500">
-            Remington Schwartz has been a driving force in the tech industry,
-            backing bold entrepreneurs who explore grey areas in financial and
-            privacy law. Their deep industry expertise and extensive political
-            lobbying provide their portfolio companies with favorable regulation
-            and direct access to lawmakers.
+            Remington Schwartz has been a driving force in the tech industry, backing bold
+            entrepreneurs who explore grey areas in financial and privacy law. Their deep industry
+            expertise and extensive political lobbying provide their portfolio companies with
+            favorable regulation and direct access to lawmakers.
           </p>
         </li>
         <li>
           <img alt="Deccel" src="/investors/deccel.svg" className="h-14" />
           <p className="mt-6 max-w-lg text-sm/6 text-gray-500">
-            Deccel has been at the forefront of innovation, investing in
-            pioneering companies across various sectors, including technology,
-            consumer goods, and healthcare. Their philosophy of ‘plausible
-            deniability’ and dedication to looking the other way have helped
-            produce some of the world’s most controversial companies.
+            Deccel has been at the forefront of innovation, investing in pioneering companies across
+            various sectors, including technology, consumer goods, and healthcare. Their philosophy
+            of ‘plausible deniability’ and dedication to looking the other way have helped produce
+            some of the world’s most controversial companies.
           </p>
         </li>
       </ul>
-             <Subheading as="h3" className="mt-24 text-[#003e3e]">
-         Individual investors
-       </Subheading>
+      <Subheading as="h3" className="mt-24 text-[#003e3e]">
+        Individual investors
+      </Subheading>
       <hr className="mt-6 border-t border-gray-200" />
       <ul
         role="list"
@@ -324,8 +311,7 @@ function Testimonial() {
       <figure className="relative p-10">
         <blockquote>
           <p className="relative text-xl/7 text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”']">
-            We&apos;ve managed to put two of our main competitors out of
-            business in 6 months.
+            We&apos;ve managed to put two of our main competitors out of business in 6 months.
           </p>
         </blockquote>
         <figcaption className="mt-6 border-t border-white/20 pt-6">
@@ -344,17 +330,19 @@ function Testimonial() {
 function Careers() {
   return (
     <Container className="my-32">
-             <Subheading className="text-[#003e3e]">Careers</Subheading>
+      <Subheading className="text-[#003e3e]">Careers</Subheading>
       <Heading as="h3" className="mt-2">
         Join our fully remote team.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        We work together from all over the world, mainly from locations without
-        extradition agreements.
+        We work together from all over the world, mainly from locations without extradition
+        agreements.
       </Lead>
       <div className="mt-24 grid grid-cols-1 gap-16 lg:grid-cols-[1fr_24rem]">
         <div className="lg:max-w-2xl">
-                     <Subheading as="h3" className="text-[#003e3e]">Open positions</Subheading>
+          <Subheading as="h3" className="text-[#003e3e]">
+            Open positions
+          </Subheading>
           <div>
             <table className="w-full text-left">
               <colgroup>
