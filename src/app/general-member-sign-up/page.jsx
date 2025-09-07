@@ -2,12 +2,12 @@ import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
-
 import { Heading } from '@/components/home/text'
 
 export const metadata = {
   title: 'General Member Sign-Up - uOttawa Lab2Life',
-  description: 'Join uOttawa Lab2Life as a general member and start exploring healthcare career opportunities.',
+  description:
+    'Join uOttawa Lab2Life as a general member and start exploring healthcare career opportunities.',
 }
 
 export default function GeneralMemberSignUp() {

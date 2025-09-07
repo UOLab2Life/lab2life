@@ -7,7 +7,8 @@ import { Heading } from '@/components/home/text'
 
 export const metadata = {
   title: 'Events - uOttawa Lab2Life',
-  description: 'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
+  description:
+    'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
 }
 
 export default function Events() {
