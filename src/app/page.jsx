@@ -1,27 +1,21 @@
 import { BentoCard } from '@/components/home/bento-card'
+import { Bounce } from '@/components/home/bounce'
 import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
+import { Countdown } from '@/components/home/countdown'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Instagram } from '@/components/home/instagram'
 import { Keyboard } from '@/components/home/keyboard'
 import { LatestArticles } from '@/components/home/latest-articles'
 import { LinkedAvatars } from '@/components/home/linked-avatars'
-import { LogoCloud } from '@/components/home/logo-cloud'
 import { LogoCluster } from '@/components/home/logo-cluster'
 import { LogoTimeline } from '@/components/home/logo-timeline'
 import { Map } from '@/components/home/map'
 import { Navbar } from '@/components/home/navbar'
+import { PodcastPreview } from '@/components/home/podcast-preview'
 import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
-import { Countdown } from '@/components/home/countdown'
-import { Bounce } from '@/components/home/bounce'
-import { PodcastPreview } from '@/components/home/podcast-preview'
-
-export const metadata = {
-  title: 'uOttawa Lab2Life',
-  description: 'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
-}
 
 function Hero() {
   return (

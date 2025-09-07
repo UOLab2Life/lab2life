@@ -4,7 +4,8 @@ import localFont from 'next/font/local'
 
 export const metadata = {
   title: 'Articles - uOttawa Lab2Life',
-  description: 'Read our latest articles about healthcare careers, medical insights, and professional development.',
+  description:
+    'Find our monthly articles passionately written by our representatives covering diverse medical themes.',
 }
 
 const inter = localFont({
@@ -24,7 +25,8 @@ export default function LayoutWrapper({ children }) {
   return (
     <section
       data-app="articles"
-      className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}>
+      className={clsx('min-h-full bg-white dark:bg-[#003e3e]', inter.variable, lexend.variable)}
+    >
       <Layout>{children}</Layout>
     </section>
   )

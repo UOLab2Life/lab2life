@@ -36,7 +36,6 @@ export async function getAllEpisodes() {
   }
 }
 
-//TEST TO CHECK IF DATABASE CONNECTION WORKS, PLEASE LEAVE IT UNTOUCHED
 // export async function testConnection() {
 //   try {
 //     const { data, error } = await supabase
