@@ -51,6 +51,34 @@
   }
 }
 
+@layer base {
+  .lab2life-calendar {
+    --fc-today-bg-color: #ffffff;
+    --fc-today-border-color: #b184e9;
+
+    --fc-button-bg-color: #015555;
+    --fc-button-border-color: #ffffff;
+    --fc-button-text-color: theme('colors.white');
+
+    --fc-button-hover-bg-color: #b184e9;
+    --fc-button-hover-border-color: #ffffff;
+
+    --fc-button-active-bg-color: #b184e9;
+    --fc-button-active-border-color: #ffffff;
+
+    --fc-button-disabled-bg-color: theme('colors.gray.400');
+    --fc-button-disabled-border-color: #ffffff;
+    --fc-button-disabled-text-color: theme('colors.white');
+
+    --fc-event-bg-color: #015555; 
+    --fc-event-border-color: #ecdcff; 
+    --fc-event-text-color: #ffffff; 
+  }
+  .lab2life-calendar .fc .fc-toolbar-title {
+    @apply font-semibold;
+  }
+}
+
 @layer utilities {
   .font-inter-semibold {
     font-family: var(--font-inter), var(--font-system);

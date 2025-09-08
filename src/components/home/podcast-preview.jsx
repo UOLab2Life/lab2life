@@ -1,19 +1,19 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
 import { Heading } from '@/components/home/text'
 import { AudioProvider, useAudioPlayer } from '@/components/podcasts/AudioProvider'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { PauseIcon } from '@/components/podcasts/PauseIcon'
-import { PlayIcon } from '@/components/podcasts/PlayIcon'
 import { ForwardButton } from '@/components/podcasts/player/ForwardButton'
 import { MuteButton } from '@/components/podcasts/player/MuteButton'
 import { PlaybackRateButton } from '@/components/podcasts/player/PlaybackRateButton'
 import { PlayButton } from '@/components/podcasts/player/PlayButton'
 import { RewindButton } from '@/components/podcasts/player/RewindButton'
 import { Slider } from '@/components/podcasts/player/Slider'
+import { PlayIcon } from '@/components/podcasts/PlayIcon'
+import { useEffect, useRef, useState } from 'react'
 
 function parseTime(seconds) {
   let hours = Math.floor(seconds / 3600)
@@ -48,7 +48,7 @@ function CustomAudioPlayer({ onClose }) {
   }
 
   return (
-    <div className="flex items-center gap-6 bg-white/90 px-4 py-4 shadow-sm ring-1 shadow-slate-200/80 ring-slate-900/5 backdrop-blur-xs md:px-6">
+    <div className="backdrop-blur-xs flex items-center gap-6 bg-white/90 px-4 py-4 shadow-sm shadow-slate-200/80 ring-1 ring-slate-900/5 md:px-6">
       <div className="hidden md:block">
         <PlayButton player={player} />
       </div>
@@ -94,11 +94,16 @@ function CustomAudioPlayer({ onClose }) {
             </div>
             <button
               onClick={handleClose}
-              className="flex items-center justify-center h-8 w-8 rounded-full bg-gray-200 hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-hidden transition-colors"
+              className="focus:outline-hidden flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
               aria-label="Close audio player"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -111,37 +116,42 @@ function CustomAudioPlayer({ onClose }) {
 function PodcastPlayer({ mp3FileName }) {
   const episode = {
     id: 1,
-    title: "The Career Catalyst",
+    title: 'The Career Catalyst',
     audio: {
-      src: mp3FileName ? `/podcast-previews/${mp3FileName}` : '/podcast-previews/episode-4-tcc-preview.mp3',
+      src: mp3FileName
+        ? `/podcast-previews/${mp3FileName}`
+        : '/podcast-previews/episode-4-tcc-preview.mp3',
       type: 'audio/mp3',
     },
   }
 
   return (
-    <div className="w-11/12 mx-auto">
-      <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 shadow-[#003e3e]/20">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#003e3e]">Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)</h3>
+    <div className="mx-auto w-11/12">
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
+            Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)
+          </h3>
           <EpisodePlayButton
             episode={episode}
-            className="group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2 focus:outline-hidden"
+            className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2"
             playing={<PauseIcon className="h-5 w-5 fill-[#003e3e]" />}
             paused={<PlayIcon className="h-5 w-5 fill-[#003e3e]" />}
           />
         </div>
-        
+
         <div className="text-gray-600">
-            Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr. Yale Erenberg,
-            a radiologist working out of Southwestern Ontario. In this episode, we explore his role as a radiologist, 
-            advances in imaging technology, and career insights for aspiring students.
+          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
+          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
+          explore his role as a radiologist, advances in imaging technology, and career insights for
+          aspiring students.
         </div>
       </div>
     </div>
   )
 }
 
-export function PodcastPreview({ mp3FileName = "episode-4-tcc-preview.mp3" }) {
+export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
   const [showAudioPlayer, setShowAudioPlayer] = useState(false)
   const [hasStartedPlaying, setHasStartedPlaying] = useState(false)
 
@@ -159,35 +169,36 @@ export function PodcastPreview({ mp3FileName = "episode-4-tcc-preview.mp3" }) {
     <AudioProvider>
       <div className="bg-white py-16">
         <Container>
-          <div className="text-center mb-12">
-            <Heading as="h2" className="text-4xl font-bold text-[#003e3e] mb-6">
+          <div className="mb-12 text-center">
+            <Heading as="h2" className="mb-6 text-4xl font-bold text-[#003e3e]">
               The Career Catalyst
             </Heading>
-            <p className="text-xl text-gray-600 max-w-5xl mx-auto">
-            Through insightful conversations with professionals from various fields, we uncover career journeys, 
-            industry advancements, valuable advice for students and aspiring professionals. Tune in to discover 
-            professions and different pathways in research and science that shape our world!
+            <p className="mx-auto max-w-5xl text-xl text-gray-600">
+              Through insightful conversations with professionals from various fields, we uncover
+              career journeys, industry advancements, valuable advice for students and aspiring
+              professionals. Tune in to discover professions and different pathways in research and
+              science that shape our world!
             </p>
           </div>
-          
-          <PodcastPlayerWithSync 
-            mp3FileName={mp3FileName} 
+
+          <PodcastPlayerWithSync
+            mp3FileName={mp3FileName}
             onPlayStarted={handlePlayStarted}
             onClose={handleCloseAudioPlayer}
             isPlaying={showAudioPlayer}
           />
-          
-          <div className="text-center mt-8">
+
+          <div className="mt-8 text-center">
             <Button
               href="/podcasts"
-              className="text-base px-6 py-2 sm:text-lg sm:px-8 sm:py-3 text-center w-64"
+              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
               View All Episodes
             </Button>
           </div>
         </Container>
       </div>
-      
+
       {showAudioPlayer && (
         <div className="fixed inset-x-0 bottom-0 z-10">
           <CustomAudioPlayer onClose={handleCloseAudioPlayer} />
@@ -201,9 +212,11 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
   const player = useAudioPlayer()
   const episode = {
     id: 4,
-    title: "Reading Between the Scans with Dr. Yale Erenberg (Preview)",
+    title: 'Reading Between the Scans with Dr. Yale Erenberg (Preview)',
     audio: {
-      src: mp3FileName ? `/podcast-previews/${mp3FileName}` : '/podcast-previews/episode-4-tcc-preview.mp3',
+      src: mp3FileName
+        ? `/podcast-previews/${mp3FileName}`
+        : '/podcast-previews/episode-4-tcc-preview.mp3',
       type: 'audio/mp3',
     },
   }
@@ -221,24 +234,27 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
   }, [player.episode, episode.id, isPlaying, onClose])
 
   return (
-    <div className="w-11/12 mx-auto">
-      <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 shadow-[#003e3e]/20">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-[#003e3e]">Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)</h3>
+    <div className="mx-auto w-11/12">
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
+            Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)
+          </h3>
           {!isPlaying && (
             <EpisodePlayButton
               episode={episode}
-              className="group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2 focus:outline-hidden"
+              className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2"
               playing={<PauseIcon className="h-5 w-5 fill-[#003e3e]" />}
               paused={<PlayIcon className="h-5 w-5 fill-[#003e3e]" />}
             />
           )}
         </div>
-        
+
         <div className="text-gray-600">
-          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr. Yale Erenberg,
-          a radiologist working out of Southwestern Ontario. In this episode, we explore his role as a radiologist, 
-          advances in imaging technology, and career insights for aspiring students.
+          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
+          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
+          explore his role as a radiologist, advances in imaging technology, and career insights for
+          aspiring students.
         </div>
       </div>
     </div>

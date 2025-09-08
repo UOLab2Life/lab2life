@@ -23,13 +23,20 @@ export function LatestArticles() {
               />
               <div className="flex flex-1 flex-col p-8">
                 <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="w-4 h-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   February 10th, 2025
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
-                  <a href="/articles/newsletters/legal-nurse-consultant" className="text-[#003e3e] hover:text-[#003e3e]/80 transition-colors">
+                  <a
+                    href="/articles/newsletters/legal-nurse-consultant"
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
                     <span className="absolute inset-0"></span>
                     The Reality Behind Nurses in the Court
                   </a>
@@ -40,12 +47,12 @@ export function LatestArticles() {
                   hospital...
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <img 
-                    alt="Maroun Tarabey" 
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30" 
+                  <img
+                    alt="Maroun Tarabey"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
                     src="/images/home/maroun-tarabey.avif"
                   />
-                  <div className="text-base/6 text-gray-700 font-medium">Maroun Tarabey</div>
+                  <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
                 </div>
               </div>
             </div>
@@ -58,13 +65,20 @@ export function LatestArticles() {
               />
               <div className="flex flex-1 flex-col p-8">
                 <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="w-4 h-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   February 3rd, 2025
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
-                  <a href="/articles/newsletters/medical-law-introduction" className="text-[#003e3e] hover:text-[#003e3e]/80 transition-colors">
+                  <a
+                    href="/articles/newsletters/medical-law-introduction"
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
                     <span className="absolute inset-0"></span>
                     From Courtrooms to Clinics Introduction to Medical Law
                   </a>
@@ -75,12 +89,12 @@ export function LatestArticles() {
                   that govern the healthcare industry...{' '}
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <img 
-                    alt="Maria Bilat" 
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30" 
+                  <img
+                    alt="Maria Bilat"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
                     src="/images/home/maria-bilat.avif"
                   />
-                  <div className="text-base/6 text-gray-700 font-medium">Maria Bilat</div>
+                  <div className="text-base/6 font-medium text-gray-700">Maria Bilat</div>
                 </div>
               </div>
             </div>
@@ -93,13 +107,20 @@ export function LatestArticles() {
               />
               <div className="flex flex-1 flex-col p-8">
                 <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="w-4 h-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   November 25th, 2024
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
-                  <a href="/articles/newsletters/occupational-therapists" className="text-[#003e3e] hover:text-[#003e3e]/80 transition-colors">
+                  <a
+                    href="/articles/newsletters/occupational-therapists"
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
                     <span className="absolute inset-0"></span>
                     Partners in Progress The Role of Occupational Therapists in Prosthetic
                     Adaptation
@@ -110,19 +131,23 @@ export function LatestArticles() {
                   emotional, and psychological challenges. Many patients struggle with the...
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <img 
-                    alt="Maria Bilat" 
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30" 
+                  <img
+                    alt="Maria Bilat"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
                     src="/images/home/maria-bilat.avif"
                   />
-                  <div className="text-base/6 text-gray-700 font-medium">Maria Bilat</div>
+                  <div className="text-base/6 font-medium text-gray-700">Maria Bilat</div>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="mt-12 flex justify-center">
-            <Button href="/docs" variant="primary" className="!visible !block w-1/2 text-center">
+            <Button
+              href="/docs"
+              variant="primary"
+              className="!visible mx-auto !block w-full max-w-sm text-center lg:w-1/3"
+            >
               Explore All Articles
             </Button>
           </div>
