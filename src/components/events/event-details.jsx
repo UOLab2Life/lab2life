@@ -3,32 +3,29 @@
 export default function EventDetails({ event }) {
   if (!event) return null
 
-  const {
-    title = 'Untitled',
-    description,
-    location,
-    type,
-    registration,
-    dateOnly,
-    timeOnly,
-  } = event
+  const { title, description, location, registration, date, time, end_time } = event
 
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold">{title}</h3>
+      <h3 className="text-xl text-[#015555] font-semibold">{title}</h3>
 
       <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
-        {type && (
+        {date && (
           <div>
-            <span className="font-medium">Type:</span> {type}
+            <span className="font-medium">Date:</span> {date}
           </div>
         )}
-        {(dateOnly || timeOnly) && (
+        {time && (
           <div>
-            <span className="font-medium">Date:</span> {dateOnly}
-            {timeOnly ? ` • ${timeOnly.slice(0, 5)}` : ''}
+            <span className="font-medium">Starts:</span> {time}
           </div>
         )}
+        {end_time && (
+          <div>
+            <span className="font-medium">Ends:</span> {end_time}
+          </div>
+        )}
+
         {location && (
           <div>
             <span className="font-medium">Location:</span> {location}
@@ -43,7 +40,7 @@ export default function EventDetails({ event }) {
           href={registration}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-lg bg-black px-4 py-2 text-sm font-medium text-white hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/90"
+          className="inline-flex items-center rounded-lg bg-[#b184e9] px-4 py-2 text-sm font-medium text-white hover:bg-[#d3b4f8] dark:bg-white dark:text-black dark:hover:bg-white/90"
         >
           Register
         </a>

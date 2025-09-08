@@ -37,9 +37,9 @@ pids
 # ——— Next.js ———
 .next/
 .next.cache/
-out/            # static export
+out/           
 .turbo/
-.vercel/        # Vercel CLI/project settings
+.vercel/        
 
 # ——— Build artifacts & caches ———
 dist/

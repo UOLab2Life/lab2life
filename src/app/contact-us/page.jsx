@@ -152,8 +152,8 @@ export default function ContactUs() {
               <Heading as="h2" className="mx-auto max-w-3xl">
                 Contact Us
               </Heading>
-              <p className="mt-6 text-lg text-gray-600">
-                Have any questions about our club? Get in touch with our team below!
+              <p className="mt-6 text-2xl text-gray-600">
+                Get in touch with our team below!
               </p>
             </div>
 

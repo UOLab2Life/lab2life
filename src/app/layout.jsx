@@ -1,4 +1,4 @@
-import '@/styles/tailwind.css'
+import '@/styles/global.css'
 import localFont from 'next/font/local'
 import Providers from './providers'
 

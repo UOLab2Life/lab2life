@@ -25,22 +25,24 @@ export default function Calendar() {
         console.error(error)
         return
       }
-
       const mapped = (data ?? []).map((row) => {
         const start = row.event_time ? `${row.event_date}T${row.event_time}` : row.event_date
+        const end = row.event_end_time ? `${row.event_date}T${row.event_end_time}` : undefined
 
         return {
           id: row.event_id,
           title: row.event_name ?? 'Untitled',
           start,
-          allDay: !row.event_time,
+          end,
+          allDay: !row.event_time && !row.event_end_time,
           extendedProps: {
             type: row.event_type,
-            description: row.event_desription,
+            description: row.event_description,
             location: row.event_location,
             registration: row.registration_link,
-            dateOnly: row.event_date,
-            timeOnly: row.event_time,
+            date: row.event_date,
+            time: row.event_time,
+            end_time: row.event_end_time,
           },
         }
       })
@@ -62,20 +64,25 @@ export default function Calendar() {
 
   return (
     <>
-      <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin]}
-        initialView="dayGridMonth"
-        headerToolbar={{ left: 'prev,next', center: 'title', right: 'dayGridMonth,timeGridWeek' }}
-        events={events}
-        editable={false}
-        selectable={false}
-        dayMaxEvents={true}
-        height="auto"
-        eventClick={onEventClick}
-        slotMinTime="07:00:00"
-        slotMaxTime="23:00:00"
-        slotLabelInterval="01:00"
-      />
+      <div className="lab2life-calendar">
+        <FullCalendar
+          plugins={[dayGridPlugin, timeGridPlugin]}
+          initialView="dayGridMonth"
+          headerToolbar={{ left: 'prev,next', center: 'title', right: 'dayGridMonth,timeGridWeek' }}
+          events={events}
+          eventDisplay="block"
+          dayMaxEvents
+          height="auto"
+          eventClick={onEventClick}
+          slotMinTime="07:00:00"
+          slotMaxTime="23:00:00"
+          slotLabelInterval="01:00"
+          validRange={(nowDate) => {
+            const start = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1)
+            return { start }
+          }}
+        />
+      </div>
 
       <Modal isOpen={isOpen} onClose={closeModal} className="max-w-[640px] p-6">
         <EventDetails event={selected} />

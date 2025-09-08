@@ -1,4 +1,6 @@
 'use client'
+
+import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
 export const Modal = ({
@@ -43,7 +45,7 @@ export const Modal = ({
 
   const contentClasses = isFullscreen
     ? 'w-full h-full'
-    : 'relative w-full rounded-3xl bg-white  dark:bg-gray-900'
+    : 'relative w-full rounded-3xl bg-white dark:bg-gray-900'
 
   return (
     <div className="modal fixed inset-0 z-99999 flex items-center justify-center overflow-y-auto">
@@ -58,6 +60,16 @@ export const Modal = ({
         className={`${contentClasses} ${className || ''}`}
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
+          <Image
+            src="/lab2life-no-bg.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            className="rounded-md"
+          />
+        </div>
+
         {showCloseButton && (
           <button
             onClick={onClose}
@@ -80,6 +92,7 @@ export const Modal = ({
             </svg>
           </button>
         )}
+
         <div>{children}</div>
       </div>
     </div>
