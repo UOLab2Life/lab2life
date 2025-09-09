@@ -1,5 +1,4 @@
 import { BentoCard } from '@/components/home/bento-card'
-import { Bounce } from '@/components/home/bounce'
 import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
@@ -8,24 +7,32 @@ import { Instagram } from '@/components/home/instagram'
 import { Keyboard } from '@/components/home/keyboard'
 import { LatestArticles } from '@/components/home/latest-articles'
 import { LinkedAvatars } from '@/components/home/linked-avatars'
+import { LogoCloud } from '@/components/home/logo-cloud'
 import { LogoCluster } from '@/components/home/logo-cluster'
 import { LogoTimeline } from '@/components/home/logo-timeline'
 import { Map } from '@/components/home/map'
 import { Navbar } from '@/components/home/navbar'
-import { PodcastPreview } from '@/components/home/podcast-preview'
 import { Screenshot } from '@/components/home/screenshot'
 import { Heading, Subheading } from '@/components/home/text'
+import { Countdown } from '@/components/home/countdown'
+import { Bounce } from '@/components/home/bounce'
+import { PodcastPreview } from '@/components/home/podcast-preview'
+
+export const metadata = {
+  title: 'uOttawa Lab2Life',
+  description: 'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
+}
 
 function Hero() {
   return (
     <div className="relative">
-      <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
+      <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
         <Navbar />
-        <div className="pb-24 pt-16 text-center sm:pb-32 sm:pt-24 sm:text-left md:pb-48 md:pt-32">
+        <div className="pt-16 pb-24 text-center sm:pt-24 sm:pb-32 sm:text-left md:pt-32 md:pb-48">
           <Heading
             as="h1"
-            className="text-balance text-6xl/[0.9] tracking-tight text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]"
+            className="text-6xl/[0.9] tracking-tight text-balance text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]"
           >
             uOttawa Lab2Life
           </Heading>
@@ -65,7 +72,7 @@ function FeatureSection() {
           width={1216}
           height={768}
           src="/screenshots/app.png"
-          className="h-144 sm:w-304 mt-16 sm:h-auto"
+          className="mt-16 h-144 sm:h-auto sm:w-304"
         />
       </Container>
     </div>
@@ -86,31 +93,31 @@ function BentoSection() {
           title="Clinical Practice"
           description="Explore various medical specialties from family medicine to surgery. Learn about patient care, diagnosis, and treatment in diverse healthcare settings."
           graphic={
-            <div className="bg-size-[1000px_560px] bg-position-[left_-109px_top_-112px] h-80 bg-[url(/screenshots/profile.png)] bg-no-repeat" />
+            <div className="h-80 bg-[url(/screenshots/profile.png)] bg-size-[1000px_560px] bg-position-[left_-109px_top_-112px] bg-no-repeat" />
           }
           fade={['bottom']}
-          className="max-lg:rounded-t-4xl lg:rounded-tl-4xl lg:col-span-3"
+          className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
         />
         <BentoCard
           eyebrow="Research"
           title="Healthcare Innovation"
           description="Discover opportunities in medical research, biotech, and pharmaceutical development. Join the effort to advance healthcare through scientific discovery."
           graphic={
-            <div className="bg-size-[1100px_650px] bg-position-[left_-38px_top_-73px] absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-no-repeat" />
+            <div className="absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-size-[1100px_650px] bg-position-[left_-38px_top_-73px] bg-no-repeat" />
           }
           fade={['bottom']}
-          className="lg:rounded-tr-4xl lg:col-span-3"
+          className="lg:col-span-3 lg:rounded-tr-4xl"
         />
         <BentoCard
           eyebrow="Technology"
           title="Health Informatics"
           description="Explore the intersection of healthcare and technology. Learn about electronic health records, data analysis, and digital health solutions."
           graphic={
-            <div className="flex size-full pl-10 pt-10">
+            <div className="flex size-full pt-10 pl-10">
               <Keyboard highlighted={['LeftCommand', 'LeftShift', 'D']} />
             </div>
           }
-          className="lg:rounded-bl-4xl lg:col-span-2"
+          className="lg:col-span-2 lg:rounded-bl-4xl"
         />
         <BentoCard
           eyebrow="Administration"
@@ -124,7 +131,7 @@ function BentoSection() {
           title="International Impact"
           description="Explore global health initiatives and international medical missions. Make a difference in healthcare access worldwide."
           graphic={<Map />}
-          className="max-lg:rounded-b-4xl lg:rounded-br-4xl lg:col-span-2"
+          className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
       </div>
     </Container>
@@ -133,7 +140,7 @@ function BentoSection() {
 
 function DarkBentoSection() {
   return (
-    <div className="rounded-4xl mx-2 mt-2 bg-gray-900 py-32">
+    <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
         <Subheading dark>Specializations</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
@@ -147,10 +154,10 @@ function DarkBentoSection() {
             title="Psychology & Counseling"
             description="Explore careers in mental health, from clinical psychology to social work. Help individuals and communities achieve better mental wellness."
             graphic={
-              <div className="bg-size-[851px_344px] h-80 bg-[url(/screenshots/networking.png)] bg-no-repeat" />
+              <div className="h-80 bg-[url(/screenshots/networking.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
             fade={['top']}
-            className="max-lg:rounded-t-4xl lg:rounded-tl-4xl lg:col-span-4"
+            className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl"
           />
           <BentoCard
             dark
@@ -158,7 +165,7 @@ function DarkBentoSection() {
             title="Rehabilitation Services"
             description="Discover physical therapy, occupational therapy, and speech pathology careers. Help patients recover and regain independence."
             graphic={<LogoTimeline />}
-            className="overflow-visible! lg:rounded-tr-4xl z-10 lg:col-span-2"
+            className="z-10 overflow-visible! lg:col-span-2 lg:rounded-tr-4xl"
           />
           <BentoCard
             dark
@@ -166,7 +173,7 @@ function DarkBentoSection() {
             title="Patient Care Excellence"
             description="Explore diverse nursing specialties from critical care to community health. Provide compassionate, evidence-based patient care."
             graphic={<LinkedAvatars />}
-            className="lg:rounded-bl-4xl lg:col-span-2"
+            className="lg:col-span-2 lg:rounded-bl-4xl"
           />
           <BentoCard
             dark
@@ -174,10 +181,10 @@ function DarkBentoSection() {
             title="Community Wellness"
             description="Learn about epidemiology, health promotion, and disease prevention. Work to improve population health and healthcare systems."
             graphic={
-              <div className="bg-size-[851px_344px] h-80 bg-[url(/screenshots/engagement.png)] bg-no-repeat" />
+              <div className="h-80 bg-[url(/screenshots/engagement.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
             fade={['top']}
-            className="max-lg:rounded-b-4xl lg:rounded-br-4xl lg:col-span-4"
+            className="max-lg:rounded-b-4xl lg:col-span-4 lg:rounded-br-4xl"
           />
         </div>
       </Container>
@@ -190,9 +197,10 @@ export default function Homepage() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <Instagram />
-        <LatestArticles />
+        <Countdown />
         <PodcastPreview />
+        <LatestArticles />
+        <Instagram />
         <Bounce />
         {/* <Container className="mt-10">
           <LogoCloud />

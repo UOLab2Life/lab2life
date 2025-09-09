@@ -1,5 +1,5 @@
 import Calendar from '@/components/events/calendar'
-import { Countdown } from '@/components/events/countdown'
+import { Countdown } from '@/components/home/countdown'
 import LatestEvents from '@/components/events/latest-events'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
