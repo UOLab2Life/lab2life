@@ -144,7 +144,7 @@ export function LatestArticles() {
 
           <div className="mt-12 flex justify-center">
             <Button
-              href="/docs"
+              href="/articles"
               variant="primary"
               className="!visible mx-auto !block w-full max-w-sm text-center lg:w-1/3"
             >

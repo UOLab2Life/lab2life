@@ -168,7 +168,7 @@ export default function ContactUs() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Your full name"
@@ -188,7 +188,7 @@ export default function ContactUs() {
                   onChange={handleInputChange}
                   onBlur={handleEmailBlur}
                   onInvalid={handleEmailInvalid}
-                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="your.email@example.com"
@@ -206,7 +206,7 @@ export default function ContactUs() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.subject ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="What's this about?"
@@ -224,7 +224,7 @@ export default function ContactUs() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
-                  className={`w-full resize-none overflow-hidden rounded-lg border bg-white px-4 py-3 text-[#003e3e] placeholder-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full resize-none overflow-hidden rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
                     errors.message ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Tell us more about your inquiry..."

@@ -54,7 +54,7 @@ function Sitemap() {
       <div>
         {/* Column 2 */}
         <SitemapLinks>
-          <SitemapLink href="/docs">Articles</SitemapLink>
+          <SitemapLink href="/articles">Articles</SitemapLink>
           <SitemapLink href="/podcasts">Podcasts</SitemapLink>
         </SitemapLinks>
       </div>

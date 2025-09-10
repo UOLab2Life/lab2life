@@ -18,7 +18,7 @@ export function Bounce() {
           </div>
 
           <div className="flex-1 text-center lg:text-left lg:ml-16">
-            <Heading as="h3" className="mb-4 text-3xl font-bold text-[#6bc5f7]">
+            <Heading as="h3" className="mb-4 text-3xl font-bold text-[#003e3e]">
               Stay connected with us through Bounce
             </Heading>
             <p className="text-lg text-gray-600 max-w-2xl mb-8">
@@ -30,7 +30,8 @@ export function Bounce() {
                 href="https://www.bouncelife.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="!bg-[#68b4f8] hover:!bg-white text-white hover:text-[#68b4f8] px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl"
+                variant="primary"
+                className="!visible !block w-full max-w-sm text-center lg:w-1/3"
               >
                 Follow Us on Bounce
               </Button>
