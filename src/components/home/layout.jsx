@@ -1,7 +1,7 @@
 'use client'
 
-import { AnimatedNumber } from '@/components/about-us/animated-number'
-import { MembersCarousel } from '@/components/about-us/members-carousel'
+import { AnimatedNumber } from '@/components/home/animated-number'
+import { MembersCarousel } from '@/components/home/members-carousel'
 import { Container } from '@/components/home/container'
 import { Heading, Lead, Subheading } from '@/components/home/text'
 

@@ -28,8 +28,9 @@ export default function Events() {
             <Heading as="h2" className="mx-auto max-w-3xl">
               Events
             </Heading>
-            <p className="mb-6 mt-6 text-lg text-gray-600">
-              Join uOttawa Lab2Life and for some amazing healthcare-related events!
+            <p className="mb-6 mt-6 text-xl font-inter text-gray-600">
+              Join uOttawa Lab2Life and for some amazing healthcare-related events! <br /> Click an
+              event to view detailed information!
             </p>
             <Calendar />
             <LatestEvents />
