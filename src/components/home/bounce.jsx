@@ -17,14 +17,15 @@ export function Bounce() {
             </div>
           </div>
 
-          <div className="flex-1 text-center lg:ml-16 lg:text-left">
-            <Heading as="h3" className="mb-4 text-3xl font-bold text-[#003e3e]">
-              Stay connected with us through Bounce
+          <div className="text-center lg:ml-12 lg:text-left">
+            <Heading as="h3" className="mb-4 font-bold text-[#003e3e]">
+              Register our events through Bounce
             </Heading>
             <p className="mb-8 max-w-2xl text-lg text-gray-600">
-              Discover exciting opportunities and connect with like-minded individuals through our
-              comprehensive platform designed for students and professionals in healthcare and
-              medicine.
+              New with the 2025-2026 academic year, the University of Ottawa has partnered up with
+              Bounce to provide you with an easy yet accessible way to register for our events.
+              You'll also be able to submit photos of our events through Bounce to share the fun
+              times you had with everyone!
             </p>
 
             <div className="flex justify-center lg:justify-start">

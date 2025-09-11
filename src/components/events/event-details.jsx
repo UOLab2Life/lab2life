@@ -9,7 +9,7 @@ export default function EventDetails({ event }) {
     <div className="space-y-4">
       <h3 className="text-xl font-semibold text-[#015555]">{title}</h3>
 
-      <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+      <div className="space-y-1 text-sm text-gray-700">
         {date && (
           <div>
             <span className="font-medium">Date:</span> {date}
@@ -40,7 +40,7 @@ export default function EventDetails({ event }) {
           href={registration}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-lg bg-[#b184e9] px-4 py-2 text-sm font-medium text-white hover:bg-[#d3b4f8] dark:bg-white dark:text-black dark:hover:bg-white/90"
+          className="inline-flex items-center rounded-lg bg-[#b184e9] px-4 py-2 text-sm font-medium text-white hover:bg-[#d3b4f8]"
         >
           Register
         </a>

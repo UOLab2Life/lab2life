@@ -64,7 +64,7 @@ export default function Calendar() {
 
   return (
     <>
-      <div className="lab2life-calendar">
+      <div className="mt-16 mb-16 lab2life-calendar [&_.fc-button]:px-2 [&_.fc-button]:py-1 [&_.fc-button]:text-[0.85rem] [&_.fc-toolbar-title]:whitespace-nowrap [&_.fc-toolbar-title]:text-[clamp(0.9rem,2.2vw,1.25rem)] [&_.fc-toolbar-title]:leading-[1.1]">
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin]}
           initialView="dayGridMonth"
@@ -80,6 +80,11 @@ export default function Calendar() {
           validRange={(nowDate) => {
             const start = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1)
             return { start }
+          }}
+          views={{
+            dayGridMonth: {
+              displayEventTime: false, 
+            },
           }}
         />
       </div>

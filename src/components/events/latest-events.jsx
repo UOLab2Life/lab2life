@@ -71,12 +71,18 @@ export default function LatestEvents() {
     load()
   }, [])
 
+  const getSortKey = (evt) => new Date(evt.start ?? evt.extendedProps?.date).getTime()
+
   const list = useMemo(() => {
-    return [...events].sort((a, b) => {
-      const da = new Date(a.start ?? a.extendedProps?.date)
-      const db = new Date(b.start ?? b.extendedProps?.date)
-      return da.getTime() - db.getTime()
-    })
+    const now = new Date()
+    const upcoming = []
+    const past = []
+    for (const evt of events) {
+      ;(isPastEvent(evt, now) ? past : upcoming).push(evt)
+    }
+    upcoming.sort((a, b) => getSortKey(a) - getSortKey(b))
+    past.sort((a, b) => getSortKey(a) - getSortKey(b))
+    return [...upcoming, ...past]
   }, [events])
 
   const openFromCard = (evt) => {
@@ -109,16 +115,18 @@ export default function LatestEvents() {
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
               {list.map((evt) => {
                 const past = isPastEvent(evt)
+                const cardBase =
+                  'relative flex flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-black/5 transition'
+                const cardStyle = past
+                  ? 'opacity-85 shadow-md grayscale-[30%] filter hover:shadow-md cursor-default'
+                  : 'shadow-lg shadow-[#003e3e]/60 hover:shadow-xl cursor-pointer'
+
                 return (
                   <article
                     key={evt.id}
-                    className={[
-                      'relative flex cursor-pointer flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-black/5 transition',
-                      past
-                        ? 'opacity-85 shadow-md grayscale-[30%] filter hover:shadow-md'
-                        : 'shadow-lg shadow-[#003e3e]/60 hover:shadow-xl',
-                    ].join(' ')}
-                    onClick={() => openFromCard(evt)}
+                    className={[cardBase, cardStyle].join(' ')}
+                    onClick={!past ? () => openFromCard(evt) : undefined}
+                    aria-disabled={past ? true : undefined}
                   >
                     <div className="flex flex-1 flex-col p-8">
                       <div className="flex items-center gap-2 text-sm text-gray-700">
@@ -143,28 +151,24 @@ export default function LatestEvents() {
                           past ? 'text-gray-700' : 'text-[#003e3e]',
                         ].join(' ')}
                       >
-                        <button
-                          type="button"
-                          className={[
-                            'text-left transition-colors',
-                            past ? 'hover:text-gray-700' : 'hover:text-[#003e3e]/80',
-                          ].join(' ')}
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            openFromCard(evt)
-                          }}
-                        >
-                          {evt.title}
-                        </button>
+                        {past ? (
+                          <span className="text-left">{evt.title}</span>
+                        ) : (
+                          <button
+                            type="button"
+                            className="text-left transition-colors hover:text-[#003e3e]/80"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              openFromCard(evt)
+                            }}
+                          >
+                            {evt.title}
+                          </button>
+                        )}
                       </h3>
 
                       {evt.extendedProps?.description && (
-                        <p
-                          className={[
-                            'mt-2 line-clamp-3 flex-1 text-sm',
-                            past ? 'text-gray-500' : 'text-gray-500',
-                          ].join(' ')}
-                        >
+                        <p className="mt-2 line-clamp-3 flex-1 text-sm text-gray-500">
                           {evt.extendedProps.description}
                         </p>
                       )}

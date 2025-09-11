@@ -1,4 +1,4 @@
-import AboutLayout from '@/components/about-us/layout'
+import AboutLayout from '@/components/home/layout'
 import { Bounce } from '@/components/home/bounce'
 import { Countdown } from '@/components/home/countdown'
 import { Footer } from '@/components/home/footer'
