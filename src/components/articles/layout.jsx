@@ -82,7 +82,7 @@ function Header() {
                     aria-current={isActive ? 'page' : undefined}
                     className={clsx(
                       'inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold transition-colors',
-                      'focus:outline-none focus-visible:ring data-hover:bg-black/5 dark:data-hover:bg-white/10',
+                      'data-hover:bg-black/5 dark:data-hover:bg-white/10 focus:outline-none focus-visible:ring',
                       isActive
                         ? 'text-slate-900 dark:text-white'
                         : 'text-slate-700 dark:text-white/80',
@@ -123,7 +123,7 @@ function ScrollToTopButton() {
       aria-label="Go to top"
       onClick={scrollToTop}
       className={clsx(
-        'fixed right-30 bottom-124 z-50 h-12 w-12 rounded-full',
+        'right-30 bottom-124 fixed z-50 h-12 w-12 rounded-full',
         'bg-white text-slate-700 shadow-md ring-1 ring-black/10 hover:shadow-lg',
         'transition-all duration-200 focus:outline-none focus-visible:ring',
         'dark:bg-teal-900/80 dark:text-white dark:ring-white/10',
@@ -146,12 +146,12 @@ export function Layout({ children }) {
     <div className="flex w-full flex-col">
       <Header />
       {isIntroPage && <Hero />}
-      <div className="w/full relative mx-auto flex max-w-8xl flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="w/full max-w-8xl relative mx-auto flex flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-white dark:hidden" />
-          <div className="absolute top-16 right-0 bottom-0 hidden h-12 w-px bg-linear-to-t from-slate-800 dark:block" />
-          <div className="absolute top-28 right-0 bottom-0 hidden w-px bg-slate-800 dark:block" />
-          <div className="sticky top-19 -ml-0.5 h-[calc(100vh-4.75rem)] w-64 overflow-x-hidden overflow-y-auto py-16 pr-8 pl-0.5 xl:w-72 xl:pr-16">
+          <div className="bg-linear-to-t absolute bottom-0 right-0 top-16 hidden h-12 w-px from-slate-800 dark:block" />
+          <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-slate-800 dark:block" />
+          <div className="top-19 sticky -ml-0.5 h-[calc(100vh-4.75rem)] w-64 overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-8 xl:w-72 xl:pr-16">
             <Navigation />
           </div>
         </div>

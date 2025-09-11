@@ -7,7 +7,7 @@ export default function EventDetails({ event }) {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-xl text-[#015555] font-semibold">{title}</h3>
+      <h3 className="text-xl font-semibold text-[#015555]">{title}</h3>
 
       <div className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
         {date && (

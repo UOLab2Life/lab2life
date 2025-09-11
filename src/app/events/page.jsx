@@ -1,21 +1,22 @@
 import Calendar from '@/components/events/calendar'
+import LatestEvents from '@/components/events/latest-events'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
-import LatestEvents from '@/components/events/latest-events'
 
 export const metadata = {
   title: 'Events - uOttawa Lab2Life',
-  description: 'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
+  description:
+    'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
 }
 
 export default function Events() {
   return (
     <main className="overflow-hidden">
       <div className="relative">
-        <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
+        <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
         <Container className="relative pb-12">
           <Navbar />
         </Container>
@@ -27,7 +28,7 @@ export default function Events() {
             <Heading as="h2" className="mx-auto max-w-3xl">
               Events
             </Heading>
-            <p className="mt-6 mb-6 text-lg text-gray-600">
+            <p className="mb-6 mt-6 text-lg text-gray-600">
               Join uOttawa Lab2Life and for some amazing healthcare-related events!
             </p>
             <Calendar />

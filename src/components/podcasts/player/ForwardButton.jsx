@@ -22,7 +22,7 @@ export function ForwardButton({ player, amount = 10 }) {
   return (
     <button
       type="button"
-      className="group relative rounded-full focus:outline-hidden"
+      className="focus:outline-hidden group relative rounded-full"
       onClick={() => player.seekBy(amount)}
       aria-label={`Fast-forward ${amount} seconds`}
     >

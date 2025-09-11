@@ -139,7 +139,7 @@ export default function ContactUs() {
   return (
     <main className="overflow-hidden">
       <div className="relative">
-        <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
+        <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
         <Container className="relative pb-12">
           <Navbar />
         </Container>
@@ -152,9 +152,7 @@ export default function ContactUs() {
               <Heading as="h2" className="mx-auto max-w-3xl">
                 Contact Us
               </Heading>
-              <p className="mt-6 text-2xl text-gray-600">
-                Get in touch with our team below!
-              </p>
+              <p className="mt-6 text-2xl text-gray-600">Get in touch with our team below!</p>
             </div>
 
             <form onSubmit={handleSubmit} method="post" className="space-y-6">
@@ -168,7 +166,7 @@ export default function ContactUs() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Your full name"
@@ -188,7 +186,7 @@ export default function ContactUs() {
                   onChange={handleInputChange}
                   onBlur={handleEmailBlur}
                   onInvalid={handleEmailInvalid}
-                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="your.email@example.com"
@@ -206,7 +204,7 @@ export default function ContactUs() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.subject ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="What's this about?"
@@ -224,7 +222,7 @@ export default function ContactUs() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
-                  className={`w-full resize-none overflow-hidden rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:ring-2 focus:ring-[#003e3e] focus:outline-none ${
+                  className={`w-full resize-none overflow-hidden rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.message ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Tell us more about your inquiry..."

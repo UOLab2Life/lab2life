@@ -14,7 +14,7 @@ export default function GeneralMemberSignUp() {
   return (
     <main className="overflow-hidden">
       <div className="relative">
-        <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
+        <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
         <Container className="relative pb-12">
           <Navbar />
         </Container>

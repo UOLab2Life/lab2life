@@ -48,7 +48,7 @@ export const Modal = ({
     : 'relative w-full rounded-3xl bg-white dark:bg-gray-900'
 
   return (
-    <div className="modal fixed inset-0 z-99999 flex items-center justify-center overflow-y-auto">
+    <div className="modal z-99999 fixed inset-0 flex items-center justify-center overflow-y-auto">
       {!isFullscreen && (
         <div
           className="fixed inset-0 h-full w-full bg-gray-400/60 backdrop-blur-[32px]"
@@ -60,7 +60,7 @@ export const Modal = ({
         className={`${contentClasses} ${className || ''}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
+        <div className="absolute left-3 top-3 sm:left-6 sm:top-6">
           <Image
             src="/lab2life-no-bg.png"
             alt="Logo"
@@ -74,7 +74,7 @@ export const Modal = ({
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute top-3 right-3 z-999 flex h-9.5 w-9.5 items-center justify-center rounded-full bg-gray-100 text-gray-400 transition-colors hover:bg-gray-200 hover:text-gray-700 sm:top-6 sm:right-6 sm:h-11 sm:w-11 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="z-999 h-9.5 w-9.5 absolute right-3 top-3 flex items-center justify-center rounded-full bg-gray-100 text-gray-400 transition-colors hover:bg-gray-200 hover:text-gray-700 sm:right-6 sm:top-6 sm:h-11 sm:w-11 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <svg
               width="24"

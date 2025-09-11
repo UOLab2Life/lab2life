@@ -17,14 +17,16 @@ export function Bounce() {
             </div>
           </div>
 
-          <div className="flex-1 text-center lg:text-left lg:ml-16">
+          <div className="flex-1 text-center lg:ml-16 lg:text-left">
             <Heading as="h3" className="mb-4 text-3xl font-bold text-[#003e3e]">
               Stay connected with us through Bounce
             </Heading>
-            <p className="text-lg text-gray-600 max-w-2xl mb-8">
-              Discover exciting opportunities and connect with like-minded individuals through our comprehensive platform designed for students and professionals in healthcare and medicine.
+            <p className="mb-8 max-w-2xl text-lg text-gray-600">
+              Discover exciting opportunities and connect with like-minded individuals through our
+              comprehensive platform designed for students and professionals in healthcare and
+              medicine.
             </p>
-            
+
             <div className="flex justify-center lg:justify-start">
               <Button
                 href="https://www.bouncelife.com"

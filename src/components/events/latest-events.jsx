@@ -14,7 +14,7 @@ function mapRowToEvent(row) {
     id: row.event_id,
     title: row.event_name ?? 'Untitled',
     start,
-    end,  
+    end,
     allDay: !row.event_time && !row.event_end_time,
     extendedProps: {
       type: row.event_type,
@@ -103,7 +103,7 @@ export default function LatestEvents() {
 
   return (
     <>
-      <section className="mt-12 mb-12">
+      <section className="mb-12 mt-12">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-7xl">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">

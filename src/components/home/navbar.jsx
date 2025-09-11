@@ -8,7 +8,6 @@ import { Logo } from './logo'
 import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
-  { href: '/about-us', label: 'About Us' },
   { href: '/articles', label: 'Articles' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/events', label: 'Events' },
@@ -22,7 +21,7 @@ function DesktopNav() {
         <PlusGridItem key={href} className="relative flex">
           <Link
             href={href}
-            className="flex items-center px-4 py-3 text-base font-semibold text-white bg-blend-multiply data-hover:bg-white/10"
+            className="data-hover:bg-white/10 flex items-center px-4 py-3 text-base font-semibold text-white bg-blend-multiply"
           >
             {label}
           </Link>
@@ -35,7 +34,7 @@ function DesktopNav() {
 function MobileNavButton() {
   return (
     <DisclosureButton
-      className="flex size-12 items-center justify-center self-center rounded-lg data-hover:bg-white/10 lg:hidden"
+      className="data-hover:bg-white/10 flex size-12 items-center justify-center self-center rounded-lg lg:hidden"
       aria-label="Open main menu"
     >
       {({ open }) => (
@@ -85,12 +84,11 @@ function MobileNav() {
 }
 
 export function Navbar({ showBanner = true, shortText = false }) {
-  // paste Bounce Link Here
   const defaultBanner = (
     <Link
       href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
       target="_blank"
-      className="flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white data-hover:bg-[#99c96f]/30 sm:px-3 sm:text-sm/6"
+      className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (
         <>

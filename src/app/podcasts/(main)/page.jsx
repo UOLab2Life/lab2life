@@ -1,13 +1,13 @@
+import posterImage from '@/assets/podcasts/images/poster.png'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
-import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
 import { PodcastSidebar } from '@/components/podcasts/PodcastSidebar'
+import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
 import { getAllEpisodes } from '@/lib/podcasts/episodes'
-import posterImage from '@/assets/podcasts/images/poster.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -68,7 +68,7 @@ function EpisodeEntry({ episode }) {
           <div className="w-full pb-4 sm:pb-0">
             <h2
               id={`episode-${episode.id}-title`}
-              className="mt-2 mb-4 text-3xl font-bold text-[#2e4954]"
+              className="mb-4 mt-2 text-3xl font-bold text-[#2e4954]"
             >
               <Link href={`/podcasts/${episode.id}`}>
                 Episode {episode.id}: {episode.title}
@@ -134,14 +134,14 @@ export default async function Home() {
   return (
     <>
       <div className="relative hidden lg:block">
-        <Gradient className="absolute inset-1 bottom-0 rounded-2xl ring-1 ring-black/5 ring-inset sm:inset-2 sm:rounded-4xl" />
+        <Gradient className="sm:rounded-4xl absolute inset-1 bottom-0 rounded-2xl ring-1 ring-inset ring-black/5 sm:inset-2" />
         <Container className="relative pb-8 sm:pb-12">
           <Navbar />
         </Container>
       </div>
 
-      <div className="lg:hidden bg-[#003e3e] mb-2">
-        <div className="px-4 pt-2 pb-4 sm:px-6 md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-12 xl:px-8">
+      <div className="mb-2 bg-[#003e3e] lg:hidden">
+        <div className="px-4 pb-4 pt-2 sm:px-6 md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-12 xl:px-8">
           <div className="mb-4 sm:mb-6">
             <Navbar />
           </div>
@@ -159,12 +159,10 @@ export default async function Home() {
               sizes="(min-width: 1024px) 20rem, (min-width: 768px) 16rem, (min-width: 640px) 14rem, 12rem"
               priority
             />
-            <div className="absolute inset-0 rounded-lg ring-1 ring-black/10 ring-inset sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />
+            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />
           </Link>
           <div className="mt-6 text-center sm:mt-8 md:mt-10 lg:mt-12 lg:text-left">
-            <h2 className="text-2xl font-bold text-[#99c96f] sm:text-3xl">
-              The Career Catalyst
-            </h2>
+            <h2 className="text-2xl font-bold text-[#99c96f] sm:text-3xl">The Career Catalyst</h2>
             <p className="mt-3 text-sm/6 text-white sm:text-base/7">
               Through insightful conversations with professionals from various fields, we uncover
               career journeys, industry advancements, valuable advice for students and aspiring
@@ -180,14 +178,22 @@ export default async function Home() {
               />
               <span className="ml-2.5">Listen on</span>
             </h2>
-            <div className="h-px bg-linear-to-r from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
+            <div className="bg-linear-to-r h-px from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
             <ul
               role="list"
               className="mt-4 flex justify-center gap-10 text-base/7 font-medium text-[#ffffff]/80 sm:gap-8 lg:flex-col lg:gap-4"
             >
               {[
-                ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
-                ['Apple Podcasts', ApplePodcastIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
+                [
+                  'Spotify',
+                  SpotifyIcon,
+                  'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                ],
+                [
+                  'Apple Podcasts',
+                  ApplePodcastIcon,
+                  'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                ],
               ].map(([label, Icon, href]) => (
                 <li key={label} className="flex">
                   <Link

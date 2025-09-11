@@ -21,28 +21,24 @@ function Sitemap() {
   return (
     <>
       <div>
-        {/* Column 1 */}
         <SitemapLinks>
           <SitemapLink href="/">Home</SitemapLink>
           <SitemapLink href="/about-us">About Us</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        {/* Column 2 */}
         <SitemapLinks>
           <SitemapLink href="/docs">Articles</SitemapLink>
           <SitemapLink href="/podcasts">Podcasts</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        {/* Column 3 */}
         <SitemapLinks>
           <SitemapLink href="/events">Events</SitemapLink>
           <SitemapLink href="/general-member-sign-up">General Sign-Up</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        {/* Column 4 */}
         <SitemapLinks>
           <SitemapLink href="/contact-us">Contact Us</SitemapLink>
           <SitemapLink href="/">Privacy Policy</SitemapLink>
@@ -140,8 +136,7 @@ export function Footer() {
   return (
     <footer>
       <Container>
-        {/* <CallToAction /> */}
-        <PlusGrid className="pt-16 pb-16">
+        <PlusGrid className="pb-16 pt-16">
           <PlusGridRow>
             <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
               <div className="col-span-2 flex">

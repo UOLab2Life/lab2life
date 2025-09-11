@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { cache } from 'react'
 
+import posterImage from '@/assets/podcasts/images/poster.png'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
@@ -9,10 +10,9 @@ import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
 import { PauseIcon } from '@/components/podcasts/PauseIcon'
 import { PlayIcon } from '@/components/podcasts/PlayIcon'
-import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
 import { PodcastSidebar } from '@/components/podcasts/PodcastSidebar'
+import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
 import { getAllEpisodes } from '@/lib/podcasts/episodes'
-import posterImage from '@/assets/podcasts/images/poster.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -86,14 +86,14 @@ export default async function Episode({ params }) {
   return (
     <>
       <div className="relative hidden lg:block">
-        <Gradient className="absolute inset-1 bottom-0 rounded-2xl ring-1 ring-black/5 ring-inset sm:inset-2 sm:rounded-4xl" />
+        <Gradient className="sm:rounded-4xl absolute inset-1 bottom-0 rounded-2xl ring-1 ring-inset ring-black/5 sm:inset-2" />
         <Container className="relative pb-8 sm:pb-12">
           <Navbar />
         </Container>
       </div>
 
-      <div className="lg:hidden bg-[#003e3e] mb-2">
-        <div className="px-4 pt-2 pb-4 sm:px-6 md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-12 xl:px-8">
+      <div className="mb-2 bg-[#003e3e] lg:hidden">
+        <div className="px-4 pb-4 pt-2 sm:px-6 md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-12 xl:px-8">
           <div className="mb-4 sm:mb-6">
             <Navbar />
           </div>
@@ -111,7 +111,7 @@ export default async function Episode({ params }) {
               sizes="(min-width: 1024px) 20rem, (min-width: 768px) 14rem, (min-width: 640px) 12rem, 10rem"
               priority
             />
-            <div className="absolute inset-0 rounded-lg ring-1 ring-black/10 ring-inset sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />
+            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />
           </Link>
           <div className="mt-6 text-center sm:mt-8 md:mt-10 lg:mt-12 lg:text-left">
             <h2 className="text-xl font-bold text-[#99c96f] sm:text-2xl md:text-3xl">
@@ -132,14 +132,22 @@ export default async function Episode({ params }) {
               />
               <span className="ml-2.5">Listen on</span>
             </h2>
-            <div className="h-px bg-linear-to-r from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
+            <div className="bg-linear-to-r h-px from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
             <ul
               role="list"
               className="mt-4 flex justify-center gap-10 text-base/7 font-medium text-[#ffffff]/80 sm:gap-8 lg:flex-col lg:gap-4"
             >
               {[
-                ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
-                ['Apple Podcasts', ApplePodcastIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
+                [
+                  'Spotify',
+                  SpotifyIcon,
+                  'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                ],
+                [
+                  'Apple Podcasts',
+                  ApplePodcastIcon,
+                  'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                ],
               ].map(([label, Icon, href]) => (
                 <li key={label} className="flex">
                   <Link
@@ -150,7 +158,7 @@ export default async function Episode({ params }) {
                     rel="noopener noreferrer"
                   >
                     <Icon className="h-6 w-6 fill-[#ffffff]/60 group-hover:fill-[#b184e9]" />
-                    <span className="hidden sm:ml-3 sm:block text-sm">{label}</span>
+                    <span className="hidden text-sm sm:ml-3 sm:block">{label}</span>
                   </Link>
                 </li>
               ))}
@@ -164,65 +172,65 @@ export default async function Episode({ params }) {
 
         <div className="flex-1 pt-4 lg:pt-12">
           <article className="py-12 lg:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <header className="flex flex-col">
-            <div className="flex items-center gap-6">
-              <EpisodePlayButton
-                episode={episode}
-                className="group relative flex h-18 w-18 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-3 focus:ring-[#b184e9] focus:ring-offset-4 focus:outline-hidden"
-                playing={
-                  <PauseIcon className="h-9 w-9 fill-[#2e4954] group-active:fill-[#2e4954]/80" />
-                }
-                paused={
-                  <PlayIcon className="h-9 w-9 fill-[#2e4954] group-active:fill-[#2e4954]/80" />
-                }
-              />
-              <div className="flex flex-col">
-                <h1 className="mt-2 text-4xl font-bold text-[#2e4954]">
-                  Episode {episode.id}: {episode.title}
-                </h1>
-                <FormattedDate
-                  date={date}
-                  className="text-md/7 order-first font-mono font-bold text-[#003e3e]/60"
-                />
-              </div>
-            </div>
-            <p className="mt-3 ml-24 text-lg/8 font-medium text-[#2e4954]/80">
-              {episode.description}
-            </p>
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              <header className="flex flex-col">
+                <div className="flex items-center gap-6">
+                  <EpisodePlayButton
+                    episode={episode}
+                    className="h-18 w-18 focus:ring-3 focus:outline-hidden group relative flex shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-[#b184e9] focus:ring-offset-4"
+                    playing={
+                      <PauseIcon className="h-9 w-9 fill-[#2e4954] group-active:fill-[#2e4954]/80" />
+                    }
+                    paused={
+                      <PlayIcon className="h-9 w-9 fill-[#2e4954] group-active:fill-[#2e4954]/80" />
+                    }
+                  />
+                  <div className="flex flex-col">
+                    <h1 className="mt-2 text-4xl font-bold text-[#2e4954]">
+                      Episode {episode.id}: {episode.title}
+                    </h1>
+                    <FormattedDate
+                      date={date}
+                      className="text-md/7 order-first font-mono font-bold text-[#003e3e]/60"
+                    />
+                  </div>
+                </div>
+                <p className="ml-24 mt-3 text-lg/8 font-medium text-[#2e4954]/80">
+                  {episode.description}
+                </p>
 
-            {categories.length > 0 && (
-              <div className="mt-4 ml-24 flex flex-wrap gap-2">
-                {categories.map((category, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center rounded-full bg-[#003e3e] px-3 py-1 text-sm font-medium text-white"
+                {categories.length > 0 && (
+                  <div className="ml-24 mt-4 flex flex-wrap gap-2">
+                    {categories.map((category, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center rounded-full bg-[#003e3e] px-3 py-1 text-sm font-medium text-white"
+                      >
+                        {category}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </header>
+
+              {episode.youtube_url && embedUrl && (
+                <div className="mt-12">
+                  <div
+                    className="relative mx-auto w-full max-w-5xl"
+                    style={{ paddingBottom: '56.25%' }}
                   >
-                    {category}
-                  </span>
-                ))}
-              </div>
-            )}
-          </header>
-
-          {episode.youtube_url && embedUrl && (
-            <div className="mt-12">
-              <div
-                className="relative mx-auto w-full max-w-5xl"
-                style={{ paddingBottom: '56.25%' }}
-              >
-                <iframe
-                  src={embedUrl}
-                  className="absolute top-0 left-0 h-full w-full rounded-lg"
-                  title={`Episode ${episode.id} - ${episode.title}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  frameBorder="0"
-                />
-              </div>
+                    <iframe
+                      src={embedUrl}
+                      className="absolute left-0 top-0 h-full w-full rounded-lg"
+                      title={`Episode ${episode.id} - ${episode.title}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      frameBorder="0"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
           </article>
         </div>
       </div>

@@ -70,9 +70,9 @@
     --fc-button-disabled-border-color: #ffffff;
     --fc-button-disabled-text-color: theme('colors.white');
 
-    --fc-event-bg-color: #015555; 
-    --fc-event-border-color: #ecdcff; 
-    --fc-event-text-color: #ffffff; 
+    --fc-event-bg-color: #015555;
+    --fc-event-border-color: #ecdcff;
+    --fc-event-text-color: #ffffff;
   }
   .lab2life-calendar .fc .fc-toolbar-title {
     @apply font-semibold;

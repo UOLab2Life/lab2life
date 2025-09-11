@@ -22,27 +22,27 @@ export function BentoCard({
       className={clsx(
         className,
         'group relative flex flex-col overflow-hidden rounded-lg',
-        'bg-white shadow-xs ring-1 ring-black/5',
+        'shadow-xs bg-white ring-1 ring-black/5',
         'data-dark:bg-gray-800 data-dark:ring-white/15',
       )}
     >
       <div className="relative h-80 shrink-0">
         {graphic}
         {fade.includes('top') && (
-          <div className="absolute inset-0 bg-linear-to-b from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
+          <div className="bg-linear-to-b group-data-dark:from-gray-800 group-data-dark:from-[-25%] absolute inset-0 from-white to-50%" />
         )}
         {fade.includes('bottom') && (
-          <div className="absolute inset-0 bg-linear-to-t from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
+          <div className="bg-linear-to-t group-data-dark:from-gray-800 group-data-dark:from-[-25%] absolute inset-0 from-white to-50%" />
         )}
       </div>
       <div className="relative p-10">
         <Subheading as="h3" dark={dark}>
           {eyebrow}
         </Subheading>
-        <p className="font-inter-semibold mt-1 text-2xl/8 tracking-tight text-gray-950 group-data-dark:text-white">
+        <p className="font-inter-semibold group-data-dark:text-white mt-1 text-2xl/8 tracking-tight text-gray-950">
           {title}
         </p>
-        <p className="font-inter-semibold mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+        <p className="font-inter-semibold group-data-dark:text-gray-400 mt-2 max-w-[600px] text-sm/6 text-gray-600">
           {description}
         </p>
       </div>

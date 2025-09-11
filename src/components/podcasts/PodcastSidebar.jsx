@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { TinyWaveFormIcon } from './TinyWaveFormIcon'
 import posterImage from '@/assets/podcasts/images/poster.png'
+import Image from 'next/image'
+import Link from 'next/link'
+import { TinyWaveFormIcon } from './TinyWaveFormIcon'
 
 function SpotifyIcon(props) {
   return (
@@ -25,17 +25,20 @@ function ApplePodcastIcon(props) {
 
 export function PodcastSidebar() {
   return (
-    <div className="hidden lg:block lg:w-112 xl:w-120 flex-shrink-0">
-      <div className="sticky top-0 h-screen overflow-y-auto" style={{ position: 'sticky', top: '0' }}>
-        <div className="relative z-10 mx-auto px-4 pt-4 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:h-screen lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-8 xl:px-8 bg-[#003e3e] rounded-2xl ring-1 ring-black/5 ring-inset sm:rounded-4xl ml-2 mr-2 flex">
-          <div className="flex w-12 flex-none items-center px-2 text-sm/7 whitespace-nowrap [writing-mode:vertical-rl]">
+    <div className="lg:w-112 xl:w-120 hidden flex-shrink-0 lg:block">
+      <div
+        className="sticky top-0 h-screen overflow-y-auto"
+        style={{ position: 'sticky', top: '0' }}
+      >
+        <div className="sm:rounded-4xl relative z-10 mx-auto ml-2 mr-2 flex rounded-2xl bg-[#003e3e] px-4 pb-4 pt-4 ring-1 ring-inset ring-black/5 sm:px-6 md:max-w-2xl md:px-4 lg:h-screen lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-8 xl:px-8">
+          <div className="flex w-12 flex-none items-center whitespace-nowrap px-2 text-sm/7 [writing-mode:vertical-rl]">
             <span className="font-mono text-[#99c96f]/70">Hosted by</span>
             <span className="mt-4 flex gap-4 font-bold text-[#99c96f]">uOttawa Lab2Life</span>
           </div>
-          <div className="flex-1 p-8 pt-4 flex flex-col">
+          <div className="flex flex-1 flex-col p-8 pt-4">
             <Link
               href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
-              className="relative mx-auto block w-72 overflow-hidden rounded-lg bg-slate-200 rounded-2xl"
+              className="relative mx-auto block w-72 overflow-hidden rounded-2xl bg-slate-200"
               style={{ width: 'clamp(12rem, 18vh, 18rem)', height: 'clamp(12rem, 18vh, 18rem)' }}
               aria-label="Homepage"
               target="_blank"
@@ -48,17 +51,15 @@ export function PodcastSidebar() {
                 sizes="(min-width: 1024px) 13rem, (min-width: 640px) 14rem, 12rem"
                 priority
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-black/10 ring-inset" />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10" />
             </Link>
             <div className="mt-6 text-center lg:text-left">
-              <h2 className="text-2xl font-bold text-[#99c96f]">
-                The Career Catalyst
-              </h2>
+              <h2 className="text-2xl font-bold text-[#99c96f]">The Career Catalyst</h2>
               <p className="mt-3 text-lg/8 text-white">
                 Through insightful conversations with professionals from various fields, we uncover
                 career journeys, industry advancements, valuable advice for students and aspiring
-                professionals. Tune in to discover professions and different pathways in research and
-                science that shape our world!
+                professionals. Tune in to discover professions and different pathways in research
+                and science that shape our world!
               </p>
             </div>
             <section className="mt-8">
@@ -69,14 +70,22 @@ export function PodcastSidebar() {
                 />
                 <span className="ml-2.5">Listen on</span>
               </h2>
-              <div className="h-px bg-linear-to-r from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
+              <div className="bg-linear-to-r h-px from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
               <ul
                 role="list"
                 className="mt-4 flex justify-center gap-10 text-base/7 font-medium text-[#ffffff]/80 sm:gap-8 lg:flex-col lg:gap-3"
               >
                 {[
-                  ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
-                  ['Apple Podcasts (coming soon)', ApplePodcastIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
+                  [
+                    'Spotify',
+                    SpotifyIcon,
+                    'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                  ],
+                  [
+                    'Apple Podcasts (coming soon)',
+                    ApplePodcastIcon,
+                    'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                  ],
                 ].map(([label, Icon, href]) => (
                   <li key={label} className="flex">
                     <Link
@@ -87,7 +96,7 @@ export function PodcastSidebar() {
                       rel="noopener noreferrer"
                     >
                       <Icon className="h-6 w-6 fill-[#ffffff]/60 group-hover:fill-[#b184e9]" />
-                      <span className="hidden sm:ml-3 sm:block text-sm">{label}</span>
+                      <span className="hidden text-sm sm:ml-3 sm:block">{label}</span>
                     </Link>
                   </li>
                 ))}

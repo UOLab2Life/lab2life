@@ -7,7 +7,7 @@ export function PlayButton({ player }) {
   return (
     <button
       type="button"
-      className="group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2 focus:outline-hidden md:h-14 md:w-14"
+      className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2 md:h-14 md:w-14"
       onClick={() => player.toggle()}
       aria-label={player.playing ? 'Pause' : 'Play'}
     >

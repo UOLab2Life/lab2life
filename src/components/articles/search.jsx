@@ -140,7 +140,7 @@ function SearchResult({ result, autocomplete, collection, query }) {
         <div
           id={`${id}-hierarchy`}
           aria-hidden="true"
-          className="mt-0.5 truncate text-xs whitespace-nowrap text-slate-500 dark:text-slate-400"
+          className="mt-0.5 truncate whitespace-nowrap text-xs text-slate-500 dark:text-slate-400"
         >
           {hierarchy.map((item, itemIndex, items) => (
             <Fragment key={itemIndex}>
@@ -196,12 +196,12 @@ const SearchInput = forwardRef(function SearchInput(
 
   return (
     <div className="group relative flex h-12">
-      <SearchIcon className="pointer-events-none absolute top-0 left-4 h-full w-5 fill-slate-400 dark:fill-slate-500" />
+      <SearchIcon className="pointer-events-none absolute left-4 top-0 h-full w-5 fill-slate-400 dark:fill-slate-500" />
       <input
         ref={inputRef}
         data-autofocus
         className={clsx(
-          'flex-auto appearance-none bg-transparent pl-12 text-slate-900 outline-hidden placeholder:text-slate-400 focus:w-full focus:flex-none sm:text-sm dark:text-white [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden [&::-webkit-search-results-button]:hidden [&::-webkit-search-results-decoration]:hidden',
+          'outline-hidden flex-auto appearance-none bg-transparent pl-12 text-slate-900 placeholder:text-slate-400 focus:w-full focus:flex-none sm:text-sm dark:text-white [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden [&::-webkit-search-results-button]:hidden [&::-webkit-search-results-decoration]:hidden',
           autocompleteState.status === 'stalled' ? 'pr-11' : 'pr-4',
         )}
         {...inputProps}
@@ -365,7 +365,7 @@ export function Search() {
     <>
       <button
         type="button"
-        className="group flex h-12 w-12 items-center justify-center sm:justify-start md:h-auto md:w-96 md:flex-none md:rounded-lg md:py-2.5 md:pr-3.5 md:pl-4 md:text-sm md:ring-1 md:ring-slate-200 md:hover:ring-slate-300 lg:w-96 dark:md:bg-teal-900/100 dark:md:ring-white/5 dark:md:ring-inset dark:md:hover:bg-emerald-600/40 dark:md:hover:ring-slate-500"
+        className="group flex h-12 w-12 items-center justify-center sm:justify-start md:h-auto md:w-96 md:flex-none md:rounded-lg md:py-2.5 md:pl-4 md:pr-3.5 md:text-sm md:ring-1 md:ring-slate-200 md:hover:ring-slate-300 lg:w-96 dark:md:bg-teal-900/100 dark:md:ring-inset dark:md:ring-white/5 dark:md:hover:bg-emerald-600/40 dark:md:hover:ring-slate-500"
         {...buttonProps}
       >
         <SearchIcon className="h-5 w-5 flex-none fill-slate-400 group-hover:fill-slate-500 md:group-hover:fill-slate-400 dark:fill-slate-500" />
