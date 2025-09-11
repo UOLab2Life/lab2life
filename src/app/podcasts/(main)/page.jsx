@@ -147,7 +147,7 @@ export default async function Home() {
           </div>
           <Link
             href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
-            className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 sm:w-56 sm:rounded-xl md:w-64 md:rounded-2xl lg:w-auto lg:rounded-2xl"
+            className="relative mx-auto block w-64 overflow-hidden rounded-lg bg-slate-200 sm:w-72 sm:rounded-xl md:w-80 md:rounded-2xl lg:w-auto lg:rounded-2xl"
             aria-label="Homepage"
             target="_blank"
             rel="noopener noreferrer"
@@ -156,7 +156,7 @@ export default async function Home() {
               className="w-full"
               src={posterImage}
               alt=""
-              sizes="(min-width: 1024px) 20rem, (min-width: 768px) 16rem, (min-width: 640px) 14rem, 12rem"
+              sizes="(min-width: 1024px) 20rem, (min-width: 768px) 20rem, (min-width: 640px) 18rem, 16rem"
               priority
             />
             <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />

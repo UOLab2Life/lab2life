@@ -1,3 +1,5 @@
+'use client'
+
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/home/plus-grid'
 import { Container } from './container'
 import { Gradient } from './gradient'
@@ -12,7 +14,7 @@ function SitemapLink(props) {
     <li>
       <a
         {...props}
-        className="inline-block transform-gpu font-semibold text-[#003e3e] transition-transform duration-500 ease-out will-change-transform hover:scale-105 hover:text-[#003e3e]/75"
+        className="inline-block transform-gpu font-semibold text-[#003e3e] transition-transform duration-500 ease-out will-change-transform hover:scale-105 hover:text-[#003e3e]/75 cursor-pointer"
       />
     </li>
   )
@@ -24,7 +26,7 @@ function Sitemap() {
       <div>
         <SitemapLinks>
           <SitemapLink href="/">Home</SitemapLink>
-          <SitemapLink href="/about-us">About Us</SitemapLink>
+          <SitemapLink href="/general-member-sign-up">Member Sign-Up</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
@@ -36,14 +38,13 @@ function Sitemap() {
       <div>
         <SitemapLinks>
           <SitemapLink href="/events">Events</SitemapLink>
-          <SitemapLink href="/general-member-sign-up">General Sign-Up</SitemapLink>
+          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapLinks>
-          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
-          <SitemapLink href="/">Privacy Policy</SitemapLink>
-          <SitemapLink href="/">Terms of Service</SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Privacy Policy</SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Terms of Service</SitemapLink>
         </SitemapLinks>
       </div>
     </>

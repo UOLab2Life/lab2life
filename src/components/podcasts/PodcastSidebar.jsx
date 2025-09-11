@@ -38,8 +38,8 @@ export function PodcastSidebar() {
           <div className="flex flex-1 flex-col p-8 pt-4">
             <Link
               href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
-              className="relative mx-auto block w-72 overflow-hidden rounded-2xl bg-slate-200"
-              style={{ width: 'clamp(12rem, 18vh, 18rem)', height: 'clamp(12rem, 18vh, 18rem)' }}
+              className="relative mx-auto block w-96 overflow-hidden rounded-2xl bg-slate-200"
+              style={{ width: 'clamp(16rem, 24vh, 24rem)', height: 'clamp(16rem, 24vh, 24rem)' }}
               aria-label="Homepage"
               target="_blank"
               rel="noopener noreferrer"
@@ -48,7 +48,7 @@ export function PodcastSidebar() {
                 className="w-full"
                 src={posterImage}
                 alt=""
-                sizes="(min-width: 1024px) 13rem, (min-width: 640px) 14rem, 12rem"
+                sizes="(min-width: 1024px) 19rem, (min-width: 640px) 20rem, 18rem"
                 priority
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10" />

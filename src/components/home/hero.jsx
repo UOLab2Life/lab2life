@@ -23,13 +23,6 @@ export function Hero() {
           </p>
           <div className="mt-12 flex flex-row justify-center gap-3 sm:justify-start sm:gap-6">
             <Button
-              href="/about-us"
-              className="px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
-            >
-              About Us
-            </Button>
-            <Button
-              variant="secondary"
               href="/general-member-sign-up"
               className="px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
             >

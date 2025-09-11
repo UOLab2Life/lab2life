@@ -16,7 +16,7 @@ export default function AboutUsSection() {
 
 function Header() {
   return (
-    <Container className="mt-16">
+    <Container className="mt-16 pb-8">
       <Heading as="h1" className="text-[#003e3e]">
         Supporting students in their journey from classroom to career.
       </Heading>

@@ -347,7 +347,7 @@ export function MembersCarousel() {
   }, [])
 
   return (
-    <div className="overflow-hidden py-32">
+    <div className="overflow-hidden pt-16 pb-16">
       <Container>
         <div ref={setReferenceWindowRef} className="text-center">
           <Heading as="h3" className="mt-2 text-[#003e3e]">

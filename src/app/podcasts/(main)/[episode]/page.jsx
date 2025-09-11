@@ -97,22 +97,22 @@ export default async function Episode({ params }) {
           <div className="mb-4 sm:mb-6">
             <Navbar />
           </div>
-          <Link
-            href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
-            className="relative mx-auto block w-40 overflow-hidden rounded-lg bg-slate-200 sm:w-48 sm:rounded-xl md:w-56 md:rounded-2xl lg:w-auto lg:rounded-2xl"
-            aria-label="Homepage"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="w-full"
-              src={posterImage}
-              alt=""
-              sizes="(min-width: 1024px) 20rem, (min-width: 768px) 14rem, (min-width: 640px) 12rem, 10rem"
-              priority
-            />
-            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />
-          </Link>
+           <Link
+             href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
+             className="relative mx-auto block w-56 overflow-hidden rounded-lg bg-slate-200 sm:w-64 sm:rounded-xl md:w-72 md:rounded-2xl lg:w-auto lg:rounded-2xl"
+             aria-label="Homepage"
+             target="_blank"
+             rel="noopener noreferrer"
+           >
+             <Image
+               className="w-full"
+               src={posterImage}
+               alt=""
+               sizes="(min-width: 1024px) 20rem, (min-width: 768px) 18rem, (min-width: 640px) 16rem, 14rem"
+               priority
+             />
+             <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl md:rounded-2xl lg:rounded-2xl" />
+           </Link>
           <div className="mt-6 text-center sm:mt-8 md:mt-10 lg:mt-12 lg:text-left">
             <h2 className="text-xl font-bold text-[#99c96f] sm:text-2xl md:text-3xl">
               The Career Catalyst
