@@ -2,10 +2,10 @@ import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
-import { Heading, Lead } from '@/components/home/text'
 import { EpisodePlayButton } from '@/components/podcasts/EpisodePlayButton'
 import { FormattedDate } from '@/components/podcasts/FormattedDate'
 import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
+import { PodcastSidebar } from '@/components/podcasts/PodcastSidebar'
 import { getAllEpisodes } from '@/lib/podcasts/episodes'
 import posterImage from '@/assets/podcasts/images/poster.png'
 import Image from 'next/image'
@@ -208,78 +208,7 @@ export default async function Home() {
       </div>
 
       <div className="flex min-h-screen">
-        <div className="hidden lg:block lg:w-112 xl:w-120 flex-shrink-0">
-          <div className="sticky top-0 h-screen overflow-y-auto" style={{ position: 'sticky', top: '0' }}>
-            <div className="relative z-10 mx-auto px-4 pt-4 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:h-screen lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-8 xl:px-8 bg-[#003e3e] rounded-2xl ring-1 ring-black/5 ring-inset sm:rounded-4xl ml-2 mr-2 flex">
-              <div className="flex w-12 flex-none items-center px-2 text-sm/7 whitespace-nowrap [writing-mode:vertical-rl]">
-                <span className="font-mono text-[#99c96f]/70">Hosted by</span>
-                <span className="mt-4 flex gap-4 font-bold text-[#99c96f]">uOttawa Lab2Life</span>
-              </div>
-              <div className="flex-1 p-8 pt-4 flex flex-col">
-                <Link
-                  href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
-                  className="relative mx-auto block w-72 overflow-hidden rounded-lg bg-slate-200 rounded-2xl"
-                  style={{ width: 'clamp(12rem, 18vh, 18rem)', height: 'clamp(12rem, 18vh, 18rem)' }}
-                  aria-label="Homepage"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    className="w-full"
-                    src={posterImage}
-                    alt=""
-                    sizes="(min-width: 1024px) 13rem, (min-width: 640px) 14rem, 12rem"
-                    priority
-                  />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-black/10 ring-inset" />
-                </Link>
-                <div className="mt-6 text-center lg:text-left">
-                  <h2 className="text-2xl font-bold text-[#99c96f]">
-                    The Career Catalyst
-                  </h2>
-                  <p className="mt-3 text-lg/8 text-white">
-                    Through insightful conversations with professionals from various fields, we uncover
-                    career journeys, industry advancements, valuable advice for students and aspiring
-                    professionals. Tune in to discover professions and different pathways in research and
-                    science that shape our world!
-                  </p>
-                </div>
-                <section className="mt-8">
-                  <h2 className="sr-only flex items-center font-mono text-sm/7 font-medium text-[#ffffff] lg:not-sr-only">
-                    <TinyWaveFormIcon
-                      colors={['fill-[#b184e9]', 'fill-[#8a5fc8]']}
-                      className="h-2.5 w-2.5"
-                    />
-                    <span className="ml-2.5">Listen on</span>
-                  </h2>
-                  <div className="h-px bg-linear-to-r from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
-                  <ul
-                    role="list"
-                    className="mt-4 flex justify-center gap-10 text-base/7 font-medium text-[#ffffff]/80 sm:gap-8 lg:flex-col lg:gap-3"
-                  >
-                    {[
-                      ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
-                      ['Apple Podcasts (coming soon)', ApplePodcastIcon, 'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5'],
-                    ].map(([label, Icon, href]) => (
-                      <li key={label} className="flex">
-                        <Link
-                          href={href}
-                          className="group flex items-center"
-                          aria-label={label}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Icon className="h-6 w-6 fill-[#ffffff]/60 group-hover:fill-[#b184e9]" />
-                          <span className="hidden sm:ml-3 sm:block text-sm">{label}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              </div>
-            </div>
-          </div>
-        </div>
+        <PodcastSidebar />
 
         <div className="flex-1 pt-4 lg:pt-12">
           <div className="mt-0">
