@@ -34,7 +34,8 @@ export function Bounce() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                className="!visible !block w-full max-w-sm text-center lg:w-1/3"
+                className="!visible !block w-full max-w-xs text-center text-sm sm:max-w-sm sm:text-base lg:w-1/3"
+                style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}
               >
                 Follow Us on Bounce
               </Button>

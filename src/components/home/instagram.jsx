@@ -20,7 +20,7 @@ export function Instagram() {
             <div className="mt-8">
               <iframe
                 src="https://www.instagram.com/uolab2life/embed"
-                className="shadow-3xl h-[580px] w-full rounded-3xl border-0 shadow-lg shadow-[#003e3e]/60"
+                className="shadow-3xl h-[400px] w-full rounded-3xl border-0 shadow-lg shadow-[#003e3e]/60 sm:h-[500px] lg:h-[580px]"
                 title="uOttawa Lab2Life Instagram Feed"
                 allowtransparency="true"
                 allowFullScreen={true}

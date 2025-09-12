@@ -45,13 +45,13 @@ export function Countdown() {
 
   return (
     <div className="relative bg-white">
-      <Container className="relative pt-20 pb-8 sm:pt-24 sm:pb-12">
+      <Container className="relative pt-12 pb-8 sm:pt-16 sm:pb-12">
         <div className="mx-auto max-w-7xl text-center">
-          <Subheading className="text-lg">Upcoming Event</Subheading>
-          <Heading as="h2" className="font-inter-semibold mt-4 text-5xl text-[#003e3e] sm:text-6xl lg:text-7xl">
-            uOttawa Lab2Life Club Fair
-          </Heading>
-          <p className="font-inter-semibold mx-auto mt-8 max-w-6xl text-xl/8 text-gray-600 sm:text-2xl/8">
+                <Subheading className="text-lg">Upcoming Event</Subheading>
+                <Heading as="h2" className="font-inter-semibold mt-4 text-4xl font-bold text-[#003e3e]">
+                  uOttawa Lab2Life Club Fair
+                </Heading>
+                <p className="font-inter-semibold mx-auto mt-8 max-w-6xl text-xl text-gray-600">
             Join us for an exciting day of learning more about what our club is all about! Don't
             forget to come to our table and spin the wheel for a chance to win amazing prizes!
           </p>
@@ -113,37 +113,35 @@ export function Countdown() {
 
           <div className="mt-16 flex flex-col items-center justify-center gap-4">
             <Button
-              href="/general-member-sign-up"
+              href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
               Register Now
             </Button>
-            <Button
+            <a
               href="/events"
-              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
               style={{
                 backgroundColor: '#b184e9',
                 color: 'white',
-                border: 'none',
-                borderRadius: '9999px',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                transition: 'all 0.3s ease-in-out'
+                border: '1px solid transparent',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = 'white'
-                e.target.style.borderColor = '#003e3e'
-                e.target.style.borderWidth = '1px'
-                e.target.style.color = '#003e3e'
+                e.target.style.borderColor = '#b184e9'
+                e.target.style.color = '#b184e9'
               }}
               onMouseLeave={(e) => {
                 e.target.style.backgroundColor = '#b184e9'
                 e.target.style.borderColor = 'transparent'
-                e.target.style.borderWidth = '0px'
                 e.target.style.color = 'white'
               }}
             >
               View All Events
-            </Button>
+            </a>
           </div>
         </div>
       </Container>
