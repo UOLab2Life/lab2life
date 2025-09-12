@@ -18,6 +18,10 @@ export default function ContactUs() {
   })
   const [errors, setErrors] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    document.title = 'Contact Us - uOttawaLab2Life'
+  }, [])
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
@@ -148,7 +152,7 @@ export default function ContactUs() {
       <div className="py-16 sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl">
-            <div className="mb-16 text-center">
+            <div className="mb-8 text-center">
               <Heading as="h2" className="mx-auto max-w-3xl">
                 Contact Us
               </Heading>
@@ -169,6 +173,7 @@ export default function ContactUs() {
                   className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
+                  style={{ backgroundColor: 'white' }}
                   placeholder="Your full name"
                 />
                 {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
@@ -189,6 +194,7 @@ export default function ContactUs() {
                   className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
+                  style={{ backgroundColor: 'white' }}
                   placeholder="your.email@example.com"
                 />
                 {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
@@ -207,6 +213,7 @@ export default function ContactUs() {
                   className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.subject ? 'border-red-500' : 'border-gray-300'
                   }`}
+                  style={{ backgroundColor: 'white' }}
                   placeholder="What's this about?"
                 />
                 {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject}</p>}
@@ -248,8 +255,26 @@ export default function ContactUs() {
                   className={`w-full rounded-full px-8 py-4 font-semibold shadow-md transition-all duration-300 ${
                     isSubmitting
                       ? 'cursor-not-allowed bg-gray-400 text-gray-600'
-                      : 'bg-[#99c96f] text-[#003e3e] hover:border hover:border-[#003e3e] hover:bg-white'
+                      : 'bg-[#99c96f] text-[#003e3e] cursor-pointer'
                   }`}
+                  style={{
+                    border: '1px solid transparent',
+                    transition: 'all 0.3s ease-in-out'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isSubmitting) {
+                      e.target.style.backgroundColor = 'white'
+                      e.target.style.borderColor = '#003e3e'
+                      e.target.style.color = '#003e3e'
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isSubmitting) {
+                      e.target.style.backgroundColor = '#99c96f'
+                      e.target.style.borderColor = 'transparent'
+                      e.target.style.color = '#003e3e'
+                    }
+                  }}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
