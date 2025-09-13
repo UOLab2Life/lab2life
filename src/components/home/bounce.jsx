@@ -4,7 +4,7 @@ import { Heading } from '@/components/home/text'
 
 export function Bounce() {
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-8 sm:py-16">
       <Container>
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
           <div className="flex-shrink-0">
@@ -34,7 +34,7 @@ export function Bounce() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                className="!visible !block w-full max-w-xs text-center text-sm sm:max-w-sm sm:text-base lg:w-1/3"
+                className="!visible !block w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
                 style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}
               >
                 Follow Us on Bounce

@@ -146,7 +146,7 @@ export function LatestArticles() {
             <Button
               href="/articles"
               variant="primary"
-              className="!visible mx-auto !block w-full max-w-sm text-center lg:w-1/3"
+              className="!visible mx-auto !block w-[65%] max-w-sm text-center lg:w-1/3"
             >
               Explore All Articles
             </Button>
