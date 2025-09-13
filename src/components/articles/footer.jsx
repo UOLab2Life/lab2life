@@ -16,33 +16,35 @@ function SitemapLink(props) {
     </li>
   )
 }
-
 function Sitemap() {
   return (
     <>
       <div>
         <SitemapLinks>
           <SitemapLink href="/">Home</SitemapLink>
-          <SitemapLink href="/about-us">About Us</SitemapLink>
+          <SitemapLink href="/general-member-sign-up">Member Sign-Up</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapLinks>
-          <SitemapLink href="/docs">Articles</SitemapLink>
+          <SitemapLink href="/articles">Articles</SitemapLink>
           <SitemapLink href="/podcasts">Podcasts</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapLinks>
           <SitemapLink href="/events">Events</SitemapLink>
-          <SitemapLink href="/general-member-sign-up">General Sign-Up</SitemapLink>
+          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapLinks>
-          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
-          <SitemapLink href="/">Privacy Policy</SitemapLink>
-          <SitemapLink href="/">Terms of Service</SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Privacy Policy
+          </SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Terms of Service
+          </SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -155,7 +157,8 @@ export function Footer() {
                     </span>
                   </Link>
                   <p className="mt-4 max-w-xs text-base text-[#003e3e] dark:text-[#FFFFFF]">
-                    Dedicated to promoting and helping students explore various careers in healthcare and medicine.
+                    Dedicated to promoting and helping students explore various careers in
+                    healthcare and medicine.
                   </p>
                   <p className="mt-2 text-base font-bold text-[#003e3e] dark:text-[#FFFFFF]">
                     Email: uolab2life@gmail.com

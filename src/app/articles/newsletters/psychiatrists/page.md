@@ -50,17 +50,17 @@ By contrast, psychologists mainly focus on psychotherapy (talk therapy 🗪). Ps
 
 Seeking help can feel overwhelming, but it is crucial to gain the appropriate diagnosis and support. You should consider consulting a psychiatrist (or talking to your family doctor for a referral) if you experience:
 
-- 🎭 Inability to manage or control emotions
-- 💢 Continuous or frequent anger/rage episodes
-- 😱 Excessive or irrational fears
-- ⚠️ Risky or dangerous behaviors
-- 😔 Persistent worrying or sadness  
-- 🛌 Major changes in sleep patterns  
-- 💉 Substance use problems  
-- 🍽️ Eating disorders  
-- 📈 Declining school or work performance  
-- 👥 Withdrawal from social activities  
-- 🤕 Thoughts of self-harm  
+- Inability to manage or control emotions
+- Continuous or frequent anger/rage episodes
+- Excessive or irrational fears
+- Risky or dangerous behaviors
+- Persistent worrying or sadness  
+- Major changes in sleep patterns  
+- Substance use problems  
+- Eating disorders  
+- Declining school or work performance  
+- Withdrawal from social activities  
+- Thoughts of self-harm  
 
 ---
 

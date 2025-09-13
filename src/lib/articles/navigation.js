@@ -13,7 +13,7 @@ export const navigation = [
     ],
   },
   {
-    title: 'Prosthetics & Rehabilitation',
+    title: 'Rehabilitation',
     links: [
       { title: 'Prosthetists', href: '/articles/newsletters/prosthetists' },
       { title: 'Orthotists', href: '/articles/newsletters/orthotists' },

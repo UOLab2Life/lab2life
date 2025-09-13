@@ -40,19 +40,14 @@ To conclude this article, I’d like to share a quote that captures the magic of
 
 > This is not general surgery in miniature. These are the tiny humans. These are children. They believe in magic. They play pretend. There is fairy dust in their IV bags. They hope, and they cross their fingers and they make wishes, and that makes them more resilient than adults. They recover fast, survive worse. They believe².
 
-
 ### Footnotes
 
 1. [Salary Expert (2024)](https://www.salaryexpert.com/salary/job/pediatrician/canada/ontario)  *Pediatrician: Average Base Salary*.
 2. McKee, S. (Writer), Rhimes, S. (Writer), & Yu, J. (Director). (2009, November 5). *Invest in Love* (Season 6, Episode 8) [TV series episode]. In Beers, B., Gordon, M., & Rhimes, S. (Executive Producers), *Grey’s Anatomy*. Shondaland Lionsgate.  
 
+### References
 
-### References 
-
-- [Caring for Kids ](https://caringforkids.cps.ca/handouts/health-conditions-and-treatments/paediatricians_in_canada#:~:text=Many%20paediatricians%2C%20particularly%20subspecialists%2C%20work,schools%20or%20do%20clinical%20research) (2020) Paediatricians in Canada
+- [Caring for Kids](https://caringforkids.cps.ca/handouts/health-conditions-and-treatments/paediatricians_in_canada#:~:text=Many%20paediatricians%2C%20particularly%20subspecialists%2C%20work,schools%20or%20do%20clinical%20research) (2020) Paediatricians in Canada
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/articles/21716-what-is-a-pediatrician) (2021) *Pediatrician*.  
 - [Indeed](https://ca.indeed.com/career-advice/finding-a-job/how-to-become-a-pediatrician) (2024) *How To Become a Pediatrician*.
-- [CHEO Workday Careers](https://cheo.wd10.myworkdayjobs.com/External_Site)  
-
-
-
+- [CHEO Workday Careers](https://cheo.wd10.myworkdayjobs.com/External_Site)
