@@ -133,9 +133,9 @@ export default async function Home() {
 
   return (
     <>
-      <div className="relative hidden lg:block">
-        <Gradient className="sm:rounded-4xl absolute inset-1 bottom-0 rounded-2xl ring-1 ring-inset ring-black/5 sm:inset-2" />
-        <Container className="relative pb-8 sm:pb-12">
+      <div className="relative">
+        <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
+        <Container className="relative pb-12">
           <Navbar />
         </Container>
       </div>
@@ -213,10 +213,10 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen pt-12 sm:pt-2">
         <PodcastSidebar />
 
-        <div className="flex-1 pt-4 lg:pt-12">
+        <div className="flex-1">
           <div className="mt-0">
             {episodes.length > 0 ? (
               episodes.map((episode) => <EpisodeEntry key={episode.id} episode={episode} />)
@@ -235,7 +235,7 @@ export default async function Home() {
       </div>
 
       <div className="pt-12 sm:pt-2">
-        <Footer />
+      <Footer />
       </div>
     </>
   )
