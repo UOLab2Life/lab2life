@@ -133,7 +133,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative hidden lg:block">
         <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
         <Container className="relative pb-12">
           <Navbar />

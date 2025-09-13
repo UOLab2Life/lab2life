@@ -161,7 +161,7 @@ export function Footer() {
                     healthcare and medicine.
                   </p>
                   <p className="mt-2 text-base font-bold text-[#003e3e] dark:text-[#FFFFFF]">
-                    Email: uolab2life@gmail.com
+                    Email: <a href="mailto:uolab2life@gmail.com" className="hover:text-[#003e3e]/75 dark:hover:text-white/75 transition-colors">uolab2life@gmail.com</a>
                   </p>
                 </PlusGridItem>
               </div>
