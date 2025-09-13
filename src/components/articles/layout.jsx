@@ -13,7 +13,7 @@ import { ThemeSelector } from '@/components/articles/theme-selector'
 import { Link } from '@/components/home/link'
 
 const topLinks = [
-  { href: '/about-us', label: 'About Us' },
+  { href: '/articles', label: 'Articles' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/events', label: 'Events' },
   { href: '/contact-us', label: 'Contact Us' },
