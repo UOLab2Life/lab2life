@@ -128,23 +128,34 @@ function PodcastPlayer({ mp3FileName }) {
   return (
     <div className="mx-auto w-11/12">
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
             Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)
           </h3>
+          <div className="hidden sm:flex sm:justify-end">
+            <EpisodePlayButton
+              episode={episode}
+              className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2"
+              playing={<PauseIcon className="h-5 w-5 fill-[#003e3e]" />}
+              paused={<PlayIcon className="h-5 w-5 fill-[#003e3e]" />}
+            />
+          </div>
+        </div>
+
+        <div className="mb-4 text-gray-600">
+          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
+          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
+          explore his role as a radiologist, advances in imaging technology, and career insights for
+          aspiring students.
+        </div>
+
+        <div className="mt-6 mb-2 flex justify-center sm:hidden">
           <EpisodePlayButton
             episode={episode}
             className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2"
             playing={<PauseIcon className="h-5 w-5 fill-[#003e3e]" />}
             paused={<PlayIcon className="h-5 w-5 fill-[#003e3e]" />}
           />
-        </div>
-
-        <div className="text-gray-600">
-          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
-          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
-          explore his role as a radiologist, advances in imaging technology, and career insights for
-          aspiring students.
         </div>
       </div>
     </div>
@@ -191,7 +202,7 @@ export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
           <div className="mt-8 text-center">
             <Button
               href="/podcasts"
-              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
               View All Episodes
             </Button>
@@ -236,26 +247,39 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
   return (
     <div className="mx-auto w-11/12">
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
             Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)
           </h3>
           {!isPlaying && (
+            <div className="hidden sm:flex sm:justify-end">
+              <EpisodePlayButton
+                episode={episode}
+                className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2"
+                playing={<PauseIcon className="h-5 w-5 fill-[#003e3e]" />}
+                paused={<PlayIcon className="h-5 w-5 fill-[#003e3e]" />}
+              />
+            </div>
+          )}
+        </div>
+
+        <div className="mb-4 text-gray-600">
+          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
+          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
+          explore his role as a radiologist, advances in imaging technology, and career insights for
+          aspiring students.
+        </div>
+
+        {!isPlaying && (
+          <div className="mt-6 mb-2 flex justify-center sm:hidden">
             <EpisodePlayButton
               episode={episode}
               className="focus:outline-hidden group relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#99c96f] hover:bg-[#8ab85e] focus:ring-2 focus:ring-[#99c96f] focus:ring-offset-2"
               playing={<PauseIcon className="h-5 w-5 fill-[#003e3e]" />}
               paused={<PlayIcon className="h-5 w-5 fill-[#003e3e]" />}
             />
-          )}
-        </div>
-
-        <div className="text-gray-600">
-          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
-          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
-          explore his role as a radiologist, advances in imaging technology, and career insights for
-          aspiring students.
-        </div>
+          </div>
+        )}
       </div>
     </div>
   )
