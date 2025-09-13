@@ -46,20 +46,22 @@ export function AudioProvider({ children }) {
         if (episode) {
           dispatch({ type: ActionKind.SET_META, payload: episode })
 
-          if (
-            playerRef.current &&
-            playerRef.current.currentSrc !== episode.audio.src
-          ) {
+          if (playerRef.current && playerRef.current.currentSrc !== episode.audio.src) {
             let playbackRate = playerRef.current.playbackRate
             playerRef.current.src = episode.audio.src
             playerRef.current.load()
             playerRef.current.pause()
             playerRef.current.playbackRate = playbackRate
             playerRef.current.currentTime = 0
+
+            console.log('Loading audio from:', episode.audio.src)
           }
         }
-
-        playerRef.current?.play()
+        if (playerRef.current) {
+          playerRef.current.play().catch((error) => {
+            console.error('Error playing audio:', error)
+          })
+        }
       },
       pause() {
         playerRef.current?.pause()
@@ -90,6 +92,12 @@ export function AudioProvider({ children }) {
           ? state.playing && playerRef.current?.currentSrc === episode.audio.src
           : state.playing
       },
+      clear() {
+        dispatch({ type: ActionKind.SET_META, payload: null })
+        if (playerRef.current) {
+          playerRef.current.pause()
+        }
+      },
     }
   }, [state.playing])
 
@@ -97,9 +105,7 @@ export function AudioProvider({ children }) {
 
   return (
     <>
-      <AudioPlayerContext.Provider value={api}>
-        {children}
-      </AudioPlayerContext.Provider>
+      <AudioPlayerContext.Provider value={api}>{children}</AudioPlayerContext.Provider>
       <audio
         ref={playerRef}
         onPlay={() => dispatch({ type: ActionKind.PLAY })}
@@ -116,6 +122,16 @@ export function AudioProvider({ children }) {
             payload: Math.floor(event.currentTarget.duration),
           })
         }}
+        onError={(event) => {
+          console.error('Audio loading error:', event.currentTarget.error)
+        }}
+        onLoadStart={() => {
+          console.log('Audio loading started')
+        }}
+        onCanPlay={() => {
+          console.log('Audio can play')
+        }}
+        preload="metadata"
         muted={state.muted}
       />
     </>

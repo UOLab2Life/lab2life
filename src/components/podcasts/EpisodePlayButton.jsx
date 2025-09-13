@@ -9,9 +9,7 @@ export function EpisodePlayButton({ episode, playing, paused, ...props }) {
     <button
       type="button"
       onClick={() => player.toggle()}
-      aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${
-        episode.title
-      }`}
+      aria-label={`${player.playing ? 'Pause' : 'Play'} Episode ${episode.id}: ${episode.title}`}
       {...props}
     >
       {player.playing ? playing : paused}

@@ -6,6 +6,4 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'ts', 'tsx'],
 }
 
-export default withSearch(
-  withMarkdoc({ schemaPath: './src/markdoc' })(nextConfig),
-)
+export default withSearch(withMarkdoc({ schemaPath: './src/markdoc' })(nextConfig))

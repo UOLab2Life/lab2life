@@ -7,12 +7,7 @@ function ForwardIcon(props) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path
-        d="M13 15V19"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M13 15V19" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path
         d="M16 18V16C16 15.4477 16.4477 15 17 15H18C18.5523 15 19 15.4477 19 16V18C19 18.5523 18.5523 19 18 19H17C16.4477 19 16 18.5523 16 18Z"
         strokeWidth="1.5"
@@ -27,7 +22,7 @@ export function ForwardButton({ player, amount = 10 }) {
   return (
     <button
       type="button"
-      className="group relative rounded-full focus:outline-hidden"
+      className="focus:outline-hidden group relative rounded-full"
       onClick={() => player.seekBy(amount)}
       aria-label={`Fast-forward ${amount} seconds`}
     >

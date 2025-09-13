@@ -1,56 +1,64 @@
 export const navigation = [
   {
     title: 'Introduction',
-    links: [
-      { title: 'Getting started', href: '/' },
-      { title: 'Installation', href: '/docs/newsletters/installation' },
-    ],
+    links: [{ title: 'Getting started', href: '/docs' }],
   },
   {
-    title: 'Core concepts',
+    title: 'Pediatrics',
     links: [
-      { title: 'Understanding caching', href: '/docs/newsletters/understanding-caching' },
       {
-        title: 'Predicting user behavior',
-        href: '/docs/newsletters/predicting-user-behavior',
+        title: 'The Essentials of Pediatrics',
+        href: '/docs/newsletters/the-essentials-of-pediatrics',
       },
-      { title: 'Basics of time-travel', href: '/docs/newsletters/basics-of-time-travel' },
       {
-        title: 'Introduction to string theory',
-        href: '/docs/newsletters/introduction-to-string-theory',
+        title: 'An Overview of Pediatric Oncology',
+        href: '/docs/newsletters/pediatric-oncology',
       },
-      { title: 'The butterfly effect', href: '/docs/newsletters/the-butterfly-effect' },
-    ],
-  },
-  {
-    title: 'Advanced guides',
-    links: [
-      { title: 'Writing plugins', href: '/docs/newsletters/writing-plugins' },
-      { title: 'Neuralink integration', href: '/docs/newsletters/neuralink-integration' },
-      { title: 'Temporal paradoxes', href: '/docs/newsletters/temporal-paradoxes' },
-      { title: 'Testing', href: '/docs/newsletters/testing' },
-      { title: 'Compile-time caching', href: '/docs/newsletters/compile-time-caching' },
       {
-        title: 'Predictive data generation',
-        href: '/docs/newsletters/predictive-data-generation',
+        title: 'Neonatologists Lifesavers at Birth',
+        href: '/docs/newsletters/neonatologists',
+      },
+      {
+        title: 'The Role of Pediatric Speech-Language Pathologist',
+        href: '/docs/newsletters/pediatric-speech-language-pathologist',
       },
     ],
   },
   {
-    title: 'API reference',
+    title: 'Mental Health',
     links: [
-      { title: 'CacheAdvance.predict()', href: '/docs/newsletters/cacheadvance-predict' },
-      { title: 'CacheAdvance.flush()', href: '/docs/newsletters/cacheadvance-flush' },
-      { title: 'CacheAdvance.revert()', href: '/docs/newsletters/cacheadvance-revert' },
-      { title: 'CacheAdvance.regret()', href: '/docs/newsletters/cacheadvance-regret' },
+      { title: 'Mental Health Day Special', href: '/docs/newsletters/mental-health-day-special' },
+      {
+        title: 'Psychiatrists',
+        href: '/docs/newsletters/psychiatrists',
+      },
+      {
+        title: 'Criminal Psychologist',
+        href: '/docs/newsletters/criminal-psychologist',
+      },
+      {
+        title: 'Certified Mental Performance Coach',
+        href: '/docs/newsletters/mental-performance-coach',
+      },
+      {
+        title: 'There Is No Health Without Mental Health  ',
+        href: '/docs/newsletters/mental-health-introduction',
+      },
     ],
   },
   {
-    title: 'Contributing',
+    title: 'Prosthetics & Rehabilitation',
     links: [
-      { title: 'How to contribute', href: '/docs/newsletters/how-to-contribute' },
-      { title: 'Architecture guide', href: '/docs/newsletters/architecture-guide' },
-      { title: 'Design principles', href: '/docs/newsletters/design-principles' },
+      { title: 'Prosthetists', href: '/docs/newsletters/prosthetists' },
+      { title: 'Orthotists', href: '/docs/newsletters/orthotists' },
+      { title: 'Occupational Therapist', href: '/docs/newsletters/occupational-therapists' },
+    ],
+  },
+  {
+    title: 'Medical Law',
+    links: [
+      { title: 'Introduction to Medical Law', href: '/docs/newsletters/medical-law-introduction' },
+      { title: 'Legal Nurse Consultant', href: '/docs/newsletters/legal-nurse-consultant' },
     ],
   },
 ]

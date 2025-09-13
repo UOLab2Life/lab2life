@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 
 import { useAudioPlayer } from '@/components/podcasts/AudioProvider'
 import { ForwardButton } from '@/components/podcasts/player/ForwardButton'
@@ -41,7 +41,7 @@ export function AudioPlayer() {
   }
 
   return (
-    <div className="flex items-center gap-6 bg-white/90 px-4 py-4 shadow-sm ring-1 shadow-slate-200/80 ring-slate-900/5 backdrop-blur-xs md:px-6">
+    <div className="backdrop-blur-xs flex items-center gap-6 bg-white/90 px-4 py-4 shadow-sm shadow-slate-200/80 ring-1 ring-slate-900/5 md:px-6">
       <div className="hidden md:block">
         <PlayButton player={player} />
       </div>
@@ -49,9 +49,9 @@ export function AudioPlayer() {
         <Link
           href={`/podcasts/${player.episode.id}`}
           className="truncate text-center text-sm/6 font-bold md:text-left"
-          title={player.episode.title}
+          title={`Episode ${player.episode.id}: ${player.episode.title}`}
         >
-          {player.episode.title}
+          Episode {player.episode.id}: {player.episode.title}
         </Link>
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">

@@ -37,9 +37,9 @@ pids
 # ——— Next.js ———
 .next/
 .next.cache/
-out/            # static export
+out/           
 .turbo/
-.vercel/        # Vercel CLI/project settings
+.vercel/        
 
 # ——— Build artifacts & caches ———
 dist/
@@ -57,7 +57,7 @@ coverage/
 # ——— Storybook ———
 storybook-static/
 
-# ——— Supabase CLI (keep migrations/config; ignore ephemeral) ———
+# ——— Supabase CLI ———
 supabase/.temp/
 supabase/.branches/
 supabase/.cache/
