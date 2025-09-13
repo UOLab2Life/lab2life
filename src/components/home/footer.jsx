@@ -156,7 +156,7 @@ export function Footer() {
                       Dedicated to promoting and helping students explore various careers in healthcare and medicine.
                     </p>
                     <p className="mt-2 text-base font-bold text-[#003e3e]">
-                      Email: uolab2life@gmail.com
+                      Email: <a href="mailto:uolab2life@gmail.com" className="hover:text-[#003e3e]/75 transition-colors">uolab2life@gmail.com</a>
                     </p>
                   </PlusGridItem>
                 </div>
