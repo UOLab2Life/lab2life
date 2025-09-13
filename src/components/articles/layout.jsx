@@ -83,9 +83,7 @@ function Header() {
                     className={clsx(
                       'inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold transition-colors',
                       'data-hover:bg-black/5 dark:data-hover:bg-white/10 focus:outline-none focus-visible:ring',
-                      isActive
-                        ? 'text-slate-900 dark:text-white'
-                        : 'text-slate-700 dark:text-white/80',
+                      'text-slate-700 dark:text-white/80',
                     )}
                   >
                     {label}
