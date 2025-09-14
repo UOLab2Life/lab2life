@@ -1,6 +1,6 @@
 'use client'
 
-import { SuccessModal } from '@/components/contact-us/modal'
+import { SuccessModal } from './success-modal'
 import { BounceGeneralMember } from './bounce-general-member'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
@@ -8,6 +8,7 @@ import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
 import { Button } from '@/components/home/button'
+import { supabase } from '@/lib/supabase/client'
 import { useState } from 'react'
 
 export default function GeneralMemberSignUp() {
@@ -94,20 +95,6 @@ export default function GeneralMemberSignUp() {
         }))
       }
     }
-
-    if (name === 'interest' && value.trim() && value.trim().length < 10) {
-      setErrors((prev) => ({
-        ...prev,
-        interest: 'Please provide more details (minimum 10 characters)',
-      }))
-    }
-
-    if (name === 'events' && value.trim() && value.trim().length < 10) {
-      setErrors((prev) => ({
-        ...prev,
-        events: 'Please provide more details (minimum 10 characters)',
-      }))
-    }
   }
 
   const handleEmailBlur = (e) => {
@@ -168,16 +155,6 @@ export default function GeneralMemberSignUp() {
 
     if (!formData.program.trim()) {
       newErrors.program = 'Program is required'
-    } else if (formData.program.trim().length < 3) {
-      newErrors.program = 'Program name must be at least 3 characters long'
-    }
-
-    if (formData.interest.trim() && formData.interest.trim().length < 10) {
-      newErrors.interest = 'Please provide more details (minimum 10 characters)'
-    }
-
-    if (formData.events.trim() && formData.events.trim().length < 10) {
-      newErrors.events = 'Please provide more details (minimum 10 characters)'
     }
 
     return newErrors
@@ -197,22 +174,25 @@ export default function GeneralMemberSignUp() {
     setIsSubmitting(true)
 
     try {
-      const formDataToSubmit = new FormData()
-      formDataToSubmit.append('entry.1234567890', formData.firstName)
-      formDataToSubmit.append('entry.1234567891', formData.lastName)
-      formDataToSubmit.append('entry.1234567892', formData.email)
-      formDataToSubmit.append('entry.1234567893', formData.studentNumber)
-      formDataToSubmit.append('entry.1234567894', formData.year)
-      formDataToSubmit.append('entry.1234567895', formData.faculty)
-      formDataToSubmit.append('entry.1234567896', formData.program)
-      formDataToSubmit.append('entry.1234567897', formData.interest)
-      formDataToSubmit.append('entry.1234567898', formData.events)
+      const { data, error } = await supabase.from('Members').insert([
+        {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          uottawa_email: formData.email,
+          student_number: parseInt(formData.studentNumber),
+          year: formData.year,
+          faculty: formData.faculty,
+          program: formData.program,
+          why_join: formData.interest,
+          initiatives: formData.events,
+        },
+      ])
 
-      const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSfdv9Ik4bUylJax_Cupn21rFw6P-tImmtBkk_2TuSUTJSSZAw/formResponse', {
-        method: 'POST',
-        body: formDataToSubmit,
-        mode: 'no-cors'
-      })
+      if (error) {
+        setErrors({ submit: 'Failed to submit application. Please try again.' })
+        return
+      }
+
       setFormData({
         firstName: '',
         lastName: '',
@@ -227,7 +207,6 @@ export default function GeneralMemberSignUp() {
       setErrors({})
       setIsModalOpen(true)
     } catch (error) {
-      console.error('Error:', error)
       setErrors({ submit: 'Failed to submit application. Please try again.' })
     } finally {
       setIsSubmitting(false)
