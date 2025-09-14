@@ -194,8 +194,8 @@ function MemberCard({
       <figure className="relative p-6 sm:p-8 md:p-10">
         <figcaption className="mt-6">
           <div className="space-y-1">
-            <p className="font-inter-semibold text-xl sm:text-2xl md:text-3xl text-white">{name}</p>
-            <p className="font-inter-semibold text-sm sm:text-base md:text-lg text-[#b184e9]">{position}</p>
+            <p className="font-inter font-medium text-xl sm:text-2xl md:text-3xl text-white">{name}</p>
+            <p className="font-inter font-medium text-sm sm:text-base md:text-lg text-[#b184e9]">{position}</p>
             <p className="font-inter-semibold text-xs sm:text-sm leading-tight text-white">{education}</p>
           </div>
 

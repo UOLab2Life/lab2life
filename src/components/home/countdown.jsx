@@ -97,13 +97,13 @@ export function Countdown() {
 
           <div className="mt-16 flex justify-center gap-6 sm:gap-12">
             {timeUnits.map((unit) => (
-              <div key={unit.label} className="relative h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36">
+              <div key={unit.label} className="relative h-20 w-20 sm:h-32 sm:w-32 lg:h-36 lg:w-36">
                 <Gradient className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5" />
                 <div className="relative flex h-full flex-col items-center justify-center rounded-2xl p-2 shadow-lg">
-                  <div className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+                  <div className="text-2xl font-bold text-white sm:text-5xl lg:text-6xl">
                     {unit.value.toString().padStart(2, '0')}
                   </div>
-                  <p className="font-inter-medium mt-2 text-sm tracking-wide text-[#ffffff] sm:text-base">
+                  <p className="font-inter-medium mt-1 text-xs tracking-wide text-[#ffffff] sm:mt-2 sm:text-base">
                     {unit.label}
                   </p>
                 </div>
@@ -116,13 +116,13 @@ export function Countdown() {
               href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
               target="_blank"
               rel="noopener noreferrer"
-              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
               Register Now
             </Button>
             <a
               href="/events"
-              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
+              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
               style={{
                 backgroundColor: '#b184e9',
                 color: 'white',
