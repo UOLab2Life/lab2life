@@ -85,7 +85,6 @@ function Header() {
                 )
               })}
             </nav>
-
             <ThemeSelector className="relative z-10" />
           </div>
         </div>
