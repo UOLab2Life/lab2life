@@ -24,7 +24,7 @@ export function Hero() {
           <div className="mt-12 flex flex-row justify-center gap-3 sm:justify-start sm:gap-6">
             <Button
               href="/general-member-sign-up"
-              className="px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
+              className="w-[65%] sm:w-auto px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
             >
               General Member Sign-Up
             </Button>

@@ -20,7 +20,7 @@ const topLinks = [
 ]
 
 function Header() {
-  let [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -29,9 +29,7 @@ function Header() {
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-    }
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
@@ -46,20 +44,16 @@ function Header() {
       <div className="w-full">
         <div className="grid min-h-[48px] w-full grid-cols-2 items-center gap-x-4 md:grid-cols-3">
           <div className="hidden items-center justify-start md:flex">
-            <div className="hidden items-center justify-start md:flex">
-              <Link href="/" title="Home" className="group flex items-center gap-3">
-                <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-14 w-auto" />
-                <div className="group inline-block">
-                  <span className="inline-block origin-center transform-gpu bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-2xl font-semibold text-transparent transition-transform duration-300 ease-out group-hover:scale-110 group-hover:via-violet-500 motion-reduce:transition-none motion-reduce:hover:scale-100">
-                    Lab2Life
-                  </span>
-                </div>
-              </Link>
-            </div>
+            <Link href="/" title="Home" className="group flex items-center gap-3">
+              <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-14 w-auto" />
+              <span className="inline-block origin-center transform-gpu bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-2xl font-semibold text-transparent transition-transform duration-300 ease-out group-hover:scale-110 group-hover:via-violet-500 motion-reduce:transition-none motion-reduce:hover:scale-100">
+                Lab2Life
+              </span>
+            </Link>
           </div>
 
           <div className="flex min-w-0 justify-center">
-            <div className="w-full max-w-lg">
+            <div className="hidden w-full max-w-lg md:block">
               <Search />
             </div>
           </div>
@@ -98,7 +92,6 @@ function Header() {
     </header>
   )
 }
-
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false)
 
@@ -144,7 +137,7 @@ export function Layout({ children }) {
     <div className="flex w-full flex-col">
       <Header />
       {isIntroPage && <Hero />}
-      <div className="w/full max-w-8xl relative mx-auto flex flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="max-w-8xl relative mx-auto flex w-full flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-white dark:hidden" />
           <div className="bg-linear-to-t absolute bottom-0 right-0 top-16 hidden h-12 w-px from-slate-800 dark:block" />

@@ -19,25 +19,45 @@ function SitemapLink(props) {
 function Sitemap() {
   return (
     <>
-      <div>
+      <div className="lg:hidden">
+        <SitemapLinks>
+          <SitemapLink href="/">Home</SitemapLink>
+          <SitemapLink href="/general-member-sign-up">Member Sign-Up</SitemapLink>
+          <SitemapLink href="/articles">Articles</SitemapLink>
+          <SitemapLink href="/podcasts">Podcasts</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div className="lg:hidden">
+        <SitemapLinks>
+          <SitemapLink href="/events">Events</SitemapLink>
+          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Privacy Policy
+          </SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Terms of Service
+          </SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div className="hidden lg:block">
         <SitemapLinks>
           <SitemapLink href="/">Home</SitemapLink>
           <SitemapLink href="/general-member-sign-up">Member Sign-Up</SitemapLink>
         </SitemapLinks>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <SitemapLinks>
           <SitemapLink href="/articles">Articles</SitemapLink>
           <SitemapLink href="/podcasts">Podcasts</SitemapLink>
         </SitemapLinks>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <SitemapLinks>
           <SitemapLink href="/events">Events</SitemapLink>
           <SitemapLink href="/contact-us">Contact Us</SitemapLink>
         </SitemapLinks>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <SitemapLinks>
           <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             Privacy Policy
@@ -140,7 +160,7 @@ export function Footer() {
       <Container>
         <PlusGrid className="pb-16 pt-16">
           <PlusGridRow>
-            <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
+            <div className="grid grid-cols-2 gap-y-6 pb-6 lg:grid-cols-6 lg:gap-8">
               <div className="col-span-2 flex">
                 <PlusGridItem className="pt-8 lg:pb-6">
                   <Link
@@ -156,7 +176,7 @@ export function Footer() {
                       uOttawa Lab2Life
                     </span>
                   </Link>
-                  <p className="mt-4 max-w-xs text-base text-[#003e3e] dark:text-[#FFFFFF]">
+                  <p className="mt-4 max-w-sm text-base text-[#003e3e] dark:text-[#FFFFFF] lg:max-w-md">
                     Dedicated to promoting and helping students explore various careers in
                     healthcare and medicine.
                   </p>
@@ -165,8 +185,8 @@ export function Footer() {
                   </p>
                 </PlusGridItem>
               </div>
-              <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
-                <Sitemap />
+              <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-8 lg:col-span-4 lg:grid-cols-4 lg:pt-8">
+<Sitemap />
               </div>
             </div>
           </PlusGridRow>

@@ -116,13 +116,13 @@ export function Countdown() {
               href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
               target="_blank"
               rel="noopener noreferrer"
-              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
               Register Now
             </Button>
             <a
               href="/events"
-              className="mx-auto w-full max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
+              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
               style={{
                 backgroundColor: '#b184e9',
                 color: 'white',

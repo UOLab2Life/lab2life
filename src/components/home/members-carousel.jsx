@@ -116,7 +116,7 @@ const members = [
     img: '/images/home/blank.webp',
     name: 'Lacey Mullin',
     position: 'Upper Year Representative',
-    education: '4th Year | B.Sc. Biopharmaceutical Science',
+    education: '4th Year | B.Sc. Biopharm. Science',
     email: 'representatives.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/lacey-mullin-209963327/',
   },
@@ -180,7 +180,7 @@ function MemberCard({
       ref={ref}
       style={{ opacity }}
       {...props}
-      className="relative flex aspect-3/4 w-96 shrink-0 snap-start scroll-ml-(--scroll-padding) flex-col justify-end overflow-hidden rounded-3xl"
+      className="relative flex aspect-3/4 w-64 sm:w-80 md:w-96 shrink-0 snap-start scroll-ml-(--scroll-padding) flex-col justify-end overflow-hidden rounded-3xl mx-auto"
     >
       <img
         alt=""
@@ -191,12 +191,12 @@ function MemberCard({
         aria-hidden="true"
         className="absolute inset-0 rounded-3xl bg-linear-to-t from-black from-[calc(3/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
       />
-      <figure className="relative p-10">
+      <figure className="relative p-6 sm:p-8 md:p-10">
         <figcaption className="mt-6">
           <div className="space-y-1">
-            <p className="font-inter-semibold text-3xl/7 text-white">{name}</p>
-            <p className="font-inter-semibold text-lg/6 text-[#b184e9]">{position}</p>
-            <p className="font-inter-semibold text-sm/5 leading-tight text-white">{education}</p>
+            <p className="font-inter font-medium text-xl sm:text-2xl md:text-3xl text-white">{name}</p>
+            <p className="font-inter font-medium text-sm sm:text-base md:text-lg text-[#b184e9]">{position}</p>
+            <p className="font-inter-semibold text-xs sm:text-sm leading-tight text-white">{education}</p>
           </div>
 
           <div className="mt-4 flex gap-3">
