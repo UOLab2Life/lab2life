@@ -20,7 +20,7 @@ export function Subheading({ className, as: Element = 'h2', dark = false, ...pro
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'data-dark:text-gray-400 font-mono text-lg/6 font-medium uppercase tracking-widest text-gray-500',
+        'data-dark:text-gray-400 font-mono text-lg/6 font-bold uppercase tracking-widest text-[#003e3e]',
       )}
     />
   )
