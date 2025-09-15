@@ -7,7 +7,6 @@ import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
-import { Button } from '@/components/home/button'
 import { supabase } from '@/lib/supabase/client'
 import { useState } from 'react'
 
@@ -26,11 +25,6 @@ export default function GeneralMemberSignUp() {
   const [errors, setErrors] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email)
-  }
 
   const validateUOttawaEmail = (email) => {
     const uottawaEmailRegex = /^[a-zA-Z0-9._%+-]+@uottawa\.ca$/
@@ -277,7 +271,7 @@ export default function GeneralMemberSignUp() {
             </div>
 
             <div className="mt-16">
-              <Heading as="h2" className="text-lg">Registration Form</Heading>
+              <Heading as="h2" className="mx-auto max-w-3xl">Registration Form</Heading>
               <form onSubmit={handleSubmit} className="mt-8 space-y-6 text-left">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
