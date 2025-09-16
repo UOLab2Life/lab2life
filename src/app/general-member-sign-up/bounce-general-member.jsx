@@ -3,7 +3,21 @@ import { Heading } from '@/components/home/text'
 
 export function BounceGeneralMember() {
   return (
-    <div className="bg-white py-4 sm:py-8">
+    <>
+      <style jsx>{`
+        @keyframes ringPulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(0, 62, 62, 1);
+          }
+          50% {
+            box-shadow: 0 0 0 6px rgba(0, 62, 62, 0.6);
+          }
+        }
+        .ring-pulse {
+          animation: ringPulse 1.5s ease-in-out infinite;
+        }
+      `}</style>
+      <div className="bg-white py-4 sm:py-8">
       <Container>
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
           <div className="flex-shrink-0">
@@ -11,7 +25,7 @@ export function BounceGeneralMember() {
               href="https://www.bouncelife.com/organizations/6883b3e4772d78e56dfd977c"
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-2xl bg-white p-6 shadow-lg ring-2 ring-[#003e3e] transition-all duration-300 hover:ring-4 hover:shadow-xl"
+              className="block rounded-2xl bg-white p-6 shadow-lg ring-2 ring-[#003e3e] transition-all duration-300 hover:ring-4 hover:shadow-xl ring-pulse"
             >
               <img
                 src="/images/home/bouncelifelogo.png"
@@ -35,5 +49,6 @@ export function BounceGeneralMember() {
         </div>
       </Container>
     </div>
+    </>
   )
 }

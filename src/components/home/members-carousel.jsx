@@ -26,11 +26,11 @@ const members = [
   },
   {
     img: '/images/home/blank.webp',
-    name: 'Ann Ignatius',
+    name: 'Parisha Baral',
     position: 'VP Internal Operations',
-    education: '4th Year | B.Sc. Psychology',
+    education: '1st Year | B.Sc. Biomedical Science',
     email: 'internals.uol2l@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/ann-ignatius-262b09288/',
+    linkedin: '',
   },
   {
     img: '/images/home/blank.webp',
