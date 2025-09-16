@@ -7,7 +7,6 @@ import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
-import { supabase } from '@/lib/supabase/client'
 import { useState } from 'react'
 
 export default function GeneralMemberSignUp() {
@@ -168,25 +167,42 @@ export default function GeneralMemberSignUp() {
     setIsSubmitting(true)
 
     try {
-      const { data, error } = await supabase.from('Members').insert([
-        {
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          uottawa_email: formData.email,
-          student_number: parseInt(formData.studentNumber),
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_dnRavk9qvEWrl_RqDlMwXZrra80F4VrlD9N1K5FVzxqY4zYxhFzIWShfmHLtevY1sA/exec'
+      
+      console.log('Submitting form data to Google Sheets:', {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        studentNumber: formData.studentNumber,
+        year: formData.year,
+        faculty: formData.faculty,
+        program: formData.program,
+        interest: formData.interest,
+        events: formData.events,
+      })
+      
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          studentNumber: formData.studentNumber,
           year: formData.year,
           faculty: formData.faculty,
           program: formData.program,
-          why_join: formData.interest,
-          initiatives: formData.events,
-        },
-      ])
+          interest: formData.interest,
+          events: formData.events,
+        }),
+      })
 
-      if (error) {
-        setErrors({ submit: 'Failed to submit application. Please try again.' })
-        return
-      }
+      console.log('Google Sheets response:', response)
 
+      console.log('Form submitted successfully to Google Sheets')
       setFormData({
         firstName: '',
         lastName: '',
@@ -200,7 +216,9 @@ export default function GeneralMemberSignUp() {
       })
       setErrors({})
       setIsModalOpen(true)
+      
     } catch (error) {
+      console.error('Error submitting to Google Sheets:', error)
       setErrors({ submit: 'Failed to submit application. Please try again.' })
     } finally {
       setIsSubmitting(false)
