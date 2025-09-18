@@ -8,6 +8,7 @@ import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
 import { useState } from 'react'
+import { supabase } from '@/lib/supabase/client'
 
 export default function GeneralMemberSignUp() {
   const [formData, setFormData] = useState({
@@ -167,9 +168,9 @@ export default function GeneralMemberSignUp() {
     setIsSubmitting(true)
 
     try {
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_dnRavk9qvEWrl_RqDlMwXZrra80F4VrlD9N1K5FVzxqY4zYxhFzIWShfmHLtevY1sA/exec'
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYlLoNJbSDsbeQDBGR_Jnkut6Pa_YX0S2P6CtsiPBc056B_B9FOBeuubRlEAVjnTs/exec'
       
-      console.log('Submitting form data to Google Sheets:', {
+      console.log('Submitting form data to Google Sheets (without interest and events):', {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
@@ -177,11 +178,9 @@ export default function GeneralMemberSignUp() {
         year: formData.year,
         faculty: formData.faculty,
         program: formData.program,
-        interest: formData.interest,
-        events: formData.events,
       })
       
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      const googleSheetsResponse = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -195,14 +194,36 @@ export default function GeneralMemberSignUp() {
           year: formData.year,
           faculty: formData.faculty,
           program: formData.program,
-          interest: formData.interest,
-          events: formData.events,
         }),
       })
 
-      console.log('Google Sheets response:', response)
+      console.log('Google Sheets response:', googleSheetsResponse)
+      console.log('Google Sheets submission successful')
 
-      console.log('Form submitted successfully to Google Sheets')
+      console.log('Submitting to Supabase with all fields including interest and events...')
+      
+      const supabaseResponse = await supabase.from('Members').insert([
+        {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          uottawa_email: formData.email,
+          student_number: parseInt(formData.studentNumber),
+          year: formData.year,
+          faculty: formData.faculty,
+          program: formData.program,
+          why_join: formData.interest,
+          initiatives: formData.events,
+        },
+      ])
+
+      if (supabaseResponse.error) {
+        console.warn('Supabase submission failed:', supabaseResponse.error)
+        console.warn('Data was saved to Google Sheets but not to Supabase')
+      } else {
+        console.log('Supabase submission successful')
+      }
+
+      console.log('Form submitted successfully to both Google Sheets and Supabase')
       setFormData({
         firstName: '',
         lastName: '',
@@ -218,7 +239,7 @@ export default function GeneralMemberSignUp() {
       setIsModalOpen(true)
       
     } catch (error) {
-      console.error('Error submitting to Google Sheets:', error)
+      console.error('Error submitting form:', error)
       setErrors({ submit: 'Failed to submit application. Please try again.' })
     } finally {
       setIsSubmitting(false)
@@ -410,15 +431,15 @@ export default function GeneralMemberSignUp() {
                       style={{ backgroundColor: 'white' }}
                     >
                       <option value="">Select Faculty</option>
-                      <option value="Faculty of Arts">Faculty of Arts</option>
-                      <option value="Faculty of Education">Faculty of Education</option>
-                      <option value="Faculty of Engineering">Faculty of Engineering</option>
-                      <option value="Faculty of Health Sciences">Faculty of Health Sciences</option>
-                      <option value="Faculty of Law">Faculty of Law</option>
-                      <option value="Faculty of Medicine">Faculty of Medicine</option>
-                      <option value="Faculty of Science">Faculty of Science</option>
-                      <option value="Faculty of Social Science">Faculty of Social Science</option>
-                      <option value="Telfer School of Management">Telfer School of Management</option>
+                      <option value="Arts">Faculty of Arts</option>
+                      <option value="Education">Faculty of Education</option>
+                      <option value="Engineering">Faculty of Engineering</option>
+                      <option value="Health Sciences">Faculty of Health Sciences</option>
+                      <option value="Law">Faculty of Law</option>
+                      <option value="Medicine">Faculty of Medicine</option>
+                      <option value="Science">Faculty of Science</option>
+                      <option value="Social Science">Faculty of Social Science</option>
+                      <option value="Telfer">Telfer School of Management</option>
                     </select>
                     {errors.faculty && <p className="mt-1 text-sm text-red-600">{errors.faculty}</p>}
                   </div>
