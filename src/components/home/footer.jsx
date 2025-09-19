@@ -14,7 +14,7 @@ function SitemapLink(props) {
     <li>
       <a
         {...props}
-        className="inline-block transform-gpu font-semibold text-[#003e3e] transition-transform duration-500 ease-out will-change-transform hover:scale-105 hover:text-[#003e3e]/75 cursor-pointer"
+        className="inline-block transform-gpu cursor-pointer font-semibold text-[#003e3e] transition-transform duration-500 ease-out will-change-transform hover:scale-105 hover:text-[#003e3e]/75"
       />
     </li>
   )
@@ -35,8 +35,12 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/events">Events</SitemapLink>
           <SitemapLink href="/contact-us">Contact Us</SitemapLink>
-          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Privacy Policy</SitemapLink>
-          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Terms of Service</SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Privacy Policy
+          </SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Terms of Service
+          </SitemapLink>
         </SitemapLinks>
       </div>
       <div className="hidden lg:block">
@@ -59,14 +63,19 @@ function Sitemap() {
       </div>
       <div className="hidden lg:block">
         <SitemapLinks>
-          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Privacy Policy</SitemapLink>
-          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Terms of Service</SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Privacy Policy
+          </SitemapLink>
+          <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Terms of Service
+          </SitemapLink>
         </SitemapLinks>
       </div>
     </>
   )
 }
 
+/* --- Social icons --- */
 function SocialIconTikTok(props) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -74,7 +83,6 @@ function SocialIconTikTok(props) {
     </svg>
   )
 }
-
 function SocialIconYouTube(props) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -82,7 +90,6 @@ function SocialIconYouTube(props) {
     </svg>
   )
 }
-
 function SocialIconLinkedIn(props) {
   return (
     <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
@@ -90,7 +97,6 @@ function SocialIconLinkedIn(props) {
     </svg>
   )
 }
-
 function SocialIconInstagram(props) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -100,39 +106,46 @@ function SocialIconInstagram(props) {
 }
 
 function SocialLinks() {
+  const iconLink =
+    'inline-flex text-[#003e3e] transition-transform duration-300 ease-out hover:scale-110 hover:text-[#003e3e]/75'
+
   return (
     <>
       <Link
         href="https://instagram.com/uolab2life"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on Instagram"
-        className="data-hover:text-[#003e3e]/75 text-[#003e3e] transition-transform duration-300 ease-out hover:scale-110"
+        className={iconLink}
       >
-        <SocialIconInstagram className="size-4.5" />
+        <SocialIconInstagram className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
       <Link
         href="https://www.tiktok.com/@uolab2life"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on TikTok"
-        className="data-hover:text-[#003e3e]/75 text-[#003e3e] transition-transform duration-300 ease-out hover:scale-110"
+        className={iconLink}
       >
-        <SocialIconTikTok className="size-4" />
+        <SocialIconTikTok className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
       <Link
         href="https://www.linkedin.com/company/uolab2life/"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on LinkedIn"
-        className="data-hover:text-[#003e3e]/75 text-[#003e3e] transition-transform duration-300 ease-out hover:scale-110"
+        className={iconLink}
       >
-        <SocialIconLinkedIn className="size-4" />
+        <SocialIconLinkedIn className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
       <Link
         href="https://www.youtube.com/@uOttawa-Lab2Life"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on YouTube"
-        className="data-hover:text-[#003e3e]/75 text-[#003e3e] transition-transform duration-300 ease-out hover:scale-110"
+        className={iconLink}
       >
-        <SocialIconYouTube className="size-4" />
+        <SocialIconYouTube className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
     </>
   )
@@ -140,7 +153,7 @@ function SocialLinks() {
 
 function Copyright() {
   return (
-    <div className="text-base/6 text-[#003e3e]">
+    <div className="text-xs text-[#003e3e] sm:text-sm">
       &copy; {new Date().getFullYear()} uOttawa Lab2Life
     </div>
   )
@@ -169,29 +182,36 @@ export function Footer() {
                       <span className="text-xl font-semibold text-[#003e3e]">uOttawa Lab2Life</span>
                     </Link>
                     <p className="mt-4 max-w-sm text-base text-[#003e3e] lg:max-w-md">
-                      Dedicated to promoting and helping students explore various careers in healthcare and medicine.
+                      Dedicated to promoting and helping students explore various careers in
+                      healthcare and medicine.
                     </p>
                     <p className="mt-2 text-base font-bold text-[#003e3e]">
-                      Email: <a href="mailto:uolab2life@gmail.com" className="hover:text-[#003e3e]/75 transition-colors">uolab2life@gmail.com</a>
+                      Email:{' '}
+                      <a
+                        href="mailto:uolab2life@gmail.com"
+                        className="transition-colors hover:text-[#003e3e]/75"
+                      >
+                        uolab2life@gmail.com
+                      </a>
                     </p>
                   </PlusGridItem>
                 </div>
+
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-8 lg:col-span-4 lg:grid-cols-4 lg:pt-8">
                   <Sitemap />
                 </div>
               </div>
             </PlusGridRow>
-            <PlusGridRow className="flex justify-between">
-              <div>
-                <PlusGridItem className="py-3">
+
+            <PlusGridRow className="py-3">
+              <PlusGridItem className="w-full">
+                <div className="flex w-full items-center justify-between gap-3">
                   <Copyright />
-                </PlusGridItem>
-              </div>
-              <div className="flex">
-                <PlusGridItem className="flex items-center gap-8 py-3">
-                  <SocialLinks />
-                </PlusGridItem>
-              </div>
+                  <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+                    <SocialLinks />
+                  </div>
+                </div>
+              </PlusGridItem>
             </PlusGridRow>
           </PlusGrid>
         </Container>

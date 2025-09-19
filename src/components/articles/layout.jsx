@@ -42,10 +42,19 @@ function Header() {
       )}
     >
       <div className="w-full">
-        <div className="grid min-h-[48px] w-full grid-cols-2 items-center gap-x-4 md:grid-cols-3">
+        <div className="grid min-h-[48px] w-full grid-cols-3 items-center gap-x-4 md:grid-cols-3">
+          <div className="flex items-center justify-start md:hidden">
+            <Link href="/" title="Home" className="group flex items-center gap-2">
+              <img src="/images/lab2life-no-bg.png" alt="Lab2Life" className="h-10 w-auto" />
+              <span className="inline-block origin-center transform-gpu bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-lg font-semibold text-transparent transition-transform duration-300 ease-out group-hover:scale-110 group-hover:via-violet-500 motion-reduce:transition-none motion-reduce:hover:scale-100">
+                Lab2Life
+              </span>
+            </Link>
+          </div>
+
           <div className="hidden items-center justify-start md:flex">
             <Link href="/" title="Home" className="group flex items-center gap-3">
-              <img src="/lab2life-no-bg.png" alt="Lab2Life" className="h-14 w-auto" />
+              <img src="/images/lab2life-no-bg.png" alt="Lab2Life" className="h-14 w-auto" />
               <span className="inline-block origin-center transform-gpu bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-2xl font-semibold text-transparent transition-transform duration-300 ease-out group-hover:scale-110 group-hover:via-violet-500 motion-reduce:transition-none motion-reduce:hover:scale-100">
                 Lab2Life
               </span>
@@ -85,6 +94,7 @@ function Header() {
                 )
               })}
             </nav>
+
             <ThemeSelector className="relative z-10" />
           </div>
         </div>
@@ -92,6 +102,7 @@ function Header() {
     </header>
   )
 }
+
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false)
 

@@ -1,14 +1,14 @@
 'use client'
 
-import { SuccessModal } from './success-modal'
-import { BounceGeneralMember } from './bounce-general-member'
 import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
-import { Heading, Subheading } from '@/components/home/text'
-import { useState } from 'react'
+import { Heading } from '@/components/home/text'
 import { supabase } from '@/lib/supabase/client'
+import { useState } from 'react'
+import { BounceGeneralMember } from './bounce-general-member'
+import { SuccessModal } from './success-modal'
 
 export default function GeneralMemberSignUp() {
   const [formData, setFormData] = useState({
@@ -58,7 +58,8 @@ export default function GeneralMemberSignUp() {
       if (!validateName(value)) {
         setErrors((prev) => ({
           ...prev,
-          firstName: 'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
+          firstName:
+            'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
         }))
       }
     }
@@ -67,7 +68,8 @@ export default function GeneralMemberSignUp() {
       if (!validateName(value)) {
         setErrors((prev) => ({
           ...prev,
-          lastName: 'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
+          lastName:
+            'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
         }))
       }
     }
@@ -118,13 +120,15 @@ export default function GeneralMemberSignUp() {
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required'
     } else if (!validateName(formData.firstName)) {
-      newErrors.firstName = 'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
+      newErrors.firstName =
+        'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
     }
 
     if (!formData.lastName.trim()) {
       newErrors.lastName = 'Last name is required'
     } else if (!validateName(formData.lastName)) {
-      newErrors.lastName = 'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
+      newErrors.lastName =
+        'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
     }
 
     if (!formData.email.trim()) {
@@ -168,8 +172,9 @@ export default function GeneralMemberSignUp() {
     setIsSubmitting(true)
 
     try {
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYlLoNJbSDsbeQDBGR_Jnkut6Pa_YX0S2P6CtsiPBc056B_B9FOBeuubRlEAVjnTs/exec'
-      
+      const GOOGLE_SCRIPT_URL =
+        'https://script.google.com/macros/s/AKfycbxYlLoNJbSDsbeQDBGR_Jnkut6Pa_YX0S2P6CtsiPBc056B_B9FOBeuubRlEAVjnTs/exec'
+
       console.log('Submitting form data to Google Sheets (without interest and events):', {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -179,7 +184,7 @@ export default function GeneralMemberSignUp() {
         faculty: formData.faculty,
         program: formData.program,
       })
-      
+
       const googleSheetsResponse = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -201,7 +206,7 @@ export default function GeneralMemberSignUp() {
       console.log('Google Sheets submission successful')
 
       console.log('Submitting to Supabase with all fields including interest and events...')
-      
+
       const supabaseResponse = await supabase.from('Members').insert([
         {
           first_name: formData.firstName,
@@ -237,7 +242,6 @@ export default function GeneralMemberSignUp() {
       })
       setErrors({})
       setIsModalOpen(true)
-      
     } catch (error) {
       console.error('Error submitting form:', error)
       setErrors({ submit: 'Failed to submit application. Please try again.' })
@@ -254,67 +258,21 @@ export default function GeneralMemberSignUp() {
         </Container>
       </div>
 
-      <div className="py-8 sm:py-16 pb-16 sm:pb-24">
+      <div className="py-8 pb-16 sm:py-16 sm:pb-24">
         <Container>
           <div className="mx-auto max-w-6xl text-center">
             <Heading as="h2" className="mx-auto max-w-3xl">
               General Member Sign-Up
             </Heading>
 
-            <div className="mt-8 text-left">
-              <Subheading className="text-lg">What is Lab2Life?</Subheading>
-              <p className="mt-4 text-[#003e3e]">
-                We are an up and coming club which allows students to connect with and explore various jobs in the field of health and medicine.
-              </p>
-            </div>
-
-            <div className="mt-8 text-left">
-              <Subheading className="text-lg">Our Mission</Subheading>
-              <p className="mt-4 text-[#003e3e]">
-                uOttawa Lab2Life is dedicated to promoting and helping students explore various careers in the field of healthcare and medicine. We wish to support students interested in the field by providing them with information, resources, and opportunities to apply their academics to different careers. Through innovative events, professional development initiatives, podcast episodes with people in various professions, articles about different careers, workshops about job applications, and networking opportunities, we aim to guide students through their journey from the classroom and lab to diverse careers in the field and support them with potential career pathways such as jobs, graduate education or medical school.
-              </p>
-            </div>
-
-            <div className="mt-8 text-left">
-              <Subheading className="text-lg">What do you get by becoming a general member?</Subheading>
-              <ul className="mt-4 space-y-2 text-[#003e3e]">
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>Access to Professional Networks:</strong> Opportunities to connect with industry professionals, alumni, and guest speakers.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>Exclusive Discounts and Perks from our Sponsors:</strong> Access to special deals or discounts for the products offered by our sponsors.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>First Dibs on Events:</strong> Priority registration for popular events or limited spots in workshops.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>General Member Meetings:</strong> We try to hold at least 1-2 meetings per semester for general members where you guys can provide your inputs.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>Members-Only Newsletters:</strong> Regular updates on club news, content, sneak peaks into upcoming events and opportunities that are exclusive to members.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>Study Groups:</strong> Organized study sessions or groups within the club to help with coursework and exam preparation.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-[#003e3e]">•</span>
-                  <span><strong>Volunteer Opportunities:</strong> Opportunities to give back to the community through organized volunteer activities.</span>
-                </li>
-              </ul>
-            </div>
-
             <div className="mt-16">
-              <Heading as="h2" className="mx-auto max-w-3xl">Registration Form</Heading>
               <form onSubmit={handleSubmit} className="mt-8 space-y-6 text-left">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="firstName" className="mb-2 block text-sm font-medium text-[#003e3e]">
+                    <label
+                      htmlFor="firstName"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
                       First Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -329,10 +287,15 @@ export default function GeneralMemberSignUp() {
                       style={{ backgroundColor: 'white' }}
                       placeholder="Your first name"
                     />
-                    {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>}
+                    {errors.firstName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+                    )}
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="mb-2 block text-sm font-medium text-[#003e3e]">
+                    <label
+                      htmlFor="lastName"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
                       Last Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -347,7 +310,9 @@ export default function GeneralMemberSignUp() {
                       style={{ backgroundColor: 'white' }}
                       placeholder="Your last name"
                     />
-                    {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>}
+                    {errors.lastName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+                    )}
                   </div>
                 </div>
 
@@ -373,7 +338,10 @@ export default function GeneralMemberSignUp() {
                 </div>
 
                 <div>
-                  <label htmlFor="studentNumber" className="mb-2 block text-sm font-medium text-[#003e3e]">
+                  <label
+                    htmlFor="studentNumber"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
                     Student Number <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -388,7 +356,9 @@ export default function GeneralMemberSignUp() {
                     style={{ backgroundColor: 'white' }}
                     placeholder="Your student number"
                   />
-                  {errors.studentNumber && <p className="mt-1 text-sm text-red-600">{errors.studentNumber}</p>}
+                  {errors.studentNumber && (
+                    <p className="mt-1 text-sm text-red-600">{errors.studentNumber}</p>
+                  )}
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -417,7 +387,10 @@ export default function GeneralMemberSignUp() {
                     {errors.year && <p className="mt-1 text-sm text-red-600">{errors.year}</p>}
                   </div>
                   <div>
-                    <label htmlFor="faculty" className="mb-2 block text-sm font-medium text-[#003e3e]">
+                    <label
+                      htmlFor="faculty"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
                       Faculty <span className="text-red-500">*</span>
                     </label>
                     <select
@@ -441,12 +414,17 @@ export default function GeneralMemberSignUp() {
                       <option value="Social Science">Faculty of Social Science</option>
                       <option value="Telfer">Telfer School of Management</option>
                     </select>
-                    {errors.faculty && <p className="mt-1 text-sm text-red-600">{errors.faculty}</p>}
+                    {errors.faculty && (
+                      <p className="mt-1 text-sm text-red-600">{errors.faculty}</p>
+                    )}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="program" className="mb-2 block text-sm font-medium text-[#003e3e]">
+                  <label
+                    htmlFor="program"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
                     Program <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -465,7 +443,10 @@ export default function GeneralMemberSignUp() {
                 </div>
 
                 <div>
-                  <label htmlFor="interest" className="mb-2 block text-sm font-medium text-[#003e3e]">
+                  <label
+                    htmlFor="interest"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
                     Why are you interested in joining uOttawa Lab2Life?
                   </label>
                   <textarea
@@ -484,12 +465,15 @@ export default function GeneralMemberSignUp() {
                       e.target.style.height = e.target.scrollHeight + 'px'
                     }}
                   />
-                  {errors.interest && <p className="mt-1 text-sm text-red-600">{errors.interest}</p>}
+                  {errors.interest && (
+                    <p className="mt-1 text-sm text-red-600">{errors.interest}</p>
+                  )}
                 </div>
 
                 <div>
                   <label htmlFor="events" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                    What events or initiatives do you want to see us do during the 2024-2025 academic year?
+                    What events or initiatives do you want to see us do during the 2024-2025
+                    academic year?
                   </label>
                   <textarea
                     id="events"
@@ -527,11 +511,11 @@ export default function GeneralMemberSignUp() {
                     className={`w-full rounded-full px-8 py-4 font-semibold shadow-md transition-all duration-300 ${
                       isSubmitting
                         ? 'cursor-not-allowed bg-gray-400 text-gray-600'
-                        : 'bg-[#99c96f] text-[#003e3e] cursor-pointer'
+                        : 'cursor-pointer bg-[#99c96f] text-[#003e3e]'
                     }`}
                     style={{
                       border: '1px solid transparent',
-                      transition: 'all 0.3s ease-in-out'
+                      transition: 'all 0.3s ease-in-out',
                     }}
                     onMouseEnter={(e) => {
                       if (!isSubmitting) {
