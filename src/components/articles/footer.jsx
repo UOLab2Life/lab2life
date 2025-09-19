@@ -3,7 +3,7 @@ import { Link } from '@/components/home/link'
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/home/plus-grid'
 
 function SitemapLinks({ children }) {
-  return <ul className="mt-6 space-y-4 text-base/6">{children}</ul>
+  return <ul className="mt-6 space-y-3 text-sm/6 sm:space-y-4 sm:text-base/6">{children}</ul>
 }
 
 function SitemapLink(props) {
@@ -16,6 +16,7 @@ function SitemapLink(props) {
     </li>
   )
 }
+
 function Sitemap() {
   return (
     <>
@@ -102,45 +103,51 @@ function SocialIconInstagram(props) {
     </svg>
   )
 }
+
 function SocialLinks() {
   const iconLink =
-    'text-[#003e3e] dark:text-white transition-transform duration-300 ease-out hover:scale-110 hover:text-[#003e3e]/75 dark:hover:text-white/75'
+    'inline-flex text-[#003e3e] dark:text-white transition-transform duration-300 ease-out hover:scale-110 hover:text-[#003e3e]/75 dark:hover:text-white/75'
+
   return (
     <>
       <Link
         href="https://instagram.com/uolab2life"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on Instagram"
         className={iconLink}
       >
-        <SocialIconInstagram className="size-4.5" />
+        <SocialIconInstagram className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
 
       <Link
         href="https://www.tiktok.com/@uolab2life"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on TikTok"
         className={iconLink}
       >
-        <SocialIconTikTok className="size-4" />
+        <SocialIconTikTok className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
 
       <Link
         href="https://www.linkedin.com/company/uolab2life/"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on LinkedIn"
         className={iconLink}
       >
-        <SocialIconLinkedIn className="size-4" />
+        <SocialIconLinkedIn className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
 
       <Link
         href="https://www.youtube.com/@uOttawa-Lab2Life"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit us on YouTube"
         className={iconLink}
       >
-        <SocialIconYouTube className="size-4" />
+        <SocialIconYouTube className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
       </Link>
     </>
   )
@@ -148,7 +155,7 @@ function SocialLinks() {
 
 function Copyright() {
   return (
-    <div className="text-gray-600 before:content-[''] dark:text-white">
+    <div className="text-xs text-gray-600 sm:text-sm dark:text-white">
       &copy; {new Date().getFullYear()} uOttawa Lab2Life
     </div>
   )
@@ -156,11 +163,11 @@ function Copyright() {
 
 export function Footer() {
   return (
-    <footer>
+    <footer role="contentinfo">
       <Container>
         <PlusGrid className="pb-16 pt-16">
           <PlusGridRow>
-            <div className="grid grid-cols-2 gap-y-6 pb-6 lg:grid-cols-6 lg:gap-8">
+            <div className="grid grid-cols-2 gap-y-5 pb-6 lg:grid-cols-6 lg:gap-8">
               <div className="col-span-2 flex">
                 <PlusGridItem className="pt-8 lg:pb-6">
                   <Link
@@ -170,37 +177,43 @@ export function Footer() {
                     <img
                       src="/images/home/uolab2life_logo_no_bg.png"
                       alt="Lab2Life"
-                      className="h-11 w-auto"
+                      className="h-9 w-auto sm:h-10 lg:h-11"
                     />
-                    <span className="bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-xl font-semibold text-transparent before:block before:content-['']">
+                    <span className="bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-300 bg-clip-text text-lg font-semibold text-transparent before:block before:content-[''] sm:text-xl">
                       uOttawa Lab2Life
                     </span>
                   </Link>
-                  <p className="mt-4 max-w-sm text-base text-[#003e3e] dark:text-[#FFFFFF] lg:max-w-md">
+                  <p className="mt-4 max-w-sm text-sm text-[#003e3e] sm:text-base lg:max-w-md dark:text-[#FFFFFF]">
                     Dedicated to promoting and helping students explore various careers in
                     healthcare and medicine.
                   </p>
-                  <p className="mt-2 text-base font-bold text-[#003e3e] dark:text-[#FFFFFF]">
-                    Email: <a href="mailto:uolab2life@gmail.com" className="hover:text-[#003e3e]/75 dark:hover:text-white/75 transition-colors">uolab2life@gmail.com</a>
+                  <p className="mt-2 text-sm font-bold text-[#003e3e] sm:text-base dark:text-[#FFFFFF]">
+                    Email:{' '}
+                    <a
+                      href="mailto:uolab2life@gmail.com"
+                      className="transition-colors hover:text-[#003e3e]/75 dark:hover:text-white/75"
+                    >
+                      uolab2life@gmail.com
+                    </a>
                   </p>
                 </PlusGridItem>
               </div>
+
               <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-8 lg:col-span-4 lg:grid-cols-4 lg:pt-8">
-<Sitemap />
+                <Sitemap />
               </div>
             </div>
           </PlusGridRow>
-          <PlusGridRow className="flex justify-between">
-            <div>
-              <PlusGridItem className="py-3">
+
+          <PlusGridRow className="py-3">
+            <PlusGridItem className="w-full">
+              <div className="flex w-full items-center justify-between gap-3">
                 <Copyright />
-              </PlusGridItem>
-            </div>
-            <div className="flex">
-              <PlusGridItem className="flex items-center gap-8 py-3">
-                <SocialLinks />
-              </PlusGridItem>
-            </div>
+                <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+                  <SocialLinks />
+                </div>
+              </div>
+            </PlusGridItem>
           </PlusGridRow>
         </PlusGrid>
       </Container>

@@ -10,7 +10,7 @@ export function BounceGeneralMember() {
             box-shadow: 0 0 0 0 rgba(0, 62, 62, 1);
           }
           50% {
-            box-shadow: 0 0 0 6px rgba(0, 62, 62, 0.6);
+            box-shadow: 0 0 0 2px rgba(0, 62, 62, 0.6);
           }
         }
         .ring-pulse {
