@@ -19,9 +19,6 @@ export default function ContactUs() {
   const [errors, setErrors] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  useEffect(() => {
-    document.title = 'Contact Us - uOttawaLab2Life'
-  }, [])
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {

@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Podcasts - uOttawa Lab2Life',
   description: 'Listen to our podcasts featuring healthcare professionals and career insights.',
   icons: {
-    icon: '/lab2life-no-bg.png',
+    icon: '/images/lab2life-no-bg.png',
   },
 }
 
