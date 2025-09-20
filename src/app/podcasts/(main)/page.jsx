@@ -62,7 +62,7 @@ function EpisodeEntry({ episode }) {
     : []
 
   return (
-    <article aria-labelledby={`episode-${episode.id}-title`} className="py-4 sm:py-6">
+    <article aria-labelledby={`episode-${episode.id}-title`} className="pt-0 pb-4 sm:py-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start rounded-2xl bg-white/50 p-8 transition-all duration-300 hover:scale-105 hover:bg-white/70 hover:shadow-lg">
           <div className="w-full pb-4 sm:pb-0">
@@ -141,8 +141,8 @@ export default async function Home() {
       </div>
 
       <div className="mb-2 bg-[#003e3e] lg:hidden">
-        <div className="px-4 pb-4 pt-2 sm:px-6 md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-12 xl:px-8">
-          <div className="mb-4 sm:mb-6">
+        <div className="px-4 pb-4 -mt-2 pt-0 sm:mt-0 sm:pt-1 sm:px-6 md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-12 xl:px-8">
+          <div className="mb-4 pb-4 sm:mb-6 sm:pb-0">
             <Navbar />
           </div>
           <Link

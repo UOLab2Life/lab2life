@@ -4,7 +4,7 @@ import { Heading } from '@/components/home/text'
 
 export function Bounce() {
   return (
-    <div className="bg-white py-8 sm:py-16">
+    <div className="bg-white pt-4 pb-12 sm:pt-8 sm:pb-24">
       <Container>
         <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
           <div className="flex-shrink-0">

@@ -9,15 +9,16 @@ import { Heading } from './text'
 
 const members = [
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Sanjay Sathees Executive Photo.JPG',
     name: 'Sanjay Sathees',
     position: 'Co-President and Founder',
     education: '4th Year | B.Sc. Biomedical Science',
     email: 'uolab2life@gmail.com',
     linkedin: 'https://www.linkedin.com/in/sanjay-sathees/',
+    zoom: 120,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Bharat Yanala Executive Photo.JPG',
     name: 'Bharat Yanala',
     position: 'Co-President',
     education: '4th Year | B.HSc. Health Science',
@@ -25,23 +26,25 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/bharatyanala/',
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Parisha Baral Executive Photo.JPG',
     name: 'Parisha Baral',
     position: 'VP Internal Operations',
     education: '1st Year | B.Sc. Biomedical Science',
     email: 'internals.uol2l@gmail.com',
     linkedin: '',
+    zoom: 110,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Maya Labbe Executive Photos.JPG',
     name: 'Maya Labbé',
     position: 'VP Finance',
     education: '4th Year | B.HSc. Health Science',
     email: 'finance.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maya-labb%C3%A9-85987a298/',
+    imagePosition: 'center',
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Eshal Uddin Executive Photo.JPG',
     name: 'Eshal Uddin',
     position: 'VP External Affairs',
     education: '4th Year | B.Sc. Biomedical Science',
@@ -49,23 +52,25 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/eshal-uddin-5019b9267/',
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Meera Harahsha Executive Photo.JPG',
     name: 'Meera Harahsha',
     position: 'VP External Affairs',
     education: '2nd Year | B.HSc Health Science',
     email: 'externals.uol2l@gmail.com',
     linkedin: '',
+    zoom: 150,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Maeve McAneney Executive Photo.JPG',
     name: 'Maeve McAneney',
     position: 'VP Events',
     education: '2nd Year | B.HSc Health Science',
     email: 'events.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maeve-mcaneney-88259121b/',
+    zoom: 150,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Ghazal Farahmand Executive Photo.JPG',
     name: 'Ghazal Farahmand',
     position: 'VP Marketing',
     education: '3rd Year | B.Sc. Biomedical Science',
@@ -73,7 +78,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/ghazal-farahmand-226600310/',
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Jasmin Yermashova Executive Photo.jpg',
     name: 'Jasmin Yermashova',
     position: 'VP Graphic Design',
     education: '4th Year | B.Sc. Biology',
@@ -81,39 +86,46 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/jasmin-yermashova/',
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Nahiyan Ishtiaque Executive Photo.JPG',
     name: 'Nahiyan Ishtiaque',
     position: 'Senior Webmaster',
     education: '4th Year | B.Sc Computer Science',
     email: 'webmaster.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/nahiyan-ishtiaque/',
+    imagePosition: 'center',
+    zoom: 130,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Onur Onel Executive Photo.JPG',
     name: 'Onur Onel',
     position: 'Webmaster',
     education: '2nd Year | B.Sc. Computer Science',
     email: 'webmaster.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/onuronel13/',
+    imagePosition: 'center',
+    zoom: 130,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Maroun Tarabey Executive Photo.JPG',
     name: 'Maroun Tarabey',
     position: 'Editor-in-Chief',
     education: '2nd Year | B.Sc. Biochemistry',
     email: 'editor.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maroun-tarabey-55a88b2a7/',
+    imagePosition: 'center',
+    zoom: 130,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Maya Alali Executive Photo.JPG',
     name: 'Maya Alali',
     position: 'Podcast Producer',
     education: '2nd Year | B.Sc. Biomedical Science',
     email: 'podcast.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maya-al-ali-676a31371/',
+    zoom: 180,
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Lacey Mullin Executive Photo.JPG',
     name: 'Lacey Mullin',
     position: 'Upper Year Representative',
     education: '4th Year | B.Sc. Biopharm. Science',
@@ -121,7 +133,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/lacey-mullin-209963327/',
   },
   {
-    img: '/images/home/blank.webp',
+    img: '/images/members-carousel/Anoosha Rehman Executive Photo.JPG',
     name: 'Anoosha Rehman',
     position: 'Lower Year Representative',
     education: '2nd Year | B.Sc. Biomedical Science',
@@ -137,6 +149,8 @@ function MemberCard({
   email,
   linkedin,
   img,
+  zoom,
+  imagePosition,
   bounds,
   scrollX,
   ...props
@@ -185,7 +199,12 @@ function MemberCard({
       <img
         alt=""
         src={img}
-        className="absolute inset-x-0 top-0 aspect-square w-full object-cover"
+        className={`absolute inset-x-0 top-0 aspect-square w-full ${
+          imagePosition === 'top' ? 'object-top' : 
+          imagePosition === 'bottom' ? 'object-bottom' : 
+          'object-center'
+        } object-cover`}
+        style={zoom ? { transform: `scale(${zoom / 100})` } : undefined}
       />
       <div
         aria-hidden="true"
@@ -347,7 +366,7 @@ export function MembersCarousel() {
   }, [])
 
   return (
-    <div className="overflow-hidden pt-16 pb-16">
+    <div className="overflow-hidden pt-8 pb-8 sm:pt-16 sm:pb-16">
       <Container>
         <div ref={setReferenceWindowRef} className="text-center">
           <Heading as="h3" className="mt-2 text-[#003e3e]">
@@ -369,7 +388,7 @@ export function MembersCarousel() {
           '[--scroll-padding:max(--spacing(6),calc((100vw-(var(--container-2xl)))/2))] lg:[--scroll-padding:max(--spacing(8),calc((100vw-(var(--container-7xl)))/2))]',
         ])}
       >
-        {members.map(({ img, name, position, education, email, linkedin }, memberIndex) => (
+        {members.map(({ img, name, position, education, email, linkedin, zoom, imagePosition }, memberIndex) => (
           <MemberCard
             key={memberIndex}
             name={name}
@@ -378,6 +397,8 @@ export function MembersCarousel() {
             email={email}
             linkedin={linkedin}
             img={img}
+            zoom={zoom}
+            imagePosition={imagePosition}
             bounds={bounds}
             scrollX={scrollX}
             onClick={() => handleMemberClick(memberIndex)}
@@ -385,7 +406,7 @@ export function MembersCarousel() {
         ))}
 
         {Array.from({ length: 50 }, (_, repeatIndex) =>
-          members.map(({ img, name, position, education, email, linkedin }, cardIndex) => (
+          members.map(({ img, name, position, education, email, linkedin, zoom, imagePosition }, cardIndex) => (
             <MemberCard
               key={`repeat-${repeatIndex}-${cardIndex}`}
               name={name}
@@ -394,6 +415,8 @@ export function MembersCarousel() {
               email={email}
               linkedin={linkedin}
               img={img}
+              zoom={zoom}
+              imagePosition={imagePosition}
               bounds={bounds}
               scrollX={scrollX}
               onClick={() => handleMemberClick(cardIndex)}
