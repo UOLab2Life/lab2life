@@ -7,7 +7,7 @@ export const metadata = {
   description:
     'Find our monthly articles passionately written by our representatives covering diverse medical themes.',
   icons: {
-    icon: '/lab2life-no-bg.png',
+    icon: '/images/lab2life-no-bg.png',
   },
 }
 

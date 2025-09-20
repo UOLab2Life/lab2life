@@ -7,7 +7,7 @@ export const metadata = {
   description:
     'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.',
   icons: {
-    icon: '/lab2life-no-bg.png',
+    icon: '/images/lab2life-no-bg.png',
   },
 }
 
