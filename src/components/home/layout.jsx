@@ -75,7 +75,7 @@ function Header() {
             <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-32">
               <img
                 alt=""
-                src="/images/about-us/about-us-4.JPEG"
+                src="/images/about-us/about-us-4.jpeg"
                 className="block size-full object-cover"
               />
             </div>
@@ -88,13 +88,13 @@ function Header() {
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
               <dt className="text-sm/6 text-gray-600">General Members</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                <AnimatedNumber start={0} end={275} />+
+                <AnimatedNumber start={0} end={300} />+
               </dd>
             </div>
             <div className="flex flex-col gap-y-2">
               <dt className="text-sm/6 text-gray-600">Articles + Podcasts Released</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                <AnimatedNumber start={0} end={18} />
+                <AnimatedNumber start={0} end={19} />
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">

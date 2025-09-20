@@ -4,7 +4,7 @@ import { Container } from '@/components/home/container'
 import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
-import { Heading } from '@/components/home/text'
+import { Heading, Subheading } from '@/components/home/text'
 import { supabase } from '@/lib/supabase/client'
 import { useState } from 'react'
 import { BounceGeneralMember } from './bounce-general-member'
@@ -212,7 +212,7 @@ export default function GeneralMemberSignUp() {
           first_name: formData.firstName,
           last_name: formData.lastName,
           uottawa_email: formData.email,
-          student_number: parseInt(formData.studentNumber),
+          student_number: formData.studentNumber,
           year: formData.year,
           faculty: formData.faculty,
           program: formData.program,
@@ -265,7 +265,53 @@ export default function GeneralMemberSignUp() {
               General Member Sign-Up
             </Heading>
 
+            <div className="mx-auto mt-12 max-w-6xl text-left space-y-12">
+              <div>
+                <Subheading as="h3" className="mb-6">What is Lab2Life?</Subheading>
+                <p className="text-lg/8 text-[#003e3e]">
+                  We are an up and coming club which allows students to connect with and explore various jobs in the field of health and medicine.
+                </p>
+              </div>
+
+              <div>
+                <Subheading as="h3" className="mb-6">What do you get by becoming a general member?</Subheading>
+                <ul className="text-lg/8 text-[#003e3e] space-y-2">
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">Access to Professional Networks:</strong> Opportunities to connect with industry professionals, alumni, and guest speakers.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">Exclusive Discounts and Perks from our Sponsors:</strong> Access to special deals or discounts for the products offered by our sponsors.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">First Dibs on Events:</strong> Priority registration for popular events or limited spots in workshops.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">General Member Meetings:</strong> We try to hold at least 1-2 meetings per semester for general members where you guys can provide your inputs.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">Members-Only Newsletters:</strong> Regular updates on club news, content, sneak peaks into upcoming events and opportunities that are exclusive to members.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">Study Groups:</strong> Organized study sessions or groups within the club to help with coursework and exam preparation.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                    <span><strong className="text-[#003e3e]">Volunteer Opportunities:</strong> Opportunities to give back to the community through organized volunteer activities.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <div className="mt-16">
+              <Heading as="h3" className="mx-auto max-w-6xl mb-8 pb-4">
+                Registration Form
+              </Heading>
               <form onSubmit={handleSubmit} className="mt-8 space-y-6 text-left">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>

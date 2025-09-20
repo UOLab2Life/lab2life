@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Articles - uOttawa Lab2Life',
   description:
     'Find our monthly articles passionately written by our representatives covering diverse medical themes.',
+  icons: {
+    icon: '/lab2life-no-bg.png',
+  },
 }
 
 const inter = localFont({
