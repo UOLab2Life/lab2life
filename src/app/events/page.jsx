@@ -10,6 +10,9 @@ export const metadata = {
   title: 'Events - uOttawa Lab2Life',
   description:
     'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
+  icons: {
+    icon: '/images/lab2life-no-bg.png',
+  },
 }
 
 export default function Events() {

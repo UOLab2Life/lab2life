@@ -3,7 +3,7 @@ export const metadata = {
   description:
     'Join the uOttawa Lab2Life community! Sign up as a general member to gain access to exclusive events, networking opportunities, and resources.',
   icons: {
-    icon: '/lab2life-no-bg.png',
+    icon: '/images/lab2life-no-bg.png',
   },
 }
 
