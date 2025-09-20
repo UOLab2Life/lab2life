@@ -17,6 +17,48 @@ export function LatestArticles() {
           <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
+                alt="Clinical Support"
+                className="aspect-3/2 w-full object-cover"
+                src="/images/home/clinicalsupport1.png"
+              />
+              <div className="flex flex-1 flex-col p-8">
+                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  September 16th, 2025
+                </div>
+                <div className="mt-2 text-lg/7 font-medium">
+                  <a
+                    href="/articles/newsletters/september2025/clinical-support"
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
+                    <span className="absolute inset-0"></span>
+                    The Power of Clinical Support
+                  </a>
+                </div>
+                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
+                Clinical support is an essential part of modern healthcare; think of it as “tech support” but for life-saving systems 
+                and machinery. Modern labs rely on high-tech equipment for...
+                </div>
+                <div className="mt-6 flex items-center gap-3">
+                  <img
+                    alt="Anoosha Rehman"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
+                    src="/images/members-carousel/Anoosha Rehman Executive Photo.JPG"
+                    style={{ transform: 'scale(1.2)', objectPosition: 'center 20%' }}
+                  />
+                  <div className="text-base/6 font-medium text-gray-700">Anoosha Rehman</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+              <img
                 alt="A bunch of nurses"
                 className="aspect-3/2 w-full object-cover"
                 src="/images/home/lncac_cover.jpg"
@@ -34,7 +76,7 @@ export function LatestArticles() {
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
-                    href="/articles/newsletters/legal-nurse-consultant"
+                    href="/articles/newsletters/february2025/legal-nurse-consultant"
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
@@ -50,7 +92,7 @@ export function LatestArticles() {
                   <img
                     alt="Maroun Tarabey"
                     className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/home/maroun-tarabey.avif"
+                    src="/images/members-carousel/Maroun Tarabey Executive Photo.JPG"
                   />
                   <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
                 </div>
@@ -76,7 +118,7 @@ export function LatestArticles() {
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
-                    href="/articles/newsletters/medical-law-introduction"
+                    href="/articles/newsletters/february2025/medical-law-introduction"
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
@@ -87,48 +129,6 @@ export function LatestArticles() {
                   Medical Law, often referred to as Health Law, is an interdisciplinary field of law
                   that focuses on the legislative, executive, and judicial rules and regulations
                   that govern the healthcare industry...{' '}
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <img
-                    alt="Maria Bilat"
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/home/maria-bilat.avif"
-                  />
-                  <div className="text-base/6 font-medium text-gray-700">Maria Bilat</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
-              <img
-                alt="Occupational Therapists and Prosthetic Adaptation"
-                className="aspect-3/2 w-full object-cover"
-                src="/images/home/prosthetic.png"
-              />
-              <div className="flex flex-1 flex-col p-8">
-                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  November 25th, 2024
-                </div>
-                <div className="mt-2 text-lg/7 font-medium">
-                  <a
-                    href="/articles/newsletters/occupational-therapists"
-                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
-                  >
-                    <span className="absolute inset-0"></span>
-                    Partners in Progress The Role of Occupational Therapists in Prosthetic
-                    Adaptation
-                  </a>
-                </div>
-                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
-                  Losing a limb is a life-altering experience that brings immense physical,
-                  emotional, and psychological challenges. Many patients struggle with the...
                 </div>
                 <div className="mt-6 flex items-center gap-3">
                   <img

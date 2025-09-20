@@ -178,7 +178,7 @@ export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
 
   return (
     <AudioProvider>
-      <div className="bg-white py-16">
+      <div className="bg-white py-8 sm:py-16">
         <Container>
           <div className="mb-12 text-center">
             <Heading as="h2" className="mb-6 text-4xl font-bold text-[#003e3e]">

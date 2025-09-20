@@ -164,8 +164,8 @@ export function Footer() {
     <footer>
       <Gradient className="relative">
         <div className="rounded-4xl absolute inset-2 bg-white/80" />
-        <Container>
-          <PlusGrid className="pb-16 pt-16">
+        <Container className="px-6 sm:px-0">
+          <PlusGrid className="pb-8 pt-8 sm:pb-16 sm:pt-16">
             <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-6 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
@@ -197,7 +197,7 @@ export function Footer() {
                   </PlusGridItem>
                 </div>
 
-                <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-8 lg:col-span-4 lg:grid-cols-4 lg:pt-8">
+                <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-8 pb-6 sm:pb-0 lg:col-span-4 lg:grid-cols-4 lg:pt-8">
                   <Sitemap />
                 </div>
               </div>
