@@ -86,19 +86,18 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const defaultBanner = (
     <Link
-      href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
-      target="_blank"
+      href="/articles/newsletters/september2025/clinical-support"
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (
         <>
-          <span className="xs:inline hidden">Club Fair - Sept 3rd, 2025</span>
-          <span className="xs:hidden">Club Fair - Sept 3rd, 2025</span>
+          <span className="xs:inline hidden">NEW ARTICLE! The Power of Clinical Support</span>
+          <span className="xs:hidden">NEW ARTICLE! The Power of Clinical Support</span>
         </>
       ) : (
         <>
-          <span className="xs:inline hidden">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
-          <span className="xs:hidden">uOttawa Lab2Life Club Fair - September 3rd, 2025</span>
+          <span className="xs:inline hidden">NEW ARTICLE! The Power of Clinical Support</span>
+          <span className="xs:hidden">NEW ARTICLE! The Power of Clinical Support</span>
         </>
       )}
       <ChevronRightIcon className="size-3 sm:size-4" />
