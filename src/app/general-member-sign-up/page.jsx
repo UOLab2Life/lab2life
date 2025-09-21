@@ -5,9 +5,7 @@ import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
-import { supabase } from '@/lib/supabase/client'
 import { useState } from 'react'
-import { BounceGeneralMember } from './bounce-general-member'
 import { SuccessModal } from './success-modal'
 
 export default function GeneralMemberSignUp() {
@@ -173,9 +171,9 @@ export default function GeneralMemberSignUp() {
 
     try {
       const GOOGLE_SCRIPT_URL =
-        'https://script.google.com/macros/s/AKfycbxYlLoNJbSDsbeQDBGR_Jnkut6Pa_YX0S2P6CtsiPBc056B_B9FOBeuubRlEAVjnTs/exec'
+        'https://script.google.com/macros/s/AKfycbzwopvd-GWCU2rGZckSvl8a3YyfKtJD1A-vbZRUCfrCpObBD9V713Q1OsvyiSiUZ40D/exec'
 
-      console.log('Submitting form data to Google Sheets (without interest and events):', {
+      console.log('Submitting form data to Google Sheets (with all fields including interest and events):', {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
@@ -183,13 +181,19 @@ export default function GeneralMemberSignUp() {
         year: formData.year,
         faculty: formData.faculty,
         program: formData.program,
+        interest: formData.interest,
+        events: formData.events,
       })
+
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 8000)
 
       const googleSheetsResponse = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           firstName: formData.firstName,
@@ -199,36 +203,19 @@ export default function GeneralMemberSignUp() {
           year: formData.year,
           faculty: formData.faculty,
           program: formData.program,
+          interest: formData.interest,
+          events: formData.events,
         }),
+        signal: controller.signal,
+        keepalive: true,
       })
+
+      clearTimeout(timeoutId)
 
       console.log('Google Sheets response:', googleSheetsResponse)
       console.log('Google Sheets submission successful')
 
-      console.log('Submitting to Supabase with all fields including interest and events...')
-
-      const supabaseResponse = await supabase.from('Members').insert([
-        {
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          uottawa_email: formData.email,
-          student_number: formData.studentNumber,
-          year: formData.year,
-          faculty: formData.faculty,
-          program: formData.program,
-          why_join: formData.interest,
-          initiatives: formData.events,
-        },
-      ])
-
-      if (supabaseResponse.error) {
-        console.warn('Supabase submission failed:', supabaseResponse.error)
-        console.warn('Data was saved to Google Sheets but not to Supabase')
-      } else {
-        console.log('Supabase submission successful')
-      }
-
-      console.log('Form submitted successfully to both Google Sheets and Supabase')
+      console.log('Form submitted successfully to Google Sheets')
       setFormData({
         firstName: '',
         lastName: '',
@@ -244,7 +231,11 @@ export default function GeneralMemberSignUp() {
       setIsModalOpen(true)
     } catch (error) {
       console.error('Error submitting form:', error)
-      setErrors({ submit: 'Failed to submit application. Please try again.' })
+      if (error.name === 'AbortError') {
+        setErrors({ submit: 'Submission is taking longer than expected. Please try again.' })
+      } else {
+        setErrors({ submit: 'Failed to submit application. Please try again.' })
+      }
     } finally {
       setIsSubmitting(false)
     }
@@ -540,9 +531,6 @@ export default function GeneralMemberSignUp() {
                   {errors.events && <p className="mt-1 text-sm text-red-600">{errors.events}</p>}
                 </div>
 
-                <div className="mt-8">
-                  <BounceGeneralMember />
-                </div>
 
                 {errors.submit && (
                   <div className="pt-2">

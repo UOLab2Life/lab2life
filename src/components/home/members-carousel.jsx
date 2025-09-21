@@ -406,22 +406,25 @@ export function MembersCarousel() {
         ))}
 
         {Array.from({ length: 50 }, (_, repeatIndex) =>
-          members.map(({ img, name, position, education, email, linkedin, zoom, imagePosition }, cardIndex) => (
-            <MemberCard
-              key={`repeat-${repeatIndex}-${cardIndex}`}
-              name={name}
-              position={position}
-              education={education}
-              email={email}
-              linkedin={linkedin}
-              img={img}
-              zoom={zoom}
-              imagePosition={imagePosition}
-              bounds={bounds}
-              scrollX={scrollX}
-              onClick={() => handleMemberClick(cardIndex)}
-            />
-          )),
+          members.map(({ img, name, position, education, email, linkedin, zoom, imagePosition }, cardIndex) => {
+            const actualIndex = members.length + (repeatIndex * members.length) + cardIndex
+            return (
+              <MemberCard
+                key={`repeat-${repeatIndex}-${cardIndex}`}
+                name={name}
+                position={position}
+                education={education}
+                email={email}
+                linkedin={linkedin}
+                img={img}
+                zoom={zoom}
+                imagePosition={imagePosition}
+                bounds={bounds}
+                scrollX={scrollX}
+                onClick={() => handleMemberClick(actualIndex)}
+              />
+            )
+          }),
         )}
 
         <div className="w-2xl shrink-0 sm:w-216" />

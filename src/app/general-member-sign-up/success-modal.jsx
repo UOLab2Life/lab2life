@@ -1,10 +1,21 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { BounceGeneralMember } from './bounce-general-member'
 
 export function SuccessModal({ isOpen, onClose }) {
+  const router = useRouter()
+
   useEffect(() => {
     if (isOpen) {
+      const isMobile = window.innerWidth < 768
+      if (isMobile) {
+        router.push('/general-member-sign-up/success')
+        onClose()
+        return
+      }
+      
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'unset'
@@ -13,15 +24,15 @@ export function SuccessModal({ isOpen, onClose }) {
     return () => {
       document.body.style.overflow = 'unset'
     }
-  }, [isOpen])
+  }, [isOpen, router, onClose])
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center hidden md:flex">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
-      <div className="relative mx-4 w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl">
+      <div className="relative mx-4 w-full max-w-4xl rounded-2xl bg-white p-8 shadow-2xl">
         <div className="text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
             <svg
@@ -51,6 +62,10 @@ export function SuccessModal({ isOpen, onClose }) {
           <p className="mb-6 text-[#003e3e]">
             Thank you for signing up as a uOttawa Lab2Life general member!
           </p>
+
+          <div className="mb-6">
+            <BounceGeneralMember />
+          </div>
 
           <button
             onClick={onClose}
