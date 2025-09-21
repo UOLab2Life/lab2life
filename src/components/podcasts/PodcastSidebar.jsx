@@ -27,7 +27,7 @@ export function PodcastSidebar() {
   return (
     <div className="lg:w-112 xl:w-120 hidden flex-shrink-0 lg:block">
       <div
-        className="sticky top-0 h-screen overflow-y-auto"
+        className="sticky top-0 h-screen overflow-hidden"
         style={{ position: 'sticky', top: '0' }}
       >
         <div className="sm:rounded-4xl relative z-10 mx-auto ml-2 mr-2 flex rounded-2xl bg-[#003e3e] px-4 pb-4 pt-4 ring-1 ring-inset ring-black/5 sm:px-6 md:max-w-2xl md:px-4 lg:h-screen lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-8 xl:px-8">
@@ -35,20 +35,20 @@ export function PodcastSidebar() {
             <span className="font-mono text-[#99c96f]/70">Hosted by</span>
             <span className="mt-4 flex gap-4 font-bold text-[#99c96f]">uOttawa Lab2Life</span>
           </div>
-          <div className="flex flex-1 flex-col p-8 pt-4">
+          <div className="flex flex-1 flex-col p-8 pt-4 min-h-0 overflow-hidden">
             <Link
               href="https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5"
-              className="relative mx-auto block w-96 overflow-hidden rounded-2xl bg-slate-200"
-              style={{ width: 'clamp(16rem, 24vh, 24rem)', height: 'clamp(16rem, 24vh, 24rem)' }}
+              className="relative mx-auto block overflow-hidden rounded-2xl bg-slate-200"
+              style={{ width: '200px', height: '200px', flexShrink: 0 }}
               aria-label="Homepage"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
-                className="w-full"
+                className="w-full h-full object-cover"
                 src={posterImage}
                 alt=""
-                sizes="(min-width: 1024px) 19rem, (min-width: 640px) 20rem, 18rem"
+                sizes="200px"
                 priority
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10" />
