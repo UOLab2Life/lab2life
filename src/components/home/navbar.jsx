@@ -86,7 +86,7 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const defaultBanner = (
     <Link
-      href="/articles/newsletters/september2025/clinical-support"
+      href="/articles/clinical-support"
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (

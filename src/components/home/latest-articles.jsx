@@ -34,7 +34,7 @@ export function LatestArticles() {
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
-                    href="/articles/newsletters/september2025/clinical-support"
+                    href="/articles/clinical-support"
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
@@ -76,7 +76,7 @@ export function LatestArticles() {
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
-                    href="/articles/newsletters/february2025/legal-nurse-consultant"
+                    href="/articles/legal-nurse-consultant"
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
@@ -118,7 +118,7 @@ export function LatestArticles() {
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
-                    href="/articles/newsletters/february2025/medical-law-introduction"
+                    href="/articles/medical-law-introduction"
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
