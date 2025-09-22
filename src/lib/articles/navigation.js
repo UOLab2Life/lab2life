@@ -4,7 +4,7 @@ export const navigation = [
     links: [
       {
         title: 'The Power of Clinical Support',
-        href: '/articles/newsletters/september2025/clinical-support',
+        href: '/articles/clinical-support',
       },
     ],
   },
@@ -13,11 +13,11 @@ export const navigation = [
     links: [
       {
         title: 'Legal Nurse Consultant',
-        href: '/articles/newsletters/february2025/legal-nurse-consultant',
+        href: '/articles/legal-nurse-consultant',
       },
       {
         title: 'Introduction to Medical Law',
-        href: '/articles/newsletters/february2025/medical-law-introduction',
+        href: '/articles/medical-law-introduction',
       },
     ],
   },
@@ -26,11 +26,10 @@ export const navigation = [
     links: [
       {
         title: 'Occupational Therapist',
-        href: '/articles/newsletters/november2024/occupational-therapists',
+        href: '/articles/occupational-therapists',
       },
-      { title: 'Orthotists', href: '/articles/newsletters/november2024/orthotists' },
-
-      { title: 'Prosthetists', href: '/articles/newsletters/november2024/prosthetists' },
+      { title: 'Orthotists', href: '/articles/orthotists' },
+      { title: 'Prosthetists', href: '/articles/prosthetists' },
     ],
   },
   {
@@ -38,23 +37,23 @@ export const navigation = [
     links: [
       {
         title: 'Certified Mental Performance Coach',
-        href: '/articles/newsletters/october2024/mental-performance-coach',
+        href: '/articles/mental-performance-coach',
       },
       {
         title: 'Psychiatrists',
-        href: '/articles/newsletters/october2024/psychiatrists',
+        href: '/articles/psychiatrists',
       },
       {
         title: 'Criminal Psychologist',
-        href: '/articles/newsletters/october2024/criminal-psychologist',
+        href: '/articles/criminal-psychologist',
       },
       {
         title: 'Mental Health Day Special',
-        href: '/articles/newsletters/october2024/mental-health-day-special',
+        href: '/articles/mental-health-day-special',
       },
       {
         title: 'There Is No Health Without Mental Health',
-        href: '/articles/newsletters/october2024/mental-health-introduction',
+        href: '/articles/mental-health-introduction',
       },
     ],
   },
@@ -63,19 +62,19 @@ export const navigation = [
     links: [
       {
         title: 'The Role of Pediatric Speech-Language Pathologist',
-        href: '/articles/newsletters/september2024/pediatric-speech-language-pathologist',
+        href: '/articles/pediatric-speech-language-pathologist',
       },
       {
         title: 'Neonatologists Lifesavers at Birth',
-        href: '/articles/newsletters/september2024/neonatologists',
+        href: '/articles/neonatologists',
       },
       {
         title: 'An Overview of Pediatric Oncology',
-        href: '/articles/newsletters/september2024/pediatric-oncology',
+        href: '/articles/pediatric-oncology',
       },
       {
         title: 'The Essentials of Pediatrics',
-        href: '/articles/newsletters/september2024/the-essentials-of-pediatrics',
+        href: '/articles/the-essentials-of-pediatrics',
       },
     ],
   },

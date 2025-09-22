@@ -88,7 +88,7 @@ const members = [
   {
     img: '/images/members-carousel/Nahiyan Ishtiaque Executive Photo.JPG',
     name: 'Nahiyan Ishtiaque',
-    position: 'Senior Webmaster',
+    position: 'Webmaster',
     education: '4th Year | B.Sc Computer Science',
     email: 'webmaster.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/nahiyan-ishtiaque/',
