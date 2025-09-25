@@ -15,9 +15,9 @@ Right from birth, communication is a key part of our lives. As we grow, our way 
 
 Speech-language pathologists are specially trained to assess and treat a variety of conditions, including but not limited to:  
 
-- 🗣️ Social communication disorders  
-- 🧠 Cognitive communication disorders  
-- 🍽️ Swallowing issues  
+- Social communication disorders  
+- Cognitive communication disorders  
+- Swallowing issues  
 
 Pediatric SLP's work with patients from infancy to adolescence to help children improve their communication skills and develop confidence in self-expression. A child may be considered to have a speech disorder when they cannot produce speech sounds correctly or fluently, or when there are issues with voice resonance. To help those with such disorders, pediatric SLP's evaluate, treat, and assess speech sounds, voice, and resonance. They also prevent conditions from worsening and treat related issues such as:  
 
@@ -32,16 +32,16 @@ Pediatric SLPs often provide special therapy programs. For example, at the Child
 
 Pediatric SLPs often work collaboratively in:  
 
-- 🏫 Schools  
-- 🏥 Hospitals  
-- 🏨 Clinics  
-- 🩺 Private practices  
+- Schools  
+- Hospitals  
+- Clinics  
+- Private practices  
 
 ---
 
 ## Education & Career Path in Canada  
 
-🎓 The steps to becoming a pediatric SLP in Canada typically include:  
+The steps to becoming a pediatric SLP in Canada typically include:  
 
 1. **Undergraduate Degree**: Earn an Honours bachelor’s degree (ideally in a related field such as health sciences or biomedical sciences).  
    - Those with an unrelated degree must complete compulsory prerequisite courses for their chosen Master’s program.  
@@ -58,8 +58,8 @@ Pediatric SLPs often work collaboratively in:
    - University of Toronto  
    - University of Western Ontario  
    - McMaster University  
-    
-On top of a Master’s-level education, SLP's must complete clinical practice and gain certification within their province. For example, in Ontario, SLP's must register under the College of Audiologists and Speech-Language Pathologists of Ontario (CASLPO). All provincial regulatory bodies fall under the Canadian Alliance of Audiology and Speech-Language Pathology (CAASPR).Once licensed and registered, pediatric SLPs can pursue further specialized pediatric training. The average base salary for pediatric SLPs ranges between **💲118,000 – 💲285,000** per year.  
+   
+On top of a Master’s-level education, SLP's must complete clinical practice and gain certification within their province. For example, in Ontario, SLP's must register under the College of Audiologists and Speech-Language Pathologists of Ontario (CASLPO). All provincial regulatory bodies fall under the Canadian Alliance of Audiology and Speech-Language Pathology (CAASPR).Once licensed and registered, pediatric SLPs can pursue further specialized pediatric training. The average base salary for pediatric SLPs ranges between **118,000 – 285,000** per year.  
 
 ---
 

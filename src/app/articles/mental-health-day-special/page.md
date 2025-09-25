@@ -18,15 +18,15 @@ In honor of World Mental Health Day (October 10, 2024), uOttawa Lab2Life would l
 
 It’s important to practice simple strategies that can improve mental well-being. Here are some effective ones:  
 
-- 🛏️ Get enough sleep  
-- 🎨 Do enjoyable activities (sports, painting, dancing, etc.)  
-- 🌬️ Practice deep breathing  
-- 🥗 Eat healthy meals  
-- 👥 Join a support group  
-- 💬 Talk to people you trust  
-- 🏃 Get regular exercise  
-- 🎯 Set goals and priorities  
-- 📓 Journaling  
+- Get enough sleep  
+- Do enjoyable activities (sports, painting, dancing, etc.)  
+- Practice deep breathing  
+- Eat healthy meals  
+- Join a support group  
+- Talk to people you trust  
+- Get regular exercise  
+- Set goals and priorities  
+- Journaling  
 
 These strategies can be done from the comfort of your home.  
 

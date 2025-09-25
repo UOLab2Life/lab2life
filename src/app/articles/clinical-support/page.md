@@ -4,8 +4,6 @@ title: The Power of Clinical Support
 *Written by Anoosha Rehman*  
 *September 16th, 2025*
 
----
-
 Welcome back to a new year of Lab2Life! We’ll kick off the month of September by exploring an essential hidden corner of healthcare: Clinical support.
 
 ---
@@ -53,12 +51,9 @@ Clinical Application Specialists may not always be in the spotlight, but their i
 
 ---
 
-## References
+## References  
 
-1. **Public Health Ontario.** (n.d.). *About laboratory services*. Retrieved September 11, 2025, from [https://www.publichealthontario.ca/en/Laboratory-Services/About-Laboratory-Services](https://www.publichealthontario.ca/en/Laboratory-Services/About-Laboratory-Services)
-
-2. **Glassdoor.** (2025). *Clinical Applications Specialist salaries in Canada*. Retrieved from [https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.htm](https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.htm)
-
-3. **ZipRecruiter.** (2025). *Clinical Application Specialist Salary in Toronto, ON*. Retrieved from [https://www.ziprecruiter.com/Salaries/Clinical-Application-Specialist-Salary-in-Toronto%2CON](https://www.ziprecruiter.com/Salaries/Clinical-Application-Specialist-Salary-in-Toronto%2CON)
-
-4. **PayScale.** (2025). *Average Clinical Applications Specialist Salary in Canada*. Retrieved from [https://www.payscale.com/research/CA/Job%3DClinical_Applications_Specialist/Salary](https://www.payscale.com/research/CA/Job%3DClinical_Applications_Specialist/Salary)
+- [Public Health Ontario](https://www.publichealthontario.ca/en/Laboratory-Services/About-Laboratory-Services) (n.d.). *About Laboratory Services*. Retrieved September 11, 2025.  
+- [Glassdoor](https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.htm) (2025). *Clinical Applications Specialist Salaries in Canada*.  
+- [ZipRecruiter](https://www.ziprecruiter.com/Salaries/Clinical-Application-Specialist-Salary-in-Toronto%2CON) (2025). *Clinical Application Specialist Salary in Toronto, ON*.  
+- [PayScale](https://www.payscale.com/research/CA/Job%3DClinical_Applications_Specialist/Salary) (2025). *Average Clinical Applications Specialist Salary in Canada*.  

@@ -63,8 +63,6 @@ Through these efforts, OTs not only enhance physical ability but also provide em
 
 Occupational therapists are partners in progress for individuals adapting to prosthetics. They ensure patients regain functionality, independence, and hope. By blending medical expertise with compassionate care, OTs empower patients to embrace their new reality with strength and dignity.  
 
----
-
 ### Footnotes  
 
 - [The Surgical Clinic. *Prosthetic Basics: Adapting to Life with a New Limb*](https://thesurgicalclinics.com/prosthetic-basics-adapting-to-life-with-a-new-limb/#:~:text=The%20adjustment%20period%20is%20unique,can%20help%20speed%20things%20along)  

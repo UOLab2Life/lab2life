@@ -14,7 +14,7 @@ Under this month’s topic of mental health, the next career we will be explorin
 
 ### How Do You Become a Psychiatrist?  
 
-🎓 To become a psychiatrist in Canada, the typical pathway includes:  
+To become a psychiatrist in Canada, the typical pathway includes:  
 
 - Undergraduate Degree: 4 years  
 - Medical School: 4 years  
@@ -38,9 +38,9 @@ Common subspecialties include:
 
 Although the fields overlap, there are clear distinctions:  
 
-- ☤ Psychiatrists are medical doctors.  
-- 💊 Psychiatrists can prescribe medication.  
-- 🏥 Psychiatrists diagnose illness, manage treatment, and provide therapies for complex and serious conditions.  
+- Psychiatrists are medical doctors.  
+- Psychiatrists can prescribe medication.  
+- Psychiatrists diagnose illness, manage treatment, and provide therapies for complex and serious conditions.  
 
 By contrast, psychologists mainly focus on psychotherapy (talk therapy 🗪). Psychiatrists also bridge the gap between mental and physical health, as they are trained to assess how neurochemical imbalances and other biological factors affect mental well-being.  
 
