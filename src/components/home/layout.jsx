@@ -1,9 +1,10 @@
 'use client'
 
 import { AnimatedNumber } from '@/components/home/animated-number'
-import { MembersCarousel } from '@/components/home/members-carousel'
 import { Container } from '@/components/home/container'
+import { MembersCarousel } from '@/components/home/members-carousel'
 import { Heading, Lead, Subheading } from '@/components/home/text'
+import Image from 'next/image'
 
 export default function AboutUsSection() {
   return (
@@ -18,7 +19,7 @@ function Header() {
   return (
     <Container className="mt-16 pb-8">
       <Heading as="h1" className="text-[#003e3e]">
-        Supporting students in their journey from classroom to career.
+        Supporting students in their journey <br /> from classroom to career.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
         We are on a mission to allow students to connect with and explore various jobs in the field
@@ -49,38 +50,51 @@ function Header() {
             profession in the ever-changing job market.
           </p>
         </div>
-        <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
-          <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
-            <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
-              <img
-                alt=""
-                src="/images/about-us/about-us-1.JPEG"
-                className="block size-full object-cover"
+
+        <div className="pt-12 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+          <div className="-mx-2 grid grid-cols-2 gap-2 sm:-mx-4 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
+            <div className="relative mx-auto aspect-square w-full max-w-[200px] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 sm:max-w-none">
+              <Image
+                src="/images/about-us/about-us-1.jpg"
+                alt="Lab2Life Event 1"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-32">
-              <img
-                alt=""
-                src="/images/about-us/about-us-2.jpeg"
-                className="block size-full object-cover"
+
+            <div className="relative mx-auto -mt-3 aspect-square w-full max-w-[200px] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 sm:max-w-none lg:-mt-32">
+              <Image
+                src="/images/about-us/about-us-2.jpg"
+                alt="Lab2Life Event 2"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
-              <img
-                alt=""
-                src="/images/about-us/about-us-3.jpeg"
-                className="block size-full object-cover"
+
+            <div className="relative mx-auto aspect-square w-full max-w-[200px] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 sm:max-w-none">
+              <Image
+                src="/images/about-us/about-us-3.jpg"
+                alt="Lab2Life Event 3"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-32">
-                <img
-                  alt=""
-                  src="/images/about-us/about-us-5.JPEG"
-                  className="block size-full object-cover"
-                />
+
+            <div className="relative mx-auto -mt-3 aspect-square w-full max-w-[200px] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 sm:max-w-none lg:-mt-32">
+              <Image
+                src="/images/about-us/about-us-5.jpg"
+                alt="Lab2Life Event 5"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
+
         <div className="max-lg:mt-16 lg:col-span-1">
           <Subheading className="text-[#003e3e]">uoLab2Life by the Numbers</Subheading>
           <hr className="mt-6 border-t border-gray-200" />
