@@ -68,7 +68,7 @@ In Canada, becoming an orthotist typically requires:
 - BCIT – Prosthetics & Orthotics Diploma (offered every 2 years; limited to students from BC, Alberta, Saskatchewan, Manitoba)⁴  
 - George Brown College (Toronto & Winnipeg campuses) – Clinical Methods in Orthotics/Prosthetics (accepts 10 students annually nationwide)⁵  
 
-💰 The average salary for an orthotist/prosthetist in Ottawa is approximately $105,000 CAD⁶.  
+The average salary for an orthotist/prosthetist in Ottawa is approximately $105,000 CAD⁶.  
 
 ---
 
@@ -89,8 +89,6 @@ Orthotists are unsung heroes in rehabilitation, blending biomechanics with empat
 
 By helping patients regain movement, stability, and independence, orthotists remain a fundamental pillar in physical therapy and rehabilitation.  
 
----
-
 ### Footnotes  
 
 - [ProMotion Orthotics](https://promotionorthotics.ca/what-is-orthotics/) (2018). *Examples of Orthoses*  
@@ -100,8 +98,6 @@ By helping patients regain movement, stability, and independence, orthotists rem
 - [George Brown College](https://www.georgebrown.ca/programs/clinical-methods-in-orthoticsprosthetics-program-postgraduate-s407) (2024). *Clinical Methods in Orthotics/Prosthetics Program (S407)*  
 - [Economic Research Institute](https://www.erieri.com/salary/job/orthotist-prosthetist/canada/ontario/ottawa) (2024, Nov 19). *Orthotist/Prosthetist Salary in Ottawa, Ontario*  
 - Moisan, G., & Zong-Hao Ma, C. (2024). *Advances in prosthetics and orthotics*. BMC Musculoskeletal Disorders, 25(1), 135. [Link](https://doi.org/10.1186/S12891-024-07246-Y)  
-
----
 
 ### References  
 

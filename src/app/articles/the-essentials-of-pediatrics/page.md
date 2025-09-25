@@ -22,11 +22,11 @@ Pediatricians typically work in clinics or hospitals, with some working in gener
 
 ### Typical Educational Path in Canada
 
-- **🎓 Undergraduate degree**: 4-year bachelor’s degree in a relevant field, such as biology, chemistry, psychology, health sciences, or biomedical sciences.  
-- **🎓 Medical school**: 4-year MD program, typically consisting of two years of in-class learning and two years of clinical rotations.  
-- **🎓 Residency**: Completion of a specialized pediatric residency program ranging anywhere from 3–5 years.  
+- **Undergraduate degree**: 4-year bachelor’s degree in a relevant field, such as biology, chemistry, psychology, health sciences, or biomedical sciences.  
+- **Medical school**: 4-year MD program, typically consisting of two years of in-class learning and two years of clinical rotations.  
+- **Residency**: Completion of a specialized pediatric residency program ranging anywhere from 3–5 years.  
 
-After residency, pediatricians can go into general pediatric practice or enter a fellowship program to specialize in a pediatric subspecialty, such as neonatology, pediatric cardiology, or pediatric surgery. These programs can take anywhere from 2 to 6 years of additional training. According to Salary Expert, an entry-level pediatrician in Ontario earns an average salary of **💲164,429**, while a senior-level pediatrician earns an average salary of **💲314,991**¹
+After residency, pediatricians can go into general pediatric practice or enter a fellowship program to specialize in a pediatric subspecialty, such as neonatology, pediatric cardiology, or pediatric surgery. These programs can take anywhere from 2 to 6 years of additional training. According to Salary Expert, an entry-level pediatrician in Ontario earns an average salary of **164,429**, while a senior-level pediatrician earns an average salary of **314,991**¹
 
 ### Career Opportunities Beyond Pediatricians
 

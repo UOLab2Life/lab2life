@@ -59,8 +59,6 @@ Both orthotists and prosthetists:
 - Repair, adjust, or replace devices  
 - Maintain detailed patient records  
 
-👉 Curious about orthotics? Stay tuned for next week’s article!  
-
 ---
 
 ## Phantom Limb Pain  
@@ -80,8 +78,6 @@ Prosthetists combine medical knowledge with engineering skills to design and fit
 - Improving self-confidence  
 
 Through their dedication, prosthetists remind us of the transformative power of specialized healthcare in shaping lives and communities.  
-
----
 
 ### Footnotes  
 

@@ -19,15 +19,15 @@ Reading stories like these remind me of how deadly cancer is, and more important
 
 Typically found in children’s hospitals, community hospitals, and university medical departments, a pediatric oncologist is a physician who treats children and young adults after a referral from a primary care physician due to suspected cancer. Their responsibilities include:  
 
-- 📝 Taking medical history and documenting symptoms.  
-- 🧪 Performing diagnostic tests such as urinalysis, biopsies, imaging ( X-rays, MRIs, CT scans ), and various blood tests.  
-- 🎯 Making a proper diagnosis and developing treatment plans.  
+- Taking medical history and documenting symptoms.  
+- Performing diagnostic tests such as urinalysis, biopsies, imaging ( X-rays, MRIs, CT scans ), and various blood tests.  
+- Making a proper diagnosis and developing treatment plans.  
 
 ---
 
 ## What Does a Typical Career Path Look Like?  
 
-🎓 The path to becoming a pediatric oncologist can look something like this:  
+The path to becoming a pediatric oncologist can look something like this:  
 
 1. Undergraduate bachelor’s degree
 2. Medical school
@@ -53,9 +53,9 @@ The short answer: the difference lies in their approach. Children are young, and
 
 To summarize, this profession isn’t to be taken lightly. As such, I’ll end with the advice of pediatric oncologist Dr. Christopher T. Denny (UCLA David Geffen School of Medicine), who highlights three essential characteristics for any pediatric oncologist:  
 
-- **🧘‍♂️Concentration**  
-- **🧠 Focus**  
-- **🌟 Emotional resilience**⁴  
+- **Concentration**  
+- **Focus**  
+- **Emotional resilience**⁴  
 
 After all: *Good doctors treat disease, but the best doctors treat the person.*  
 

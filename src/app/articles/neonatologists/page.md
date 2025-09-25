@@ -19,7 +19,7 @@ Neonatologists usually work in the Neonatal Intensive Care Unit (NICU) in hospit
 
 ## Path to Becoming a Neonatologist  
 
-🎓 The path to becoming a neonatologist typically involves:  
+The path to becoming a neonatologist typically involves:  
 
 - 4 years of undergraduate degree at a college or university  
 - 4 years of medical school  

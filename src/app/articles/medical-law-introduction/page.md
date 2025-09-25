@@ -21,11 +21,11 @@ Medical Law, often referred to as Health Law, is an interdisciplinary field of l
 
 Health lawyers work on a wide range of cases and policies, covering topics such as:  
 
-- 🧾 Informed consent  
-- 🔒 Confidentiality  
-- ⚖️ Ethical dilemmas in patient care  
-- ⚠️ Medical malpractice  
-- 🍎 Food and drug safety²  
+- Informed consent  
+- Confidentiality  
+- Ethical dilemmas in patient care  
+- Medical malpractice  
+- Food and drug safety²  
 
 With the emergence of artificial intelligence and other new technologies in healthcare, the demand for medical law expertise continues to grow as we navigate the legal and ethical complexities of these advancements³.  
 
@@ -44,7 +44,7 @@ Medical law is a broad and dynamic field, offering career paths across litigatio
 3. **Pharmaceutical & Medical Device Lawyer**  
    - Manages lawsuits involving defective drugs, devices, or instruments.  
 
-4. **Public Health Lawyer  
+4. **Public Health Lawyer** 
    - Advises governments, businesses, and agencies on public health issues such as vaccination laws, pandemic policies, and healthcare access⁵.  
 
 ---
@@ -53,12 +53,12 @@ Medical law is a broad and dynamic field, offering career paths across litigatio
 
 Educational requirements vary by specialization, but a typical pathway for a Medical Lawyer includes:  
 
-- 🎓 4-year undergraduate degree in a medical-related field  
+- 4-year undergraduate degree in a medical-related field  
   (e.g., biology, biotechnology, pharmacology, or health sciences)  
 
-- 🎓 4-year Juris Doctor degree  
+- 4-year Juris Doctor degree  
 
-- 🎓 2-year postgraduate degree in Health Law  
+- 2-year postgraduate degree in Health Law  
   (e.g., Master of Laws in Health Law at the University of Ottawa)⁶  
 
 ---
