@@ -21,10 +21,10 @@ As seen with these words from Saint Paul, the understanding of human disobedienc
 
 Criminal psychiatry, also known as forensic psychiatry, is a specialized practice that involves treating individuals in the criminal justice system, while also decrypting their psychological processes for the courtroom. A unique aspect of this profession is their relationship with the patient. Unlike traditional psychiatrists, forensic psychiatrists often refer to their patient as the defendant or the claimant. They may also:  
 
-- 👨🏻‍⚖️ Make court appearances as expert witnesses  
-- ⚖️ Evaluate defendants for trial  
-- 🔎 Diagnose mental health conditions in a legal context  
-- 🤔 Determine whether an individual is dangerous, ready for pardon, or suitable for rehabilitation  
+- Make court appearances as expert witnesses  
+- Evaluate defendants for trial  
+- Diagnose mental health conditions in a legal context  
+- Determine whether an individual is dangerous, ready for pardon, or suitable for rehabilitation  
 
 Their responsibilities include:  
 
@@ -32,11 +32,11 @@ Their responsibilities include:
 - Conducting psychiatric and psychological assessments  
 - Assessing social factors and environmental influences  
 
-According to Salary Expert, forensic psychiatrists in Ontario earn on average **💲244,280** per year, with a range of **💲165,250 – 💲315,609** depending on seniority².  
+According to Salary Expert, forensic psychiatrists in Ontario earn on average **$244,280** per year, with a range of **$165,250 – $315,609** depending on seniority².  
 
 ### Education Path  
 
-🎓 The path to becoming a forensic psychiatrist in Canada typically involves:  
+The path to becoming a forensic psychiatrist in Canada typically involves:  
 
 1. Undergraduate Bachelor’s Degree: 4 years  
 2. Medical School (MD): 4 years  
@@ -51,16 +51,16 @@ According to Salary Expert, forensic psychiatrists in Ontario earn on average **
 
 Forensic psychiatrists typically work in:  
 
-- 🏥 Hospitals  
-- 🏢 Private offices  
-- 🏛️ Courtrooms  
-- ⛓ Correctional facilities  
+- Hospitals  
+- Private offices  
+- Courtrooms  
+- Correctional facilities  
 
 ---
 
 ## Distinguishing Psychiatry from Psychology  
 
-*Aren’t criminal psychiatrists the same as criminal psychologists* No ❌ While both professions overlap, there are important differences:  
+*Aren’t criminal psychiatrists the same as criminal psychologists* No! While both professions overlap, there are important differences:  
 
 - Forensic Psychiatrists hold MDs, prescribe medications, and provide treatment.  
 - Forensic Psychologists hold Master’s or PsyD degrees, and typically:  

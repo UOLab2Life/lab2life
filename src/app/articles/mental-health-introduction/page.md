@@ -56,9 +56,9 @@ The mental health field offers a wide variety of career options, each with uniqu
 
 If you or someone you know is struggling with mental health, remember: you are not alone. Asking for help is a sign of strength.  
 
-- 📞 Suicide Crisis Helpline (9-8-8) — Call or text, available 24/7  
-- 📞 Ottawa Distress Line (613-238-3311) — 24/7 bilingual service (French & English)  
-- 📞 ConnexOntario (+1 866-531-2600) — Free and confidential phone, chat, text, and email service for mental health, gambling, and addiction support in Ontario  
+- Suicide Crisis Helpline (9-8-8) — Call or text, available 24/7  
+- Ottawa Distress Line (613-238-3311) — 24/7 bilingual service (French & English)  
+- ConnexOntario (+1 866-531-2600) — Free and confidential phone, chat, text, and email service for mental health, gambling, and addiction support in Ontario  
 
 ---
 
@@ -72,7 +72,7 @@ Mental health is inseparable from overall health. By addressing mental well-bein
 - [Substance Abuse and Mental Health Services Administration](https://www.samhsa.gov/mental-health) (2023). *What is Mental Health?*  
 - [Centre for Addiction and Mental Health](https://www.camh.ca/en/driving-change/the-crisis-is-real/mental-health-statistics). *Mental Illness and Addiction: Facts and Statistics*  
 
-### References 
+### References
 
 - [Canadian Association of Social Workers. *What is Social Work?*](https://www.casw-acts.ca/en/what-social-work)  
 - [Embark](https://www.embark.ca/learning-centre/how-to-become-a-psychologist) (2024). *A Comprehensive Guide: How to Become a Psychologist*  
