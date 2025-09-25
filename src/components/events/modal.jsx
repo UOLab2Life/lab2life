@@ -62,7 +62,7 @@ export const Modal = ({
       >
         <div className="absolute left-3 top-3 sm:left-6 sm:top-6">
           <Image
-            src="/lab2life-no-bg.png"
+            src="/images/lab2life-no-bg.png"
             alt="Logo"
             width={50}
             height={50}

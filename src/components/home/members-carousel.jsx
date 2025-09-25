@@ -9,7 +9,7 @@ import { Heading } from './text'
 
 const members = [
   {
-    img: '/images/members-carousel/Sanjay Sathees Executive Photo.JPG',
+    img: '/images/members-carousel/sanjay-sathees.jpg',
     name: 'Sanjay Sathees',
     position: 'Co-President and Founder',
     education: '4th Year | B.Sc. Biomedical Science',
@@ -18,7 +18,7 @@ const members = [
     zoom: 120,
   },
   {
-    img: '/images/members-carousel/Bharat Yanala Executive Photo.JPG',
+    img: '/images/members-carousel/bharat-yanala.jpg',
     name: 'Bharat Yanala',
     position: 'Co-President',
     education: '4th Year | B.HSc. Health Science',
@@ -26,7 +26,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/bharatyanala/',
   },
   {
-    img: '/images/members-carousel/Parisha Baral Executive Photo.JPG',
+    img: '/images/members-carousel/parisha-baral.jpg',
     name: 'Parisha Baral',
     position: 'VP Internal Operations',
     education: '1st Year | B.Sc. Biomedical Science',
@@ -35,7 +35,7 @@ const members = [
     zoom: 110,
   },
   {
-    img: '/images/members-carousel/Maya Labbe Executive Photos.JPG',
+    img: '/images/members-carousel/maya-labbe.jpg',
     name: 'Maya Labbé',
     position: 'VP Finance',
     education: '4th Year | B.HSc. Health Science',
@@ -44,7 +44,7 @@ const members = [
     imagePosition: 'center',
   },
   {
-    img: '/images/members-carousel/Eshal Uddin Executive Photo.JPG',
+    img: '/images/members-carousel/eshal-uddin.jpg',
     name: 'Eshal Uddin',
     position: 'VP External Affairs',
     education: '4th Year | B.Sc. Biomedical Science',
@@ -52,7 +52,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/eshal-uddin-5019b9267/',
   },
   {
-    img: '/images/members-carousel/Meera Harahsha Executive Photo.JPG',
+    img: '/images/members-carousel/meera-harahsha.jpg',
     name: 'Meera Harahsha',
     position: 'VP External Affairs',
     education: '2nd Year | B.HSc Health Science',
@@ -61,7 +61,7 @@ const members = [
     zoom: 150,
   },
   {
-    img: '/images/members-carousel/Maeve McAneney Executive Photo.JPG',
+    img: '/images/members-carousel/maeve-mcaneney.jpg',
     name: 'Maeve McAneney',
     position: 'VP Events',
     education: '2nd Year | B.HSc Health Science',
@@ -70,7 +70,7 @@ const members = [
     zoom: 150,
   },
   {
-    img: '/images/members-carousel/Ghazal Farahmand Executive Photo.JPG',
+    img: '/images/members-carousel/ghazal-farahmand.jpg',
     name: 'Ghazal Farahmand',
     position: 'VP Marketing',
     education: '3rd Year | B.Sc. Biomedical Science',
@@ -78,7 +78,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/ghazal-farahmand-226600310/',
   },
   {
-    img: '/images/members-carousel/Jasmin Yermashova Executive Photo.jpg',
+    img: '/images/members-carousel/jasmin-yermashova.jpg',
     name: 'Jasmin Yermashova',
     position: 'VP Graphic Design',
     education: '4th Year | B.Sc. Biology',
@@ -86,7 +86,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/jasmin-yermashova/',
   },
   {
-    img: '/images/members-carousel/Nahiyan Ishtiaque Executive Photo.JPG',
+    img: '/images/members-carousel/nahiyan-ishtiaque.jpg',
     name: 'Nahiyan Ishtiaque',
     position: 'Webmaster',
     education: '4th Year | B.Sc Computer Science',
@@ -96,8 +96,8 @@ const members = [
     zoom: 130,
   },
   {
-    img: '/images/members-carousel/Onur Onel Executive Photo.JPG',
-    name: 'Onur Onel',
+    img: '/images/members-carousel/onur-onel.jpg',
+    name: 'Onur Önel',
     position: 'Webmaster',
     education: '2nd Year | B.Sc. Computer Science',
     email: 'webmaster.uol2l@gmail.com',
@@ -106,7 +106,7 @@ const members = [
     zoom: 130,
   },
   {
-    img: '/images/members-carousel/Maroun Tarabey Executive Photo.JPG',
+    img: '/images/members-carousel/maroun-tarabey.jpg',
     name: 'Maroun Tarabey',
     position: 'Editor-in-Chief',
     education: '2nd Year | B.Sc. Biochemistry',
@@ -116,7 +116,7 @@ const members = [
     zoom: 130,
   },
   {
-    img: '/images/members-carousel/Maya Alali Executive Photo.JPG',
+    img: '/images/members-carousel/maya-alali.jpg',
     name: 'Maya Alali',
     position: 'Podcast Producer',
     education: '2nd Year | B.Sc. Biomedical Science',
@@ -125,7 +125,7 @@ const members = [
     zoom: 180,
   },
   {
-    img: '/images/members-carousel/Lacey Mullin Executive Photo.JPG',
+    img: '/images/members-carousel/lacey-mullin.jpg',
     name: 'Lacey Mullin',
     position: 'Upper Year Representative',
     education: '4th Year | B.Sc. Biopharm. Science',
@@ -133,7 +133,7 @@ const members = [
     linkedin: 'https://www.linkedin.com/in/lacey-mullin-209963327/',
   },
   {
-    img: '/images/members-carousel/Anoosha Rehman Executive Photo.JPG',
+    img: '/images/members-carousel/anoosha-rehman.jpg',
     name: 'Anoosha Rehman',
     position: 'Lower Year Representative',
     education: '2nd Year | B.Sc. Biomedical Science',
@@ -194,37 +194,49 @@ function MemberCard({
       ref={ref}
       style={{ opacity }}
       {...props}
-      className="relative flex aspect-3/4 w-64 sm:w-80 md:w-96 shrink-0 snap-start scroll-ml-(--scroll-padding) flex-col justify-end overflow-hidden rounded-3xl mx-auto"
+      className="aspect-3/4 scroll-ml-(--scroll-padding) relative mx-auto flex w-64 shrink-0 snap-start flex-col justify-end overflow-hidden rounded-3xl sm:w-80 md:w-96"
     >
       <img
         alt=""
         src={img}
         className={`absolute inset-x-0 top-0 aspect-square w-full ${
-          imagePosition === 'top' ? 'object-top' : 
-          imagePosition === 'bottom' ? 'object-bottom' : 
-          'object-center'
+          imagePosition === 'top'
+            ? 'object-top'
+            : imagePosition === 'bottom'
+              ? 'object-bottom'
+              : 'object-center'
         } object-cover`}
         style={zoom ? { transform: `scale(${zoom / 100})` } : undefined}
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 rounded-3xl bg-linear-to-t from-black from-[calc(3/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
+        className="bg-linear-to-t absolute inset-0 rounded-3xl from-black from-[calc(3/16*100%)] ring-1 ring-inset ring-gray-950/10 sm:from-25%"
       />
       <figure className="relative p-6 sm:p-8 md:p-10">
         <figcaption className="mt-4 sm:mt-6">
           <div className="space-y-0.5 sm:space-y-1">
-            <p className="font-inter font-medium text-xl sm:text-2xl md:text-3xl text-white">{name}</p>
-            <p className="font-inter font-medium text-sm sm:text-base md:text-lg text-[#b184e9]">{position}</p>
-            <p className="font-inter-semibold text-xs sm:text-sm leading-tight text-white">{education}</p>
+            <p className="font-inter text-xl font-medium text-white sm:text-2xl md:text-3xl">
+              {name}
+            </p>
+            <p className="font-inter text-sm font-medium text-[#b184e9] sm:text-base md:text-lg">
+              {position}
+            </p>
+            <p className="font-inter-semibold text-xs leading-tight text-white sm:text-sm">
+              {education}
+            </p>
           </div>
 
-          <div className="mt-2 sm:mt-4 flex gap-3">
+          <div className="mt-2 flex gap-3 sm:mt-4">
             <a
               href={`mailto:${email}`}
-              className="rounded-full bg-white/10 p-1.5 sm:p-2 transition-colors hover:bg-[#003e3e]"
+              className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-[#003e3e] sm:p-2"
               aria-label={`Email ${name}`}
             >
-              <svg className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                className="h-3.5 w-3.5 text-white sm:h-5 sm:w-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
@@ -234,10 +246,14 @@ function MemberCard({
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 p-1.5 sm:p-2 transition-colors hover:bg-[#003e3e]"
+                className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-[#003e3e] sm:p-2"
                 aria-label={`${name}'s LinkedIn`}
               >
-                <svg className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="h-3.5 w-3.5 text-white sm:h-5 sm:w-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.328v15.344C1 18.4 1.595 19 2.328 19h15.34c.734 0 1.332-.598 1.332-1.328V2.328C19 1.581 18.402 1 17.668 1z"
@@ -366,7 +382,7 @@ export function MembersCarousel() {
   }, [])
 
   return (
-    <div className="overflow-hidden pt-8 pb-8 sm:pt-16 sm:pb-16">
+    <div className="overflow-hidden pb-8 pt-8 sm:pb-16 sm:pt-16">
       <Container>
         <div ref={setReferenceWindowRef} className="text-center">
           <Heading as="h3" className="mt-2 text-[#003e3e]">
@@ -382,54 +398,64 @@ export function MembersCarousel() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={clsx([
-          'mt-16 flex gap-8 px-(--scroll-padding)',
+          'px-(--scroll-padding) mt-16 flex gap-8',
           '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
           'snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth',
           '[--scroll-padding:max(--spacing(6),calc((100vw-(var(--container-2xl)))/2))] lg:[--scroll-padding:max(--spacing(8),calc((100vw-(var(--container-7xl)))/2))]',
         ])}
       >
-        {members.map(({ img, name, position, education, email, linkedin, zoom, imagePosition }, memberIndex) => (
-          <MemberCard
-            key={memberIndex}
-            name={name}
-            position={position}
-            education={education}
-            email={email}
-            linkedin={linkedin}
-            img={img}
-            zoom={zoom}
-            imagePosition={imagePosition}
-            bounds={bounds}
-            scrollX={scrollX}
-            onClick={() => handleMemberClick(memberIndex)}
-          />
-        ))}
-
-        {Array.from({ length: 50 }, (_, repeatIndex) =>
-          members.map(({ img, name, position, education, email, linkedin, zoom, imagePosition }, cardIndex) => {
-            const actualIndex = members.length + (repeatIndex * members.length) + cardIndex
-            return (
-              <MemberCard
-                key={`repeat-${repeatIndex}-${cardIndex}`}
-                name={name}
-                position={position}
-                education={education}
-                email={email}
-                linkedin={linkedin}
-                img={img}
-                zoom={zoom}
-                imagePosition={imagePosition}
-                bounds={bounds}
-                scrollX={scrollX}
-                onClick={() => handleMemberClick(actualIndex)}
-              />
-            )
-          }),
+        {members.map(
+          (
+            { img, name, position, education, email, linkedin, zoom, imagePosition },
+            memberIndex,
+          ) => (
+            <MemberCard
+              key={memberIndex}
+              name={name}
+              position={position}
+              education={education}
+              email={email}
+              linkedin={linkedin}
+              img={img}
+              zoom={zoom}
+              imagePosition={imagePosition}
+              bounds={bounds}
+              scrollX={scrollX}
+              onClick={() => handleMemberClick(memberIndex)}
+            />
+          ),
         )}
 
-        <div className="w-2xl shrink-0 sm:w-216" />
+        {Array.from({ length: 2 }, (_, repeatIndex) =>
+          members.map(
+            (
+              { img, name, position, education, email, linkedin, zoom, imagePosition },
+              cardIndex,
+            ) => {
+              const actualIndex = members.length + repeatIndex * members.length + cardIndex
+              return (
+                <MemberCard
+                  key={`repeat-${repeatIndex}-${cardIndex}`}
+                  name={name}
+                  position={position}
+                  education={education}
+                  email={email}
+                  linkedin={linkedin}
+                  img={img}
+                  zoom={zoom}
+                  imagePosition={imagePosition}
+                  bounds={bounds}
+                  scrollX={scrollX}
+                  onClick={() => handleMemberClick(actualIndex)}
+                />
+              )
+            },
+          ),
+        )}
 
-        <div className="w-2xl shrink-0 sm:w-216" />
+        <div className="w-2xl sm:w-216 shrink-0" />
+
+        <div className="w-2xl sm:w-216 shrink-0" />
       </div>
     </div>
   )
