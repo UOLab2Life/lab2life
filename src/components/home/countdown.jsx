@@ -97,9 +97,9 @@ export function Countdown() {
 
           <div className="mt-16 flex justify-center gap-6 sm:gap-12">
             {timeUnits.map((unit) => (
-              <div key={unit.label} className="relative h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36">
-                <Gradient className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5" />
-                <div className="relative flex h-full flex-col items-center justify-center rounded-2xl p-2 shadow-lg">
+               <div key={unit.label} className="relative h-28 w-32 sm:h-32 sm:w-36 lg:h-36 lg:w-40">
+                <Gradient className="absolute inset-0 h-full w-full rounded-2xl ring-1 ring-inset ring-black/5" />
+                <div className="relative flex h-full w-full flex-col items-center justify-center rounded-2xl p-2 shadow-lg">
                   <div className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
                     {unit.value.toString().padStart(2, '0')}
                   </div>

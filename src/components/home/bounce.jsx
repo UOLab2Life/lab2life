@@ -19,7 +19,7 @@ export function Bounce() {
 
           <div className="text-center lg:ml-12 lg:text-left">
             <Heading as="h3" className="mb-4 font-bold text-[#003e3e]">
-              Register our events through Bounce
+              Register for our events through Bounce
             </Heading>
             <p className="mb-8 max-w-2xl text-lg text-gray-600">
               New with the 2025-2026 academic year, the University of Ottawa has partnered up with
