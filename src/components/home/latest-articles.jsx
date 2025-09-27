@@ -49,7 +49,7 @@ export function LatestArticles() {
                   <img
                     alt="Anoosha Rehman"
                     className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/members-carousel/Anoosha Rehman Executive Photo.JPG"
+                    src="/images/members-carousel/anoosha-rehman.jpg"
                     style={{ transform: 'scale(1.2)', objectPosition: 'center 20%' }}
                   />
                   <div className="text-base/6 font-medium text-gray-700">Anoosha Rehman</div>
@@ -92,7 +92,7 @@ export function LatestArticles() {
                   <img
                     alt="Maroun Tarabey"
                     className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/members-carousel/Maroun Tarabey Executive Photo.JPG"
+                    src="/images/members-carousel/maroun-tarabey.jpg"
                   />
                   <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
                 </div>
