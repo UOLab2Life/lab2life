@@ -85,11 +85,11 @@ function Header() {
 
             <div className="relative mx-auto -mt-3 aspect-square w-full max-w-[200px] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 sm:max-w-none lg:-mt-32">
               <Image
-                src="/images/about-us/about-us-5.jpg"
+                src="/images/about-us/IMG_7393.JPG"
                 alt="Lab2Life Event 5"
                 width={600}
                 height={600}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover scale-105"
               />
             </div>
           </div>
