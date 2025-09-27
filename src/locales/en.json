@@ -1,0 +1,72 @@
+{
+  "navbar": {
+    "articles": "Articles",
+    "podcasts": "Podcasts",
+    "events": "Events",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "home": "Home",
+    "memberSignUp": "Member Sign-Up",
+    "articles": "Articles",
+    "podcasts": "Podcasts",
+    "events": "Events",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "description": "Dedicated to promoting and helping students explore various careers in healthcare and medicine.",
+    "email": "Email"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team below!",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more about your inquiry...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "errors": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "subjectRequired": "Subject is required",
+        "messageRequired": "Message is required",
+        "submitFailed": "Failed to send message. Please try again."
+      }
+    },
+    "modal": {
+      "title": "Success!",
+      "message": "Your message has been sent successfully. We'll get back to you soon!",
+      "close": "Close"
+    }
+  },
+  "events": {
+    "title": "Events",
+    "description": "Join uOttawa Lab2Life and for some amazing healthcare-related events! Click an event to view detailed information!",
+    "eventDetails": {
+      "date": "Date",
+      "starts": "Starts",
+      "ends": "Ends",
+      "location": "Location",
+      "register": "Register",
+      "done": "Done"
+    },
+    "calendar": {
+      "month": "Month",
+      "week": "Week",
+      "day": "Day",
+      "today": "Today",
+      "prev": "Previous",
+      "next": "Next",
+      "allDay": "all-day",
+      "more": "more",
+      "noEvents": "No events to display"
+    }
+  }
+}

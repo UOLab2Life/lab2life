@@ -1,6 +1,69 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+.fc-day-today {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.fc-day-today .fc-daygrid-day-number {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.fc-day-today .fc-daygrid-day-frame {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.fc-today-highlight {
+  border: 2px solid #003e3e !important;
+  border-radius: 4px !important;
+  background-color: rgba(0, 62, 62, 0.1) !important;
+  position: relative !important;
+  z-index: 10 !important;
+  box-shadow: 0 0 0 2px #003e3e !important;
+}
+
+.fc-today-highlight .fc-daygrid-day-number {
+  color: #003e3e !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+}
+
+.fc-daygrid-day.fc-today-highlight {
+  border: 2px solid #003e3e !important;
+  border-radius: 4px !important;
+  background-color: rgba(0, 62, 62, 0.1) !important;
+  box-shadow: 0 0 0 2px #003e3e !important;
+}
+
+.fc-daygrid-day.fc-today-highlight .fc-daygrid-day-number {
+  color: #003e3e !important;
+  font-weight: bold !important;
+  font-size: 1.125rem !important;
+}
+
+.fc-daygrid-day-frame {
+  position: relative;
+  min-height: 100px !important;
+}
+
+.fc-daygrid-day {
+  min-height: 100px !important;
+}
+
+.fc-daygrid-day-events {
+  min-height: 70px !important;
+}
+
+.fc-daygrid-day-number {
+  display: block !important;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

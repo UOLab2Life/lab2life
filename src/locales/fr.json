@@ -1,0 +1,72 @@
+{
+  "navbar": {
+    "articles": "Articles",
+    "podcasts": "Podcasts",
+    "events": "Événements",
+    "contactUs": "Contactez-nous"
+  },
+  "footer": {
+    "home": "Accueil",
+    "memberSignUp": "Inscription Membre",
+    "articles": "Articles",
+    "podcasts": "Podcasts",
+    "events": "Événements",
+    "contactUs": "Contactez-nous",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "description": "Dédié à promouvoir et aider les étudiants à explorer diverses carrières dans les soins de santé et la médecine.",
+    "email": "Courriel"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Entrez en contact avec notre équipe ci-dessous!",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom complet",
+      "email": "Courriel",
+      "emailPlaceholder": "votre.courriel@exemple.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il?",
+      "message": "Message",
+      "messagePlaceholder": "Dites-nous-en plus sur votre demande...",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours...",
+      "errors": {
+        "nameRequired": "Le nom est requis",
+        "emailRequired": "Le courriel est requis",
+        "emailInvalid": "Veuillez entrer une adresse courriel valide",
+        "subjectRequired": "Le sujet est requis",
+        "messageRequired": "Le message est requis",
+        "submitFailed": "Échec de l'envoi du message. Veuillez réessayer."
+      }
+    },
+    "modal": {
+      "title": "Succès!",
+      "message": "Votre message a été envoyé avec succès. Nous vous répondrons bientôt!",
+      "close": "Fermer"
+    }
+  },
+  "events": {
+    "title": "Événements",
+    "description": "Rejoignez uOttawa Lab2Life pour des événements incroyables liés aux soins de santé! Cliquez sur un événement pour voir les informations détaillées!",
+    "eventDetails": {
+      "date": "Date",
+      "starts": "Début",
+      "ends": "Fin",
+      "location": "Lieu",
+      "register": "S'inscrire",
+      "done": "Terminé"
+    },
+    "calendar": {
+      "month": "Mois",
+      "week": "Semaine",
+      "day": "Jour",
+      "today": "Aujourd'hui",
+      "prev": "Précédent",
+      "next": "Suivant",
+      "allDay": "toute la journée",
+      "more": "plus",
+      "noEvents": "Aucun événement à afficher"
+    }
+  }
+}
