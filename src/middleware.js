@@ -15,12 +15,13 @@ export function middleware(request) {
     }
   }
   
-  // Check if we need to redirect /events to /evenements for French users
-  if (pathname === '/events') {
-    const locale = request.headers.get('x-locale') || 'en'
-    if (locale === 'fr') {
-      return NextResponse.redirect(new URL('/evenements', request.url))
-    }
+  // Set French locale for French URLs
+  if (pathname.startsWith('/evenements') || 
+      pathname.startsWith('/contactez-nous') || 
+      pathname.startsWith('/inscription-membres-generaux')) {
+    const response = NextResponse.next()
+    response.headers.set('x-locale', 'fr')
+    return response
   }
   
   return NextResponse.next()

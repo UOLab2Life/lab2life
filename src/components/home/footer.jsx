@@ -23,7 +23,11 @@ function SitemapLink(props) {
 }
 
 function Sitemap() {
-  const { t, locale } = useTranslation()
+  const { t, locale, isInitialized } = useTranslation()
+  
+  if (!isInitialized) {
+    return null
+  }
   
   return (
     <>
@@ -164,7 +168,7 @@ function Copyright() {
 }
 
 export function Footer() {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   
   return (
     <footer>
@@ -203,7 +207,7 @@ export function Footer() {
                 </div>
 
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-8 pb-6 sm:pb-0 lg:col-span-4 lg:grid-cols-4 lg:pt-8">
-                  <Sitemap />
+                  <Sitemap key={locale} />
                 </div>
               </div>
             </PlusGridRow>
