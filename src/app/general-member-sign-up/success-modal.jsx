@@ -3,9 +3,11 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { BounceGeneralMember } from './bounce-general-member'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export function SuccessModal({ isOpen, onClose }) {
   const router = useRouter()
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (isOpen) {
@@ -58,9 +60,9 @@ export function SuccessModal({ isOpen, onClose }) {
             </svg>
           </div>
 
-          <h3 className="mb-2 text-2xl font-bold text-[#003e3e]">Success!</h3>
+          <h3 className="mb-2 text-2xl font-bold text-[#003e3e]">{t('memberSignUp.successModal.title') || 'Success!'}</h3>
           <p className="mb-6 text-[#003e3e]">
-            Thank you for signing up as a uOttawa Lab2Life general member!
+            {t('memberSignUp.successModal.message') || 'Thank you for signing up as a uOttawa Lab2Life general member!'}
           </p>
 
           <div className="mb-6">
@@ -71,7 +73,7 @@ export function SuccessModal({ isOpen, onClose }) {
             onClick={onClose}
             className="w-32 rounded-full bg-red-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:border hover:border-red-500 hover:bg-white hover:text-red-500"
           >
-            Close
+            {t('memberSignUp.successModal.close') || 'Close'}
           </button>
         </div>
       </div>

@@ -148,7 +148,7 @@ function MobileNav() {
   const links = getLinks(t, locale)
   
   return (
-    <DisclosurePanel className="lg:hidden">
+    <DisclosurePanel className="lg:hidden" key={locale}>
       <div className="flex flex-col gap-6 py-4 pl-4">
         {links.map(({ href, label }, linkIndex) => (
           <motion.div
@@ -159,7 +159,7 @@ function MobileNav() {
               ease: 'easeInOut',
               rotateX: { duration: 0.3, delay: linkIndex * 0.1 },
             }}
-            key={href}
+            key={`${href}-${locale}`}
           >
             <Link href={href} className="text-base font-semibold text-white">
               {label}
@@ -176,6 +176,8 @@ function MobileNav() {
 }
 
 export function Navbar({ showBanner = true, shortText = false }) {
+  const { t } = useTranslation()
+  
   const defaultBanner = (
     <Link
       href="/articles/clinical-support"
@@ -183,13 +185,13 @@ export function Navbar({ showBanner = true, shortText = false }) {
     >
       {shortText ? (
         <>
-          <span className="xs:inline hidden">NEW ARTICLE! The Power of Clinical Support</span>
-          <span className="xs:hidden">NEW ARTICLE! The Power of Clinical Support</span>
+          <span className="xs:inline hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
+          <span className="xs:hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
         </>
       ) : (
         <>
-          <span className="xs:inline hidden">NEW ARTICLE! The Power of Clinical Support</span>
-          <span className="xs:hidden">NEW ARTICLE! The Power of Clinical Support</span>
+          <span className="xs:inline hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
+          <span className="xs:hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
         </>
       )}
       <ChevronRightIcon className="size-3 sm:size-4" />

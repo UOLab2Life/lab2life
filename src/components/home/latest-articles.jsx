@@ -1,17 +1,22 @@
+'use client'
+
 import { Button } from '@/components/home/button'
 import { Heading } from '@/components/home/text'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export function LatestArticles() {
+  const { t } = useTranslation()
+  
   return (
     <div className="mt-8 bg-white pb-0">
       <div className="px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-7xl">
           <div className="text-center">
             <Heading as="h3" className="mt-2">
-              Latest Articles
+              {t('home.latestArticles.title') || 'Latest Articles'}
             </Heading>
             <p className="mx-auto mt-4 max-w-2xl text-lg/7 font-semibold text-gray-600">
-              Check out our latest articles about healthcare and medicine
+              {t('home.latestArticles.description') || 'Check out our latest articles about healthcare and medicine'}
             </p>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -50,7 +55,6 @@ export function LatestArticles() {
                     alt="Anoosha Rehman"
                     className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
                     src="/images/members-carousel/anoosha-rehman.jpg"
-                    style={{ transform: 'scale(1.2)', objectPosition: 'center 20%' }}
                   />
                   <div className="text-base/6 font-medium text-gray-700">Anoosha Rehman</div>
                 </div>

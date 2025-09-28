@@ -3,7 +3,8 @@
     "articles": "Articles",
     "podcasts": "Podcasts",
     "events": "Événements",
-    "contactUs": "Contactez-nous"
+    "contactUs": "Contactez-nous",
+    "banner": "NOUVEAU ARTICLE! Le Pouvoir du Soutien Clinique"
   },
   "footer": {
     "home": "Accueil",
@@ -46,6 +47,96 @@
       "close": "Fermer"
     }
   },
+        "home": {
+          "hero": {
+            "description": "Dédié à promouvoir et aider les étudiants à explorer diverses carrières dans les soins de santé et la médecine.",
+            "button": "Inscription des membres généraux"
+          },
+          "latestArticles": {
+            "title": "Derniers Articles",
+            "description": "Découvrez nos derniers articles sur les soins de santé et la médecine"
+          },
+          "countdown": {
+            "upcomingEvent": "Événement à venir",
+            "title": "Salon des clubs Lab2Life de l'Université d'Ottawa",
+            "description": "Nous serons au Salon des Clubs ce mercredi ! Passez à notre table, découvrez Lab2Life et faites tourner la roue pour tenter de gagner des prix incroyables !",
+            "date": "3 septembre 2025",
+            "time": "10 h 00 - 12 h 00",
+            "location": "Grand Allée (85 University Private)",
+            "registerNow": "S'inscrire",
+            "viewAllEvents": "Voir tous les événements",
+            "timeUnits": {
+              "days": "Jours",
+              "hours": "Heures",
+              "minutes": "Minutes",
+              "seconds": "Secondes"
+            }
+          },
+          "podcastPreview": {
+            "title": "The Career Catalyst",
+            "description": "Grâce à des conversations perspicaces avec des professionnels de divers domaines, nous découvrons des parcours de carrière, des avancées industrielles, des conseils précieux pour les étudiants et les professionnels en devenir. Écoutez pour découvrir des professions et différents chemins dans la recherche et la science qui façonnent notre monde!",
+            "episodeTitle": "Épisode 4: Reading Between the Scans with Dr. Yale Erenberg (anglais, aperçu)",
+            "episodeDescription": "Bienvenue à l'édition de mars du podcast UOLab2Life! Ce mois-ci, nous sommes rejoints par Dr. Yale Erenberg, un radiologiste travaillant dans le sud-ouest de l'Ontario. Dans cet épisode, nous explorons son rôle en tant que radiologiste, les avancées en technologie d'imagerie, et les conseils de carrière pour les étudiants aspirants.",
+            "viewAllEpisodes": "Voir tous les épisodes"
+          },
+          "bounce": {
+            "title": "Inscrivez-vous à nos événements via Bounce",
+            "description": "Nouveau avec l'année académique 2025-2026, l'Université d'Ottawa s'est associée à Bounce pour vous offrir un moyen facile et accessible de vous inscrire à nos événements. Vous pourrez également soumettre des photos de nos événements via Bounce pour partager les moments amusants que vous avez passés avec tout le monde!",
+            "button": "Suivez-nous sur Bounce"
+          },
+          "instagram": {
+            "title": "Suivez-nous sur Instagram",
+            "description": "Restez à jour avec nos derniers posts et contenu en coulisses !",
+            "button": "Suivre @uolab2life"
+          },
+          "membersCarousel": {
+            "title": "Rencontrez l'équipe !",
+            "description": "Rencontrez les étudiants dévoués derrière uOttawa Lab2Life",
+            "positions": {
+              "coPresidentAndFounder": "Co-président et fondateur",
+              "coPresident": "Co-président",
+              "vpInternalOperations": "VP Opérations internes",
+              "vpFinance": "VP Finances",
+              "vpExternalAffairs": "VP Affaires externes",
+              "vpEvents": "VP Événements",
+              "vpMarketing": "VP Marketing",
+              "vpGraphicDesign": "VP Design graphique",
+              "webmaster": "Webmestre",
+              "editorInChief": "Rédacteur en chef",
+              "podcastProducer": "Producteur de podcast",
+              "upperYearRepresentative": "Représentant des années supérieures",
+              "lowerYearRepresentative": "Représentant des années inférieures"
+            },
+            "programs": {
+              "biomedicalScience": "Sciences biomédicales",
+              "healthScience": "Sciences de la santé",
+              "biology": "Biologie",
+              "computerScience": "Informatique",
+              "biochemistry": "Biochimie",
+              "biopharmScience": "Sciences biopharmaceutiques"
+            },
+            "years": {
+              "1st": "1ère année",
+              "2nd": "2ème année", 
+              "3rd": "3ème année",
+              "4th": "4ème année",
+              "5th": "5ème année"
+            }
+          },
+          "about": {
+            "title": "Soutenir les étudiants dans leur parcours de la salle de classe à la carrière",
+            "mission": "Nous avons pour mission de permettre aux étudiants de se connecter et d'explorer divers emplois dans le domaine des soins de santé et de la médecine.",
+            "ourMission": "Notre mission",
+            "paragraph1": "uOttawa Lab2Life est dédié à promouvoir et aider les étudiants à explorer diverses carrières dans le domaine des soins de santé et de la médecine. Nous souhaitons soutenir les étudiants intéressés par ce domaine en leur fournissant des informations, des ressources et des opportunités pour appliquer leurs études à différentes carrières.",
+            "paragraph2": "Grâce à des événements innovants, des initiatives de développement professionnel, des épisodes de podcast avec des experts de diverses professions, des articles sur différentes carrières, des ateliers sur les candidatures d'emploi et les opportunités de réseautage, nous visons à guider les étudiants dans leur parcours de la salle de classe au laboratoire. Nous espérons présenter aux étudiants des carrières diversifiées dans le domaine et les soutenir avec des voies de carrière potentielles telles que les emplois, les études supérieures ou l'école de médecine.",
+            "paragraph3": "Nous nous efforçons de créer une communauté de professionnels en devenir, équipés des compétences, des connaissances et des expériences nécessaires pour avoir un impact positif dans leurs voies et professions choisies. Nous souhaitons être inclusifs de tous les diplômes et ne pas être limités aux sciences uniquement. Notre objectif est de soutenir les étudiants intéressés à naviguer vers leur profession préférée dans le marché du travail en constante évolution.",
+            "byTheNumbers": "UOLAB2LIFE EN CHIFFRES",
+            "generalMembers": "Membres généraux",
+            "articlesPodcasts": "Articles + podcasts publiés",
+            "eventsHosted": "Événements organisés",
+            "socialMediaEngagement": "Engagement sur les réseaux sociaux"
+          }
+        },
   "events": {
     "title": "Événements",
     "description": "Rejoignez uOttawa Lab2Life pour des événements incroyables liés aux soins de santé! Cliquez sur un événement pour voir les informations détaillées!",
@@ -67,6 +158,107 @@
       "allDay": "toute la journée",
       "more": "plus",
       "noEvents": "Aucun événement à afficher"
+    }
+  },
+  "podcasts": {
+    "title": "The Career Catalyst",
+    "description": "Grâce à des conversations perspicaces avec des professionnels de divers domaines, nous découvrons des parcours de carrière, des avancées industrielles, des conseils précieux pour les étudiants et les professionnels en devenir. Écoutez pour découvrir des professions et différents chemins dans la recherche et la science qui façonnent notre monde!",
+    "hostedBy": "Animé par",
+    "listenOn": "Écouter sur",
+    "listen": "Écouter",
+    "more": "Plus",
+    "applePodcasts": "Apple Podcasts (bientôt disponible)",
+    "episode": "Épisode"
+  },
+  "memberSignUp": {
+    "title": "Inscription des membres généraux",
+    "whatIsLab2Life": {
+      "title": "Qu'est-ce que Lab2Life?",
+      "description": "Nous sommes un club prometteur qui permet aux étudiants de se connecter et d'explorer divers emplois dans le domaine de la santé et de la médecine."
+    },
+    "benefits": {
+      "title": "Qu'obtient-on en devenant membre général ?",
+      "professionalNetworks": "Accès aux réseaux professionnels: opportunités de se connecter avec des professionnels de l'industrie, des anciens élèves et des conférenciers invités.",
+      "exclusiveDiscounts": "Remises et avantages exclusifs de nos sponsors: accès à des offres spéciales ou à des remises sur les produits proposés par nos sponsors.",
+      "firstDibsEvents": "Premiers pas sur les événements: inscription prioritaire aux événements populaires ou places limitées dans les ateliers.",
+      "generalMemberMeetings": "Réunions des membres généraux: Nous essayons d'organiser au moins 1-2 réunions par semestre pour les membres généraux où vous pouvez fournir vos commentaires.",
+      "memberNewsletters": "Newsletters réservées aux membres: mises à jour régulières sur les actualités et le contenu du club, aperçus des événements à venir et des opportunités exclusives aux membres.",
+      "studyGroups": "Groupes d'étude: séances d'étude ou groupes organisés au sein du club pour aider aux cours et à la préparation aux examens.",
+      "volunteerOpportunities": "Opportunités de bénévolat: opportunités de redonner à la communauté grâce à des activités bénévoles organisées."
+    },
+    "form": {
+      "title": "Formulaire d'Inscription",
+      "fields": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Adresse courriel de l'Université d'Ottawa",
+        "studentNumber": "Numéro d'étudiant",
+        "year": "année",
+        "faculty": "Faculté",
+        "program": "Programme",
+        "interest": "Pourquoi êtes-vous intéressés à joindre Lab2Life de l'université d'Ottawa?",
+        "events": "Quels événements ou initiatives aimerez-vous voir au cours de l'année scolaire 2025-2026?"
+      },
+      "placeholders": {
+        "firstName": "Votre prénom",
+        "lastName": "Votre nom",
+        "email": "votre.courriel@uottawa.ca",
+        "studentNumber": "Votre numéro d'étudiant",
+        "year": "Sélectionner l'année",
+        "faculty": "Sélectionner la Faculté",
+        "program": "Votre programme d'études",
+        "interest": "Dites-nous pourquoi vous voulez rejoindre Lab2Life...",
+        "events": "Dites-nous quels événements vous aimeriez voir..."
+      },
+      "yearOptions": {
+        "1st": "1ère année",
+        "2nd": "2ème année",
+        "3rd": "3ème année",
+        "4th": "4ème année",
+        "5th": "5ème année",
+        "other": "Autre"
+      },
+      "facultyOptions": {
+        "arts": "Faculté des Arts",
+        "education": "Faculté d'Éducation",
+        "engineering": "Faculté de Génie",
+        "healthSciences": "Faculté des Sciences de la Santé",
+        "law": "Faculté de Droit",
+        "medicine": "Faculté de Médecine",
+        "science": "Faculté des Sciences",
+        "socialScience": "Faculté des Sciences Sociales",
+        "telfer": "École de Gestion Telfer"
+      },
+      "submit": "Soumettre votre application",
+      "submitting": "Soumission en cours...",
+      "errors": {
+        "firstNameRequired": "Le prénom est requis",
+        "firstNameInvalid": "Le prénom ne doit contenir que des lettres, espaces, tirets et apostrophes (minimum 2 caractères)",
+        "lastNameRequired": "Le nom est requis",
+        "lastNameInvalid": "Le nom ne doit contenir que des lettres, espaces, tirets et apostrophes (minimum 2 caractères)",
+        "emailRequired": "Le courriel est requis",
+        "emailInvalid": "Veuillez utiliser votre adresse courriel uOttawa (@uottawa.ca)",
+        "studentNumberRequired": "Le numéro d'étudiant est requis",
+        "studentNumberInvalid": "Le numéro d'étudiant doit contenir exactement 9 chiffres",
+        "yearRequired": "L'année est requise",
+        "facultyRequired": "La faculté est requise",
+        "programRequired": "Le programme est requis",
+        "submitFailed": "Échec de la soumission de la demande. Veuillez réessayer.",
+        "submitTimeout": "La soumission prend plus de temps que prévu. Veuillez réessayer."
+      }
+    },
+    "successModal": {
+      "title": "Succès!",
+      "message": "Merci de vous être inscrit comme membre général de uOttawa Lab2Life!",
+      "close": "Fermer",
+      "bounce": {
+        "title": "Inscrivez-vous à nos événements via Bounce",
+        "description": "Nouveau avec l'année académique 2025-2026, l'Université d'Ottawa s'est associée à Bounce pour vous offrir un moyen facile et accessible de vous inscrire à nos événements. Vous pourrez également soumettre des photos de nos événements via Bounce pour partager les moments amusants que vous avez passés avec tout le monde!"
+      },
+      "buttons": {
+        "backToForm": "Retour au formulaire",
+        "backToHomepage": "Retour à l'accueil"
+      }
     }
   }
 }

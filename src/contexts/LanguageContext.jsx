@@ -4,9 +4,39 @@ import { createContext, useContext, useState, useEffect } from 'react'
 
 const LanguageContext = createContext()
 
+const getInitialLocale = () => {
+  // Always return 'en' for server-side rendering to prevent hydration mismatch
+  return 'en'
+}
+
 export function LanguageProvider({ children }) {
-  const [locale, setLocale] = useState('en')
+  const [locale, setLocale] = useState(getInitialLocale)
   const [messages, setMessages] = useState({})
+  const [isInitialized, setIsInitialized] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedLocale = localStorage.getItem('preferred-language')
+      
+      if (savedLocale && (savedLocale === 'en' || savedLocale === 'fr')) {
+        setLocale(savedLocale)
+      } else {
+        const currentPath = window.location.pathname
+        const isFrenchPath = currentPath.startsWith('/inscription-membres-generaux') || 
+                            currentPath.startsWith('/evenements') || 
+                            currentPath.startsWith('/contactez-nous')
+        
+        if (isFrenchPath) {
+          setLocale('fr')
+          localStorage.setItem('preferred-language', 'fr')
+        } else {
+          setLocale('en')
+          localStorage.setItem('preferred-language', 'en')
+        }
+      }
+    }
+    setIsInitialized(true)
+  }, [])
 
   useEffect(() => {
     const loadMessages = async () => {
@@ -15,7 +45,6 @@ export function LanguageProvider({ children }) {
         setMessages(messages.default)
       } catch (error) {
         console.error('Failed to load messages for locale:', locale)
-        // Fallback to English
         const fallbackMessages = await import(`../locales/en.json`)
         setMessages(fallbackMessages.default)
       }
@@ -47,15 +76,8 @@ export function LanguageProvider({ children }) {
     }
   }
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('preferred-language')
-    if (savedLanguage && ['en', 'fr'].includes(savedLanguage)) {
-      setLocale(savedLanguage)
-    }
-  }, [])
-
   return (
-    <LanguageContext.Provider value={{ locale, changeLanguage, messages }}>
+    <LanguageContext.Provider value={{ locale, changeLanguage, messages, isInitialized }}>
       {children}
     </LanguageContext.Provider>
   )
@@ -70,7 +92,7 @@ export function useLanguage() {
 }
 
 export function useTranslation() {
-  const { locale, changeLanguage, messages } = useLanguage()
+  const { locale, changeLanguage, messages, isInitialized } = useLanguage()
   
   const t = (key) => {
     if (!messages || Object.keys(messages).length === 0) {
@@ -91,6 +113,6 @@ export function useTranslation() {
     
     return value
   }
-
-  return { t, locale, changeLanguage, messages }
+  
+  return { t, locale, changeLanguage, messages, isInitialized }
 }

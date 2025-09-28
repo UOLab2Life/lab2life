@@ -6,13 +6,17 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import { Suspense, useCallback, useEffect, useState } from 'react'
 
 import { Navigation } from '@/components/articles/navigation'
+import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
-const topLinks = [
-  { href: '/articles', label: 'Articles' },
-  { href: '/podcasts', label: 'Podcasts' },
-  { href: '/events', label: 'Events' },
-  { href: '/contact-us', label: 'Contact Us' },
-]
+function getTopLinks(t, locale) {
+  return [
+    { href: getLocalizedUrl('/articles', locale), label: t('navbar.articles') || 'Articles' },
+    { href: getLocalizedUrl('/podcasts', locale), label: t('navbar.podcasts') || 'Podcasts' },
+    { href: getLocalizedUrl('/events', locale), label: t('navbar.events') || 'Events' },
+    { href: getLocalizedUrl('/contact-us', locale), label: t('navbar.contactUs') || 'Contact Us' },
+  ]
+}
 
 function CloseOnNavigation({ close }) {
   const pathname = usePathname()
@@ -24,8 +28,10 @@ function CloseOnNavigation({ close }) {
 }
 
 export function MobileNavigation() {
+  const { t, locale } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const close = useCallback(() => setIsOpen(false), [])
+  const topLinks = getTopLinks(t, locale)
 
   function onLinkClick(event) {
     const link = event.currentTarget
@@ -79,10 +85,10 @@ export function MobileNavigation() {
             </button>
           </div>
 
-          <nav aria-label="Primary (mobile)" className="mb-6 space-y-1">
+          <nav aria-label="Primary (mobile)" className="mb-6 space-y-1" key={locale}>
             {topLinks.map(({ href, label }) => (
               <Link
-                key={href}
+                key={`${href}-${locale}`}
                 href={href}
                 onClick={close}
                 className="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-black/5 dark:text-white/85 dark:hover:bg-white/10"

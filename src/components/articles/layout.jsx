@@ -12,6 +12,7 @@ import { Search } from '@/components/articles/search'
 import { ThemeSelector } from '@/components/articles/theme-selector'
 import { Link } from '@/components/home/link'
 import { LanguageDropdown } from '@/components/home/language-dropdown'
+import { MobileLanguageDropdown } from '@/components/articles/mobile-language-dropdown'
 import { useTranslation } from '@/contexts/LanguageContext'
 
 function getTopLinks(t) {
@@ -74,7 +75,8 @@ function Header() {
           </div>
 
           <div className="flex items-center justify-end gap-2">
-            <div className="mr-2 flex lg:hidden">
+            <div className="mr-2 flex items-center gap-2 lg:hidden">
+              <MobileLanguageDropdown />
               <MobileNavigation />
             </div>
 

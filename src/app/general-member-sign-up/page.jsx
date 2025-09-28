@@ -7,8 +7,10 @@ import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
 import { useState } from 'react'
 import { SuccessModal } from './success-modal'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export default function GeneralMemberSignUp() {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -56,8 +58,7 @@ export default function GeneralMemberSignUp() {
       if (!validateName(value)) {
         setErrors((prev) => ({
           ...prev,
-          firstName:
-            'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
+          firstName: t('memberSignUp.form.errors.firstNameInvalid') || 'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
         }))
       }
     }
@@ -66,8 +67,7 @@ export default function GeneralMemberSignUp() {
       if (!validateName(value)) {
         setErrors((prev) => ({
           ...prev,
-          lastName:
-            'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
+          lastName: t('memberSignUp.form.errors.lastNameInvalid') || 'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)',
         }))
       }
     }
@@ -76,7 +76,7 @@ export default function GeneralMemberSignUp() {
       if (!validateStudentNumber(value)) {
         setErrors((prev) => ({
           ...prev,
-          studentNumber: 'Student number must be exactly 9 digits',
+          studentNumber: t('memberSignUp.form.errors.studentNumberInvalid') || 'Student number must be exactly 9 digits',
         }))
       }
     }
@@ -85,7 +85,7 @@ export default function GeneralMemberSignUp() {
       if (!validateUOttawaEmail(value)) {
         setErrors((prev) => ({
           ...prev,
-          email: 'Please use your uOttawa email address (@uottawa.ca)',
+          email: t('memberSignUp.form.errors.emailInvalid') || 'Please use your uOttawa email address (@uottawa.ca)',
         }))
       }
     }
@@ -96,7 +96,7 @@ export default function GeneralMemberSignUp() {
     if (email && !validateUOttawaEmail(email)) {
       setErrors((prev) => ({
         ...prev,
-        email: 'Please use your uOttawa email address (@uottawa.ca)',
+        email: t('memberSignUp.form.errors.emailInvalid') || 'Please use your uOttawa email address (@uottawa.ca)',
       }))
     }
   }
@@ -116,41 +116,39 @@ export default function GeneralMemberSignUp() {
     const newErrors = {}
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required'
+      newErrors.firstName = t('memberSignUp.form.errors.firstNameRequired') || 'First name is required'
     } else if (!validateName(formData.firstName)) {
-      newErrors.firstName =
-        'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
+      newErrors.firstName = t('memberSignUp.form.errors.firstNameInvalid') || 'First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
     }
 
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last name is required'
+      newErrors.lastName = t('memberSignUp.form.errors.lastNameRequired') || 'Last name is required'
     } else if (!validateName(formData.lastName)) {
-      newErrors.lastName =
-        'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
+      newErrors.lastName = t('memberSignUp.form.errors.lastNameInvalid') || 'Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)'
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
+      newErrors.email = t('memberSignUp.form.errors.emailRequired') || 'Email is required'
     } else if (!validateUOttawaEmail(formData.email)) {
-      newErrors.email = 'Please use your uOttawa email address (@uottawa.ca)'
+      newErrors.email = t('memberSignUp.form.errors.emailInvalid') || 'Please use your uOttawa email address (@uottawa.ca)'
     }
 
     if (!formData.studentNumber.trim()) {
-      newErrors.studentNumber = 'Student number is required'
+      newErrors.studentNumber = t('memberSignUp.form.errors.studentNumberRequired') || 'Student number is required'
     } else if (!validateStudentNumber(formData.studentNumber)) {
-      newErrors.studentNumber = 'Student number must be exactly 9 digits'
+      newErrors.studentNumber = t('memberSignUp.form.errors.studentNumberInvalid') || 'Student number must be exactly 9 digits'
     }
 
     if (!formData.year) {
-      newErrors.year = 'Year is required'
+      newErrors.year = t('memberSignUp.form.errors.yearRequired') || 'Year is required'
     }
 
     if (!formData.faculty) {
-      newErrors.faculty = 'Faculty is required'
+      newErrors.faculty = t('memberSignUp.form.errors.facultyRequired') || 'Faculty is required'
     }
 
     if (!formData.program.trim()) {
-      newErrors.program = 'Program is required'
+      newErrors.program = t('memberSignUp.form.errors.programRequired') || 'Program is required'
     }
 
     return newErrors
@@ -232,9 +230,9 @@ export default function GeneralMemberSignUp() {
     } catch (error) {
       console.error('Error submitting form:', error)
       if (error.name === 'AbortError') {
-        setErrors({ submit: 'Submission is taking longer than expected. Please try again.' })
+        setErrors({ submit: t('memberSignUp.form.errors.submitTimeout') || 'Submission is taking longer than expected. Please try again.' })
       } else {
-        setErrors({ submit: 'Failed to submit application. Please try again.' })
+        setErrors({ submit: t('memberSignUp.form.errors.submitFailed') || 'Failed to submit application. Please try again.' })
       }
     } finally {
       setIsSubmitting(false)
@@ -252,48 +250,48 @@ export default function GeneralMemberSignUp() {
       <div className="py-8 pb-16 sm:py-16 sm:pb-24">
         <Container>
           <div className="mx-auto max-w-6xl text-center">
-            <Heading as="h2" className="mx-auto max-w-3xl">
-              General Member Sign-Up
+            <Heading as="h2" className="mx-auto sm:whitespace-nowrap">
+              {t('memberSignUp.title') || 'General Member Sign-Up'}
             </Heading>
 
             <div className="mx-auto mt-12 max-w-6xl text-left space-y-12">
               <div>
-                <Subheading as="h3" className="mb-6">What is Lab2Life?</Subheading>
+                <Subheading as="h3" className="mb-6">{t('memberSignUp.whatIsLab2Life.title') || 'What is Lab2Life?'}</Subheading>
                 <p className="text-lg/8 text-[#003e3e]">
-                  We are an up and coming club which allows students to connect with and explore various jobs in the field of health and medicine.
+                  {t('memberSignUp.whatIsLab2Life.description') || 'We are an up and coming club which allows students to connect with and explore various jobs in the field of health and medicine.'}
                 </p>
               </div>
 
               <div>
-                <Subheading as="h3" className="mb-6">What do you get by becoming a general member?</Subheading>
+                <Subheading as="h3" className="mb-6">{t('memberSignUp.benefits.title') || 'What do you get by becoming a general member?'}</Subheading>
                 <ul className="text-lg/8 text-[#003e3e] space-y-2">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">Access to Professional Networks:</strong> Opportunities to connect with industry professionals, alumni, and guest speakers.</span>
+                    <span>{t('memberSignUp.benefits.professionalNetworks') || 'Access to Professional Networks: Opportunities to connect with industry professionals, alumni, and guest speakers.'}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">Exclusive Discounts and Perks from our Sponsors:</strong> Access to special deals or discounts for the products offered by our sponsors.</span>
+                    <span>{t('memberSignUp.benefits.exclusiveDiscounts') || 'Exclusive Discounts and Perks from our Sponsors: Access to special deals or discounts for the products offered by our sponsors.'}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">First Dibs on Events:</strong> Priority registration for popular events or limited spots in workshops.</span>
+                    <span>{t('memberSignUp.benefits.firstDibsEvents') || 'First Dibs on Events: Priority registration for popular events or limited spots in workshops.'}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">General Member Meetings:</strong> We try to hold at least 1-2 meetings per semester for general members where you guys can provide your inputs.</span>
+                    <span>{t('memberSignUp.benefits.generalMemberMeetings') || 'General Member Meetings: We try to hold at least 1-2 meetings per semester for general members where you guys can provide your inputs.'}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">Members-Only Newsletters:</strong> Regular updates on club news, content, sneak peaks into upcoming events and opportunities that are exclusive to members.</span>
+                    <span>{t('memberSignUp.benefits.memberNewsletters') || 'Members-Only Newsletters: Regular updates on club news, content, sneak peaks into upcoming events and opportunities that are exclusive to members.'}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">Study Groups:</strong> Organized study sessions or groups within the club to help with coursework and exam preparation.</span>
+                    <span>{t('memberSignUp.benefits.studyGroups') || 'Study Groups: Organized study sessions or groups within the club to help with coursework and exam preparation.'}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span><strong className="text-[#003e3e]">Volunteer Opportunities:</strong> Opportunities to give back to the community through organized volunteer activities.</span>
+                    <span>{t('memberSignUp.benefits.volunteerOpportunities') || 'Volunteer Opportunities: Opportunities to give back to the community through organized volunteer activities.'}</span>
                   </li>
                 </ul>
               </div>
@@ -301,7 +299,7 @@ export default function GeneralMemberSignUp() {
 
             <div className="mt-16">
               <Heading as="h3" className="mx-auto max-w-6xl mb-8 pb-4">
-                Registration Form
+                {t('memberSignUp.form.title') || 'Registration Form'}
               </Heading>
               <form onSubmit={handleSubmit} className="mt-8 space-y-6 text-left">
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -310,7 +308,7 @@ export default function GeneralMemberSignUp() {
                       htmlFor="firstName"
                       className="mb-2 block text-sm font-medium text-[#003e3e]"
                     >
-                      First Name <span className="text-red-500">*</span>
+                      {t('memberSignUp.form.fields.firstName') || 'First Name'} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -322,7 +320,7 @@ export default function GeneralMemberSignUp() {
                         errors.firstName ? 'border-red-500' : 'border-gray-300'
                       }`}
                       style={{ backgroundColor: 'white' }}
-                      placeholder="Your first name"
+                      placeholder={t('memberSignUp.form.placeholders.firstName') || 'Your first name'}
                     />
                     {errors.firstName && (
                       <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
@@ -333,7 +331,7 @@ export default function GeneralMemberSignUp() {
                       htmlFor="lastName"
                       className="mb-2 block text-sm font-medium text-[#003e3e]"
                     >
-                      Last Name <span className="text-red-500">*</span>
+                      {t('memberSignUp.form.fields.lastName') || 'Last Name'} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -345,7 +343,7 @@ export default function GeneralMemberSignUp() {
                         errors.lastName ? 'border-red-500' : 'border-gray-300'
                       }`}
                       style={{ backgroundColor: 'white' }}
-                      placeholder="Your last name"
+                      placeholder={t('memberSignUp.form.placeholders.lastName') || 'Your last name'}
                     />
                     {errors.lastName && (
                       <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
@@ -355,7 +353,7 @@ export default function GeneralMemberSignUp() {
 
                 <div>
                   <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                    uOttawa Email Address <span className="text-red-500">*</span>
+                    {t('memberSignUp.form.fields.email') || 'uOttawa Email Address'} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -369,7 +367,7 @@ export default function GeneralMemberSignUp() {
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: 'white' }}
-                    placeholder="your.email@uottawa.ca"
+                    placeholder={t('memberSignUp.form.placeholders.email') || 'your.email@uottawa.ca'}
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                 </div>
@@ -379,7 +377,7 @@ export default function GeneralMemberSignUp() {
                     htmlFor="studentNumber"
                     className="mb-2 block text-sm font-medium text-[#003e3e]"
                   >
-                    Student Number <span className="text-red-500">*</span>
+                    {t('memberSignUp.form.fields.studentNumber') || 'Student Number'} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -391,7 +389,7 @@ export default function GeneralMemberSignUp() {
                       errors.studentNumber ? 'border-red-500' : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: 'white' }}
-                    placeholder="Your student number"
+                    placeholder={t('memberSignUp.form.placeholders.studentNumber') || 'Your student number'}
                   />
                   {errors.studentNumber && (
                     <p className="mt-1 text-sm text-red-600">{errors.studentNumber}</p>
@@ -401,7 +399,7 @@ export default function GeneralMemberSignUp() {
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="year" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                      Year <span className="text-red-500">*</span>
+                      {t('memberSignUp.form.fields.year') || 'Year'} <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="year"
@@ -413,13 +411,13 @@ export default function GeneralMemberSignUp() {
                       }`}
                       style={{ backgroundColor: 'white' }}
                     >
-                      <option value="">Select Year</option>
-                      <option value="1st Year">1st Year</option>
-                      <option value="2nd Year">2nd Year</option>
-                      <option value="3rd Year">3rd Year</option>
-                      <option value="4th Year">4th Year</option>
-                      <option value="5th Year">5th Year</option>
-                      <option value="Other">Other</option>
+                      <option value="">{t('memberSignUp.form.placeholders.year') || 'Select Year'}</option>
+                      <option value="1st Year">{t('memberSignUp.form.yearOptions.1st') || '1st Year'}</option>
+                      <option value="2nd Year">{t('memberSignUp.form.yearOptions.2nd') || '2nd Year'}</option>
+                      <option value="3rd Year">{t('memberSignUp.form.yearOptions.3rd') || '3rd Year'}</option>
+                      <option value="4th Year">{t('memberSignUp.form.yearOptions.4th') || '4th Year'}</option>
+                      <option value="5th Year">{t('memberSignUp.form.yearOptions.5th') || '5th Year'}</option>
+                      <option value="Other">{t('memberSignUp.form.yearOptions.other') || 'Other'}</option>
                     </select>
                     {errors.year && <p className="mt-1 text-sm text-red-600">{errors.year}</p>}
                   </div>
@@ -428,7 +426,7 @@ export default function GeneralMemberSignUp() {
                       htmlFor="faculty"
                       className="mb-2 block text-sm font-medium text-[#003e3e]"
                     >
-                      Faculty <span className="text-red-500">*</span>
+                      {t('memberSignUp.form.fields.faculty') || 'Faculty'} <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="faculty"
@@ -440,16 +438,16 @@ export default function GeneralMemberSignUp() {
                       }`}
                       style={{ backgroundColor: 'white' }}
                     >
-                      <option value="">Select Faculty</option>
-                      <option value="Arts">Faculty of Arts</option>
-                      <option value="Education">Faculty of Education</option>
-                      <option value="Engineering">Faculty of Engineering</option>
-                      <option value="Health Sciences">Faculty of Health Sciences</option>
-                      <option value="Law">Faculty of Law</option>
-                      <option value="Medicine">Faculty of Medicine</option>
-                      <option value="Science">Faculty of Science</option>
-                      <option value="Social Science">Faculty of Social Science</option>
-                      <option value="Telfer">Telfer School of Management</option>
+                      <option value="">{t('memberSignUp.form.placeholders.faculty') || 'Select Faculty'}</option>
+                      <option value="Arts">{t('memberSignUp.form.facultyOptions.arts') || 'Faculty of Arts'}</option>
+                      <option value="Education">{t('memberSignUp.form.facultyOptions.education') || 'Faculty of Education'}</option>
+                      <option value="Engineering">{t('memberSignUp.form.facultyOptions.engineering') || 'Faculty of Engineering'}</option>
+                      <option value="Health Sciences">{t('memberSignUp.form.facultyOptions.healthSciences') || 'Faculty of Health Sciences'}</option>
+                      <option value="Law">{t('memberSignUp.form.facultyOptions.law') || 'Faculty of Law'}</option>
+                      <option value="Medicine">{t('memberSignUp.form.facultyOptions.medicine') || 'Faculty of Medicine'}</option>
+                      <option value="Science">{t('memberSignUp.form.facultyOptions.science') || 'Faculty of Science'}</option>
+                      <option value="Social Science">{t('memberSignUp.form.facultyOptions.socialScience') || 'Faculty of Social Science'}</option>
+                      <option value="Telfer">{t('memberSignUp.form.facultyOptions.telfer') || 'Telfer School of Management'}</option>
                     </select>
                     {errors.faculty && (
                       <p className="mt-1 text-sm text-red-600">{errors.faculty}</p>
@@ -462,7 +460,7 @@ export default function GeneralMemberSignUp() {
                     htmlFor="program"
                     className="mb-2 block text-sm font-medium text-[#003e3e]"
                   >
-                    Program <span className="text-red-500">*</span>
+                    {t('memberSignUp.form.fields.program') || 'Program'} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -474,7 +472,7 @@ export default function GeneralMemberSignUp() {
                       errors.program ? 'border-red-500' : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: 'white' }}
-                    placeholder="Your program of study"
+                    placeholder={t('memberSignUp.form.placeholders.program') || 'Your program of study'}
                   />
                   {errors.program && <p className="mt-1 text-sm text-red-600">{errors.program}</p>}
                 </div>
@@ -484,7 +482,7 @@ export default function GeneralMemberSignUp() {
                     htmlFor="interest"
                     className="mb-2 block text-sm font-medium text-[#003e3e]"
                   >
-                    Why are you interested in joining uOttawa Lab2Life?
+                    {t('memberSignUp.form.fields.interest') || 'Why are you interested in joining uOttawa Lab2Life?'}
                   </label>
                   <textarea
                     id="interest"
@@ -496,7 +494,7 @@ export default function GeneralMemberSignUp() {
                       errors.interest ? 'border-red-500' : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: 'white', minHeight: '120px' }}
-                    placeholder="Tell us why you want to join Lab2Life..."
+                    placeholder={t('memberSignUp.form.placeholders.interest') || 'Tell us why you want to join Lab2Life...'}
                     onInput={(e) => {
                       e.target.style.height = 'auto'
                       e.target.style.height = e.target.scrollHeight + 'px'
@@ -509,8 +507,7 @@ export default function GeneralMemberSignUp() {
 
                 <div>
                   <label htmlFor="events" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                    What events or initiatives do you want to see us do during the 2024-2025
-                    academic year?
+                    {t('memberSignUp.form.fields.events') || 'What events or initiatives do you want to see us do during the 2025-2026 academic year?'}
                   </label>
                   <textarea
                     id="events"
@@ -522,7 +519,7 @@ export default function GeneralMemberSignUp() {
                       errors.events ? 'border-red-500' : 'border-gray-300'
                     }`}
                     style={{ backgroundColor: 'white', minHeight: '120px' }}
-                    placeholder="Tell us what events you would like to see..."
+                    placeholder={t('memberSignUp.form.placeholders.events') || 'Tell us what events you would like to see...'}
                     onInput={(e) => {
                       e.target.style.height = 'auto'
                       e.target.style.height = e.target.scrollHeight + 'px'
@@ -566,7 +563,7 @@ export default function GeneralMemberSignUp() {
                       }
                     }}
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                    {isSubmitting ? (t('memberSignUp.form.submitting') || 'Submitting...') : (t('memberSignUp.form.submit') || 'Submit Application')}
                   </button>
                 </div>
               </form>

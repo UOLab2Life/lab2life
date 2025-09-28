@@ -11,7 +11,7 @@ const urlMappings = {
     '/podcasts': '/podcasts',
     '/events': '/evenements', 
     '/contact-us': '/contactez-nous',
-    '/general-member-sign-up': '/inscription-membre'
+    '/general-member-sign-up': '/inscription-membres-generaux'
   }
 }
 
@@ -21,7 +21,7 @@ const reverseUrlMappings = {
     '/podcasts': '/podcasts',
     '/evenements': '/events',
     '/contactez-nous': '/contact-us', 
-    '/inscription-membre': '/general-member-sign-up'
+    '/inscription-membres-generaux': '/general-member-sign-up'
   }
 }
 

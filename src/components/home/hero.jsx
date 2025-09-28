@@ -1,10 +1,16 @@
+'use client'
+
 import { Gradient } from '@/components/home/gradient'
 import { Container } from '@/components/home/container'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
 import { Button } from '@/components/home/button'
+import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
 export function Hero() {
+  const { t, locale } = useTranslation()
+  
   return (
     <div className="relative">
       <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
@@ -18,15 +24,14 @@ export function Hero() {
             uOttawa Lab2Life
           </Heading>
           <p className="font-inter-semibold mx-auto mt-8 max-w-2xl text-xl/7 text-white/90 sm:mx-0 sm:text-2xl/8">
-            Dedicated to promoting and helping students explore various careers in the field of
-            healthcare and medicine.
+            {t('home.hero.description') || 'Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.'}
           </p>
           <div className="mt-12 flex flex-row justify-center gap-3 sm:justify-start sm:gap-6">
             <Button
-              href="/general-member-sign-up"
+              href={getLocalizedUrl('/general-member-sign-up', locale)}
               className="w-[65%] sm:w-auto px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
             >
-              General Member Sign-Up
+              {t('home.hero.button') || 'General Member Sign-Up'}
             </Button>
           </div>
         </div>

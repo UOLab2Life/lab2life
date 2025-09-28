@@ -144,6 +144,7 @@
     line-height: 1.2;
     white-space: nowrap;
     color: #003e3e !important;
+    text-transform: capitalize;
   }
 
   .lab2life-calendar .fc .fc-toolbar-chunk {
