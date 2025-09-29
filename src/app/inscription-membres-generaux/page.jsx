@@ -98,6 +98,17 @@ export default function InscriptionMembresGenerauxPage() {
     }
   }
 
+  const handleEmailInvalid = (e) => {
+    e.preventDefault()
+    const email = e.target.value.trim()
+    if (email) {
+      setErrors((prev) => ({
+        ...prev,
+        email: e.target.validationMessage,
+      }))
+    }
+  }
+
   const validateForm = () => {
     const newErrors = {}
 
@@ -151,13 +162,10 @@ export default function InscriptionMembresGenerauxPage() {
     setIsSubmitting(true)
     
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000))
       
-      // Show success modal
       setIsModalOpen(true)
       
-      // Reset form
       setFormData({
         firstName: '',
         lastName: '',
@@ -196,252 +204,310 @@ export default function InscriptionMembresGenerauxPage() {
 
               <div>
                 <Subheading as="h3" className="mb-6">{t('memberSignUp.benefits.title') || 'Qu\'obtient-on en devenant membre général ?'}</Subheading>
-                <ul className="space-y-4 text-lg/8 text-[#003e3e]">
+                <ul className="text-lg/8 text-[#003e3e] space-y-2">
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.professionalNetworks') || 'Accès aux réseaux professionnels: opportunités de se connecter avec des professionnels de l\'industrie, des anciens élèves et des conférenciers invités.'}</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.exclusiveDiscounts') || 'Remises et avantages exclusifs de nos sponsors: accès à des offres spéciales ou à des remises sur les produits proposés par nos sponsors.'}</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.firstDibsEvents') || 'Premiers pas sur les événements: inscription prioritaire aux événements populaires ou places limitées dans les ateliers.'}</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.generalMemberMeetings') || 'Réunions des membres généraux: Nous essayons d\'organiser au moins 1-2 réunions par semestre pour les membres généraux où vous pouvez fournir vos commentaires.'}</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.memberNewsletters') || 'Newsletters réservées aux membres: mises à jour régulières sur les actualités et le contenu du club, aperçus des événements à venir et des opportunités exclusives aux membres.'}</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.studyGroups') || 'Groupes d\'étude: séances d\'étude ou groupes organisés au sein du club pour aider aux cours et à la préparation aux examens.'}</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#003e3e] mr-3">•</span>
+                    <span className="inline-block w-2 h-2 bg-[#003e3e] rounded-full mt-3 mr-4 flex-shrink-0"></span>
                     <span>{t('memberSignUp.benefits.volunteerOpportunities') || 'Opportunités de bénévolat: opportunités de redonner à la communauté grâce à des activités bénévoles organisées.'}</span>
                   </li>
                 </ul>
               </div>
+            </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-[#003e3e] mb-6">
-                  {t('memberSignUp.form.title') || 'Formulaire d\'Inscription'}
-                </h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('memberSignUp.form.fields.firstName') || 'Prénom'}
-                      </label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                          errors.firstName ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholder={t('memberSignUp.form.placeholders.firstName') || 'Votre prénom'}
-                      />
-                      {errors.firstName && (
-                        <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('memberSignUp.form.fields.lastName') || 'Nom'}
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                          errors.lastName ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholder={t('memberSignUp.form.placeholders.lastName') || 'Votre nom'}
-                      />
-                      {errors.lastName && (
-                        <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
-                      )}
-                    </div>
-                  </div>
-
+            <div className="mt-16">
+              <Heading as="h3" className="mx-auto max-w-6xl mb-8 pb-4">
+                {t('memberSignUp.form.title') || 'Formulaire d\'inscription'}
+              </Heading>
+              <form onSubmit={handleSubmit} className="mt-8 space-y-6 text-left">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('memberSignUp.form.fields.email') || 'Adresse courriel de l\'Université d\'Ottawa'}
+                    <label
+                      htmlFor="firstName"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
+                      {t('memberSignUp.form.fields.firstName') || 'Prénom'} <span className="text-red-500">*</span>
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
                       onChange={handleInputChange}
-                      onBlur={handleEmailBlur}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                        errors.firstName ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder={t('memberSignUp.form.placeholders.email') || 'votre.courriel@uottawa.ca'}
+                      style={{ backgroundColor: 'white' }}
+                      placeholder={t('memberSignUp.form.placeholders.firstName') || 'Votre prénom'}
                     />
-                    {errors.email && (
-                      <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                    {errors.firstName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
                     )}
                   </div>
-
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="studentNumber" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('memberSignUp.form.fields.studentNumber') || 'Numéro d\'étudiant'}
-                      </label>
-                      <input
-                        type="text"
-                        id="studentNumber"
-                        name="studentNumber"
-                        value={formData.studentNumber}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                          errors.studentNumber ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholder={t('memberSignUp.form.placeholders.studentNumber') || 'Votre numéro d\'étudiant'}
-                      />
-                      {errors.studentNumber && (
-                        <p className="mt-1 text-sm text-red-600">{errors.studentNumber}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label htmlFor="year" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('memberSignUp.form.fields.year') || 'année'}
-                      </label>
-                      <select
-                        id="year"
-                        name="year"
-                        value={formData.year}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                          errors.year ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                      >
-                        <option value="">{t('memberSignUp.form.placeholders.year') || 'Sélectionner l\'année'}</option>
-                        <option value="1st">{t('memberSignUp.form.yearOptions.1st') || '1ère année'}</option>
-                        <option value="2nd">{t('memberSignUp.form.yearOptions.2nd') || '2ème année'}</option>
-                        <option value="3rd">{t('memberSignUp.form.yearOptions.3rd') || '3ème année'}</option>
-                        <option value="4th">{t('memberSignUp.form.yearOptions.4th') || '4ème année'}</option>
-                        <option value="5th">{t('memberSignUp.form.yearOptions.5th') || '5ème année'}</option>
-                        <option value="other">{t('memberSignUp.form.yearOptions.other') || 'Autre'}</option>
-                      </select>
-                      {errors.year && (
-                        <p className="mt-1 text-sm text-red-600">{errors.year}</p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="faculty" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('memberSignUp.form.fields.faculty') || 'Faculté'}
-                      </label>
-                      <select
-                        id="faculty"
-                        name="faculty"
-                        value={formData.faculty}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                          errors.faculty ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                      >
-                        <option value="">{t('memberSignUp.form.placeholders.faculty') || 'Sélectionner la Faculté'}</option>
-                        <option value="arts">{t('memberSignUp.form.facultyOptions.arts') || 'Faculté des Arts'}</option>
-                        <option value="education">{t('memberSignUp.form.facultyOptions.education') || 'Faculté d\'Éducation'}</option>
-                        <option value="engineering">{t('memberSignUp.form.facultyOptions.engineering') || 'Faculté de Génie'}</option>
-                        <option value="healthSciences">{t('memberSignUp.form.facultyOptions.healthSciences') || 'Faculté des Sciences de la Santé'}</option>
-                        <option value="law">{t('memberSignUp.form.facultyOptions.law') || 'Faculté de Droit'}</option>
-                        <option value="medicine">{t('memberSignUp.form.facultyOptions.medicine') || 'Faculté de Médecine'}</option>
-                        <option value="science">{t('memberSignUp.form.facultyOptions.science') || 'Faculté des Sciences'}</option>
-                        <option value="socialScience">{t('memberSignUp.form.facultyOptions.socialScience') || 'Faculté des Sciences Sociales'}</option>
-                        <option value="telfer">{t('memberSignUp.form.facultyOptions.telfer') || 'École de Gestion Telfer'}</option>
-                      </select>
-                      {errors.faculty && (
-                        <p className="mt-1 text-sm text-red-600">{errors.faculty}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label htmlFor="program" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('memberSignUp.form.fields.program') || 'Programme'}
-                      </label>
-                      <input
-                        type="text"
-                        id="program"
-                        name="program"
-                        value={formData.program}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent ${
-                          errors.program ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholder={t('memberSignUp.form.placeholders.program') || 'Votre programme d\'études'}
-                      />
-                      {errors.program && (
-                        <p className="mt-1 text-sm text-red-600">{errors.program}</p>
-                      )}
-                    </div>
-                  </div>
-
                   <div>
-                    <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('memberSignUp.form.fields.interest') || 'Pourquoi êtes-vous intéressés à joindre Lab2Life de l\'université d\'Ottawa?'}
+                    <label
+                      htmlFor="lastName"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
+                      {t('memberSignUp.form.fields.lastName') || 'Nom'} <span className="text-red-500">*</span>
                     </label>
-                    <textarea
-                      id="interest"
-                      name="interest"
-                      value={formData.interest}
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
                       onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent"
-                      placeholder={t('memberSignUp.form.placeholders.interest') || 'Dites-nous pourquoi vous voulez rejoindre Lab2Life...'}
+                      className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                        errors.lastName ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                      style={{ backgroundColor: 'white' }}
+                      placeholder={t('memberSignUp.form.placeholders.lastName') || 'Votre nom'}
                     />
+                    {errors.lastName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+                    )}
                   </div>
+                </div>
 
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
+                    {t('memberSignUp.form.fields.email') || 'Adresse courriel de l\'Université d\'Ottawa'} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    onBlur={handleEmailBlur}
+                    onInvalid={handleEmailInvalid}
+                    className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                      errors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                    style={{ backgroundColor: 'white' }}
+                    placeholder={t('memberSignUp.form.placeholders.email') || 'votre.courriel@uottawa.ca'}
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="studentNumber"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
+                    {t('memberSignUp.form.fields.studentNumber') || 'Numéro d\'étudiant'} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="studentNumber"
+                    name="studentNumber"
+                    value={formData.studentNumber}
+                    onChange={handleInputChange}
+                    className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                      errors.studentNumber ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                    style={{ backgroundColor: 'white' }}
+                    placeholder={t('memberSignUp.form.placeholders.studentNumber') || 'Votre numéro d\'étudiant'}
+                  />
+                  {errors.studentNumber && (
+                    <p className="mt-1 text-sm text-red-600">{errors.studentNumber}</p>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="events" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('memberSignUp.form.fields.events') || 'Quels événements ou initiatives aimerez-vous voir au cours de l\'année scolaire 2025-2026?'}
+                    <label
+                      htmlFor="year"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
+                      {t('memberSignUp.form.fields.year') || 'Annee'} <span className="text-red-500">*</span>
                     </label>
-                    <textarea
-                      id="events"
-                      name="events"
-                      value={formData.events}
+                    <select
+                      id="year"
+                      name="year"
+                      value={formData.year}
                       onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003e3e] focus:border-transparent"
-                      placeholder={t('memberSignUp.form.placeholders.events') || 'Dites-nous quels événements vous aimeriez voir...'}
-                    />
+                      className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                        errors.year ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                      style={{ backgroundColor: 'white' }}
+                    >
+                      <option value="">{t('memberSignUp.form.placeholders.year') || 'Sélectionner l\'année'}</option>
+                      <option value="1st">{t('memberSignUp.form.yearOptions.1st') || '1ère année'}</option>
+                      <option value="2nd">{t('memberSignUp.form.yearOptions.2nd') || '2ème année'}</option>
+                      <option value="3rd">{t('memberSignUp.form.yearOptions.3rd') || '3ème année'}</option>
+                      <option value="4th">{t('memberSignUp.form.yearOptions.4th') || '4ème année'}</option>
+                      <option value="5th">{t('memberSignUp.form.yearOptions.5th') || '5ème année'}</option>
+                      <option value="other">{t('memberSignUp.form.yearOptions.other') || 'Autre'}</option>
+                    </select>
+                    {errors.year && (
+                      <p className="mt-1 text-sm text-red-600">{errors.year}</p>
+                    )}
                   </div>
+                  <div>
+                    <label
+                      htmlFor="faculty"
+                      className="mb-2 block text-sm font-medium text-[#003e3e]"
+                    >
+                      {t('memberSignUp.form.fields.faculty') || 'Faculté'} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      id="faculty"
+                      name="faculty"
+                      value={formData.faculty}
+                      onChange={handleInputChange}
+                      className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                        errors.faculty ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                      style={{ backgroundColor: 'white' }}
+                    >
+                      <option value="">{t('memberSignUp.form.placeholders.faculty') || 'Sélectionner la Faculté'}</option>
+                      <option value="arts">{t('memberSignUp.form.facultyOptions.arts') || 'Faculté des arts'}</option>
+                      <option value="education">{t('memberSignUp.form.facultyOptions.education') || 'Faculté d\'éducation'}</option>
+                      <option value="engineering">{t('memberSignUp.form.facultyOptions.engineering') || 'Faculté de génie'}</option>
+                      <option value="healthSciences">{t('memberSignUp.form.facultyOptions.healthSciences') || 'Faculté des sciences de la santé'}</option>
+                      <option value="law">{t('memberSignUp.form.facultyOptions.law') || 'Faculté de droit'}</option>
+                      <option value="medicine">{t('memberSignUp.form.facultyOptions.medicine') || 'Faculté de médecine'}</option>
+                      <option value="science">{t('memberSignUp.form.facultyOptions.science') || 'Faculté des sciences'}</option>
+                      <option value="socialScience">{t('memberSignUp.form.facultyOptions.socialScience') || 'Faculté des sciences sociales'}</option>
+                      <option value="telfer">{t('memberSignUp.form.facultyOptions.telfer') || 'École de Gestion Telfer'}</option>
+                    </select>
+                    {errors.faculty && (
+                      <p className="mt-1 text-sm text-red-600">{errors.faculty}</p>
+                    )}
+                  </div>
+                </div>
 
+                <div>
+                  <label
+                    htmlFor="program"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
+                    {t('memberSignUp.form.fields.program') || 'Programme'} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="program"
+                    name="program"
+                    value={formData.program}
+                    onChange={handleInputChange}
+                    className={`w-full rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
+                      errors.program ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                    style={{ backgroundColor: 'white' }}
+                    placeholder={t('memberSignUp.form.placeholders.program') || 'Votre programme d\'études'}
+                  />
+                  {errors.program && (
+                    <p className="mt-1 text-sm text-red-600">{errors.program}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="interest"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
+                    {t('memberSignUp.form.fields.interest') || 'Pourquoi êtes-vous intéressés à joindre Lab2Life de l\'université d\'Ottawa?'}
+                  </label>
+                  <textarea
+                    id="interest"
+                    name="interest"
+                    value={formData.interest}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e]"
+                    style={{ backgroundColor: 'white' }}
+                    placeholder={t('memberSignUp.form.placeholders.interest') || 'Dites-nous pourquoi vous voulez rejoindre Lab2Life...'}
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="events"
+                    className="mb-2 block text-sm font-medium text-[#003e3e]"
+                  >
+                    {t('memberSignUp.form.fields.events') || 'Quels événements ou initiatives aimerez-vous voir au cours de l\'année scolaire 2025-2026?'}
+                  </label>
+                  <textarea
+                    id="events"
+                    name="events"
+                    value={formData.events}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e]"
+                    style={{ backgroundColor: 'white' }}
+                    placeholder={t('memberSignUp.form.placeholders.events') || 'Dites-nous quels événements vous aimeriez voir...'}
+                  />
+                </div>
+
+                <div className="pt-4">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#003e3e] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#002a2a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className={`w-full rounded-full px-8 py-4 font-semibold shadow-md transition-all duration-300 ${
+                      isSubmitting
+                        ? 'cursor-not-allowed bg-gray-400 text-gray-600'
+                        : 'bg-[#99c96f] text-[#003e3e] cursor-pointer'
+                    }`}
+                    style={{
+                      border: '1px solid transparent',
+                      transition: 'all 0.3s ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isSubmitting) {
+                        e.target.style.backgroundColor = 'white'
+                        e.target.style.borderColor = '#003e3e'
+                        e.target.style.color = '#003e3e'
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isSubmitting) {
+                        e.target.style.backgroundColor = '#99c96f'
+                        e.target.style.borderColor = 'transparent'
+                        e.target.style.color = '#003e3e'
+                      }
+                    }}
                   >
                     {isSubmitting 
                       ? (t('memberSignUp.form.submitting') || 'Soumission en cours...') 
                       : (t('memberSignUp.form.submit') || 'Soumettre votre application')
                     }
                   </button>
+                </div>
 
-                  {errors.submit && (
-                    <p className="text-sm text-red-600 text-center">{errors.submit}</p>
-                  )}
-                </form>
-              </div>
+                {errors.submit && (
+                  <div className="pt-2">
+                    <p className="text-sm text-red-600">{errors.submit}</p>
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </Container>
