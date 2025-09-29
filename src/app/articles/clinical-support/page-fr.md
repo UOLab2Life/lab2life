@@ -1,5 +1,5 @@
 ---
-title: Le Pouvoir du Soutien Clinique
+title: Le pouvoir du soutien clinique
 ---
 *Écrit par Anoosha Rehman*  
 *16 septembre 2025*

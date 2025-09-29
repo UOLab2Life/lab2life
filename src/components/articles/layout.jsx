@@ -14,21 +14,22 @@ import { Link } from '@/components/home/link'
 import { LanguageDropdown } from '@/components/home/language-dropdown'
 import { MobileLanguageDropdown } from '@/components/articles/mobile-language-dropdown'
 import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
-function getTopLinks(t) {
+function getTopLinks(t, locale) {
   return [
-    { href: '/articles', label: t('navbar.articles') },
-    { href: '/podcasts', label: t('navbar.podcasts') },
-    { href: '/events', label: t('navbar.events') },
-    { href: '/contact-us', label: t('navbar.contactUs') },
+    { href: getLocalizedUrl('/articles', locale), label: t('navbar.articles') },
+    { href: getLocalizedUrl('/podcasts', locale), label: t('navbar.podcasts') },
+    { href: getLocalizedUrl('/events', locale), label: t('navbar.events') },
+    { href: getLocalizedUrl('/contact-us', locale), label: t('navbar.contactUs') },
   ]
 }
 
 function Header() {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
-  const topLinks = getTopLinks(t)
+  const topLinks = getTopLinks(t, locale)
 
   useEffect(() => {
     function onScroll() {

@@ -3,9 +3,10 @@
 import { Button } from '@/components/home/button'
 import { Heading } from '@/components/home/text'
 import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
 export function LatestArticles() {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   
   return (
     <div className="mt-8 bg-white pb-0">
@@ -148,7 +149,7 @@ export function LatestArticles() {
 
           <div className="mt-12 flex justify-center">
             <Button
-              href="/articles"
+              href={getLocalizedUrl('/articles', locale)}
               variant="primary"
               className="!visible mx-auto !block w-[65%] max-w-sm text-center lg:w-1/3"
             >
