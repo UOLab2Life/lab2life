@@ -9,7 +9,7 @@ export async function getAllEpisodes() {
   try {
     const { data, error } = await supabase
       .from('Episodes')
-      .select('episode_id, release_date, title, description, category, audio_file_url, youtube_url')
+      .select('episode_id, release_date, title, description_en, category_en, audio_file_url, youtube_url')
       .order('episode_id', { ascending: false })
 
     if (error) {
@@ -21,10 +21,10 @@ export async function getAllEpisodes() {
       id: item.episode_id,
       title: item.title,
       published: new Date(item.release_date),
-      description: item.description,
-      category: item.category,
+      description: item.description_en,
+      category: item.category_en,
       youtube_url: item.youtube_url,
-      content: item.description || '',
+      content: item.description_en || '',
       audio: {
         src: item.audio_file_url,
         type: 'audio/mp3',
