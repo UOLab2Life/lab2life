@@ -31,15 +31,15 @@ export default function Calendar() {
 
         return {
           id: row.event_id,
-          title: row.event_name ?? 'Untitled',
+          title: row.event_name_en ?? 'Untitled',
           start,
           end,
           allDay: !row.event_time && !row.event_end_time,
           extendedProps: {
-            type: row.event_type,
-            description: row.event_description,
-            location: row.event_location,
-            registration: row.registration_link,
+            type: row.event_type_en,
+            description: row.event_description_en,
+            location: row.event_location_en,
+            registration: row.registration_link_en,
             date: row.event_date,
             time: row.event_time,
             end_time: row.event_end_time,
