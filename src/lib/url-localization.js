@@ -4,24 +4,36 @@ const urlMappings = {
     '/podcasts': '/podcasts', 
     '/events': '/events',
     '/contact-us': '/contact-us',
-    '/general-member-sign-up': '/general-member-sign-up'
+    '/general-member-sign-up': '/general-member-sign-up',
+    '/articles/clinical-support': '/articles/power-clinical-support'
   },
   fr: {
     '/articles': '/articles',
     '/podcasts': '/podcasts',
     '/events': '/evenements', 
     '/contact-us': '/contactez-nous',
-    '/general-member-sign-up': '/inscription-membres-generaux'
+    '/general-member-sign-up': '/inscription-membres-generaux',
+    '/articles/clinical-support': '/articles/pouvoir-soutien-clinique',
+    // Ensure mapping also works when provided the actual route key used in navigation
+    '/articles/power-clinical-support': '/articles/pouvoir-soutien-clinique',
+    '/articles/nuclear-medicine-technologists': '/articles/technologue-medecine-nucleaire'
   }
 }
 
 const reverseUrlMappings = {
+  en: {
+    '/articles/power-clinical-support': '/articles/clinical-support',
+    '/articles/nuclear-medicine-technologists': '/articles/nuclear-medicine-technologists',
+  },
   fr: {
     '/articles': '/articles',
     '/podcasts': '/podcasts',
     '/evenements': '/events',
     '/contactez-nous': '/contact-us', 
-    '/inscription-membres-generaux': '/general-member-sign-up'
+    '/inscription-membres-generaux': '/general-member-sign-up',
+    // Map the French clinical support path back to the actual route key used in navigation
+    '/articles/pouvoir-soutien-clinique': '/articles/power-clinical-support',
+    '/articles/technologue-medecine-nucleaire': '/articles/nuclear-medicine-technologists'
   }
 }
 
@@ -32,15 +44,8 @@ const reverseUrlMappings = {
  * @returns {string} - The localized URL
  */
 export function getLocalizedUrl(path, locale = 'en') {
-  if (locale === 'en') {
-    return path
-  }
-  
   const mappings = urlMappings[locale]
-  if (!mappings) {
-    return path
-  }
-  
+  if (!mappings) return path
   return mappings[path] || path
 }
 
@@ -84,19 +89,23 @@ export function getAllLocalizedUrls(path) {
  * @returns {Object|null}
  */
 export function parseLocalizedPath(path) {
+  // Check French localized paths first
   const frMappings = reverseUrlMappings.fr
   for (const [localizedPath, originalPath] of Object.entries(frMappings)) {
-    if (path === localizedPath) {
-      return { locale: 'fr', originalPath }
-    }
+    if (path === localizedPath) return { locale: 'fr', originalPath }
   }
-  
+
+  // Check English localized paths that differ from originals
+  const enReverse = reverseUrlMappings.en
+  for (const [localizedPath, originalPath] of Object.entries(enReverse)) {
+    if (path === localizedPath) return { locale: 'en', originalPath }
+  }
+
+  // Fallback: if path matches a known English route value, assume EN
   const enMappings = urlMappings.en
-  for (const [originalPath] of Object.entries(enMappings)) {
-    if (path === originalPath) {
-      return { locale: 'en', originalPath: path }
-    }
+  for (const [, localized] of Object.entries(enMappings)) {
+    if (path === localized) return { locale: 'en', originalPath: path }
   }
-  
+
   return null
 }

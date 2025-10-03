@@ -201,7 +201,7 @@ export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
           <div className="mt-8 text-center">
             <Button
               href={getLocalizedUrl('/podcasts', locale)}
-              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
               {t('home.podcastPreview.viewAllEpisodes') || 'View All Episodes'}
             </Button>

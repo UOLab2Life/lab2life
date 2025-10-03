@@ -29,7 +29,8 @@ export function Hero() {
           <div className="mt-12 flex flex-row justify-center gap-3 sm:justify-start sm:gap-6">
             <Button
               href={getLocalizedUrl('/general-member-sign-up', locale)}
-              className="w-[65%] sm:w-auto px-4 py-2 text-center text-sm sm:px-6 sm:py-3 sm:text-base"
+              className="w-[70%] sm:w-auto px-4 py-2 text-center text-xs sm:px-6 sm:py-3 sm:text-base"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             >
               {t('home.hero.button') || 'General Member Sign-Up'}
             </Button>

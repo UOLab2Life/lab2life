@@ -52,10 +52,10 @@
             "description": "Dédié à promouvoir et aider les étudiants à explorer diverses carrières dans les soins de santé et la médecine.",
             "button": "Inscription des membres généraux"
           },
-          "latestArticles": {
-            "title": "Derniers Articles",
-            "description": "Découvrez nos derniers articles sur les soins de santé et la médecine"
-          },
+      "latestArticles": {
+        "title": "Derniers articles",
+        "description": "Découvrez nos derniers articles sur les soins de santé et la médecine"
+      },
           "countdown": {
             "upcomingEvent": "Événement à venir",
             "title": "Salon des clubs Lab2Life de l'Université d'Ottawa",
@@ -259,6 +259,15 @@
         "backToForm": "Retour au formulaire",
         "backToHomepage": "Retour à l'accueil"
       }
+    }
+  },
+  "articles": {
+    "tableOfContents": {
+      "title": "Sur cette page"
+    },
+    "hero": {
+      "title": "Explorez nos articles vedettes",
+      "description": "Découvrez nos articles mensuels passionnément écrits par nos représentants couvrant divers thèmes médicaux."
     }
   }
 }

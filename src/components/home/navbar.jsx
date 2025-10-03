@@ -176,22 +176,28 @@ function MobileNav() {
 }
 
 export function Navbar({ showBanner = true, shortText = false }) {
-  const { t } = useTranslation()
+  const { t, locale } = useTranslation()
   
+  const bannerHref = getLocalizedUrl('/articles/nuclear-medicine-technologists', locale)
+  const bannerText =
+    locale === 'fr'
+      ? 'NOUVEAU ARTICLE! Technologues en médecine nucléaire'
+      : 'NEW ARTICLE! Nuclear Medicine Technologists'
+
   const defaultBanner = (
     <Link
-      href="/articles/clinical-support"
+      href={bannerHref}
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (
         <>
-          <span className="xs:inline hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
-          <span className="xs:hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
+          <span className="xs:inline hidden">{bannerText}</span>
+          <span className="xs:hidden">{bannerText}</span>
         </>
       ) : (
         <>
-          <span className="xs:inline hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
-          <span className="xs:hidden">{t('navbar.banner') || 'NEW ARTICLE! The Power of Clinical Support'}</span>
+          <span className="xs:inline hidden">{bannerText}</span>
+          <span className="xs:hidden">{bannerText}</span>
         </>
       )}
       <ChevronRightIcon className="size-3 sm:size-4" />

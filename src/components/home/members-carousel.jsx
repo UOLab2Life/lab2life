@@ -386,11 +386,7 @@ export function MembersCarousel() {
           if (!isHovered && !isManuallyPaused && scrollRef.current) {
             let nextIndex = activeIndex + 1
 
-            if (nextIndex >= members.length) {
-              scrollTo(nextIndex)
-            } else {
-              scrollTo(nextIndex)
-            }
+            scrollTo(nextIndex)
           }
         }, 3000)
       }, 1000)
@@ -482,7 +478,7 @@ export function MembersCarousel() {
           ),
         )}
 
-        {Array.from({ length: 2 }, (_, repeatIndex) =>
+        {Array.from({ length: 100 }, (_, repeatIndex) =>
           members.map(
             (
               { img, name, position, positionKey, education, yearKey, programKey, email, linkedin, zoom, imagePosition },

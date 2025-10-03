@@ -3,8 +3,12 @@ export const navigation = [
     title: 'Clinical Support',
     links: [
       {
+        title: 'Nuclear Medicine Technologists',
+        href: '/articles/nuclear-medicine-technologists',
+      },
+      {
         title: 'The Power of Clinical Support',
-        href: '/articles/clinical-support',
+        href: '/articles/power-clinical-support',
       },
     ],
   },

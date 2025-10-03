@@ -32,7 +32,7 @@ export function LanguageDropdown() {
     return (
       <div className="relative">
         <button
-          className="data-hover:bg-white/20 flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-base font-semibold text-white transition-all duration-200 hover:bg-white/20"
+          className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-black/5 text-slate-700 hover:bg-black/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
           aria-label="Select language"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ export function LanguageDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="data-hover:bg-white/20 flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-base font-semibold text-white transition-all duration-200 hover:bg-white/20"
+        className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-black/5 text-slate-700 hover:bg-black/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
         aria-label="Select language"
       >
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

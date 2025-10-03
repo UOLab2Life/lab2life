@@ -8,14 +8,14 @@ export function Instagram() {
   
   return (
     <div className="relative mt-0">
-      <div className="mx-auto max-w-[99.25%] bg-white px-8 py-8 sm:py-16">
+      <div className="mx-auto max-w-[99.25%] bg-white px-8 pt-12 py-8 sm:py-16">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-7xl">
             <div className="text-center">
               <Heading as="h3" className="mb-4 mt-2">
                 {t('home.instagram.title') || 'Follow us on Instagram'}
               </Heading>
-              <p className="font-inter-semibold mx-auto mt-4 max-w-2xl text-lg/7 text-gray-700">
+              <p className="font-inter-semibold mx-auto mt-4 max-w-2xl text-xl text-gray-700">
                 {t('home.instagram.description') || 'Stay updated with our latest posts and behind-the-scenes content!'}
               </p>
             </div>

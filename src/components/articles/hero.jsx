@@ -1,9 +1,12 @@
 import blurCyanImage from '@/assets/articles/images/blur-cyan.png'
 import blurIndigoImage from '@/assets/articles/images/blur-indigo.png'
 import { HeroBackground } from '@/components/articles/hero-background'
+import { useTranslation } from '@/contexts/LanguageContext'
 import Image from 'next/image'
 
 export function Hero() {
+  const { t } = useTranslation()
+  
   return (
     <div className="dark:-mt-19 dark:pt-19 overflow-hidden bg-[#003e3e] dark:-mb-32 dark:pb-32">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
@@ -20,11 +23,10 @@ export function Hero() {
             />
             <div className="relative">
               <p className="bg-linear-to-r font-display inline from-indigo-200 via-violet-400 to-indigo-200 bg-clip-text text-5xl tracking-tight text-transparent">
-                Explore Featured Articles
+                {t('articles.hero.title') || 'Explore Featured Articles'}
               </p>
               <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Find our monthly articles passionately written by our representatives covering
-                diverse medical themes.
+                {t('articles.hero.description') || 'Find our monthly articles passionately written by our representatives covering diverse medical themes.'}
               </p>
             </div>
           </div>

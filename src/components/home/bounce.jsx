@@ -36,8 +36,8 @@ export function Bounce() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                className="!visible !block w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
-                style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}
+                className="!visible w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+                style={{ whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 {t('home.bounce.button') || 'Follow Us on Bounce'}
               </Button>

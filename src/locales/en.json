@@ -58,12 +58,12 @@
           },
           "countdown": {
             "upcomingEvent": "Upcoming Event",
-            "title": "uOttawa Lab2Life Clubs Fair",
-            "description": "We will be at the Clubs Fair this Wednesday! Come to our table, discover Lab2Life and spin the wheel for a chance to win amazing prizes!",
+            "title": "uOttawa Lab2Life Club Fair",
+            "description": "Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance to win amazing prizes!",
             "date": "September 3rd, 2025",
             "time": "10:00 AM - 12:00 PM",
-            "location": "Grand Allée (85 University Private)",
-            "registerNow": "Register",
+            "location": "Grand Alley (85 University Private)",
+            "registerNow": "Register Now",
             "viewAllEvents": "View All Events",
             "timeUnits": {
               "days": "Days",
@@ -229,6 +229,15 @@
         "backToForm": "Back to Form",
         "backToHomepage": "Back to Homepage"
       }
+    }
+  },
+  "articles": {
+    "tableOfContents": {
+      "title": "On this page"
+    },
+    "hero": {
+      "title": "Explore Featured Articles",
+      "description": "Find our monthly articles passionately written by our representatives covering diverse medical themes."
     }
   }
 }
