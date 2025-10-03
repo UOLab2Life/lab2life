@@ -11,17 +11,25 @@ import { Navigation } from '@/components/articles/navigation'
 import { Search } from '@/components/articles/search'
 import { ThemeSelector } from '@/components/articles/theme-selector'
 import { Link } from '@/components/home/link'
+import { LanguageDropdown } from '@/components/home/language-dropdown'
+import { MobileLanguageDropdown } from '@/components/articles/mobile-language-dropdown'
+import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
-const topLinks = [
-  { href: '/articles', label: 'Articles' },
-  { href: '/podcasts', label: 'Podcasts' },
-  { href: '/events', label: 'Events' },
-  { href: '/contact-us', label: 'Contact Us' },
-]
+function getTopLinks(t, locale) {
+  return [
+    { href: getLocalizedUrl('/articles', locale), label: t('navbar.articles') },
+    { href: getLocalizedUrl('/podcasts', locale), label: t('navbar.podcasts') },
+    { href: getLocalizedUrl('/events', locale), label: t('navbar.events') },
+    { href: getLocalizedUrl('/contact-us', locale), label: t('navbar.contactUs') },
+  ]
+}
 
 function Header() {
+  const { t, locale } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
+  const topLinks = getTopLinks(t, locale)
 
   useEffect(() => {
     function onScroll() {
@@ -68,7 +76,8 @@ function Header() {
           </div>
 
           <div className="flex items-center justify-end gap-2">
-            <div className="mr-2 flex lg:hidden">
+            <div className="mr-2 flex items-center gap-2 lg:hidden">
+              <MobileLanguageDropdown />
               <MobileNavigation />
             </div>
 
@@ -79,18 +88,24 @@ function Header() {
                     ? pathname === '/'
                     : pathname === href || pathname.startsWith(`${href}/`)
                 return (
-                  <Link
-                    key={href}
-                    href={href}
-                    aria-current={isActive ? 'page' : undefined}
-                    className={clsx(
-                      'inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold transition-colors',
-                      'data-hover:bg-black/5 dark:data-hover:bg-white/10 focus:outline-none focus-visible:ring',
-                      'text-slate-700 dark:text-white/80',
+                  <div key={href} className="flex items-center">
+                    <Link
+                      href={href}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={clsx(
+                        'inline-flex items-center rounded-lg px-3 py-2 text-sm font-semibold transition-colors',
+                        'data-hover:bg-black/5 dark:data-hover:bg-white/10 focus:outline-none focus-visible:ring',
+                        'text-slate-700 dark:text-white/80',
+                      )}
+                    >
+                      {label}
+                    </Link>
+                    {label === t('navbar.contactUs') && (
+                      <div className="ml-2">
+                        <LanguageDropdown />
+                      </div>
                     )}
-                  >
-                    {label}
-                  </Link>
+                  </div>
                 )
               })}
             </nav>

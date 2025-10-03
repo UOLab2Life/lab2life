@@ -1,11 +1,8 @@
 ---
 title: The Reality Behind Nurses in the Court
 ---
-
 *Written by Maroun Tarabey*  
-*February 10th, 2025*  
-
----
+*February 10th, 2025*
 
 ## Legal Nurse Consultants
 

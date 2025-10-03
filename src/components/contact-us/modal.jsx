@@ -1,8 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export function SuccessModal({ isOpen, onClose }) {
+  const { t } = useTranslation()
+  
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -47,16 +50,17 @@ export function SuccessModal({ isOpen, onClose }) {
             </svg>
           </div>
 
-          <h3 className="mb-2 text-2xl font-bold text-[#003e3e]">Success!</h3>
+          <h3 className="mb-2 text-2xl font-bold text-[#003e3e]">{t('contact.modal.title')}</h3>
           <p className="mb-6 text-[#003e3e]">
-            Your message has been sent successfully. We'll get back to you soon!
+            {t('contact.modal.message')}
           </p>
 
           <button
             onClick={onClose}
             className="w-32 rounded-full bg-red-500 px-4 py-2 font-semibold text-white shadow-md transition-all duration-300 hover:border hover:border-red-500 hover:bg-white hover:text-red-500"
+            style={{ minWidth: '128px', minHeight: '40px' }}
           >
-            Close
+            {t('contact.modal.close')}
           </button>
         </div>
       </div>

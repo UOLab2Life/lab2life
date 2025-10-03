@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false)
@@ -42,6 +43,7 @@ function ScrollToTopButton() {
 }
 
 export function TableOfContents({ tableOfContents }) {
+  const { t } = useTranslation()
   let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
 
   let getHeadings = useCallback((tableOfContents) => {
@@ -63,6 +65,8 @@ export function TableOfContents({ tableOfContents }) {
   useEffect(() => {
     if (tableOfContents.length === 0) return
     let headings = getHeadings(tableOfContents)
+
+    if (headings.length === 0) return
 
     function onScroll() {
       let top = window.scrollY
@@ -97,15 +101,15 @@ export function TableOfContents({ tableOfContents }) {
   }
 
   return (
-    <div className="hidden xl:sticky xl:top-19 xl:-mr-6 xl:block xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
-      <nav aria-labelledby="on-this-page-title" className="w-56">
+    <div className="hidden xl:sticky xl:top-19 xl:block xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pl-4 w-[18vw] min-w-56 max-w-72 xl:w-[20vw]">
+      <nav aria-labelledby="on-this-page-title" className="w-full">
         {tableOfContents.length > 0 && (
           <>
             <h2
               id="on-this-page-title"
               className="font-display text-sm font-medium text-slate-900 dark:text-white"
             >
-              On this page
+              {t('articles.tableOfContents.title') || 'On this page'}
             </h2>
             <ol role="list" className="mt-4 space-y-3 text-sm">
               {tableOfContents.map((section) => (

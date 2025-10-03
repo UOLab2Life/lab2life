@@ -7,9 +7,11 @@ import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
 import { BounceGeneralMember } from '../bounce-general-member'
 import { useRouter } from 'next/navigation'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export default function SignUpSuccess() {
   const router = useRouter()
+  const { t } = useTranslation()
 
   return (
     <main className="overflow-hidden">
@@ -40,10 +42,10 @@ export default function SignUpSuccess() {
             </div>
 
             <Heading as="h2" className="mb-4 text-3xl font-bold text-[#003e3e]">
-              Success!
+              {t('memberSignUp.successModal.title') || 'Success!'}
             </Heading>
             <p className="mb-12 text-xl text-[#003e3e]">
-              Thank you for signing up as a uOttawa Lab2Life general member!
+              {t('memberSignUp.successModal.message') || 'Thank you for signing up as a uOttawa Lab2Life general member!'}
             </p>
 
             <div className="mb-12">
@@ -55,13 +57,13 @@ export default function SignUpSuccess() {
                 onClick={() => router.push('/general-member-sign-up')}
                 className="w-[65%] rounded-full bg-[#99c96f] px-8 py-3 font-semibold text-[#003e3e] shadow-md transition-all duration-300 hover:bg-white hover:border hover:border-[#003e3e]"
               >
-                Back to Form
+                {t('memberSignUp.successModal.buttons.backToForm') || 'Back to Form'}
               </button>
               <button
                 onClick={() => router.push('/')}
                 className="w-[65%] rounded-full bg-[#003e3e] px-8 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-white hover:border hover:border-[#003e3e] hover:text-[#003e3e]"
               >
-                Back to Homepage
+                {t('memberSignUp.successModal.buttons.backToHomepage') || 'Back to Homepage'}
               </button>
             </div>
           </div>

@@ -13,6 +13,8 @@ import { PlayButton } from '@/components/podcasts/player/PlayButton'
 import { RewindButton } from '@/components/podcasts/player/RewindButton'
 import { Slider } from '@/components/podcasts/player/Slider'
 import { PlayIcon } from '@/components/podcasts/PlayIcon'
+import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 import { useEffect, useRef, useState } from 'react'
 
 function parseTime(seconds) {
@@ -30,6 +32,7 @@ function formatHumanTime(seconds) {
 }
 
 function CustomAudioPlayer({ onClose }) {
+  const { t, locale } = useTranslation()
   let player = useAudioPlayer()
   let wasPlayingRef = useRef(false)
   let [currentTime, setCurrentTime] = useState(player.currentTime)
@@ -54,7 +57,7 @@ function CustomAudioPlayer({ onClose }) {
       </div>
       <div className="mb-[env(safe-area-inset-bottom)] flex flex-1 flex-col gap-3 overflow-hidden p-1">
         <div className="truncate text-center text-sm/6 font-bold md:text-left">
-          Episode {player.episode.id}: {player.episode.title}
+          {locale === 'fr' ? `Épisode ${player.episode.id}: ${player.episode.title} (anglais)` : `Episode ${player.episode.id}: ${player.episode.title}`}
         </div>
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">
@@ -114,6 +117,7 @@ function CustomAudioPlayer({ onClose }) {
 }
 
 function PodcastPlayer({ mp3FileName }) {
+  const { t, locale } = useTranslation()
   const episode = {
     id: 1,
     title: 'The Career Catalyst',
@@ -130,7 +134,7 @@ function PodcastPlayer({ mp3FileName }) {
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
         <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
-            Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)
+            {t('home.podcastPreview.episodeTitle') || 'Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)'}
           </h3>
           <div className="hidden sm:flex sm:justify-end">
             <EpisodePlayButton
@@ -143,10 +147,7 @@ function PodcastPlayer({ mp3FileName }) {
         </div>
 
         <div className="mb-4 text-gray-600">
-          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
-          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
-          explore his role as a radiologist, advances in imaging technology, and career insights for
-          aspiring students.
+          {t('home.podcastPreview.episodeDescription') || "Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr. Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we explore his role as a radiologist, advances in imaging technology, and career insights for aspiring students."}
         </div>
 
         <div className="mt-6 mb-2 flex justify-center sm:hidden">
@@ -163,6 +164,7 @@ function PodcastPlayer({ mp3FileName }) {
 }
 
 export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
+  const { t, locale } = useTranslation()
   const [showAudioPlayer, setShowAudioPlayer] = useState(false)
   const [hasStartedPlaying, setHasStartedPlaying] = useState(false)
 
@@ -182,13 +184,10 @@ export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
         <Container>
           <div className="mb-12 text-center">
             <Heading as="h2" className="mb-6 text-4xl font-bold text-[#003e3e]">
-              The Career Catalyst
+              {t('home.podcastPreview.title') || 'The Career Catalyst'}
             </Heading>
             <p className="mx-auto max-w-5xl text-xl text-gray-600">
-              Through insightful conversations with professionals from various fields, we uncover
-              career journeys, industry advancements, valuable advice for students and aspiring
-              professionals. Tune in to discover professions and different pathways in research and
-              science that shape our world!
+              {t('home.podcastPreview.description') || "Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, valuable advice for students and aspiring professionals. Tune in to discover professions and different pathways in research and science that shape our world!"}
             </p>
           </div>
 
@@ -201,10 +200,10 @@ export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
 
           <div className="mt-8 text-center">
             <Button
-              href="/podcasts"
-              className="mx-auto w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              href={getLocalizedUrl('/podcasts', locale)}
+              className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
             >
-              View All Episodes
+              {t('home.podcastPreview.viewAllEpisodes') || 'View All Episodes'}
             </Button>
           </div>
         </Container>
@@ -220,6 +219,7 @@ export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
 }
 
 function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying }) {
+  const { t, locale } = useTranslation()
   const player = useAudioPlayer()
   const episode = {
     id: 4,
@@ -249,7 +249,7 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
         <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
-            Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)
+            {t('home.podcastPreview.episodeTitle') || 'Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)'}
           </h3>
           {!isPlaying && (
             <div className="hidden sm:flex sm:justify-end">
@@ -264,10 +264,7 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
         </div>
 
         <div className="mb-4 text-gray-600">
-          Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr.
-          Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we
-          explore his role as a radiologist, advances in imaging technology, and career insights for
-          aspiring students.
+          {t('home.podcastPreview.episodeDescription') || "Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr. Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we explore his role as a radiologist, advances in imaging technology, and career insights for aspiring students."}
         </div>
 
         {!isPlaying && (
