@@ -6,13 +6,17 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import useMeasure from 'react-use-measure'
 import { Container } from './container'
 import { Heading } from './text'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 const members = [
   {
     img: '/images/members-carousel/sanjay-sathees.jpg',
     name: 'Sanjay Sathees',
     position: 'Co-President and Founder',
+    positionKey: 'coPresidentAndFounder',
     education: '4th Year | B.Sc. Biomedical Science',
+    yearKey: '4th',
+    programKey: 'biomedicalScience',
     email: 'uolab2life@gmail.com',
     linkedin: 'https://www.linkedin.com/in/sanjay-sathees/',
     zoom: 120,
@@ -21,7 +25,10 @@ const members = [
     img: '/images/members-carousel/bharat-yanala.jpg',
     name: 'Bharat Yanala',
     position: 'Co-President',
+    positionKey: 'coPresident',
     education: '4th Year | B.HSc. Health Science',
+    yearKey: '4th',
+    programKey: 'healthScience',
     email: 'uolab2life@gmail.com',
     linkedin: 'https://www.linkedin.com/in/bharatyanala/',
   },
@@ -29,7 +36,10 @@ const members = [
     img: '/images/members-carousel/parisha-baral.jpg',
     name: 'Parisha Baral',
     position: 'VP Internal Operations',
+    positionKey: 'vpInternalOperations',
     education: '1st Year | B.Sc. Biomedical Science',
+    yearKey: '1st',
+    programKey: 'biomedicalScience',
     email: 'internals.uol2l@gmail.com',
     linkedin: '',
     zoom: 110,
@@ -38,7 +48,10 @@ const members = [
     img: '/images/members-carousel/maya-labbe.jpg',
     name: 'Maya Labbé',
     position: 'VP Finance',
+    positionKey: 'vpFinance',
     education: '4th Year | B.HSc. Health Science',
+    yearKey: '4th',
+    programKey: 'healthScience',
     email: 'finance.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maya-labb%C3%A9-85987a298/',
     imagePosition: 'center',
@@ -47,7 +60,10 @@ const members = [
     img: '/images/members-carousel/eshal-uddin.jpg',
     name: 'Eshal Uddin',
     position: 'VP External Affairs',
+    positionKey: 'vpExternalAffairs',
     education: '4th Year | B.Sc. Biomedical Science',
+    yearKey: '4th',
+    programKey: 'biomedicalScience',
     email: 'externals.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/eshal-uddin-5019b9267/',
   },
@@ -55,7 +71,10 @@ const members = [
     img: '/images/members-carousel/meera-harahsha.jpg',
     name: 'Meera Harahsha',
     position: 'VP External Affairs',
+    positionKey: 'vpExternalAffairs',
     education: '2nd Year | B.HSc Health Science',
+    yearKey: '2nd',
+    programKey: 'healthScience',
     email: 'externals.uol2l@gmail.com',
     linkedin: '',
     zoom: 150,
@@ -64,7 +83,10 @@ const members = [
     img: '/images/members-carousel/maeve-mcaneney.jpg',
     name: 'Maeve McAneney',
     position: 'VP Events',
+    positionKey: 'vpEvents',
     education: '2nd Year | B.HSc Health Science',
+    yearKey: '2nd',
+    programKey: 'healthScience',
     email: 'events.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maeve-mcaneney-88259121b/',
     zoom: 150,
@@ -73,7 +95,10 @@ const members = [
     img: '/images/members-carousel/ghazal-farahmand.jpg',
     name: 'Ghazal Farahmand',
     position: 'VP Marketing',
+    positionKey: 'vpMarketing',
     education: '3rd Year | B.Sc. Biomedical Science',
+    yearKey: '3rd',
+    programKey: 'biomedicalScience',
     email: 'marketing.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ghazal-farahmand-226600310/',
   },
@@ -81,7 +106,10 @@ const members = [
     img: '/images/members-carousel/jasmin-yermashova.jpg',
     name: 'Jasmin Yermashova',
     position: 'VP Graphic Design',
+    positionKey: 'vpGraphicDesign',
     education: '4th Year | B.Sc. Biology',
+    yearKey: '4th',
+    programKey: 'biology',
     email: 'design.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/jasmin-yermashova/',
   },
@@ -89,7 +117,10 @@ const members = [
     img: '/images/members-carousel/nahiyan-ishtiaque.jpg',
     name: 'Nahiyan Ishtiaque',
     position: 'Webmaster',
+    positionKey: 'webmaster',
     education: '4th Year | B.Sc Computer Science',
+    yearKey: '4th',
+    programKey: 'computerScience',
     email: 'webmaster.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/nahiyan-ishtiaque/',
     imagePosition: 'center',
@@ -99,7 +130,10 @@ const members = [
     img: '/images/members-carousel/onur-onel.jpg',
     name: 'Onur Önel',
     position: 'Webmaster',
+    positionKey: 'webmaster',
     education: '2nd Year | B.Sc. Computer Science',
+    yearKey: '2nd',
+    programKey: 'computerScience',
     email: 'webmaster.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/onuronel13/',
     imagePosition: 'center',
@@ -109,7 +143,10 @@ const members = [
     img: '/images/members-carousel/maroun-tarabey.jpg',
     name: 'Maroun Tarabey',
     position: 'Editor-in-Chief',
+    positionKey: 'editorInChief',
     education: '2nd Year | B.Sc. Biochemistry',
+    yearKey: '2nd',
+    programKey: 'biochemistry',
     email: 'editor.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maroun-tarabey-55a88b2a7/',
     imagePosition: 'center',
@@ -119,7 +156,10 @@ const members = [
     img: '/images/members-carousel/maya-alali.jpg',
     name: 'Maya Alali',
     position: 'Podcast Producer',
+    positionKey: 'podcastProducer',
     education: '2nd Year | B.Sc. Biomedical Science',
+    yearKey: '2nd',
+    programKey: 'biomedicalScience',
     email: 'podcast.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maya-al-ali-676a31371/',
     zoom: 180,
@@ -128,7 +168,10 @@ const members = [
     img: '/images/members-carousel/lacey-mullin.jpg',
     name: 'Lacey Mullin',
     position: 'Upper Year Representative',
+    positionKey: 'upperYearRepresentative',
     education: '4th Year | B.Sc. Biopharm. Science',
+    yearKey: '4th',
+    programKey: 'biopharmScience',
     email: 'representatives.uol2l@gmail.com',
     linkedin: 'https://www.linkedin.com/in/lacey-mullin-209963327/',
   },
@@ -136,7 +179,10 @@ const members = [
     img: '/images/members-carousel/anoosha-rehman.jpg',
     name: 'Anoosha Rehman',
     position: 'Lower Year Representative',
+    positionKey: 'lowerYearRepresentative',
     education: '2nd Year | B.Sc. Biomedical Science',
+    yearKey: '2nd',
+    programKey: 'biomedicalScience',
     email: 'representatives.uol2l@gmail.com',
     linkedin: '',
   },
@@ -145,7 +191,10 @@ const members = [
 function MemberCard({
   name,
   position,
+  positionKey,
   education,
+  yearKey,
+  programKey,
   email,
   linkedin,
   img,
@@ -155,6 +204,7 @@ function MemberCard({
   scrollX,
   ...props
 }) {
+  const { t, locale } = useTranslation()
   let ref = useRef(null)
 
   let computeOpacity = useCallback(() => {
@@ -219,10 +269,12 @@ function MemberCard({
               {name}
             </p>
             <p className="font-inter text-sm font-medium text-[#b184e9] sm:text-base md:text-lg">
-              {position}
+              {locale === 'fr' && positionKey ? t(`home.membersCarousel.positions.${positionKey}`) || position : position}
             </p>
             <p className="font-inter-semibold text-xs leading-tight text-white sm:text-sm">
-              {education}
+              {locale === 'fr' && yearKey && programKey 
+                ? `${t(`home.membersCarousel.years.${yearKey}`) || yearKey} | ${t(`home.membersCarousel.programs.${programKey}`) || programKey}`
+                : education}
             </p>
           </div>
 
@@ -270,6 +322,7 @@ function MemberCard({
 }
 
 export function MembersCarousel() {
+  const { t } = useTranslation()
   let scrollRef = useRef(null)
   let { scrollX } = useScroll({ container: scrollRef })
   let [setReferenceWindowRef, bounds] = useMeasure()
@@ -333,11 +386,7 @@ export function MembersCarousel() {
           if (!isHovered && !isManuallyPaused && scrollRef.current) {
             let nextIndex = activeIndex + 1
 
-            if (nextIndex >= members.length) {
-              scrollTo(nextIndex)
-            } else {
-              scrollTo(nextIndex)
-            }
+            scrollTo(nextIndex)
           }
         }, 3000)
       }, 1000)
@@ -386,10 +435,10 @@ export function MembersCarousel() {
       <Container>
         <div ref={setReferenceWindowRef} className="text-center">
           <Heading as="h3" className="mt-2 text-[#003e3e]">
-            Meet the team!
+            {t('home.membersCarousel.title') || 'Meet the team!'}
           </Heading>
           <p className="font-inter-semibold mx-auto mt-4 max-w-2xl text-lg/7 text-gray-600">
-            Meet the dedicated students behind uOttawa Lab2Life
+            {t('home.membersCarousel.description') || 'Meet the dedicated students behind uOttawa Lab2Life'}
           </p>
         </div>
       </Container>
@@ -406,14 +455,17 @@ export function MembersCarousel() {
       >
         {members.map(
           (
-            { img, name, position, education, email, linkedin, zoom, imagePosition },
+            { img, name, position, positionKey, education, yearKey, programKey, email, linkedin, zoom, imagePosition },
             memberIndex,
           ) => (
             <MemberCard
               key={memberIndex}
               name={name}
               position={position}
+              positionKey={positionKey}
               education={education}
+              yearKey={yearKey}
+              programKey={programKey}
               email={email}
               linkedin={linkedin}
               img={img}
@@ -426,10 +478,10 @@ export function MembersCarousel() {
           ),
         )}
 
-        {Array.from({ length: 2 }, (_, repeatIndex) =>
+        {Array.from({ length: 100 }, (_, repeatIndex) =>
           members.map(
             (
-              { img, name, position, education, email, linkedin, zoom, imagePosition },
+              { img, name, position, positionKey, education, yearKey, programKey, email, linkedin, zoom, imagePosition },
               cardIndex,
             ) => {
               const actualIndex = members.length + repeatIndex * members.length + cardIndex
@@ -438,7 +490,10 @@ export function MembersCarousel() {
                   key={`repeat-${repeatIndex}-${cardIndex}`}
                   name={name}
                   position={position}
+                  positionKey={positionKey}
                   education={education}
+                  yearKey={yearKey}
+                  programKey={programKey}
                   email={email}
                   linkedin={linkedin}
                   img={img}

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import { useAudioPlayer } from '@/components/podcasts/AudioProvider'
+import { useTranslation } from '@/contexts/LanguageContext'
 import { ForwardButton } from '@/components/podcasts/player/ForwardButton'
 import { MuteButton } from '@/components/podcasts/player/MuteButton'
 import { PlaybackRateButton } from '@/components/podcasts/player/PlaybackRateButton'
@@ -27,10 +28,19 @@ function formatHumanTime(seconds) {
 
 export function AudioPlayer() {
   let player = useAudioPlayer()
+  const { t, locale } = useTranslation()
 
   let wasPlayingRef = useRef(false)
 
   let [currentTime, setCurrentTime] = useState(player.currentTime)
+
+  const getTitle = () => {
+    const episodeText = t('podcasts.episode') || 'Episode'
+    if (locale === 'fr') {
+      return `${episodeText} ${player.episode.id}: ${player.episode.title} (anglais)`
+    }
+    return `${episodeText} ${player.episode.id}: ${player.episode.title}`
+  }
 
   useEffect(() => {
     setCurrentTime(null)
@@ -49,9 +59,9 @@ export function AudioPlayer() {
         <Link
           href={`/podcasts/${player.episode.id}`}
           className="truncate text-center text-sm/6 font-bold md:text-left"
-          title={`Episode ${player.episode.id}: ${player.episode.title}`}
+          title={getTitle()}
         >
-          Episode {player.episode.id}: {player.episode.title}
+          {getTitle()}
         </Link>
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">

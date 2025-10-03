@@ -1,6 +1,8 @@
 import { Container } from '@/components/home/container'
 import { Link } from '@/components/home/link'
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/home/plus-grid'
+import { useTranslation } from '@/contexts/LanguageContext'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
 function SitemapLinks({ children }) {
   return <ul className="mt-6 space-y-3 text-sm/6 sm:space-y-4 sm:text-base/6">{children}</ul>
@@ -18,53 +20,55 @@ function SitemapLink(props) {
 }
 
 function Sitemap() {
+  const { t, locale } = useTranslation()
+  
   return (
     <>
       <div className="lg:hidden">
         <SitemapLinks>
-          <SitemapLink href="/">Home</SitemapLink>
-          <SitemapLink href="/general-member-sign-up">Member Sign-Up</SitemapLink>
-          <SitemapLink href="/articles">Articles</SitemapLink>
-          <SitemapLink href="/podcasts">Podcasts</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/', locale)}>{t('footer.home') || 'Home'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/general-member-sign-up', locale)}>{t('footer.memberSignUp') || 'Member Sign-Up'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/articles', locale)}>{t('footer.articles') || 'Articles'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/podcasts', locale)}>{t('footer.podcasts') || 'Podcasts'}</SitemapLink>
         </SitemapLinks>
       </div>
       <div className="lg:hidden">
         <SitemapLinks>
-          <SitemapLink href="/events">Events</SitemapLink>
-          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/events', locale)}>{t('footer.events') || 'Events'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/contact-us', locale)}>{t('footer.contactUs') || 'Contact Us'}</SitemapLink>
           <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Privacy Policy
+            {t('footer.privacyPolicy') || 'Privacy Policy'}
           </SitemapLink>
           <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Terms of Service
+            {t('footer.termsOfService') || 'Terms of Service'}
           </SitemapLink>
         </SitemapLinks>
       </div>
       <div className="hidden lg:block">
         <SitemapLinks>
-          <SitemapLink href="/">Home</SitemapLink>
-          <SitemapLink href="/general-member-sign-up">Member Sign-Up</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/', locale)}>{t('footer.home') || 'Home'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/general-member-sign-up', locale)}>{t('footer.memberSignUp') || 'Member Sign-Up'}</SitemapLink>
         </SitemapLinks>
       </div>
       <div className="hidden lg:block">
         <SitemapLinks>
-          <SitemapLink href="/articles">Articles</SitemapLink>
-          <SitemapLink href="/podcasts">Podcasts</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/articles', locale)}>{t('footer.articles') || 'Articles'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/podcasts', locale)}>{t('footer.podcasts') || 'Podcasts'}</SitemapLink>
         </SitemapLinks>
       </div>
       <div className="hidden lg:block">
         <SitemapLinks>
-          <SitemapLink href="/events">Events</SitemapLink>
-          <SitemapLink href="/contact-us">Contact Us</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/events', locale)}>{t('footer.events') || 'Events'}</SitemapLink>
+          <SitemapLink href={getLocalizedUrl('/contact-us', locale)}>{t('footer.contactUs') || 'Contact Us'}</SitemapLink>
         </SitemapLinks>
       </div>
       <div className="hidden lg:block">
         <SitemapLinks>
           <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Privacy Policy
+            {t('footer.privacyPolicy') || 'Privacy Policy'}
           </SitemapLink>
           <SitemapLink href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Terms of Service
+            {t('footer.termsOfService') || 'Terms of Service'}
           </SitemapLink>
         </SitemapLinks>
       </div>
@@ -162,6 +166,8 @@ function Copyright() {
 }
 
 export function Footer() {
+  const { t, locale } = useTranslation()
+  
   return (
     <footer role="contentinfo">
       <Container>
@@ -171,7 +177,7 @@ export function Footer() {
               <div className="col-span-2 flex">
                 <PlusGridItem className="pt-8 lg:pb-6">
                   <Link
-                    href="/"
+                    href={getLocalizedUrl('/', locale)}
                     className="flex items-center gap-3 transition-opacity hover:opacity-80"
                   >
                     <img
@@ -184,11 +190,10 @@ export function Footer() {
                     </span>
                   </Link>
                   <p className="mt-4 max-w-sm text-sm text-[#003e3e] sm:text-base lg:max-w-md dark:text-[#FFFFFF]">
-                    Dedicated to promoting and helping students explore various careers in
-                    healthcare and medicine.
+                    {t('footer.description') || 'Dedicated to promoting and helping students explore various careers in healthcare and medicine.'}
                   </p>
                   <p className="mt-2 text-sm font-bold text-[#003e3e] sm:text-base dark:text-[#FFFFFF]">
-                    Email:{' '}
+                    {t('footer.email') || 'Email'}:{' '}
                     <a
                       href="mailto:uolab2life@gmail.com"
                       className="transition-colors hover:text-[#003e3e]/75 dark:hover:text-white/75"

@@ -1,0 +1,243 @@
+{
+  "navbar": {
+    "articles": "Articles",
+    "podcasts": "Podcasts",
+    "events": "Events",
+    "contactUs": "Contact Us",
+    "banner": "NEW ARTICLE! The Power of Clinical Support"
+  },
+  "footer": {
+    "home": "Home",
+    "memberSignUp": "Member Sign-Up",
+    "articles": "Articles",
+    "podcasts": "Podcasts",
+    "events": "Events",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "description": "Dedicated to promoting and helping students explore various careers in healthcare and medicine.",
+    "email": "Email"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team below!",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more about your inquiry...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "errors": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "subjectRequired": "Subject is required",
+        "messageRequired": "Message is required",
+        "submitFailed": "Failed to send message. Please try again."
+      }
+    },
+    "modal": {
+      "title": "Success!",
+      "message": "Your message has been sent successfully. We'll get back to you soon!",
+      "close": "Close"
+    }
+  },
+        "home": {
+          "hero": {
+            "description": "Dedicated to promoting and helping students explore various careers in the field of healthcare and medicine.",
+            "button": "General Member Sign-Up"
+          },
+          "latestArticles": {
+            "title": "Latest Articles",
+            "description": "Check out our latest articles about healthcare and medicine"
+          },
+          "countdown": {
+            "upcomingEvent": "Upcoming Event",
+            "title": "uOttawa Lab2Life Club Fair",
+            "description": "Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance to win amazing prizes!",
+            "date": "September 3rd, 2025",
+            "time": "10:00 AM - 12:00 PM",
+            "location": "Grand Alley (85 University Private)",
+            "registerNow": "Register Now",
+            "viewAllEvents": "View All Events",
+            "timeUnits": {
+              "days": "Days",
+              "hours": "Hours",
+              "minutes": "Minutes",
+              "seconds": "Seconds"
+            }
+          },
+          "podcastPreview": {
+            "title": "The Career Catalyst",
+            "description": "Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, valuable advice for students and aspiring professionals. Tune in to discover professions and different pathways in research and science that shape our world!",
+            "episodeTitle": "Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)",
+            "episodeDescription": "Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr. Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we explore his role as a radiologist, advances in imaging technology, and career insights for aspiring students.",
+            "viewAllEpisodes": "View All Episodes"
+          },
+          "bounce": {
+            "title": "Register for our events through Bounce",
+            "description": "New with the 2025-2026 academic year, the University of Ottawa has partnered up with Bounce to provide you with an easy yet accessible way to register for our events. You'll also be able to submit photos of our events through Bounce to share the fun times you had with everyone!",
+            "button": "Follow Us on Bounce"
+          },
+          "instagram": {
+            "title": "Follow us on Instagram",
+            "description": "Stay updated with our latest posts and behind-the-scenes content!",
+            "button": "Follow @uolab2life"
+          },
+          "membersCarousel": {
+            "title": "Meet the team!",
+            "description": "Meet the dedicated students behind uOttawa Lab2Life"
+          },
+          "about": {
+            "title": "Supporting students in their journey from classroom to career",
+            "mission": "We are on a mission to allow students to connect with and explore various jobs in the field of healthcare and medicine.",
+            "ourMission": "Our mission",
+            "paragraph1": "uOttawa Lab2Life is dedicated to promoting and helping students explore various careers in the field of healthcare and medicine. We wish to support students interested in the field by providing them with information, resources, and opportunities to apply their academics to different careers.",
+            "paragraph2": "Through innovative events, professional development initiatives, podcast episodes with experts in various professions, articles about different careers, workshops about job applications and networking opportunities, we aim to guide students through their journey from the classroom to the lab. We hope to introduce students to diverse careers in the field and support them with potential career pathways such as jobs, graduate education or medical school.",
+            "paragraph3": "We strive to create a community of aspiring professionals, equipped with the skills, knowledge and experiences to make a positive impact in their chosen pathways and professions. We wish to be inclusive of all degrees and will not be limited to just the sciences. Our goal is to support interested students navigate to their preferred profession in the ever-changing job market.",
+            "byTheNumbers": "UOLAB2LIFE BY THE NUMBERS",
+            "generalMembers": "General Members",
+            "articlesPodcasts": "Articles + Podcasts Released",
+            "eventsHosted": "Events Hosted",
+            "socialMediaEngagement": "Social Media Engagement"
+          }
+        },
+  "events": {
+    "title": "Events",
+    "description": "Join uOttawa Lab2Life and for some amazing healthcare-related events! Click an event to view detailed information!",
+    "eventDetails": {
+      "date": "Date",
+      "starts": "Starts",
+      "ends": "Ends",
+      "location": "Location",
+      "register": "Register",
+      "done": "Done"
+    },
+    "calendar": {
+      "month": "Month",
+      "week": "Week",
+      "day": "Day",
+      "today": "Today",
+      "prev": "Previous",
+      "next": "Next",
+      "allDay": "all-day",
+      "more": "more",
+      "noEvents": "No events to display"
+    }
+  },
+  "podcasts": {
+    "title": "The Career Catalyst",
+    "description": "Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, valuable advice for students and aspiring professionals. Tune in to discover professions and different pathways in research and science that shape our world!",
+    "hostedBy": "Hosted by",
+    "listenOn": "Listen on",
+    "listen": "Listen",
+    "more": "More",
+    "applePodcasts": "Apple Podcasts (coming soon)",
+    "episode": "Episode"
+  },
+  "memberSignUp": {
+    "title": "General Member Sign-Up",
+    "whatIsLab2Life": {
+      "title": "What is Lab2Life?",
+      "description": "We are an up and coming club which allows students to connect with and explore various jobs in the field of health and medicine."
+    },
+    "benefits": {
+      "title": "What do you get by becoming a general member?",
+      "professionalNetworks": "Access to Professional Networks: Opportunities to connect with industry professionals, alumni, and guest speakers.",
+      "exclusiveDiscounts": "Exclusive Discounts and Perks from our Sponsors: Access to special deals or discounts for the products offered by our sponsors.",
+      "firstDibsEvents": "First Dibs on Events: Priority registration for popular events or limited spots in workshops.",
+      "generalMemberMeetings": "General Member Meetings: We try to hold at least 1-2 meetings per semester for general members where you guys can provide your inputs.",
+      "memberNewsletters": "Members-Only Newsletters: Regular updates on club news, content, sneak peaks into upcoming events and opportunities that are exclusive to members.",
+      "studyGroups": "Study Groups: Organized study sessions or groups within the club to help with coursework and exam preparation.",
+      "volunteerOpportunities": "Volunteer Opportunities: Opportunities to give back to the community through organized volunteer activities."
+    },
+    "form": {
+      "title": "Registration Form",
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "uOttawa Email Address",
+        "studentNumber": "Student Number",
+        "year": "Year",
+        "faculty": "Faculty",
+        "program": "Program",
+        "interest": "Why are you interested in joining uOttawa Lab2Life?",
+        "events": "What events or initiatives do you want to see us do during the 2025-2026 academic year?"
+      },
+      "placeholders": {
+        "firstName": "Your first name",
+        "lastName": "Your last name",
+        "email": "your.email@uottawa.ca",
+        "studentNumber": "Your student number",
+        "year": "Select Year",
+        "faculty": "Select Faculty",
+        "program": "Your program of study",
+        "interest": "Tell us why you want to join Lab2Life...",
+        "events": "Tell us what events you would like to see..."
+      },
+      "yearOptions": {
+        "1st": "1st Year",
+        "2nd": "2nd Year",
+        "3rd": "3rd Year",
+        "4th": "4th Year",
+        "5th": "5th Year",
+        "other": "Other"
+      },
+      "facultyOptions": {
+        "arts": "Faculty of Arts",
+        "education": "Faculty of Education",
+        "engineering": "Faculty of Engineering",
+        "healthSciences": "Faculty of Health Sciences",
+        "law": "Faculty of Law",
+        "medicine": "Faculty of Medicine",
+        "science": "Faculty of Science",
+        "socialScience": "Faculty of Social Science",
+        "telfer": "Telfer School of Management"
+      },
+      "submit": "Submit Application",
+      "submitting": "Submitting...",
+      "errors": {
+        "firstNameRequired": "First name is required",
+        "firstNameInvalid": "First name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)",
+        "lastNameRequired": "Last name is required",
+        "lastNameInvalid": "Last name should only contain letters, spaces, hyphens, and apostrophes (minimum 2 characters)",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please use your uOttawa email address (@uottawa.ca)",
+        "studentNumberRequired": "Student number is required",
+        "studentNumberInvalid": "Student number must be exactly 9 digits",
+        "yearRequired": "Year is required",
+        "facultyRequired": "Faculty is required",
+        "programRequired": "Program is required",
+        "submitFailed": "Failed to submit application. Please try again.",
+        "submitTimeout": "Submission is taking longer than expected. Please try again."
+      }
+    },
+    "successModal": {
+      "title": "Success!",
+      "message": "Thank you for signing up as a uOttawa Lab2Life general member!",
+      "close": "Close",
+      "bounce": {
+        "title": "Register for our events through Bounce",
+        "description": "New with the 2025-2026 academic year, the University of Ottawa has partnered up with Bounce to provide you with an easy yet accessible way to register for our events. You'll also be able to submit photos of our events through Bounce to share the fun times you had with everyone!"
+      },
+      "buttons": {
+        "backToForm": "Back to Form",
+        "backToHomepage": "Back to Homepage"
+      }
+    }
+  },
+  "articles": {
+    "tableOfContents": {
+      "title": "On this page"
+    },
+    "hero": {
+      "title": "Explore Featured Articles",
+      "description": "Find our monthly articles passionately written by our representatives covering diverse medical themes."
+    }
+  }
+}

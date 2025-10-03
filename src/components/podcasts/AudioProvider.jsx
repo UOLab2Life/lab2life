@@ -41,34 +41,49 @@ export function AudioProvider({ children }) {
   let playerRef = useRef(null)
 
   let actions = useMemo(() => {
+    const play = (episode) => {
+      if (episode && episode.audio && episode.audio.src) {
+        dispatch({ type: ActionKind.SET_META, payload: episode })
+
+        if (playerRef.current && playerRef.current.currentSrc !== episode.audio.src) {
+          let playbackRate = playerRef.current.playbackRate
+          playerRef.current.src = episode.audio.src
+          playerRef.current.load()
+          playerRef.current.pause()
+          playerRef.current.playbackRate = playbackRate
+          playerRef.current.currentTime = 0
+
+          console.log('Loading audio from:', episode.audio.src)
+        }
+      } else {
+        console.warn('Episode or audio source is missing:', episode)
+        return
+      }
+      if (playerRef.current) {
+        playerRef.current.play().catch((error) => {
+          console.error('Error playing audio:', error)
+        })
+      }
+    }
+
+    const pause = () => {
+      playerRef.current?.pause()
+    }
+
+    const isPlaying = (episode) => {
+      return episode
+        ? state.playing && playerRef.current?.currentSrc === episode.audio.src
+        : state.playing
+    }
+
+    const toggle = (episode) => {
+      return isPlaying(episode) ? pause() : play(episode)
+    }
+
     return {
-      play(episode) {
-        if (episode) {
-          dispatch({ type: ActionKind.SET_META, payload: episode })
-
-          if (playerRef.current && playerRef.current.currentSrc !== episode.audio.src) {
-            let playbackRate = playerRef.current.playbackRate
-            playerRef.current.src = episode.audio.src
-            playerRef.current.load()
-            playerRef.current.pause()
-            playerRef.current.playbackRate = playbackRate
-            playerRef.current.currentTime = 0
-
-            console.log('Loading audio from:', episode.audio.src)
-          }
-        }
-        if (playerRef.current) {
-          playerRef.current.play().catch((error) => {
-            console.error('Error playing audio:', error)
-          })
-        }
-      },
-      pause() {
-        playerRef.current?.pause()
-      },
-      toggle(episode) {
-        this.isPlaying(episode) ? actions.pause() : actions.play(episode)
-      },
+      play,
+      pause,
+      toggle,
       seekBy(amount) {
         if (playerRef.current) {
           playerRef.current.currentTime += amount
@@ -87,11 +102,7 @@ export function AudioProvider({ children }) {
       toggleMute() {
         dispatch({ type: ActionKind.TOGGLE_MUTE })
       },
-      isPlaying(episode) {
-        return episode
-          ? state.playing && playerRef.current?.currentSrc === episode.audio.src
-          : state.playing
-      },
+      isPlaying,
       clear() {
         dispatch({ type: ActionKind.SET_META, payload: null })
         if (playerRef.current) {

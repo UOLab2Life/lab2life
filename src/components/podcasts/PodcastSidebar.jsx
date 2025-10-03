@@ -1,7 +1,10 @@
+'use client'
+
 import posterImage from '@/assets/podcasts/images/poster.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { TinyWaveFormIcon } from './TinyWaveFormIcon'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 function SpotifyIcon(props) {
   return (
@@ -24,6 +27,8 @@ function ApplePodcastIcon(props) {
 }
 
 export function PodcastSidebar() {
+  const { t, locale } = useTranslation()
+  
   return (
     <div className="lg:w-112 xl:w-120 hidden flex-shrink-0 lg:block">
       <div
@@ -32,7 +37,7 @@ export function PodcastSidebar() {
       >
         <div className="sm:rounded-4xl relative z-10 mx-auto ml-2 mr-2 flex rounded-2xl bg-[#003e3e] px-4 pb-4 pt-4 ring-1 ring-inset ring-black/5 sm:px-6 md:max-w-2xl md:px-4 lg:h-screen lg:flex-auto lg:border-x lg:border-[#2e4954]/20 lg:px-6 lg:py-8 xl:px-8">
           <div className="flex w-12 flex-none items-center whitespace-nowrap px-2 text-sm/7 [writing-mode:vertical-rl]">
-            <span className="font-mono text-[#99c96f]/70">Hosted by</span>
+            <span className="font-mono text-[#99c96f]/70">{t('podcasts.hostedBy') || 'Hosted by'}</span>
             <span className="mt-4 flex gap-4 font-bold text-[#99c96f]">uOttawa Lab2Life</span>
           </div>
           <div className="flex flex-1 flex-col p-8 pt-4 min-h-0 overflow-hidden">
@@ -54,12 +59,9 @@ export function PodcastSidebar() {
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10" />
             </Link>
             <div className="mt-6 text-center lg:text-left">
-              <h2 className="text-2xl font-bold text-[#99c96f]">The Career Catalyst</h2>
-              <p className="mt-3 text-lg/8 text-white">
-                Through insightful conversations with professionals from various fields, we uncover
-                career journeys, industry advancements, valuable advice for students and aspiring
-                professionals. Tune in to discover professions and different pathways in research
-                and science that shape our world!
+              <h2 className="text-2xl font-bold text-[#99c96f]">{t('podcasts.title') || 'The Career Catalyst'}</h2>
+              <p className={`mt-3 text-white ${locale === 'fr' ? 'text-base/7' : 'text-lg/8'}`}>
+                {t('podcasts.description') || 'Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, valuable advice for students and aspiring professionals. Tune in to discover professions and different pathways in research and science that shape our world!'}
               </p>
             </div>
             <section className="mt-8">
@@ -68,7 +70,7 @@ export function PodcastSidebar() {
                   colors={['fill-[#b184e9]', 'fill-[#8a5fc8]']}
                   className="h-2.5 w-2.5"
                 />
-                <span className="ml-2.5">Listen on</span>
+                <span className="ml-2.5">{t('podcasts.listenOn') || 'Listen on'}</span>
               </h2>
               <div className="bg-linear-to-r h-px from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
               <ul
@@ -82,7 +84,7 @@ export function PodcastSidebar() {
                     'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
                   ],
                   [
-                    'Apple Podcasts (coming soon)',
+                    t('podcasts.applePodcasts') || 'Apple Podcasts (coming soon)',
                     ApplePodcastIcon,
                     'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
                   ],

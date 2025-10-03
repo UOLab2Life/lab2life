@@ -4,6 +4,7 @@ import { AnimatedNumber } from '@/components/home/animated-number'
 import { Container } from '@/components/home/container'
 import { MembersCarousel } from '@/components/home/members-carousel'
 import { Heading, Lead, Subheading } from '@/components/home/text'
+import { useTranslation } from '@/contexts/LanguageContext'
 import Image from 'next/image'
 
 export default function AboutUsSection() {
@@ -16,38 +17,27 @@ export default function AboutUsSection() {
 }
 
 function Header() {
+  const { t } = useTranslation()
+  
   return (
     <Container className="mt-16 pb-8">
       <Heading as="h1" className="text-[#003e3e]">
-        Supporting students in their journey <br /> from classroom to career.
+        {t('home.about.title') || 'Supporting students in their journey from classroom to career.'}
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        We are on a mission to allow students to connect with and explore various jobs in the field
-        of healthcare and medicine.
+        {t('home.about.mission') || 'We are on a mission to allow students to connect with and explore various jobs in the field of healthcare and medicine.'}
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-medium tracking-tight">Our mission</h2>
+          <h2 className="text-2xl font-medium tracking-tight">{t('home.about.ourMission') || 'Our mission'}</h2>
           <p className="mt-6 text-sm/6 text-gray-600">
-            uOttawa Lab2Life is dedicated to promoting and helping students explore various careers
-            in the field of healthcare and medicine. We wish to support students interested in the
-            field by providing them with information, resources, and opportunities to apply their
-            academics to different careers.
+            {t('home.about.paragraph1') || 'uOttawa Lab2Life is dedicated to promoting and helping students explore various careers in the field of healthcare and medicine. We wish to support students interested in the field by providing them with information, resources, and opportunities to apply their academics to different careers.'}
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-            Through innovative events, professional development initiatives, podcast episodes with
-            experts in various professions, articles about different careers, workshops about job
-            applications and networking opportunities, we aim to guide students through their
-            journey from the classroom to the lab. We hope to introduce students to diverse careers
-            in the field and support them with potential career pathways such as jobs, graduate
-            education or medical school.
+            {t('home.about.paragraph2') || 'Through innovative events, professional development initiatives, podcast episodes with experts in various professions, articles about different careers, workshops about job applications and networking opportunities, we aim to guide students through their journey from the classroom to the lab. We hope to introduce students to diverse careers in the field and support them with potential career pathways such as jobs, graduate education or medical school.'}
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-            We strive to create a community of aspiring professionals, equipped with the skills,
-            knowledge and experiences to make a positive impact in their chosen pathways and
-            professions. We wish to be inclusive of all degrees and will not be limited to just the
-            sciences. Our goal is to support interested students navigate to their preferred
-            profession in the ever-changing job market.
+            {t('home.about.paragraph3') || 'We strive to create a community of aspiring professionals, equipped with the skills, knowledge and experiences to make a positive impact in their chosen pathways and professions. We wish to be inclusive of all degrees and will not be limited to just the sciences. Our goal is to support interested students navigate to their preferred profession in the ever-changing job market.'}
           </p>
         </div>
 
@@ -96,29 +86,29 @@ function Header() {
         </div>
 
         <div className="max-lg:mt-16 lg:col-span-1">
-          <Subheading className="text-[#003e3e]">uoLab2Life by the Numbers</Subheading>
+          <Subheading className="text-[#003e3e]">{t('home.about.byTheNumbers') || 'UOLAB2LIFE BY THE NUMBERS'}</Subheading>
           <hr className="mt-6 border-t border-gray-200" />
           <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">General Members</dt>
+              <dt className="text-sm/6 text-gray-600">{t('home.about.generalMembers') || 'General Members'}</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
                 <AnimatedNumber start={0} end={300} />+
               </dd>
             </div>
             <div className="flex flex-col gap-y-2">
-              <dt className="text-sm/6 text-gray-600">Articles + Podcasts Released</dt>
+              <dt className="text-sm/6 text-gray-600">{t('home.about.articlesPodcasts') || 'Articles + Podcasts Released'}</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                <AnimatedNumber start={0} end={19} />
+                <AnimatedNumber start={0} end={20} />
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">Events Hosted</dt>
+              <dt className="text-sm/6 text-gray-600">{t('home.about.eventsHosted') || 'Events Hosted'}</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
                 <AnimatedNumber start={0} end={7} />
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
-              <dt className="text-sm/6 text-gray-600">Social Media Engagement</dt>
+              <dt className="text-sm/6 text-gray-600">{t('home.about.socialMediaEngagement') || 'Social Media Engagement'}</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
                 <AnimatedNumber start={0} end={225} />
                 K+

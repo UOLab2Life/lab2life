@@ -7,9 +7,11 @@ import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
 import { supabase } from '@/lib/supabase/client'
+import { useTranslation } from '@/contexts/LanguageContext'
 import { useEffect, useState } from 'react'
 
 export default function ContactUs() {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -75,18 +77,18 @@ export default function ContactUs() {
     const newErrors = {}
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required'
+      newErrors.name = t('contact.form.errors.nameRequired')
     }
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
+      newErrors.email = t('contact.form.errors.emailRequired')
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Please enter a valid email address'
+      newErrors.email = t('contact.form.errors.emailInvalid')
     }
     if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required'
+      newErrors.subject = t('contact.form.errors.subjectRequired')
     }
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required'
+      newErrors.message = t('contact.form.errors.messageRequired')
     }
 
     return newErrors
@@ -117,7 +119,7 @@ export default function ContactUs() {
 
       if (error) {
         console.error('Error saving to Supabase:', error)
-        setErrors({ submit: 'Failed to send message. Please try again.' })
+        setErrors({ submit: t('contact.form.errors.submitFailed') })
         return
       }
 
@@ -131,7 +133,7 @@ export default function ContactUs() {
       setIsModalOpen(true)
     } catch (error) {
       console.error('Error:', error)
-      setErrors({ submit: 'Failed to send message. Please try again.' })
+      setErrors({ submit: t('contact.form.errors.submitFailed') })
     } finally {
       setIsSubmitting(false)
     }
@@ -151,15 +153,15 @@ export default function ContactUs() {
           <div className="mx-auto max-w-2xl">
             <div className="mb-8 text-center">
               <Heading as="h2" className="mx-auto max-w-3xl">
-                Contact Us
+                {t('contact.title')}
               </Heading>
-              <p className="mt-6 text-2xl text-gray-600">Get in touch with our team below!</p>
+              <p className="mt-6 text-2xl text-gray-600">{t('contact.subtitle')}</p>
             </div>
 
             <form onSubmit={handleSubmit} method="post" className="space-y-6">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                  Name
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -171,14 +173,14 @@ export default function ContactUs() {
                     errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
                   style={{ backgroundColor: 'white' }}
-                  placeholder="Your full name"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
                 {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
               </div>
 
               <div>
                 <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                  Email
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
@@ -192,14 +194,14 @@ export default function ContactUs() {
                     errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                   style={{ backgroundColor: 'white' }}
-                  placeholder="your.email@example.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                 />
                 {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
               </div>
 
               <div>
                 <label htmlFor="subject" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                  Subject
+                  {t('contact.form.subject')}
                 </label>
                 <input
                   type="text"
@@ -211,14 +213,14 @@ export default function ContactUs() {
                     errors.subject ? 'border-red-500' : 'border-gray-300'
                   }`}
                   style={{ backgroundColor: 'white' }}
-                  placeholder="What's this about?"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                 />
                 {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject}</p>}
               </div>
 
               <div>
                 <label htmlFor="message" className="mb-2 block text-sm font-medium text-[#003e3e]">
-                  Message
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -229,7 +231,7 @@ export default function ContactUs() {
                   className={`w-full resize-none overflow-hidden rounded-lg border bg-white px-4 py-3 text-[#003e3e] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#003e3e] ${
                     errors.message ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder="Tell us more about your inquiry..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                   style={{ minHeight: '120px' }}
                   onInput={(e) => {
                     e.target.style.height = 'auto'
@@ -273,7 +275,7 @@ export default function ContactUs() {
                     }
                   }}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
                 </button>
               </div>
             </form>

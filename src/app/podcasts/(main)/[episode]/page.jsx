@@ -1,5 +1,7 @@
+'use client'
+
 import { notFound } from 'next/navigation'
-import { cache } from 'react'
+import { cache, useState, useEffect, use } from 'react'
 
 import posterImage from '@/assets/podcasts/images/poster.png'
 import { Container } from '@/components/home/container'
@@ -13,6 +15,7 @@ import { PlayIcon } from '@/components/podcasts/PlayIcon'
 import { PodcastSidebar } from '@/components/podcasts/PodcastSidebar'
 import { TinyWaveFormIcon } from '@/components/podcasts/TinyWaveFormIcon'
 import { getAllEpisodes } from '@/lib/podcasts/episodes'
+import { useTranslation } from '@/contexts/LanguageContext'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -46,26 +49,60 @@ const getEpisode = cache(async (id) => {
   return episode
 })
 
-export async function generateMetadata({ params }) {
-  let { episode: episodeId } = params
-  let episode = await getEpisode(episodeId)
 
-  return {
-    title: `Lab2Life - Episode ${episode.id}: ${episode.title}`,
+export default function Episode({ params }) {
+  const { t, locale } = useTranslation()
+  const [episode, setEpisode] = useState(null)
+  const [loading, setLoading] = useState(true)
+  
+  const resolvedParams = use(params)
+
+  useEffect(() => {
+    const loadEpisode = async () => {
+      try {
+        const episodeData = await getEpisode(resolvedParams.episode)
+        setEpisode(episodeData)
+      } catch (error) {
+        console.error('Error loading episode:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadEpisode()
+  }, [resolvedParams.episode])
+
+  if (loading) {
+    return <div>Loading...</div>
   }
-}
 
-export default async function Episode({ params }) {
-  let { episode: episodeId } = params
-  let episode = await getEpisode(episodeId)
+  if (!episode) {
+    notFound()
+  }
+
   let date = new Date(episode.published)
 
-  const categories = episode.category
-    ? episode.category
+  const description = locale === 'fr' 
+    ? (episode.description_fr || episode.description_en || '')
+    : (episode.description_en || episode.description_fr || '')
+  
+  const categoryString = locale === 'fr' 
+    ? (episode.category_fr || episode.category_en || '')
+    : (episode.category_en || episode.category_fr || '')
+
+  const categories = categoryString
+    ? categoryString
         .split(',')
         .map((cat) => cat.trim())
         .filter((cat) => cat)
     : []
+
+  const getTitle = () => {
+    const episodeText = t('podcasts.episode') || 'Episode'
+    if (locale === 'fr') {
+      return `${episodeText} ${episode.id}: ${episode.title} (anglais)`
+    }
+    return `${episodeText} ${episode.id}: ${episode.title}`
+  }
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return null
@@ -115,13 +152,10 @@ export default async function Episode({ params }) {
            </Link>
           <div className="mt-6 text-center sm:mt-8 md:mt-10 lg:mt-12 lg:text-left">
             <h2 className="text-xl font-bold text-[#99c96f] sm:text-2xl md:text-3xl">
-              The Career Catalyst
+              {t('podcasts.title') || 'The Career Catalyst'}
             </h2>
             <p className="mt-3 text-sm/6 text-white sm:text-base/6">
-              Through insightful conversations with professionals from various fields, we uncover
-              career journeys, industry advancements, valuable advice for students and aspiring
-              professionals. Tune in to discover professions and different pathways in research and
-              science that shape our world!
+              {t('podcasts.description') || 'Through insightful conversations with professionals from various fields, we uncover career journeys, industry advancements, valuable advice for students and aspiring professionals. Tune in to discover professions and different pathways in research and science that shape our world!'}
             </p>
           </div>
           <section className="mt-4">
@@ -130,7 +164,7 @@ export default async function Episode({ params }) {
                 colors={['fill-[#b184e9]', 'fill-[#8a5fc8]']}
                 className="h-2.5 w-2.5"
               />
-              <span className="ml-2.5">Listen on</span>
+              <span className="ml-2.5">{t('podcasts.listenOn') || 'Listen on'}</span>
             </h2>
             <div className="bg-linear-to-r h-px from-[#ffffff]/0 via-[#ffffff]/30 to-[#ffffff]/0 lg:hidden" />
             <ul
@@ -187,7 +221,7 @@ export default async function Episode({ params }) {
                   />
                   <div className="flex flex-col">
                     <h1 className="mt-2 text-4xl font-bold text-[#2e4954]">
-                      Episode {episode.id}: {episode.title}
+                      {getTitle()}
                     </h1>
                     <FormattedDate
                       date={date}
@@ -196,7 +230,7 @@ export default async function Episode({ params }) {
                   </div>
                 </div>
                 <p className="ml-24 mt-3 text-lg/8 font-medium text-[#2e4954]/80">
-                  {episode.description}
+                  {description}
                 </p>
 
                 {categories.length > 0 && (

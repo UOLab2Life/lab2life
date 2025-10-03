@@ -4,23 +4,46 @@ import EventDetails from '@/components/events/event-details'
 import { Modal } from '@/components/events/modal'
 import { useModal } from '@/components/events/use-modal'
 import { supabase } from '@/lib/supabase/client'
+import { useTranslation } from '@/contexts/LanguageContext'
+import { formatEventDate, formatEventTime } from '@/lib/date-formatting'
 import { useEffect, useMemo, useState } from 'react'
 
-function mapRowToEvent(row) {
+function mapRowToEvent(row, locale = 'en') {
   const start = row.event_time ? `${row.event_date}T${row.event_time}` : row.event_date
   const end = row.event_end_time ? `${row.event_date}T${row.event_end_time}` : undefined
 
+  // Use language-specific fields with fallbacks
+  const eventName = locale === 'fr' 
+    ? (row.event_name_fr || row.event_name_en || 'Sans titre')
+    : (row.event_name_en || row.event_name_fr || 'Untitled')
+  
+  const eventType = locale === 'fr'
+    ? (row.event_type_fr || row.event_type_en || '')
+    : (row.event_type_en || row.event_type_fr || '')
+  
+  const eventDescription = locale === 'fr'
+    ? (row.event_description_fr || row.event_description_en || '')
+    : (row.event_description_en || row.event_description_fr || '')
+  
+  const eventLocation = locale === 'fr'
+    ? (row.event_location_fr || row.event_location_en || '')
+    : (row.event_location_en || row.event_location_fr || '')
+  
+  const registrationLink = locale === 'fr'
+    ? (row.registration_link_fr || row.registration_link_en || '')
+    : (row.registration_link_en || row.registration_link_fr || '')
+
   return {
     id: row.event_id,
-    title: row.event_name_en ?? 'Untitled',
+    title: eventName,
     start,
     end,
     allDay: !row.event_time && !row.event_end_time,
     extendedProps: {
-      type: row.event_type_en,
-      description: row.event_description_en,
-      location: row.event_location_en,
-      registration: row.registration_link_en,
+      type: eventType,
+      description: eventDescription,
+      location: eventLocation,
+      registration: registrationLink,
       date: row.event_date,
       time: row.event_time,
       end_time: row.event_end_time,
@@ -54,6 +77,7 @@ export default function LatestEvents() {
   const [events, setEvents] = useState([])
   const [selected, setSelected] = useState(null)
   const { isOpen, openModal, closeModal } = useModal(false)
+  const { t, locale } = useTranslation()
 
   useEffect(() => {
     const load = async () => {
@@ -66,10 +90,10 @@ export default function LatestEvents() {
         console.error(error)
         return
       }
-      setEvents((data ?? []).map(mapRowToEvent))
+      setEvents((data ?? []).map(row => mapRowToEvent(row, locale)))
     }
     load()
-  }, [])
+  }, [locale])
 
   const getSortKey = (evt) => new Date(evt.start ?? evt.extendedProps?.date).getTime()
 
@@ -95,16 +119,11 @@ export default function LatestEvents() {
   }
 
   const formatDateLabel = (evt) => {
-    const d = new Date(
-      evt.extendedProps.date +
-        (evt.extendedProps.time ? `T${evt.extendedProps.time}` : 'T00:00:00'),
+    return formatEventDate(
+      evt.extendedProps.date,
+      evt.extendedProps.time,
+      locale
     )
-    return d.toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-      ...(evt.extendedProps.time ? { hour: '2-digit', minute: '2-digit' } : {}),
-    })
   }
 
   return (
@@ -180,7 +199,7 @@ export default function LatestEvents() {
 
                         {past ? (
                           <span className="inline-flex cursor-default select-none items-center justify-center rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-600">
-                            Done
+                            {t('events.eventDetails.done') || 'Done'}
                           </span>
                         ) : (
                           evt.extendedProps?.registration && (
@@ -191,7 +210,7 @@ export default function LatestEvents() {
                               className="inline-flex items-center justify-center rounded-full bg-[#003e3e] px-4 py-2 text-xs font-medium text-white transition hover:opacity-90"
                               onClick={(e) => e.stopPropagation()}
                             >
-                              Register
+                              {t('events.eventDetails.register') || 'Register'}
                             </a>
                           )
                         )}

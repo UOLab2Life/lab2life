@@ -1,46 +1,28 @@
+'use client'
+
 import Calendar from '@/components/events/calendar'
 import LatestEvents from '@/components/events/latest-events'
 import { Container } from '@/components/home/container'
-import { Footer } from '@/components/home/footer'
-import { Gradient } from '@/components/home/gradient'
-import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
-
-export const metadata = {
-  title: 'Events - uOttawa Lab2Life',
-  description:
-    'Stay updated with upcoming uOttawa Lab2Life events, workshops, and networking opportunities.',
-  icons: {
-    icon: '/images/lab2life-no-bg.png',
-  },
-}
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export default function Events() {
-  return (
-    <main className="overflow-hidden">
-      <div className="relative">
-        <Gradient className="rounded-4xl absolute inset-2 bottom-0 ring-1 ring-inset ring-black/5" />
-        <Container className="relative pb-12">
-          <Navbar />
-        </Container>
-      </div>
+  const { t } = useTranslation()
 
-      <div className="py-16 sm:py-24">
-        <Container>
-          <div className="mx-auto max-w-6xl text-center">
-            <Heading as="h2" className="mx-auto max-w-3xl">
-              Events
-            </Heading>
-            <p className="mb-6 mt-6 text-xl font-inter text-gray-600">
-              Join uOttawa Lab2Life and for some amazing healthcare-related events! <br /> Click an
-              event to view detailed information!
-            </p>
-            <Calendar />
-            <LatestEvents />
-          </div>
-        </Container>
-      </div>
-      <Footer />
-    </main>
+  return (
+    <div className="py-8 sm:py-18">
+      <Container>
+        <div className="mx-auto max-w-6xl text-center">
+          <Heading as="h2" className="mx-auto max-w-3xl">
+            {t('events.title') || 'Events'}
+          </Heading>
+          <p className="mb-6 mt-6 text-xl font-inter text-gray-600">
+            {t('events.description') || 'Join uOttawa Lab2Life and for some amazing healthcare-related events! Click an event to view detailed information!'}
+          </p>
+          <Calendar />
+          <LatestEvents />
+        </div>
+      </Container>
+    </div>
   )
 }

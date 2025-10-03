@@ -1,8 +1,13 @@
+'use client'
+
 import { Button } from '@/components/home/button'
 import { Container } from '@/components/home/container'
 import { Heading } from '@/components/home/text'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export function Bounce() {
+  const { t } = useTranslation()
+  
   return (
     <div className="bg-white pt-4 pb-12 sm:pt-8 sm:pb-24">
       <Container>
@@ -19,13 +24,10 @@ export function Bounce() {
 
           <div className="text-center lg:ml-12 lg:text-left">
             <Heading as="h3" className="mb-4 font-bold text-[#003e3e]">
-              Register for our events through Bounce
+              {t('home.bounce.title') || 'Register for our events through Bounce'}
             </Heading>
-            <p className="mb-8 max-w-2xl text-lg text-gray-600">
-              New with the 2025-2026 academic year, the University of Ottawa has partnered up with
-              Bounce to provide you with an easy yet accessible way to register for our events.
-              You'll also be able to submit photos of our events through Bounce to share the fun
-              times you had with everyone!
+            <p className="mb-8 text-lg text-gray-600">
+              {t('home.bounce.description') || "New with the 2025-2026 academic year, the University of Ottawa has partnered up with Bounce to provide you with an easy yet accessible way to register for our events. You'll also be able to submit photos of our events through Bounce to share the fun times you had with everyone!"}
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -34,10 +36,10 @@ export function Bounce() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                className="!visible !block w-[65%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
-                style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}
+                className="!visible w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+                style={{ whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
-                Follow Us on Bounce
+                {t('home.bounce.button') || 'Follow Us on Bounce'}
               </Button>
             </div>
           </div>
