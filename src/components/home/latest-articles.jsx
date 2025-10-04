@@ -45,12 +45,12 @@ export function LatestArticles() {
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
-                    {locale === 'fr' ? 'À l\'intérieur du rôle des technologues en médecine nucléaire' : 'Inside the Role of Nuclear Medicine Technologists'}
+                    {locale === 'fr' ? 'À l\'intérieur du rôle des technologues en médecine nucléaire: du soutien qui sauve des vies' : 'Inside the Role of Nuclear Medicine Technologists: Support That Saves Lives'}
                   </a>
                 </div>
                 <div className="mt-2 flex-1 text-sm/6 text-gray-500">
                   {locale === 'fr'
-                    ? 'Les technologues en médecine nucléaire (TMN) travaillent en coulisses pour fournir les images et les données dont les cliniciens ont besoin afin de diagnostiquer et de traiter les maladies de manière sûre et précise...'
+                    ? 'Les technologues en médecine nucléaire (TMN) travaillent en coulisses pour fournir les images et les données dont les cliniciens ont besoin afin de diagnostiquer et de traiter...'
                     : 'Clinical support roles are the missing puzzle pieces that complete the picture. Without them, physicians would not be able to see the full image needed for diagnosis...'}
                 </div>
                 <div className="mt-6 flex items-center gap-3">
