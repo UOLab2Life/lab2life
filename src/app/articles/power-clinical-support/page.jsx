@@ -43,9 +43,9 @@ To better understand the field, let's dive into one of these key professions: Th
 
 Typically, a Clinical Application Specialist will have a salary of approximately $69,000–$92,000 CAD annually². They tend to work in hospitals, diagnostic laboratories, and medical device companies (e.g., Siemens, Roche, Abbott, Philips).
 
-²Glassdoor. (2025). Clinical Applications Specialist salaries in Canada. Retrieved from https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.html
-
 Typically, they will be busy splitting time between training sessions, responding to support calls, and collaborating with engineers or IT specialists. Every day is busy, yet diverse; your skills would be put to work, but it would avoid being repetitive.
+
+² Glassdoor. (2025). Clinical Applications Specialist salaries in Canada. Retrieved from https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.html
   
 ## The path (or paths) leading to becoming a CAS
 
@@ -103,9 +103,9 @@ Pour mieux comprendre le domaine, plongeons dans l'une de ces professions clés 
 
 Typiquement, un Spécialiste d'Applications Cliniques aura un salaire d'environ 69 000 $ à 92 000 $ CAD annuellement². Ils ont tendance à travailler dans les hôpitaux, les laboratoires de diagnostic et les entreprises de dispositifs médicaux (par exemple, Siemens, Roche, Abbott, Philips).
 
-²Glassdoor. (2025). Salaires des Spécialistes d'Applications Cliniques au Canada. Récupéré de https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.html
-
 Typiquement, ils seront occupés à diviser leur temps entre les sessions de formation, la réponse aux appels de support et la collaboration avec les ingénieurs ou les spécialistes informatiques. Chaque jour est occupé, mais diversifié ; vos compétences seraient mises à contribution, mais cela éviterait d'être répétitif.
+
+² Glassdoor. (2025). Salaires des Spécialistes d'Applications Cliniques au Canada. Récupéré de https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.html
 
 ## Le chemin (ou les chemins) menant à devenir un SAC
 

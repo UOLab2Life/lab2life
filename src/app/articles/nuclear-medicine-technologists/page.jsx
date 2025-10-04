@@ -10,10 +10,12 @@ import yaml from 'js-yaml'
 import markdocNodes from '@/markdoc/nodes'
 
 const englishContent = `---
-title: Inside the Role of Nuclear Medicine Technologists
+title: "Inside the Role of Nuclear Medicine Technologists: Support That Saves Lives"
 ---
 *Written by Lacey Mullin*  
 *September 30th, 2025*
+
+![Nuclear Medicine Technologist Image](https://www.gurnick.edu/wp-content/uploads/2021/09/A.S.-in-Nuclear-Medicine-Technology-Course-Descriptions.jpg)
 
 ---
 
@@ -100,13 +102,15 @@ Les technologues en médecine nucléaire travaillent souvent dans des hôpitaux,
 - Obtenir un baccalauréat dans un domaine connexe. En général, ce diplôme est obtenu dans un domaine lié aux sciences;
 - Obtenir un certificat ou suivre un programme spécialisé en technologie de médecine nucléaire.
 
+¹ Glassdoor. (2025). Indeed Careers. (22 septembre 2025). Nuclear medicine technologist salary in Ontario. Indeed. Récupéré de https://www.glassdoor.ca/Salaries/clinical-applications-specialist-salary-SRCH_KO0,32.html
+
 ## La grande leçon à retenir aujourd'hui...	
 	
 Les technologues en médecine nucléaire sont des membres essentiels de l'équipe de soins de santé. Ils travaillent en coulisses pour fournir aux médecins les images fonctionnelles et les données nécessaires à un diagnostic précis et à un traitement efficace. En préparant des produits radiopharmaceutiques, en utilisant des équipements d'imagerie spécialisés et en assurant la sécurité des patients, les technologues en médecine nucléaire allient science, technologie et soins compatissants. Leur rôle en tant que professionnels de soutien clinique souligne l'importance de la médecine collaborative et montre comment l'expertise de ces professionnels permet aux médecins d'approfondir leurs connaissances. 
 
 ---
 
-## References
+## Références
 
 - [Government of Canada](https://www.guichetemplois.gc.ca/rapportmarche/profession/18257/ca) (2025, 16 septembre). *Description de tâches: Technologue en médecine nucléaire au Canada*.
 - [Indeed Careers](https://ca.indeed.com/career/nuclear-medicine-technologist/salaries/Ontario) (2025, 22 septembre). *Nuclear medicine technologist salary in Ontario (anglais)*.
