@@ -69,6 +69,8 @@ title: "Dans le rôle d'une technologue en médecine nucléaire : du soutien qui
 *Écrit par Lacey Mullin*  
 *30 septembre 2025*
 
+![Image de technologue en médecine nucléaire](https://www.gurnick.edu/wp-content/uploads/2021/09/A.S.-in-Nuclear-Medicine-Technology-Course-Descriptions.jpg)
+
 ---
 
 Les rôles de soutien clinique sont des éléments essentiels de l'ensemble unifié que nous appelons la médecine. Sans eux, les médecins ne seraient pas en mesure d'avoir une vision globale nécessaire au diagnostic. La technologie des rayonnements médicaux est un domaine de la médecine qui se concentre sur l'imagerie diagnostique et la radiothérapie. Les professions dans ce domaine comprennent les technologues en radiologie, les radiothérapeutes et les technologues en résonance magnétique. Dans cet article, nous allons examiner de plus près la profession de technologue en médecine nucléaire (TMN).  
