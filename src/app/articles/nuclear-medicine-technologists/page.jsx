@@ -67,7 +67,7 @@ const frenchContent = `---
 title: "Dans le rôle d'une technologue en médecine nucléaire : du soutien qui sauve des vies"
 ---
 *Écrit par Lacey Mullin*  
-*30 septembre 2025*
+*Le 30 septembre 2025*
 
 ---
 
