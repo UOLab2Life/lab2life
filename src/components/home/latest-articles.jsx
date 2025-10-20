@@ -38,7 +38,7 @@ export function LatestArticles() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  {locale === 'fr' ? formatEventDate('2025-10-13', null, 'fr') : 'October 13th, 2025'}
+                  {locale === 'fr' ? `Le ${formatEventDate('2025-10-13', null, 'fr')}` : 'October 13th, 2025'}
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
@@ -80,7 +80,7 @@ export function LatestArticles() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  {locale === 'fr' ? formatEventDate('2025-09-30', null, 'fr') : 'September 30th, 2025'}
+                  {locale === 'fr' ? `Le ${formatEventDate('2025-09-30', null, 'fr')}` : 'September 30th, 2025'}
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
@@ -122,7 +122,7 @@ export function LatestArticles() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  {locale === 'fr' ? formatEventDate('2025-09-16', null, 'fr') : 'September 16th, 2025'}
+                  {locale === 'fr' ? `Le ${formatEventDate('2025-09-16', null, 'fr')}` : 'September 16th, 2025'}
                 </div>
                 <div className="mt-2 text-lg/7 font-medium">
                   <a
