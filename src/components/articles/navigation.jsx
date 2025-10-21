@@ -15,11 +15,13 @@ export function Navigation({ className, onLinkClick }) {
     'Medical Law': 'Droit médical',
     Rehabilitation: 'Réadaptation',
     'Mental Health': 'Santé mentale',
+    'Psychology/Mental Health': 'Psychologie/Santé mentale',
     Pediatrics: 'Pédiatrie',
   }
 
   const frenchArticleTitleOverrides = {
     '/articles/power-clinical-support': 'Le pouvoir du soutien clinique',
+    '/articles/body-mind-psyche': 'Le corps, l\'esprit et la psyché',
   }
 
   return (

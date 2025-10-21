@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/articles/nuclear-medicine-technologists', locale)
+  const bannerHref = getLocalizedUrl('/articles/body-mind-psyche', locale)
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU ARTICLE! Technologues en médecine nucléaire'
-      : 'NEW ARTICLE! Nuclear Medicine Technologists'
+      ? 'NOUVEAU ARTICLE! Le corps, l\'esprit et la psyché'
+      : 'NEW ARTICLE! The Body, the Mind, and the Psyche'
 
   const defaultBanner = (
     <Link

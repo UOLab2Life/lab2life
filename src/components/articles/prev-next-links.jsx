@@ -3,8 +3,6 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { getLocalizedUrl, getOriginalPath } from '@/lib/url-localization'
 
 import { navigation } from '@/lib/articles/navigation'
 
@@ -39,13 +37,8 @@ function PageLink({ title, href, dir = 'next', ...props }) {
 
 export function PrevNextLinks() {
   let pathname = usePathname()
-  const { locale } = useLanguage()
-
-  // Normalize the current path to the original English path for lookup
-  const originalPath = getOriginalPath(pathname, locale)
-
   let allLinks = navigation.flatMap((section) => section.links)
-  let linkIndex = allLinks.findIndex((link) => link.href === originalPath)
+  let linkIndex = allLinks.findIndex((link) => link.href === pathname)
   let previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
   let nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
 
@@ -53,32 +46,10 @@ export function PrevNextLinks() {
     return null
   }
 
-  // Build display titles to match the sidebar labels in French
-  const displayTitle = (link) => {
-    if (locale !== 'fr') return link.title
-    // Mirror sidebar logic for French labels
-    if (link.href === '/articles/power-clinical-support') return 'Le pouvoir du soutien clinique'
-    if (link.href === '/articles/nuclear-medicine-technologists') return 'Technologue en médecine nucléaire'
-    // Default: append (anglais) for non-translated
-    return `${link.title} (anglais)`
-  }
-
   return (
     <dl className="mt-12 flex pt-6">
-      {previousPage && (
-        <PageLink
-          dir="previous"
-          title={displayTitle(previousPage)}
-          href={getLocalizedUrl(previousPage.href, locale)}
-        />
-      )}
-      {nextPage && (
-        <PageLink
-          className="ml-auto text-right"
-          title={displayTitle(nextPage)}
-          href={getLocalizedUrl(nextPage.href, locale)}
-        />
-      )}
+      {previousPage && <PageLink dir="previous" {...previousPage} />}
+      {nextPage && <PageLink className="ml-auto text-right" {...nextPage} />}
     </dl>
   )
 }

@@ -1,5 +1,14 @@
 export const navigation = [
   {
+    title: 'Psychology/Mental Health',
+    links: [
+      {
+        title: 'The Body, the Mind, and the Psyche',
+        href: '/articles/body-mind-psyche',
+      },
+    ],
+  },
+  {
     title: 'Clinical Support',
     links: [
       {
