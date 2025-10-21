@@ -12,7 +12,6 @@ function mapRowToEvent(row, locale = 'en') {
   const start = row.event_time ? `${row.event_date}T${row.event_time}` : row.event_date
   const end = row.event_end_time ? `${row.event_date}T${row.event_end_time}` : undefined
 
-  // Use language-specific fields with fallbacks
   const eventName = locale === 'fr' 
     ? (row.event_name_fr || row.event_name_en || 'Sans titre')
     : (row.event_name_en || row.event_name_fr || 'Untitled')

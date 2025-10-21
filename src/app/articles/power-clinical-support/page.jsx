@@ -73,7 +73,7 @@ const frenchContent = `---
 title: Le pouvoir du soutien clinique
 ---
 *Écrit par Anoosha Rehman*  
-*16 septembre 2025*
+*Le 16 septembre 2025*
 
 Bienvenue dans une nouvelle année de Lab2Life ! Nous commencerons le mois de septembre en explorant un coin essentiel mais caché des soins de santé : le soutien clinique.
 
