@@ -17,7 +17,7 @@ export function Countdown() {
     seconds: 0,
   })
 
-  const targetDate = new Date('2025-09-03T10:00:00-04:00').getTime()
+  const targetDate = new Date('2025-10-30T18:30:00-04:00').getTime()
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -115,7 +115,7 @@ export function Countdown() {
 
           <div className="mt-16 flex flex-col items-center justify-center gap-4">
             <Button
-              href="https://www.bouncelife.com/events/68b1e5c58c7d8ac1d03a23f9"
+              href="https://www.bouncelife.com/events/68f963f6b64c137556790d44"
               target="_blank"
               rel="noopener noreferrer"
               className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"

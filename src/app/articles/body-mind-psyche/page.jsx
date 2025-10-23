@@ -15,7 +15,7 @@ title: "The Body, the Mind, and the Psyche - Mental Health with uoLab2Life"
 *Written by Maroun Tarabey*  
 *October 13th, 2025*
 
-![Mental Health Image](https://lh3.googleusercontent.com/proxy/i_z1hvocOjBM18kTEa4m684BokwsyR51aBGp2TSc1BwfS1I06d1BSpVlKUZTn5IUg6hHnsoBSPNrQob7MhxzA8Sz8bhMeyIUELeh5WP_FMGM4HDcPC7lVsxYb3M)
+![Mental Health Image](https://drpriyankaphysioclinics.com/wp-content/uploads/2023/08/23.png)
 
 ---
 ## Introduction
@@ -71,7 +71,7 @@ title: "Le corps, l'esprit et la psyché \- La santé mentale avec uoLab2Life"
 *Par Maroun Tarabey*  
 *Le 13 octobre 2025*
 
-![Mental Health Image](https://lh3.googleusercontent.com/proxy/i_z1hvocOjBM18kTEa4m684BokwsyR51aBGp2TSc1BwfS1I06d1BSpVlKUZTn5IUg6hHnsoBSPNrQob7MhxzA8Sz8bhMeyIUELeh5WP_FMGM4HDcPC7lVsxYb3M)
+![Mental Health Image](https://drpriyankaphysioclinics.com/wp-content/uploads/2023/08/23.png)
 
 ---
 ## Introduction

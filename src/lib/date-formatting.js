@@ -23,7 +23,7 @@ export function formatEventDate(dateStr, timeStr = null, locale = 'en') {
     ...(timeStr && { 
       hour: '2-digit', 
       minute: '2-digit',
-      hour12: false 
+      hour12: locale === 'en'
     })
   }
   
@@ -46,7 +46,7 @@ export function formatEventTime(timeStr, locale = 'en') {
   return date.toLocaleTimeString(locale === 'fr' ? 'fr-CA' : 'en-US', {
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false
+    hour12: locale === 'en'
   })
 }
 
