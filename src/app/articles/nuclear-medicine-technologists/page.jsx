@@ -67,7 +67,9 @@ const frenchContent = `---
 title: "Dans le rôle d'une technologue en médecine nucléaire : du soutien qui sauve des vies"
 ---
 *Écrit par Lacey Mullin*  
-*Le 30 septembre 2025*
+*Le Le 30 septembre 2025*
+
+![Image de technologue en médecine nucléaire](https://www.gurnick.edu/wp-content/uploads/2021/09/A.S.-in-Nuclear-Medicine-Technology-Course-Descriptions.jpg)
 
 ---
 
