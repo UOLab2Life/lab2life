@@ -27,7 +27,7 @@ export function LatestArticles() {
               <img
                 alt="Mental Health and Psychology"
                 className="aspect-3/2 w-full object-cover"
-                src="https://lh3.googleusercontent.com/proxy/i_z1hvocOjBM18kTEa4m684BokwsyR51aBGp2TSc1BwfS1I06d1BSpVlKUZTn5IUg6hHnsoBSPNrQob7MhxzA8Sz8bhMeyIUELeh5WP_FMGM4HDcPC7lVsxYb3M"
+                src="https://drpriyankaphysioclinics.com/wp-content/uploads/2023/08/23.png"
               />
               <div className="flex flex-1 flex-col p-8">
                 <div className="flex items-center gap-2 text-sm/5 text-gray-700">
