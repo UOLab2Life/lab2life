@@ -181,7 +181,7 @@ export function Navbar({ showBanner = true, shortText = false }) {
   const bannerHref = 'https://www.bouncelife.com/events/68f963f6b64c137556790d44'
   const bannerText =
     locale === 'fr'
-      ? 'INSCRIVEZ-VOUS ! : Trick or Treat Yourself : Buffet d\'arts'
+      ? 'INSCRIVEZ-VOUS ! : Des friandises ou un sort : Buffet d\'arts'
       : 'NEW EVENT! : Trick or Treat Yourself : Arts Buffet'
 
   const defaultBanner = (
