@@ -178,15 +178,17 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/articles/body-mind-psyche', locale)
+  const bannerHref = 'https://www.bouncelife.com/events/68f963f6b64c137556790d44'
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU ARTICLE! Le corps, l\'esprit et la psyché'
-      : 'NEW ARTICLE! The Body, the Mind, and the Psyche'
+      ? 'INSCRIVEZ-VOUS ! : Trick or Treat Yourself : Buffet d\'arts'
+      : 'NEW EVENT! : Trick or Treat Yourself : Arts Buffet'
 
   const defaultBanner = (
     <Link
       href={bannerHref}
+      target="_blank"
+      rel="noopener noreferrer"
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (

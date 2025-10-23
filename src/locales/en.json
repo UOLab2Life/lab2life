@@ -58,11 +58,11 @@
           },
           "countdown": {
             "upcomingEvent": "Upcoming Event",
-            "title": "uOttawa Lab2Life Club Fair",
-            "description": "Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance to win amazing prizes!",
-            "date": "September 3rd, 2025",
-            "time": "10:00 AM - 12:00 PM",
-            "location": "Grand Alley (85 University Private)",
+            "title": "Trick or Treat Yourself: Arts Buffet",
+            "description": "Join us for a cozy, creative night at our Arts Buffet, hosted by Lab2Life!\n\nCome choose your craft and let your creativity flow! From pumpkin painting to friendship bracelets, canvas art, colouring pages, and pipe cleaner flower bouquets, there's something for everyone!",
+            "date": "October 30th, 2025",
+            "time": "6:30 PM - 9:00 PM",
+            "location": "Lamoureux Hall (LMX) 219",
             "registerNow": "Register Now",
             "viewAllEvents": "View All Events",
             "timeUnits": {

@@ -58,11 +58,11 @@
       },
           "countdown": {
             "upcomingEvent": "Événement à venir",
-            "title": "Salon des clubs Lab2Life de l'Université d'Ottawa",
-            "description": "Nous serons au Salon des Clubs ce mercredi ! Passez à notre table, découvrez Lab2Life et faites tourner la roue pour tenter de gagner des prix incroyables !",
-            "date": "3 septembre 2025",
-            "time": "10 h 00 - 12 h 00",
-            "location": "Grand Allée (85 University Private)",
+            "title": "Des friandises ou des bonbons: Buffet d'arts",
+            "description": "Rejoins-nous pour une soirée créative et chaleureuse à notre Buffet d'Arts , organisé par Lab2Life !\n\nViens choisir ton activité et laisse libre cours à ta créativité ! De la peinture sur citrouille aux bracelets d'amitié, en passant par la peinture sur toile, les pages à colorier et les fleurs en cure-pipe, il y en a pour tous les goûts !",
+            "date": "Le 30 octobre 2025",
+            "time": "18 h 30 - 21 h 00",
+            "location": "Pavillon Lamoureux (LMX) 219",
             "registerNow": "S'inscrire",
             "viewAllEvents": "Voir tous les événements",
             "timeUnits": {
