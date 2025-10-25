@@ -15,7 +15,9 @@ const urlMappings = {
     '/general-member-sign-up': '/inscription-membres-generaux',
     '/articles/clinical-support': '/articles/pouvoir-soutien-clinique',
     '/articles/power-clinical-support': '/articles/pouvoir-soutien-clinique',
-    '/articles/nuclear-medicine-technologists': '/articles/technologue-medecine-nucleaire'
+    '/articles/nuclear-medicine-technologists': '/articles/technologue-medecine-nucleaire',
+    '/articles/body-mind-psyche': '/articles/corps-esprit-psyche',
+    '/articles/psychometrists-mental-health': '/articles/psychometriciens-sante-mentale'
   }
 }
 
@@ -31,7 +33,9 @@ const reverseUrlMappings = {
     '/contactez-nous': '/contact-us', 
     '/inscription-membres-generaux': '/general-member-sign-up',
     '/articles/pouvoir-soutien-clinique': '/articles/power-clinical-support',
-    '/articles/technologue-medecine-nucleaire': '/articles/nuclear-medicine-technologists'
+    '/articles/technologue-medecine-nucleaire': '/articles/nuclear-medicine-technologists',
+    '/articles/corps-esprit-psyche': '/articles/body-mind-psyche',
+    '/articles/psychometriciens-sante-mentale': '/articles/psychometrists-mental-health'
   }
 }
 
