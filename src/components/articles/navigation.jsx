@@ -10,27 +10,13 @@ export function Navigation({ className, onLinkClick }) {
   let pathname = usePathname()
   const { locale } = useLanguage()
 
-  const categoryTranslationsFr = {
-    'Clinical Support': 'Soutien clinique',
-    'Medical Law': 'Droit médical',
-    Rehabilitation: 'Réadaptation',
-    'Mental Health': 'Santé mentale',
-    'Psychology/Mental Health': 'Psychologie/Santé mentale',
-    Pediatrics: 'Pédiatrie',
-  }
-
-  const frenchArticleTitleOverrides = {
-    '/articles/power-clinical-support': 'Le pouvoir du soutien clinique',
-    '/articles/body-mind-psyche': 'Le corps, l\'esprit et la psyché',
-  }
-
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>
       <ul role="list" className="space-y-9">
-        {navigation.map((section) => (
+        {navigation[locale].map((section) => (
           <li key={section.title}>
             <h2 className="font-display font-medium text-slate-900 dark:text-white">
-              {locale === 'fr' ? categoryTranslationsFr[section.title] ?? section.title : section.title}
+              {section.title}
             </h2>
             <ul
               role="list"
@@ -48,17 +34,7 @@ export function Navigation({ className, onLinkClick }) {
                         : 'font-inter-medium text-slate-500/70 before:hidden before:bg-slate-300 hover:bg-gradient-to-r hover:from-indigo-300 hover:via-violet-400 hover:to-indigo-300 hover:bg-clip-text hover:text-transparent hover:before:block dark:text-slate-300/90 dark:before:bg-white dark:hover:text-slate-300',
                     )}
                   >
-                    {locale === 'fr'
-                      ? (frenchArticleTitleOverrides[link.href]
-                          ? frenchArticleTitleOverrides[link.href]
-                          : link.href === '/articles/nuclear-medicine-technologists'
-                            ? 'Technologue en médecine nucléaire'
-                            : `${link.title} (anglais)`)
-                      : (link.href === '/articles/power-clinical-support'
-                          ? 'The Power of Clinical Support'
-                          : link.href === '/articles/nuclear-medicine-technologists'
-                            ? 'Nuclear Medicine Technologists'
-                            : link.title)}
+                    {link.title}
                   </Link>
                 </li>
               ))}
