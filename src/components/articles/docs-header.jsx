@@ -9,15 +9,7 @@ export function DocsHeader({ title }) {
   const { locale } = useLanguage()
   let pathname = usePathname()
   const originalPath = getOriginalPath(pathname, locale)
-  let section = navigation.find((section) => section.links.find((link) => link.href === originalPath))
-
-  const categoryTranslationsFr = {
-    'Clinical Support': 'Soutien clinique',
-    'Medical Law': 'Droit médical',
-    Rehabilitation: 'Réadaptation',
-    'Mental Health': 'Santé mentale',
-    Pediatrics: 'Pédiatrie',
-  }
+  let section = navigation[locale].find((section) => section.links.find((link) => link.href === originalPath))
 
   if (!title && !section) {
     return null
@@ -27,7 +19,7 @@ export function DocsHeader({ title }) {
     <header className="mb-9 space-y-1">
       {section && (
         <p className="font-display text-sm font-medium text-white">
-          {locale === 'fr' ? categoryTranslationsFr[section.title] ?? section.title : section.title}
+          {section.title}
         </p>
       )}
       {title && (

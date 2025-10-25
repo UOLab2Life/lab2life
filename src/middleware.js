@@ -25,6 +25,24 @@ export function middleware(request) {
     return response
   }
 
+  // Rewrite body-mind-psyche French slug to EN folder path
+  if (pathname === '/articles/corps-esprit-psyche') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/body-mind-psyche'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
+  // Rewrite psychometrists-mental-health French slug to EN folder path
+  if (pathname === '/articles/psychometriciens-sante-mentale') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/psychometrists-mental-health'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
   if (parsed) {
     if (parsed.locale === 'fr') {
       const response = NextResponse.next()

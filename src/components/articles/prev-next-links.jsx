@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 import { navigation } from '@/lib/articles/navigation'
 
@@ -37,7 +38,8 @@ function PageLink({ title, href, dir = 'next', ...props }) {
 
 export function PrevNextLinks() {
   let pathname = usePathname()
-  let allLinks = navigation.flatMap((section) => section.links)
+  const { locale } = useLanguage()
+  let allLinks = navigation[locale].flatMap((section) => section.links)
   let linkIndex = allLinks.findIndex((link) => link.href === pathname)
   let previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
   let nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
