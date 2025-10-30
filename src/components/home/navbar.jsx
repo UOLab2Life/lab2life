@@ -178,17 +178,15 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = 'https://www.bouncelife.com/events/68f963f6b64c137556790d44'
+  const bannerHref = '/podcasts/5'
   const bannerText =
     locale === 'fr'
-      ? 'INSCRIVEZ-VOUS ! : Des friandises ou un sort : Buffet d\'arts'
-      : 'NEW EVENT! : Trick or Treat Yourself : Arts Buffet'
+      ? 'NOUVEAU PODCAST: Psychotherapy Unpacked w/ Giovanna S. (anglais)'
+      : 'NEW PODCAST: Psychotherapy Unpacked with Giovanna Sacca'
 
   const defaultBanner = (
     <Link
       href={bannerHref}
-      target="_blank"
-      rel="noopener noreferrer"
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (

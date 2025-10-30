@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import { navigation } from '@/lib/articles/navigation'
+import { getOriginalPath, getLocalizedUrl } from '@/lib/url-localization'
 
 function ArrowIcon(props) {
   return (
@@ -39,8 +40,12 @@ function PageLink({ title, href, dir = 'next', ...props }) {
 export function PrevNextLinks() {
   let pathname = usePathname()
   const { locale } = useLanguage()
+  
+  // Convert French pathname to English for matching
+  const originalPath = getOriginalPath(pathname, locale)
+  
   let allLinks = navigation[locale].flatMap((section) => section.links)
-  let linkIndex = allLinks.findIndex((link) => link.href === pathname)
+  let linkIndex = allLinks.findIndex((link) => link.href === originalPath)
   let previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
   let nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
 
@@ -50,8 +55,20 @@ export function PrevNextLinks() {
 
   return (
     <dl className="mt-12 flex pt-6">
-      {previousPage && <PageLink dir="previous" {...previousPage} />}
-      {nextPage && <PageLink className="ml-auto text-right" {...nextPage} />}
+      {previousPage && (
+        <PageLink
+          dir="previous"
+          title={previousPage.title}
+          href={getLocalizedUrl(previousPage.href, locale)}
+        />
+      )}
+      {nextPage && (
+        <PageLink
+          className="ml-auto text-right"
+          title={nextPage.title}
+          href={getLocalizedUrl(nextPage.href, locale)}
+        />
+      )}
     </dl>
   )
 }
