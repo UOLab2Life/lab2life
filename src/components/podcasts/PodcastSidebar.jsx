@@ -84,9 +84,9 @@ export function PodcastSidebar() {
                     'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
                   ],
                   [
-                    t('podcasts.applePodcasts') || 'Apple Podcasts (coming soon)',
+                    t('podcasts.applePodcasts') || 'Apple Podcasts',
                     ApplePodcastIcon,
-                    'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                    'https://podcasts.apple.com/ca/podcast/the-career-catalyst/id1849309681',
                   ],
                 ].map(([label, Icon, href]) => (
                   <li key={label} className="flex">

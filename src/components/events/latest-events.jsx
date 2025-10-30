@@ -134,10 +134,10 @@ export default function LatestEvents() {
               {list.map((evt) => {
                 const past = isPastEvent(evt)
                 const cardBase =
-                  'relative flex flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-black/5 transition'
+                  'relative flex flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-black/5 transition-all duration-200'
                 const cardStyle = past
-                  ? 'opacity-85 shadow-md grayscale-[30%] filter hover:shadow-md cursor-default'
-                  : 'shadow-lg shadow-[#003e3e]/60 hover:shadow-xl cursor-pointer'
+                  ? 'opacity-85 shadow-md grayscale-[30%] filter hover:shadow-lg cursor-default'
+                  : 'shadow-lg shadow-[#003e3e]/60 hover:shadow-2xl hover:shadow-[#003e3e]/70 cursor-pointer'
 
                 return (
                   <article
@@ -147,7 +147,7 @@ export default function LatestEvents() {
                     aria-disabled={past ? true : undefined}
                   >
                     <div className="flex flex-1 flex-col p-8">
-                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="flex items-center justify-center gap-2 text-sm text-gray-700">
                         <svg
                           className={past ? 'h-4 w-4 text-gray-500' : 'h-4 w-4 text-[#003e3e]'}
                           viewBox="0 0 20 20"
@@ -165,16 +165,16 @@ export default function LatestEvents() {
 
                       <h3
                         className={[
-                          'mt-2 text-lg font-medium',
+                          'mt-2 text-lg font-medium text-center',
                           past ? 'text-gray-700' : 'text-[#003e3e]',
                         ].join(' ')}
                       >
                         {past ? (
-                          <span className="text-left">{evt.title}</span>
+                          <span className="block text-center">{evt.title}</span>
                         ) : (
                           <button
                             type="button"
-                            className="text-left transition-colors hover:text-[#003e3e]/80"
+                            className="block w-full text-center transition-colors hover:text-[#003e3e]/80"
                             onClick={(e) => {
                               e.stopPropagation()
                               openFromCard(evt)
@@ -186,7 +186,7 @@ export default function LatestEvents() {
                       </h3>
 
                       {evt.extendedProps?.description && (
-                        <p className="mt-2 line-clamp-3 flex-1 text-sm text-gray-500">
+                        <p className="mt-2 line-clamp-3 flex-1 text-sm text-gray-500 text-center">
                           {evt.extendedProps.description}
                         </p>
                       )}

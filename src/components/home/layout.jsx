@@ -100,13 +100,13 @@ function Header() {
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4 lg:border-b-0">
               <dt className="text-sm/6 text-gray-600">{t('home.about.articlesPodcasts') || 'Articles + Podcasts Released'}</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                <AnimatedNumber start={0} end={22} />
+                <AnimatedNumber start={0} end={23} />
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
               <dt className="text-sm/6 text-gray-600">{t('home.about.eventsHosted') || 'Events Hosted'}</dt>
               <dd className="order-first text-6xl font-medium tracking-tight text-[#003e3e]">
-                <AnimatedNumber start={0} end={7} />
+                <AnimatedNumber start={0} end={8} />
               </dd>
             </div>
             <div className="flex flex-col gap-y-2">
