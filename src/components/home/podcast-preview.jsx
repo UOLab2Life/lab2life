@@ -57,7 +57,7 @@ function CustomAudioPlayer({ onClose }) {
       </div>
       <div className="mb-[env(safe-area-inset-bottom)] flex flex-1 flex-col gap-3 overflow-hidden p-1">
         <div className="truncate text-center text-sm/6 font-bold md:text-left">
-          {locale === 'fr' ? `Épisode ${player.episode.id}: ${player.episode.title} (anglais)` : `Episode ${player.episode.id}: ${player.episode.title}`}
+          {locale === 'fr' ? `Épisode ${player.episode.id}: ${player.episode.title} (anglais, aperçu)` : `Episode ${player.episode.id}: ${player.episode.title} (Preview)`}
         </div>
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">
@@ -163,7 +163,7 @@ function PodcastPlayer({ mp3FileName }) {
   )
 }
 
-export function PodcastPreview({ mp3FileName = 'episode-4-tcc-preview.mp3' }) {
+export function PodcastPreview({ mp3FileName = 'episode-5-preview.mp3' }) {
   const { t, locale } = useTranslation()
   const [showAudioPlayer, setShowAudioPlayer] = useState(false)
   const [hasStartedPlaying, setHasStartedPlaying] = useState(false)
@@ -222,12 +222,12 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
   const { t, locale } = useTranslation()
   const player = useAudioPlayer()
   const episode = {
-    id: 4,
-    title: 'Reading Between the Scans with Dr. Yale Erenberg (Preview)',
+    id: 5,
+    title: 'Psychotherapy Unpacked with Giovanna Sacca',
     audio: {
       src: mp3FileName
         ? `/podcast-previews/${mp3FileName}`
-        : '/podcast-previews/episode-4-tcc-preview.mp3',
+        : '/podcast-previews/episode-5-preview.mp3',
       type: 'audio/mp3',
     },
   }
@@ -249,7 +249,9 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
         <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
-            {t('home.podcastPreview.episodeTitle') || 'Episode 4: Reading Between the Scans with Dr. Yale Erenberg (Preview)'}
+            {locale === 'fr' 
+              ? 'Épisode 5: Psychotherapy Unpacked with Giovanna S. (anglais, aperçu)'
+              : 'Episode 5: Psychotherapy Unpacked with Giovanna Sacca (Preview)'}
           </h3>
           {!isPlaying && (
             <div className="hidden sm:flex sm:justify-end">
@@ -264,7 +266,9 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
         </div>
 
         <div className="mb-4 text-gray-600">
-          {t('home.podcastPreview.episodeDescription') || "Welcome to the March edition of the UOLab2Life podcast! This month, we're joined by Dr. Yale Erenberg, a radiologist working out of Southwestern Ontario. In this episode, we explore his role as a radiologist, advances in imaging technology, and career insights for aspiring students."}
+          {locale === 'fr'
+            ? "Dans cet épisode de « The Career Catalyst », nous rencontrons Giovanna S., psychothérapeute en cours d'agrément, pour explorer la réalité de la psychothérapie, ce que signifie accompagner autrui, les fondements scientifiques de la guérison émotionnelle et comment la thérapie peut être une source d'épanouissement pour les étudiants comme pour les professionnels. De son parcours professionnel à son utilisation d'approches validées scientifiquement telles que les thérapies cognitivo-comportementales (TCC), la thérapie d'acceptation et d'engagement (ACT), la thérapie centrée sur les émotions (EFT) et la pleine conscience, Giovanna partage des conseils pratiques pour toute personne intéressée par la santé mentale, le développement personnel ou les carrières en thérapie."
+            : "In this episode of The Career Catalyst, we sit down with Giovanna Sacca, a Registered Psychotherapist (Qualifying), to explore the real-world side of psychotherapy, what it means to support others, the science behind emotional healing, and how therapy can empower students and professionals alike. From her journey into the field to her use of evidence-based approaches like CBT, ACT, EFT, and mindfulness, Giovanna shares practical insights for anyone curious about mental health, personal growth, or careers in therapy."}
         </div>
 
         {!isPlaying && (

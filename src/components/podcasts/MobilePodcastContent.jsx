@@ -75,7 +75,7 @@ export function MobilePodcastContent({ posterImage }) {
               [
                 'Apple Podcasts',
                 ApplePodcastIcon,
-                'https://open.spotify.com/show/2FOKjKAM3BkI0fRO4IiFrl?si=0137e6a883a442f5',
+                'https://podcasts.apple.com/ca/podcast/the-career-catalyst/id1849309681',
               ],
             ].map(([label, Icon, href]) => (
               <li key={label} className="flex">
