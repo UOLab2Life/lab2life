@@ -76,7 +76,7 @@ function MobileLanguageDropdown() {
   }
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative z-50" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="data-hover:bg-white/20 flex items-center gap-1 rounded-lg bg-white/10 px-2 py-1.5 text-xs font-semibold text-white transition-all duration-200 hover:bg-white/20"
@@ -97,7 +97,7 @@ function MobileLanguageDropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-1 w-20 rounded-md bg-white shadow-lg ring-1 ring-black/5">
+        <div className="absolute right-0 top-full z-50 mt-1 w-20 rounded-md bg-white shadow-lg ring-1 ring-black/5">
           {languages.map((language) => (
             <button
               key={language.code}
@@ -123,7 +123,7 @@ function MobileLanguageDropdown() {
 function MobileNavButton() {
   return (
     <DisclosureButton
-      className="data-hover:bg-white/10 flex size-12 items-center justify-center self-center rounded-lg lg:hidden"
+      className="flex size-12 items-center justify-center self-center rounded-lg lg:hidden"
       aria-label="Open main menu"
     >
       {({ open }) => (
@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = '/podcasts/5'
+  const bannerHref = getLocalizedUrl('/articles/investigating-cells-crime', locale)
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU PODCAST: Psychotherapy Unpacked w/ Giovanna S. (anglais)'
-      : 'NEW PODCAST: Psychotherapy Unpacked with Giovanna Sacca'
+      ? 'NOUVEAU ARTICLE: Enquêteurs de cellules ou de crimes?'
+      : 'NEW ARTICLE: Investigating Cells or Investigating Crime?'
 
   const defaultBanner = (
     <Link
@@ -205,7 +205,7 @@ export function Navbar({ showBanner = true, shortText = false }) {
   )
 
   return (
-    <Disclosure as="header" className="pt-12 sm:pt-16">
+    <Disclosure as="header" className="relative z-40 pt-12 sm:pt-16">
       <PlusGrid>
         <PlusGridRow className="relative flex justify-between">
           <div className="relative flex gap-6">
