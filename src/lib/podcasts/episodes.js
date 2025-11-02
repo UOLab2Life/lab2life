@@ -17,48 +17,33 @@ export async function getAllEpisodes() {
       return []
     }
 
-    return (data || []).map((item) => ({
-      id: item.episode_id,
-      title: item.title,
-      published: new Date(item.release_date),
-      description_en: item.description_en,
-      description_fr: item.description_fr,
-      category_en: item.category_en,
-      category_fr: item.category_fr,
-      youtube_url: item.youtube_url,
-      content: item.description_en || '',
-      audio: {
-        src: item.audio_file_url,
-        type: 'audio/mp3',
-      },
-    }))
+    return (data || []).map((item) => {
+      let publishedDate
+      if (item.release_date) {
+        const [year, month, day] = item.release_date.split('-').map(Number)
+        publishedDate = new Date(year, month - 1, day)
+      } else {
+        publishedDate = new Date()
+      }
+      
+      return {
+        id: item.episode_id,
+        title: item.title,
+        published: publishedDate,
+        description_en: item.description_en,
+        description_fr: item.description_fr,
+        category_en: item.category_en,
+        category_fr: item.category_fr,
+        youtube_url: item.youtube_url,
+        content: item.description_en || '',
+        audio: {
+          src: item.audio_file_url,
+          type: 'audio/mp3',
+        },
+      }
+    })
   } catch (err) {
     console.error('Unexpected error:', err)
     return []
   }
 }
-
-// export async function testConnection() {
-//   try {
-//     const { data, error } = await supabase
-//       .from('Episodes')
-//       .select('*')
-//       .limit(1)
-
-//     if (error) {
-//       console.error('❌ Connection failed:', error)
-//       return { success: false, data: null }
-//     }
-
-//     if (!data || data.length === 0) {
-//       console.warn('⚠️ Connected, but no entries in Episodes table')
-//       return { success: true, data: [] }
-//     }
-
-//     console.log('✅ Supabase connection works! Sample row:', data[0])
-//     return { success: true, data }
-//   } catch (err) {
-//     console.error('❌ Unexpected error:', err)
-//     return { success: false, data: null }
-//   }
-// }

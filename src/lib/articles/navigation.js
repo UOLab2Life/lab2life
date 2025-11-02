@@ -1,7 +1,16 @@
 export const navigation = {
   en: [
     {
-      title: 'Psychology/Mental Health',
+      title: 'Forensic Science',
+      links: [
+        {
+          title: 'Investigating Cells or Investigating Crime?',
+          href: '/articles/investigating-cells-crime',
+        },
+      ],
+    },
+    {
+      title: 'Psychology and Mental Health',
       links: [
         {
           title: 'Psychometrists Support Mental Health',
@@ -99,7 +108,16 @@ export const navigation = {
   ],
   fr: [
     {
-      title: 'Psychologie/Santé mentale',
+      title: 'Science judiciaire',
+      links: [
+        {
+          title: 'Enquêteurs de cellules ou de crimes?',
+          href: '/articles/investigating-cells-crime',
+        },
+      ],
+    },
+    {
+      title: 'Psychologie et santé mentale',
       links: [
         {
           title: 'Psychométriciens soutiennent la santé mentale',

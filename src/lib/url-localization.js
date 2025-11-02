@@ -17,7 +17,8 @@ const urlMappings = {
     '/articles/power-clinical-support': '/articles/pouvoir-soutien-clinique',
     '/articles/nuclear-medicine-technologists': '/articles/technologue-medecine-nucleaire',
     '/articles/body-mind-psyche': '/articles/corps-esprit-psyche',
-    '/articles/psychometrists-mental-health': '/articles/psychometriciens-sante-mentale'
+    '/articles/psychometrists-mental-health': '/articles/psychometriciens-sante-mentale',
+    '/articles/investigating-cells-crime': '/articles/enqueteurs-cellules-crimes'
   }
 }
 
@@ -35,7 +36,8 @@ const reverseUrlMappings = {
     '/articles/pouvoir-soutien-clinique': '/articles/power-clinical-support',
     '/articles/technologue-medecine-nucleaire': '/articles/nuclear-medicine-technologists',
     '/articles/corps-esprit-psyche': '/articles/body-mind-psyche',
-    '/articles/psychometriciens-sante-mentale': '/articles/psychometrists-mental-health'
+    '/articles/psychometriciens-sante-mentale': '/articles/psychometrists-mental-health',
+    '/articles/enqueteurs-cellules-crimes': '/articles/investigating-cells-crime'
   }
 }
 
