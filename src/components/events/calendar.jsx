@@ -152,6 +152,14 @@ export default function Calendar() {
             dayGridMonth: {
               displayEventTime: false, 
             },
+            timeGridWeek: {
+              slotLabelFormat: locale === 'en' 
+                ? { hour: 'numeric', minute: '2-digit', hour12: true }
+                : { hour: '2-digit', minute: '2-digit', hour12: false },
+              eventTimeFormat: locale === 'en'
+                ? { hour: 'numeric', minute: '2-digit', hour12: true }
+                : { hour: '2-digit', minute: '2-digit', hour12: false },
+            },
           }}
         />
       </div>

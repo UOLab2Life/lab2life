@@ -42,21 +42,31 @@ export function AudioProvider({ children }) {
 
   let actions = useMemo(() => {
     const play = (episode) => {
-      if (episode && episode.audio && episode.audio.src) {
-        dispatch({ type: ActionKind.SET_META, payload: episode })
+      const currentEpisode = episode || state.episode
+      if (currentEpisode && currentEpisode.audio && currentEpisode.audio.src) {
+        if (!episode && state.episode) {
+          if (playerRef.current) {
+            playerRef.current.play().catch((error) => {
+              console.error('Error playing audio:', error)
+            })
+          }
+          return
+        }
+        
+        dispatch({ type: ActionKind.SET_META, payload: currentEpisode })
 
-        if (playerRef.current && playerRef.current.currentSrc !== episode.audio.src) {
+        if (playerRef.current && playerRef.current.currentSrc !== currentEpisode.audio.src) {
           let playbackRate = playerRef.current.playbackRate
-          playerRef.current.src = episode.audio.src
+          playerRef.current.src = currentEpisode.audio.src
           playerRef.current.load()
           playerRef.current.pause()
           playerRef.current.playbackRate = playbackRate
           playerRef.current.currentTime = 0
 
-          console.log('Loading audio from:', episode.audio.src)
+          console.log('Loading audio from:', currentEpisode.audio.src)
         }
       } else {
-        console.warn('Episode or audio source is missing:', episode)
+        console.warn('Episode or audio source is missing:', currentEpisode)
         return
       }
       if (playerRef.current) {
@@ -77,7 +87,8 @@ export function AudioProvider({ children }) {
     }
 
     const toggle = (episode) => {
-      return isPlaying(episode) ? pause() : play(episode)
+      const currentEpisode = episode || state.episode
+      return isPlaying(currentEpisode) ? pause() : play(currentEpisode)
     }
 
     return {

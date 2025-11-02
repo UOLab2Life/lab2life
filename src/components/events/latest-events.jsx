@@ -147,7 +147,7 @@ export default function LatestEvents() {
                     aria-disabled={past ? true : undefined}
                   >
                     <div className="flex flex-1 flex-col p-8">
-                      <div className="flex items-center justify-center gap-2 text-sm text-gray-700">
+                      <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
                         <svg
                           className={past ? 'h-4 w-4 text-gray-500' : 'h-4 w-4 text-[#003e3e]'}
                           viewBox="0 0 20 20"
@@ -166,7 +166,7 @@ export default function LatestEvents() {
                       <h3
                         className={[
                           'mt-2 text-lg font-medium text-center',
-                          past ? 'text-gray-700' : 'text-[#003e3e]',
+                          past ? 'text-gray-600' : 'text-[#003e3e]',
                         ].join(' ')}
                       >
                         {past ? (
