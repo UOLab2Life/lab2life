@@ -43,6 +43,15 @@ export function middleware(request) {
     return response
   }
 
+  // Rewrite investigating-cells-crime French slug to EN folder path
+  if (pathname === '/articles/enqueteurs-cellules-crimes') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/investigating-cells-crime'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
   if (parsed) {
     if (parsed.locale === 'fr') {
       const response = NextResponse.next()
