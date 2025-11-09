@@ -52,6 +52,15 @@ export function middleware(request) {
     return response
   }
 
+  // Rewrite crisis-intervention-workers French slug to EN folder path
+  if (pathname === '/articles/intervenants-situation-crise') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/crisis-intervention-workers'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
   if (parsed) {
     if (parsed.locale === 'fr') {
       const response = NextResponse.next()

@@ -15,6 +15,7 @@ import { Slider } from '@/components/podcasts/player/Slider'
 import { PlayIcon } from '@/components/podcasts/PlayIcon'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { getLocalizedUrl } from '@/lib/url-localization'
+import { supabase } from '@/lib/supabase/client'
 import { useEffect, useRef, useState } from 'react'
 
 function parseTime(seconds) {
@@ -57,7 +58,9 @@ function CustomAudioPlayer({ onClose }) {
       </div>
       <div className="mb-[env(safe-area-inset-bottom)] flex flex-1 flex-col gap-3 overflow-hidden p-1">
         <div className="truncate text-center text-sm/6 font-bold md:text-left">
-          {locale === 'fr' ? `Épisode ${player.episode.id}: ${player.episode.title} (anglais, aperçu)` : `Episode ${player.episode.id}: ${player.episode.title} (Preview)`}
+          {locale === 'fr' 
+            ? `Épisode ${player.episode.id}: ${player.episode.title} (anglais, aperçu)` 
+            : `Episode ${player.episode.id}: ${player.episode.title} (Preview)`}
         </div>
         <div className="flex justify-between gap-6">
           <div className="flex items-center md:hidden">
@@ -163,7 +166,7 @@ function PodcastPlayer({ mp3FileName }) {
   )
 }
 
-export function PodcastPreview({ mp3FileName = 'episode-5-preview.mp3' }) {
+export function PodcastPreview({ mp3FileName = 'episode-6-preview.mp3' }) {
   const { t, locale } = useTranslation()
   const [showAudioPlayer, setShowAudioPlayer] = useState(false)
   const [hasStartedPlaying, setHasStartedPlaying] = useState(false)
@@ -198,13 +201,35 @@ export function PodcastPreview({ mp3FileName = 'episode-5-preview.mp3' }) {
             isPlaying={showAudioPlayer}
           />
 
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4">
             <Button
+          href={getLocalizedUrl('/podcasts/6', locale)}
+          className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+        >
+          {t('home.podcastPreview.watchEntireEpisode') || 'Watch Entire Episode'}
+        </Button>
+            <a
               href={getLocalizedUrl('/podcasts', locale)}
-              className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
+              style={{
+                backgroundColor: '#b184e9',
+                color: 'white',
+                border: '1px solid transparent',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = 'white'
+                e.target.style.borderColor = '#b184e9'
+                e.target.style.color = '#b184e9'
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = '#b184e9'
+                e.target.style.borderColor = 'transparent'
+                e.target.style.color = 'white'
+              }}
             >
               {t('home.podcastPreview.viewAllEpisodes') || 'View All Episodes'}
-            </Button>
+            </a>
           </div>
         </Container>
       </div>
@@ -221,16 +246,47 @@ export function PodcastPreview({ mp3FileName = 'episode-5-preview.mp3' }) {
 function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying }) {
   const { t, locale } = useTranslation()
   const player = useAudioPlayer()
+  const [episodeData, setEpisodeData] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchEpisode = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('Episodes')
+          .select('episode_id, title, description_en, description_fr')
+          .eq('episode_id', 6)
+          .single()
+
+        if (error) {
+          console.error('Error fetching episode:', error)
+        } else if (data) {
+          setEpisodeData(data)
+        }
+      } catch (err) {
+        console.error('Unexpected error:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchEpisode()
+  }, [])
+
   const episode = {
-    id: 5,
-    title: 'Psychotherapy Unpacked with Giovanna Sacca',
+    id: 6,
+    title: 'The Psychology of Motivation & Procrastination with Dr. Rylee Oram',
     audio: {
       src: mp3FileName
         ? `/podcast-previews/${mp3FileName}`
-        : '/podcast-previews/episode-5-preview.mp3',
+        : '/podcast-previews/episode-6-preview.mp3',
       type: 'audio/mp3',
     },
   }
+
+  const description = locale === 'fr' 
+    ? (episodeData?.description_fr || '')
+    : (episodeData?.description_en || '')
 
   useEffect(() => {
     if (player.episode && player.episode.id === episode.id && player.playing) {
@@ -244,14 +300,24 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
     }
   }, [player.episode, episode.id, isPlaying, onClose])
 
+  if (loading) {
+    return (
+      <div className="mx-auto w-11/12">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
+          <div className="text-center text-gray-600">Loading...</div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto w-11/12">
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-lg shadow-[#003e3e]/20">
         <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
             {locale === 'fr' 
-              ? 'Épisode 5: Psychotherapy Unpacked with Giovanna S. (anglais, aperçu)'
-              : 'Episode 5: Psychotherapy Unpacked with Giovanna Sacca (Preview)'}
+              ? `Épisode 6: ${episode.title} (anglais, aperçu)`
+              : `Episode 6: ${episode.title} (Preview)`}
           </h3>
           {!isPlaying && (
             <div className="hidden sm:flex sm:justify-end">
@@ -266,9 +332,7 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
         </div>
 
         <div className="mb-4 text-gray-600">
-          {locale === 'fr'
-            ? "Dans cet épisode de « The Career Catalyst », nous rencontrons Giovanna S., psychothérapeute en cours d'agrément, pour explorer la réalité de la psychothérapie, ce que signifie accompagner autrui, les fondements scientifiques de la guérison émotionnelle et comment la thérapie peut être une source d'épanouissement pour les étudiants comme pour les professionnels. De son parcours professionnel à son utilisation d'approches validées scientifiquement telles que les thérapies cognitivo-comportementales (TCC), la thérapie d'acceptation et d'engagement (ACT), la thérapie centrée sur les émotions (EFT) et la pleine conscience, Giovanna partage des conseils pratiques pour toute personne intéressée par la santé mentale, le développement personnel ou les carrières en thérapie."
-            : "In this episode of The Career Catalyst, we sit down with Giovanna Sacca, a Registered Psychotherapist (Qualifying), to explore the real-world side of psychotherapy, what it means to support others, the science behind emotional healing, and how therapy can empower students and professionals alike. From her journey into the field to her use of evidence-based approaches like CBT, ACT, EFT, and mindfulness, Giovanna shares practical insights for anyone curious about mental health, personal growth, or careers in therapy."}
+          {description || (locale === 'fr' ? 'Chargement...' : 'Loading...')}
         </div>
 
         {!isPlaying && (

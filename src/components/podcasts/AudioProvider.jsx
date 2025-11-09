@@ -44,6 +44,7 @@ export function AudioProvider({ children }) {
     const play = (episode) => {
       const currentEpisode = episode || state.episode
       if (currentEpisode && currentEpisode.audio && currentEpisode.audio.src) {
+        // If no episode is passed but we have one in state, just resume
         if (!episode && state.episode) {
           if (playerRef.current) {
             playerRef.current.play().catch((error) => {
@@ -53,9 +54,48 @@ export function AudioProvider({ children }) {
           return
         }
         
+        // Check if this is the same episode using ID (most reliable) or URL
+        const isSameEpisodeById = state.episode && 
+          currentEpisode.id && 
+          state.episode.id === currentEpisode.id
+        
+        // Also check by URL (normalize for comparison)
+        const currentSrc = playerRef.current?.currentSrc || ''
+        const newSrc = currentEpisode.audio.src
+        const getUrlPath = (url) => {
+          if (!url) return ''
+          try {
+            if (url.startsWith('http://') || url.startsWith('https://')) {
+              return new URL(url).pathname
+            }
+            return url
+          } catch {
+            // Extract filename from full URL if URL parsing fails
+            const parts = url.split('/')
+            return parts[parts.length - 1]
+          }
+        }
+        const isSameEpisodeByUrl = playerRef.current && 
+          currentSrc && 
+          (getUrlPath(currentSrc) === getUrlPath(newSrc) || 
+           currentSrc.includes(newSrc) || 
+           newSrc.includes(getUrlPath(currentSrc)))
+        
+        const isSameEpisode = isSameEpisodeById || isSameEpisodeByUrl
+        
+        // If it's the same episode, just resume playback without resetting
+        if (isSameEpisode && playerRef.current) {
+          // Same episode - just resume from current position
+          playerRef.current.play().catch((error) => {
+            console.error('Error playing audio:', error)
+          })
+          return
+        }
+        
+        // Different episode - load new audio
         dispatch({ type: ActionKind.SET_META, payload: currentEpisode })
 
-        if (playerRef.current && playerRef.current.currentSrc !== currentEpisode.audio.src) {
+        if (playerRef.current) {
           let playbackRate = playerRef.current.playbackRate
           playerRef.current.src = currentEpisode.audio.src
           playerRef.current.load()
@@ -64,26 +104,61 @@ export function AudioProvider({ children }) {
           playerRef.current.currentTime = 0
 
           console.log('Loading audio from:', currentEpisode.audio.src)
+          
+          // Start playback after loading
+          playerRef.current.play().catch((error) => {
+            console.error('Error playing audio:', error)
+          })
         }
       } else {
         console.warn('Episode or audio source is missing:', currentEpisode)
         return
       }
-      if (playerRef.current) {
-        playerRef.current.play().catch((error) => {
-          console.error('Error playing audio:', error)
-        })
-      }
     }
 
     const pause = () => {
-      playerRef.current?.pause()
+      if (playerRef.current) {
+        playerRef.current.pause()
+      }
     }
 
     const isPlaying = (episode) => {
-      return episode
-        ? state.playing && playerRef.current?.currentSrc === episode.audio.src
-        : state.playing
+      if (!playerRef.current) return false
+      
+      // Check if audio element is actually playing
+      const audioIsPlaying = !playerRef.current.paused && 
+        !playerRef.current.ended && 
+        playerRef.current.readyState > 2
+      
+      if (!episode) {
+        return audioIsPlaying && state.playing
+      }
+      
+      // For a specific episode, check if it matches and is playing
+      if (!episode.audio || !episode.audio.src) return false
+      
+      // Normalize URLs for comparison
+      const getUrlPath = (url) => {
+        if (!url) return ''
+        try {
+          if (url.startsWith('http://') || url.startsWith('https://')) {
+            return new URL(url).pathname
+          }
+          return url
+        } catch {
+          const parts = url.split('/')
+          return parts[parts.length - 1]
+        }
+      }
+      
+      const currentSrc = playerRef.current.currentSrc || ''
+      const episodeSrc = episode.audio.src
+      const srcMatches = getUrlPath(currentSrc) === getUrlPath(episodeSrc) ||
+        currentSrc.includes(episodeSrc) ||
+        episodeSrc.includes(getUrlPath(currentSrc)) ||
+        (episode.id && state.episode?.id === episode.id)
+      
+      return audioIsPlaying && state.playing && srcMatches
     }
 
     const toggle = (episode) => {

@@ -30,7 +30,7 @@ export function Bounce() {
               {t('home.bounce.description') || "New with the 2025-2026 academic year, the University of Ottawa has partnered up with Bounce to provide you with an easy yet accessible way to register for our events. You'll also be able to submit photos of our events through Bounce to share the fun times you had with everyone!"}
             </p>
 
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-center">
               <Button
                 href="https://www.bouncelife.com"
                 target="_blank"

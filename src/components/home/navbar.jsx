@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/articles/investigating-cells-crime', locale)
+  const bannerHref = getLocalizedUrl('/podcasts/6', locale)
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU ARTICLE: Enquêteurs de cellules ou de crimes?'
-      : 'NEW ARTICLE: Investigating Cells or Investigating Crime?'
+      ? 'NOUVEAU! Psychology of Motivation & Procrastination w/ Dr. Rylee Oram'
+      : 'NEW! Psychology of Motivation & Procrastination with Dr. Rylee Oram'
 
   const defaultBanner = (
     <Link

@@ -10,7 +10,7 @@ const urlMappings = {
   fr: {
     '/articles': '/articles',
     '/podcasts': '/podcasts',
-    '/events': '/evenements', 
+    '/events': '/evenements',
     '/contact-us': '/contactez-nous',
     '/general-member-sign-up': '/inscription-membres-generaux',
     '/articles/clinical-support': '/articles/pouvoir-soutien-clinique',
@@ -18,6 +18,7 @@ const urlMappings = {
     '/articles/nuclear-medicine-technologists': '/articles/technologue-medecine-nucleaire',
     '/articles/body-mind-psyche': '/articles/corps-esprit-psyche',
     '/articles/psychometrists-mental-health': '/articles/psychometriciens-sante-mentale',
+    '/articles/crisis-intervention-workers': '/articles/intervenants-situation-crise',
     '/articles/investigating-cells-crime': '/articles/enqueteurs-cellules-crimes'
   }
 }
@@ -37,6 +38,7 @@ const reverseUrlMappings = {
     '/articles/technologue-medecine-nucleaire': '/articles/nuclear-medicine-technologists',
     '/articles/corps-esprit-psyche': '/articles/body-mind-psyche',
     '/articles/psychometriciens-sante-mentale': '/articles/psychometrists-mental-health',
+    '/articles/intervenants-situation-crise': '/articles/crisis-intervention-workers',
     '/articles/enqueteurs-cellules-crimes': '/articles/investigating-cells-crime'
   }
 }
