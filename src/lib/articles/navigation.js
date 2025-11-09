@@ -13,6 +13,10 @@ export const navigation = {
       title: 'Psychology and Mental Health',
       links: [
         {
+          title: 'How Crisis Intervention Workers Protect Mental Health',
+          href: '/articles/crisis-intervention-workers',
+        },
+        {
           title: 'Psychometrists Support Mental Health',
           href: '/articles/psychometrists-mental-health',
         },
@@ -119,6 +123,10 @@ export const navigation = {
     {
       title: 'Psychologie et santé mentale',
       links: [
+        {
+          title: 'Comment les intervenants en situation de crise protègent la santé mentale',
+          href: '/articles/crisis-intervention-workers',
+        },
         {
           title: 'Psychométriciens soutiennent la santé mentale',
           href: '/articles/psychometrists-mental-health',
