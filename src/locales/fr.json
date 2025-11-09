@@ -4,7 +4,7 @@
     "podcasts": "Podcasts",
     "events": "Événements",
     "contactUs": "Contactez-nous",
-    "banner": "NOUVEAU ARTICLE! Le pouvoir du soutien clinique"
+    "banner": "NOUVEAU! Psychology of Motivation & Procrastination w/ Dr. Rylee Oram"
   },
   "footer": {
     "home": "Accueil",
@@ -77,6 +77,7 @@
             "description": "Grâce à des conversations perspicaces avec des professionnels de divers domaines, nous découvrons des parcours de carrière, des avancées industrielles, des conseils précieux pour les étudiants et les professionnels en devenir. Écoutez pour découvrir des professions et différents chemins dans la recherche et la science qui façonnent notre monde!",
             "episodeTitle": "Épisode 4: Reading Between the Scans with Dr. Yale Erenberg (anglais, aperçu)",
             "episodeDescription": "Bienvenue à l'édition de mars du podcast UOLab2Life! Ce mois-ci, nous sommes rejoints par Dr. Yale Erenberg, un radiologiste travaillant dans le sud-ouest de l'Ontario. Dans cet épisode, nous explorons son rôle en tant que radiologiste, les avancées en technologie d'imagerie, et les conseils de carrière pour les étudiants aspirants.",
+            "watchEntireEpisode": "Regarder l'épisode complet",
             "viewAllEpisodes": "Voir tous les épisodes"
           },
           "bounce": {
