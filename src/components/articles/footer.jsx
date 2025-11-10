@@ -1,4 +1,3 @@
-import { Container } from '@/components/home/container'
 import { Link } from '@/components/home/link'
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/home/plus-grid'
 import { useTranslation } from '@/contexts/LanguageContext'
@@ -169,9 +168,10 @@ export function Footer() {
   const { t, locale } = useTranslation()
   
   return (
-    <footer role="contentinfo">
-      <Container>
-        <PlusGrid className="pb-16 pt-16">
+    <footer role="contentinfo" className="w-full">
+      <div className="w-full px-6 lg:px-8">
+        <div className="mx-auto w-full">
+          <PlusGrid className="pb-16 pt-16">
           <PlusGridRow>
             <div className="grid grid-cols-2 gap-y-5 pb-6 lg:grid-cols-6 lg:gap-8">
               <div className="col-span-2 flex">
@@ -221,7 +221,8 @@ export function Footer() {
             </PlusGridItem>
           </PlusGridRow>
         </PlusGrid>
-      </Container>
+        </div>
+      </div>
     </footer>
   )
 }
