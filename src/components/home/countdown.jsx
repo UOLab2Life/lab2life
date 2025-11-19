@@ -6,6 +6,8 @@ import { Heading, Subheading } from '@/components/home/text'
 import { Button } from '@/components/home/button'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { getLocalizedUrl } from '@/lib/url-localization'
+import { supabase } from '@/lib/supabase/client'
+import { formatEventDate, formatEventTime } from '@/lib/date-formatting'
 import { useEffect, useState } from 'react'
 
 export function Countdown() {
@@ -16,10 +18,48 @@ export function Countdown() {
     minutes: 0,
     seconds: 0,
   })
-
-  const targetDate = new Date('2025-10-30T18:30:00-04:00').getTime()
+  const [eventData, setEventData] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const fetchEvent = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('Events')
+          .select('*')
+          .eq('event_id', 3)
+          .single()
+
+        if (error) {
+          console.error('Error fetching event:', error)
+          setLoading(false)
+          return
+        }
+
+        if (data) {
+          setEventData(data)
+        }
+      } catch (err) {
+        console.error('Unexpected error:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchEvent()
+  }, [])
+
+  const targetDate = eventData && eventData.event_date && eventData.event_time
+    ? (() => {
+        const [year, month, day] = eventData.event_date.split('-').map(Number)
+        const [hours, minutes, seconds = 0] = eventData.event_time.split(':').map(Number)
+        return new Date(year, month - 1, day, hours, minutes, seconds).getTime()
+      })()
+    : null
+
+  useEffect(() => {
+    if (!targetDate) return
+
     const timer = setInterval(() => {
       const now = new Date().getTime()
       const difference = targetDate - now
@@ -39,6 +79,40 @@ export function Countdown() {
     return () => clearInterval(timer)
   }, [targetDate])
 
+  const eventTitle = eventData
+    ? (locale === 'fr'
+        ? (eventData.event_name_fr || eventData.event_name_en || '')
+        : (eventData.event_name_en || eventData.event_name_fr || ''))
+    : (t('home.countdown.title') || 'uOttawa Lab2Life Club Fair')
+
+  const eventDescription = eventData
+    ? (locale === 'fr'
+        ? (eventData.event_description_fr || eventData.event_description_en || '')
+        : (eventData.event_description_en || eventData.event_description_fr || ''))
+    : (t('home.countdown.description') || "Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance to win amazing prizes!")
+
+  const eventDate = eventData && eventData.event_date
+    ? formatEventDate(eventData.event_date, null, locale)
+    : (t('home.countdown.date') || 'September 3rd, 2025')
+
+  const eventTime = eventData && eventData.event_time && eventData.event_end_time
+    ? `${formatEventTime(eventData.event_time, locale)} - ${formatEventTime(eventData.event_end_time, locale)}`
+    : eventData && eventData.event_time
+    ? formatEventTime(eventData.event_time, locale)
+    : (t('home.countdown.time') || '10:00 AM - 12:00 PM')
+
+  const eventLocation = eventData
+    ? (locale === 'fr'
+        ? (eventData.event_location_fr || eventData.event_location_en || '')
+        : (eventData.event_location_en || eventData.event_location_fr || ''))
+    : (t('home.countdown.location') || 'Grand Alley (85 University Private)')
+
+  const registrationLink = eventData
+    ? (locale === 'fr'
+        ? (eventData.registration_link_fr || eventData.registration_link_en || '')
+        : (eventData.registration_link_en || eventData.registration_link_fr || ''))
+    : 'https://www.bouncelife.com/events/68f963f6b64c137556790d44'
+
   const timeUnits = [
     { label: t('home.countdown.timeUnits.days') || 'Days', value: timeLeft.days },
     { label: t('home.countdown.timeUnits.hours') || 'Hours', value: timeLeft.hours },
@@ -46,16 +120,28 @@ export function Countdown() {
     { label: t('home.countdown.timeUnits.seconds') || 'Seconds', value: timeLeft.seconds },
   ]
 
+  if (loading) {
+    return (
+      <div className="relative bg-white">
+        <Container className="relative pt-12 pb-8 sm:pt-16 sm:pb-12">
+          <div className="mx-auto max-w-7xl text-center">
+            <p className="text-gray-600">Loading...</p>
+          </div>
+        </Container>
+      </div>
+    )
+  }
+
   return (
     <div className="relative bg-white">
       <Container className="relative pt-12 pb-8 sm:pt-16 sm:pb-12">
         <div className="mx-auto max-w-7xl text-center">
                 <Subheading className="text-lg">{t('home.countdown.upcomingEvent') || 'Upcoming Event'}</Subheading>
                 <Heading as="h2" className="font-inter-semibold mt-4 text-4xl font-bold text-[#003e3e]">
-                  {t('home.countdown.title') || 'uOttawa Lab2Life Club Fair'}
+                  {eventTitle}
                 </Heading>
                 <p className="font-inter-semibold mx-auto mt-8 max-w-6xl text-xl text-gray-600">
-            {t('home.countdown.description') || "Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance to win amazing prizes!"}
+            {eventDescription}
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-16">
@@ -68,7 +154,7 @@ export function Countdown() {
                 />
               </svg>
               <span className="font-inter-semibold text-lg text-[#003e3e] sm:text-xl">
-                {t('home.countdown.date') || 'September 3rd, 2025'}
+                {eventDate}
               </span>
             </div>
             <div className="flex items-center gap-4">
@@ -80,7 +166,7 @@ export function Countdown() {
                 />
               </svg>
               <span className="font-inter-semibold text-lg text-[#003e3e] sm:text-xl">
-                {t('home.countdown.time') || '10:00 AM - 12:00 PM'}
+                {eventTime}
               </span>
             </div>
             <div className="flex items-center gap-4">
@@ -92,7 +178,7 @@ export function Countdown() {
                 />
               </svg>
               <span className="font-inter-semibold text-sm text-[#003e3e] sm:text-lg md:text-xl whitespace-nowrap">
-                {t('home.countdown.location') || 'Grand Alley (85 University Private)'}
+                {eventLocation}
               </span>
             </div>
           </div>
@@ -114,14 +200,16 @@ export function Countdown() {
           </div>
 
           <div className="mt-16 flex flex-col items-center justify-center gap-4">
-            <Button
-              href="https://www.bouncelife.com/events/68f963f6b64c137556790d44"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
-            >
-              {t('home.countdown.registerNow') || 'Register Now'}
-            </Button>
+            {registrationLink && (
+              <Button
+                href={registrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
+              >
+                {t('home.countdown.registerNow') || 'Register Now'}
+              </Button>
+            )}
             <a
               href={getLocalizedUrl('/events', locale)}
               className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3 inline-flex items-center justify-center rounded-full border border-transparent shadow-md whitespace-nowrap font-semibold transition-all duration-300 ease-in-out"
