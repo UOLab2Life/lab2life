@@ -1,5 +1,6 @@
 import '@/styles/global.css'
 import localFont from 'next/font/local'
+import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Providers from './providers'
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={switzer.variable} suppressHydrationWarning>
       <body className="bg-white text-gray-950 antialiased">
         <Providers>{children}</Providers>
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
