@@ -40,7 +40,7 @@ export default function EventDetails({ event }) {
       <div className="space-y-1 text-sm text-gray-700">
         {date && (
           <div>
-            <span className="font-medium">{t('events.eventDetails.date') || 'Date'}:</span> {formatEventDate(date, time, locale)}
+            <span className="font-medium">{t('events.eventDetails.date') || 'Date'}:</span> {formatEventDate(date, null, locale)}
           </div>
         )}
         {time && (

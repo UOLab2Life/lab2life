@@ -178,15 +178,17 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/podcasts/6', locale)
+  const bannerHref = 'https://www.bouncelife.com/events/691cacfdf171eb798e4a8425'
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU! Psychology of Motivation & Procrastination w/ Dr. Rylee Oram'
-      : 'NEW! Psychology of Motivation & Procrastination with Dr. Rylee Oram'
+      ? 'NOUVEAU ÉVÉNEMENT !: Meutre au gala'
+      : 'NEW EVENT!: Murder at the Gala'
 
   const defaultBanner = (
     <Link
       href={bannerHref}
+      target="_blank"
+      rel="noopener noreferrer"
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (
