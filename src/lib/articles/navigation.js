@@ -4,6 +4,10 @@ export const navigation = {
       title: 'Forensic Science',
       links: [
         {
+          title: 'How Forensic Scientists Bring Science Into Justice',
+          href: '/articles/forensic-scientists-bring-justice',
+        },
+        {
           title: 'Investigating Cells or Investigating Crime?',
           href: '/articles/investigating-cells-crime',
         },
@@ -114,6 +118,10 @@ export const navigation = {
     {
       title: 'Science judiciaire',
       links: [
+        {
+          title: 'Comment les scientifiques légistes mettent la science au service de la justice',
+          href: '/articles/forensic-scientists-bring-justice',
+        },
         {
           title: 'Enquêteurs de cellules ou de crimes?',
           href: '/articles/investigating-cells-crime',
