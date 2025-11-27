@@ -27,7 +27,7 @@ export function Countdown() {
         const { data, error } = await supabase
           .from('Events')
           .select('*')
-          .eq('event_id', 3)
+          .eq('event_id', 2)
           .single()
 
         if (error) {
