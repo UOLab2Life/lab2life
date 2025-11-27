@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = 'https://www.bouncelife.com/events/691cacfdf171eb798e4a8425'
+  const bannerHref = getLocalizedUrl('/articles/forensic-scientists-bring-justice', locale)
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU ÉVÉNEMENT !: Meutre au gala'
-      : 'NEW EVENT!: Murder at the Gala'
+      ? 'ARTICLE: Les scientifiques légistes mettent la science au service de la justice'
+      : 'ARTICLE: How Forensic Scientists Bring Science Into Justice'
 
   const defaultBanner = (
     <Link
