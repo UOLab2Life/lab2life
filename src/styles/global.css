@@ -114,6 +114,77 @@
   }
 }
 
+/* Custom scrollbar for sidebar - shadcn style */
+@layer utilities {
+  .sidebar-scrollbar {
+    /* Firefox scrollbar - hidden by default */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent !important;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden !important;
+    max-width: 100%;
+    transition: scrollbar-color 0.2s ease;
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .sidebar-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Hide scrollbar thumb by default */
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    transition: background 0.2s ease;
+  }
+
+  /* Show scrollbar when hovering anywhere in sidebar container - Light mode (default) */
+  .sidebar-container:hover .sidebar-scrollbar {
+    scrollbar-color: rgb(203 213 225 / 0.5) transparent !important;
+  }
+
+  .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(203 213 225 / 0.5) !important;
+    border: 1px solid transparent !important;
+    background-clip: padding-box !important;
+  }
+
+  .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(203 213 225 / 0.8) !important;
+    border: 1px solid transparent !important;
+    background-clip: padding-box !important;
+  }
+
+  /* Dark mode - use #003e3e - ensure it works regardless of where .dark class is applied */
+  html.dark .sidebar-container:hover .sidebar-scrollbar,
+  body.dark .sidebar-container:hover .sidebar-scrollbar,
+  .dark .sidebar-container:hover .sidebar-scrollbar {
+    border: 0 solid transparent !important;
+   }
+
+  html.dark .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb,
+  body.dark .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb,
+  .dark .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(0 62 62 / 0.5) !important;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  html.dark .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb:hover,
+  body.dark .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb:hover,
+  .dark .sidebar-container:hover .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(0 62 62 / 0.8) !important;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+}
+
 @layer base {
   .lab2life-calendar {
     --fc-today-bg-color: #ffffff;

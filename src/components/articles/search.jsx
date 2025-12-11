@@ -16,7 +16,9 @@ import {
 } from 'react'
 import Highlighter from 'react-highlight-words'
 
+import { useLanguage } from '@/contexts/LanguageContext'
 import { navigation } from '@/lib/articles/navigation'
+import { getLocalizedUrl } from '@/lib/url-localization'
 
 function SearchIcon(props) {
   return (
@@ -26,7 +28,7 @@ function SearchIcon(props) {
   )
 }
 
-function useAutocomplete({ close }) {
+function useAutocomplete({ close, locale }) {
   let id = useId()
   let router = useRouter()
   let [autocompleteState, setAutocompleteState] = useState({})
@@ -58,20 +60,49 @@ function useAutocomplete({ close }) {
         navigate,
       },
       getSources({ query }) {
-        return import('@/markdoc/search.mjs').then(({ search }) => {
-          return [
-            {
-              sourceId: 'documentation',
-              getItems() {
-                return search(query, { limit: 5 })
+        return import('@/markdoc/search.mjs')
+          .then(({ search }) => {
+            return [
+              {
+                sourceId: 'documentation',
+                async getItems() {
+                  const q = query?.trim()
+                  if (!q) return []
+
+                  try {
+                    const results = await search(q, { limit: 5 })
+                    if (results?.length) return results
+                  } catch (err) {
+                    console.warn('Indexed search failed, falling back to nav', err)
+                  }
+
+                  const nav = navigation[locale] || navigation.en
+                  const lower = q.toLowerCase()
+                  const fallback = []
+                  for (const section of nav) {
+                    for (const link of section.links) {
+                      if (link.title.toLowerCase().includes(lower)) {
+                        fallback.push({
+                          url: getLocalizedUrl(link.href, locale),
+                          title: link.title,
+                          pageTitle: section.title,
+                        })
+                      }
+                    }
+                  }
+                  return fallback.slice(0, 5)
+                },
+                getItemUrl({ item }) {
+                  return item.url
+                },
+                onSelect: navigate,
               },
-              getItemUrl({ item }) {
-                return item.url
-              },
-              onSelect: navigate,
-            },
-          ]
-        })
+            ]
+          })
+          .catch((err) => {
+            console.warn('Search module load failed', err)
+            return []
+          })
       },
     }),
   )
@@ -114,8 +145,10 @@ function HighlightQuery({ text, query }) {
 
 function SearchResult({ result, autocomplete, collection, query }) {
   let id = useId()
+  const { locale } = useLanguage()
 
-  let sectionTitle = navigation.find((section) =>
+  let navArray = navigation[locale] || navigation.en
+  let sectionTitle = navArray.find((section) =>
     section.links.find((link) => link.href === result.url.split('#')[0]),
   )?.title
   let hierarchy = [sectionTitle, result.pageTitle].filter((x) => typeof x === 'string')
@@ -243,7 +276,7 @@ function CloseOnNavigation({ close, autocomplete }) {
   return null
 }
 
-function SearchDialog({ open, setOpen, className }) {
+function SearchDialog({ open, setOpen, className, locale }) {
   let formRef = useRef(null)
   let panelRef = useRef(null)
   let inputRef = useRef(null)
@@ -260,6 +293,7 @@ function SearchDialog({ open, setOpen, className }) {
     close() {
       close(autocomplete)
     },
+    locale,
   })
 
   useEffect(() => {
@@ -355,6 +389,7 @@ function useSearchProps() {
 
 export function Search() {
   let [modifierKey, setModifierKey] = useState()
+  const { locale } = useLanguage()
   let { buttonProps, dialogProps } = useSearchProps()
 
   useEffect(() => {
@@ -379,7 +414,7 @@ export function Search() {
           </kbd>
         )}
       </button>
-      <SearchDialog {...dialogProps} />
+      <SearchDialog {...dialogProps} locale={locale} />
     </>
   )
 }

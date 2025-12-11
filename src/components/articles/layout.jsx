@@ -164,12 +164,12 @@ export function Layout({ children }) {
       <Header />
       {isIntroPage && <Hero />}
       <div className="max-w-8xl relative mx-auto flex w-full flex-auto justify-center sm:px-2 lg:max-w-full lg:px-8 xl:px-12">
-        <div className="hidden lg:relative lg:block lg:flex-none">
+        <div className="sidebar-container hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-white dark:hidden" />
-          <div className="bg-linear-to-t absolute bottom-0 right-0 top-16 hidden h-12 w-px from-slate-800 dark:block" />
-          <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-slate-800 dark:block" />
-          <div className="top-19 sticky -ml-0.5 h-[calc(100vh-4.75rem)] w-[26rem] overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-2 xl:w-[26rem] xl:pr-4">
-            <Navigation />
+          <div className="top-19 sidebar-scrollbar sticky -ml-0.5 h-[calc(100vh-4.75rem)] w-[26rem] overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-2 xl:w-[26rem] xl:pr-4">
+            <div className="max-w-full">
+              <Navigation />
+            </div>
           </div>
         </div>
         {children}

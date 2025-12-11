@@ -70,6 +70,15 @@ export function middleware(request) {
     return response
   }
 
+  // Rewrite closer-look-forensic-pathology French slug to EN folder path
+  if (pathname === '/articles/regard-approfondi-pathologie-medico-legale') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/closer-look-forensic-pathology'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
   if (parsed) {
     if (parsed.locale === 'fr') {
       const response = NextResponse.next()
