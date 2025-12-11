@@ -4,6 +4,10 @@ export const navigation = {
       title: 'Forensic Science',
       links: [
         {
+          title: 'A Closer Look at Forensic Pathology',
+          href: '/articles/closer-look-forensic-pathology',
+        },
+        {
           title: 'How Forensic Scientists Bring Science Into Justice',
           href: '/articles/forensic-scientists-bring-justice',
         },
@@ -118,6 +122,10 @@ export const navigation = {
     {
       title: 'Science judiciaire',
       links: [
+        {
+          title: 'Un regard approfondi sur la pathologie médico-légale',
+          href: '/articles/closer-look-forensic-pathology',
+        },
         {
           title: 'Comment les scientifiques légistes mettent la science au service de la justice',
           href: '/articles/forensic-scientists-bring-justice',

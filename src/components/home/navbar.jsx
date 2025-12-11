@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/articles/forensic-scientists-bring-justice', locale)
+  const bannerHref = getLocalizedUrl('/articles/closer-look-forensic-pathology', locale)
   const bannerText =
     locale === 'fr'
-      ? 'ARTICLE: Les scientifiques légistes mettent la science au service de la justice'
-      : 'ARTICLE: How Forensic Scientists Bring Science Into Justice'
+      ? 'ARTICLE: Un regard approfondi sur la pathologie médico-légale'
+      : 'ARTICLE: A Closer Look at Forensic Pathology'
 
   const defaultBanner = (
     <Link
