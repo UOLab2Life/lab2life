@@ -21,7 +21,8 @@ const urlMappings = {
     '/articles/crisis-intervention-workers': '/articles/intervenants-situation-crise',
     '/articles/investigating-cells-crime': '/articles/enqueteurs-cellules-crimes',
     '/articles/forensic-scientists-bring-justice': '/articles/scientifiques-legistes-mettent-justice',
-    '/articles/world-pharmacology-pharmacy-business': '/articles/monde-pharmacologie-pharmacie-affaires'
+    '/articles/world-pharmacology-pharmacy-business': '/articles/monde-pharmacologie-pharmacie-affaires',
+    '/articles/closer-look-forensic-pathology': '/articles/regard-approfondi-pathologie-medico-legale'
   }
 }
 
@@ -43,7 +44,9 @@ const reverseUrlMappings = {
     '/articles/intervenants-situation-crise': '/articles/crisis-intervention-workers',
     '/articles/enqueteurs-cellules-crimes': '/articles/investigating-cells-crime',
     '/articles/scientifiques-legistes-mettent-justice': '/articles/forensic-scientists-bring-justice',
-    '/articles/monde-pharmacologie-pharmacie-affaires': '/articles/world-pharmacology-pharmacy-business'
+    '/articles/monde-pharmacologie-pharmacie-affaires': '/articles/world-pharmacology-pharmacy-business',
+    '/articles/regard-approfondi-pathologie-medico-legale': '/articles/closer-look-forensic-pathology',
+    '/articles/regard-approfondi-pathologie-médico-légale': '/articles/closer-look-forensic-pathology'
   }
 }
 
