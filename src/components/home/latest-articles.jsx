@@ -9,6 +9,11 @@ import { formatEventDate } from '@/lib/date-formatting'
 export function LatestArticles() {
   const { t, locale } = useTranslation()
   
+  const descriptionRaw =
+    t('home.latestArticles.description') ||
+    'Check out our latest articles about healthcare and medicine'
+  const description = descriptionRaw.endsWith('!') ? descriptionRaw : `${descriptionRaw}!`
+
   return (
     <div className="mt-8 bg-white pb-0">
       <div className="px-6 lg:px-8">
@@ -17,13 +22,103 @@ export function LatestArticles() {
             <Heading as="h3" className="mt-2">
               {t('home.latestArticles.title') || 'Latest Articles'}
             </Heading>
-            <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-600">
-              {t('home.latestArticles.description') || 'Check out our latest articles about healthcare and medicine'}
+            <p className="mx-auto mt-4 max-w-2xl text-xl text-gray-600 py-4">
+              {description}
             </p>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            
-          <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+            {/* 1. Pharmacology article */}
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+              <img
+                alt={locale === 'fr' ? 'Pharmacologie, Pharmacie et Affaires' : 'Pharmacology, Pharmacy, and Business'}
+                className="aspect-3/2 w-full object-cover"
+                src="https://t3.ftcdn.net/jpg/00/89/56/50/360_F_89565069_3DGtZfY1jzntFsfbffN7o5l1S5YfwYUp.jpg"
+              />
+              <div className="flex flex-1 flex-col p-8">
+                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {locale === 'fr' ? `Le ${formatEventDate('2026-01-19', null, 'fr')}` : 'January 19th, 2026'}
+                </div>
+                <div className="mt-2 text-lg/7 font-medium">
+                  <a
+                    href={getLocalizedUrl('/articles/world-pharmacology-pharmacy-business', locale)}
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
+                    <span className="absolute inset-0"></span>
+                    {locale === 'fr'
+                      ? 'Le monde de la pharmacologie, de la pharmacie et des affaires - Une introduction'
+                      : 'The World of Pharmacology, Pharmacy, and Business - an in-depth introduction'}
+                  </a>
+                </div>
+                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
+                  {locale === 'fr'
+                    ? 'Bonjour à tous et bienvenue dans les articles de Lab2Life! Nous espérons que les vacances et le début du nouveau semestre se sont bien passés. En raison des examens, nous avons fait une petite pause en décembre, mais nous revenons plus forts que jamais...'
+                    : 'Welcome back, everyone, to Lab2Life’s articles! We hope that the winter break—and start of the new semester—have both been excellent and smooth for all. Due to exams, we took a short break in December, but we plan to return stronger than ever...'}
+                </div>
+                <div className="mt-6 flex items-center gap-3">
+                  <img
+                    alt="Maroun Tarabey"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
+                    src="/images/members-carousel/maroun-tarabey.jpg"
+                  />
+                  <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Closer look at forensic pathology */}
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+              <img
+                alt={locale === 'fr' ? 'Pathologie médico-légale' : 'Forensic Pathology'}
+                className="aspect-3/2 w-full object-cover"
+                src="https://app.gladeo.org/sites/default/files/2023-07/Forensic%20Pathologist.jpg"
+              />
+              <div className="flex flex-1 flex-col p-8">
+                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {locale === 'fr' ? `Le ${formatEventDate('2025-11-28', null, 'fr')}` : 'November 28th, 2025'}
+                </div>
+                <div className="mt-2 text-lg/7 font-medium">
+                  <a
+                    href={getLocalizedUrl('/articles/closer-look-forensic-pathology', locale)}
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
+                    <span className="absolute inset-0"></span>
+                    {locale === 'fr'
+                      ? 'Découvrir la vérité: Un regard approfondi sur la pathologie médico-légale'
+                      : 'Uncovering the Truth: A Closer Look at Forensic Pathology'}
+                  </a>
+                </div>
+                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
+                  {locale === 'fr'
+                    ? 'Que se passe-t-il réellement lorsque la médecine rencontre le mystère ? Ce n\'est pas aussi simple qu\'un crossover de Grey\'s Anatomy et Criminal Minds. La véritable réponse se trouve entre les mains des médecins légistes, qui répondent à cette question de façon méthodique...'
+                    : 'What really happens when medicine meets mystery? It is not an epic crossover of Grey\'s Anatomy and Criminal Minds. The answer lies with forensic pathologists who work methodically, one sample at a time, to reveal what the body can tell us...'}
+                </div>
+                <div className="mt-6 flex items-center gap-3">
+                  <img
+                    alt="Lacey Mullin"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
+                    src="/images/members-carousel/lacey-mullin.jpg"
+                  />
+                  <div className="text-base/6 font-medium text-gray-700">Lacey Mullin</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Forensic scientists article */}
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
                 alt="Forensic Science"
                 className="aspect-3/2 w-full object-cover"
@@ -46,97 +141,15 @@ export function LatestArticles() {
                     className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
                   >
                     <span className="absolute inset-0"></span>
-                    {locale === 'fr' ? 'Révéler l\'invisible - Comment les scientifiques légistes mettent la science au service de la justice' : 'Uncovering the Invisible - How Forensic Scientists Bring Science Into Justice'}
+                    {locale === 'fr'
+                      ? 'Révéler l\'invisible - Comment les scientifiques légistes mettent la science au service de la justice'
+                      : 'Uncovering the Invisible - How Forensic Scientists Bring Science Into Justice'}
                   </a>
                 </div>
                 <div className="mt-2 flex-1 text-sm/6 text-gray-500">
                   {locale === 'fr'
-                    ? 'La plupart des enquêtes criminelles commencent rarement par des réponses claires. Elles commencent par des fragments tels qu\'une empreinte digitale sur une vitre, une trace d\'ADN, un résidu chimique ou une empreinte de pas dans la poussière. Alors que les détectives se concentrent sur les interrogatoires et les pistes, les scientifiques légistes travaillent en coulisses...'
-                    : 'Most criminal investigations rarely begin with clear answers. They begin with fragments like a fingerprint on glass, a trace of DNA, a chemical residue, or a footprint in dust. While detectives focus on interviews and leads, forensic scientists work behind the scenes...'}
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <img
-                    alt="Anoosha Rehman"
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/members-carousel/anoosha-rehman.jpg"
-                  />
-                  <div className="text-base/6 font-medium text-gray-700">Anoosha Rehman</div>
-                </div>
-              </div>
-            </div>
-            
-          <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
-              <img
-                alt="Forensic Science"
-                className="aspect-3/2 w-full object-cover"
-                src="https://i.ibb.co/CsD1zc5f/Screenshot-2025-11-02-131303.png"
-              />
-              <div className="flex flex-1 flex-col p-8">
-                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {locale === 'fr' ? `Le ${formatEventDate('2025-11-03', null, 'fr')}` : 'November 3rd, 2025'}
-                </div>
-                <div className="mt-2 text-lg/7 font-medium">
-                  <a
-                    href={getLocalizedUrl('/articles/investigating-cells-crime', locale)}
-                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
-                  >
-                    <span className="absolute inset-0"></span>
-                    {locale === 'fr' ? 'Enquêteurs de cellules ou de crimes? Introduction au domaine de la science judiciaire (l\'analyse scientifique de cas)' : 'Investigating Cells or Investigating Crime? An Introduction to the field of Forensic Science'}
-                  </a>
-                </div>
-                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
-                  {locale === 'fr'
-                    ? 'Bon mois de novembre à tous! Halloween étant passé et un nouveau mois devant nous, uoLab2Life vous présente son dernier thème du mois: la science judiciaire...'
-                    : 'Happy November, everyone! With Halloween done and the beginning of a new month ahead of us, uoLab2Life presents you with our latest theme of the month: Forensic science...'}
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <img
-                    alt="Maroun Tarabey"
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/members-carousel/maroun-tarabey.jpg"
-                  />
-                  <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
-              <img
-                alt="Crisis Intervention Workers"
-                className="aspect-3/2 w-full object-cover"
-                src="https://myaolcc.com/wp-content/uploads/2024/07/JUL-10-community-service-worker-training.jpg"
-              />
-              <div className="flex flex-1 flex-col p-8">
-                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {locale === 'fr' ? `Le ${formatEventDate('2025-11-02', null, 'fr')}` : 'November 2nd, 2025'}
-                </div>
-                <div className="mt-2 text-lg/7 font-medium">
-                  <a
-                    href={getLocalizedUrl('/articles/crisis-intervention-workers', locale)}
-                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
-                  >
-                    <span className="absolute inset-0"></span>
-                    {locale === 'fr' ? 'Quand chaque seconde compte - Comment les intervenants en situation de crise protègent la santé mentale' : 'When Seconds Matter - How Crisis Intervention Workers Protect Mental Health'}
-                  </a>
-                </div>
-                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
-                  {locale === 'fr'
-                    ? 'Pour beaucoup de gens, les crises de santé mentale sont super rares. Mais elles sont présentes dans tous les aspects de la civilisation moderne...'
-                    : 'To many members of the public, mental health crises are substantially rare. However, they are present within all facets of modern civilization...'}
+                    ? 'La plupart des enquêtes criminelles commencent rarement par des réponses claires. Elles commencent par des fragments tels qu\'une empreinte digitale sur une vitre, une trace d\'ADN, un résidu chimique ou une empreinte de pas dans la poussière...'
+                    : 'Most criminal investigations rarely begin with clear answers. They begin with fragments like a fingerprint on glass, a trace of DNA, a chemical residue, or a footprint in dust...'}
                 </div>
                 <div className="mt-6 flex items-center gap-3">
                   <img

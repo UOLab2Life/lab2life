@@ -86,7 +86,7 @@ Nous en avons tous déjà entendu parler de la science judiciaire, que ce soit �
 En 2023, environ 6 302 crimes (crimes sélectionnés, c'est-à-dire les plus courants) ont été commis et signalés au Canada¹. De nombreux crimes étant difficiles à résoudre sur la base des témoignages et des alibis et compte tenu de la nécessité d'établir des vérités plus objectives pour résoudre les crimes et rendre justice, des analyses plus détaillées intégrant la biologie, la chimie et la physique sont nécessaires. C'est là qu'intervient la science judiciaire. 
 
 ---
-¹: [Statistique Canada](https://www150.statcan.gc.ca/n1/daily-quotidien/240725/t005b-eng.htm) (2024, August 21). Police-reported crime for selected offences. Accessed November 1, 2025.
+¹: [Statistique Canada](https://www150.statcan.gc.ca/n1/daily-quotidien/240725/t005b-eng.htm) (2024, August 21). Police-reported crime for selected offences. Accédé le 1er november 2025.
 ---
 
 ## Séparer les faits de la fiction - C’est quoi la science judiciaire?

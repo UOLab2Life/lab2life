@@ -1,8 +1,21 @@
 export const navigation = {
   en: [
     {
+      title: 'Pharmacology',
+      links: [
+        {
+          title: 'The World of Pharmacology, Pharmacy, and Business',
+          href: '/articles/world-pharmacology-pharmacy-business',
+        },
+      ],
+    },
+    {
       title: 'Forensic Science',
       links: [
+        {
+          title: 'A Closer Look at Forensic Pathology',
+          href: '/articles/closer-look-forensic-pathology',
+        },
         {
           title: 'How Forensic Scientists Bring Science Into Justice',
           href: '/articles/forensic-scientists-bring-justice',
@@ -116,8 +129,21 @@ export const navigation = {
   ],
   fr: [
     {
+      title: 'Pharmacologie',
+      links: [
+        {
+          title: 'Le monde de la pharmacologie, de la pharmacie et des affaires',
+          href: '/articles/world-pharmacology-pharmacy-business',
+        },
+      ],
+    },
+    {
       title: 'Science judiciaire',
       links: [
+        {
+          title: 'Un regard approfondi sur la pathologie médico-légale',
+          href: '/articles/regard-approfondi-pathologie-medico-legale',
+        },
         {
           title: 'Comment les scientifiques légistes mettent la science au service de la justice',
           href: '/articles/forensic-scientists-bring-justice',

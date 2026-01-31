@@ -6,11 +6,12 @@ import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading, Subheading } from '@/components/home/text'
 import { useState } from 'react'
-import { SuccessModal } from './success-modal'
 import { useTranslation } from '@/contexts/LanguageContext'
+import { useRouter } from 'next/navigation'
 
 export default function GeneralMemberSignUp() {
   const { t } = useTranslation()
+  const router = useRouter()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +24,6 @@ export default function GeneralMemberSignUp() {
     events: '',
   })
   const [errors, setErrors] = useState({})
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const validateUOttawaEmail = (email) => {
@@ -226,7 +226,7 @@ export default function GeneralMemberSignUp() {
         events: '',
       })
       setErrors({})
-      setIsModalOpen(true)
+      router.push('/general-member-sign-up/success')
     } catch (error) {
       console.error('Error submitting form:', error)
       if (error.name === 'AbortError') {
@@ -574,7 +574,6 @@ export default function GeneralMemberSignUp() {
 
       <Footer />
 
-      <SuccessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   )
 }

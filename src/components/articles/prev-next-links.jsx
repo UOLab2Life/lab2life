@@ -44,8 +44,11 @@ export function PrevNextLinks() {
   // Convert French pathname to English for matching
   const originalPath = getOriginalPath(pathname, locale)
   
-  let allLinks = navigation[locale].flatMap((section) => section.links)
-  let linkIndex = allLinks.findIndex((link) => link.href === originalPath)
+  const allLinks = navigation[locale].flatMap((section) => section.links)
+  const linkIndex = allLinks.findIndex((link) => {
+    const linkOriginal = getOriginalPath(link.href, locale)
+    return linkOriginal === originalPath || link.href === originalPath
+  })
   let previousPage = linkIndex > -1 ? allLinks[linkIndex - 1] : null
   let nextPage = linkIndex > -1 ? allLinks[linkIndex + 1] : null
 
