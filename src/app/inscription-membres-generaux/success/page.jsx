@@ -5,7 +5,6 @@ import { Footer } from '@/components/home/footer'
 import { Gradient } from '@/components/home/gradient'
 import { Navbar } from '@/components/home/navbar'
 import { Heading } from '@/components/home/text'
-import { BounceGeneralMember } from '../bounce-general-member'
 import { useRouter } from 'next/navigation'
 import { useTranslation } from '@/contexts/LanguageContext'
 
@@ -47,10 +46,6 @@ export default function SignUpSuccess() {
             <p className="mb-12 text-xl text-[#003e3e]">
               {t('memberSignUp.successModal.message') || 'Thank you for signing up as a uOttawa Lab2Life general member!'}
             </p>
-
-            <div className="mb-12">
-              <BounceGeneralMember />
-            </div>
 
             <div className="flex flex-col gap-4 justify-center items-center w-full">
               <button

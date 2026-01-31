@@ -1,5 +1,4 @@
 import AboutLayout from '@/components/home/layout'
-import { Bounce } from '@/components/home/bounce'
 import { Countdown } from '@/components/home/countdown'
 import { Footer } from '@/components/home/footer'
 import { Hero } from '@/components/home/hero'
@@ -23,7 +22,6 @@ export default function Homepage() {
         <PodcastPreview />
         <LatestArticles />
         <Instagram />
-        <Bounce />
         {/* <div className="bg-linear-to-b from-white from-50% to-gray-100 py-32">
           <FeatureSection />
           <BentoSection />

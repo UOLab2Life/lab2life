@@ -8,13 +8,13 @@
   },
   "footer": {
     "home": "Accueil",
-    "memberSignUp": "Inscription Membre",
+    "memberSignUp": "Inscription membres",
     "articles": "Articles",
     "podcasts": "Podcasts",
     "events": "Événements",
     "contactUs": "Contactez-nous",
-    "privacyPolicy": "Politique de Confidentialité",
-    "termsOfService": "Conditions d'Utilisation",
+    "privacyPolicy": "Confidentialité",
+    "termsOfService": "Conditions d'utilisation",
     "description": "Dédié à promouvoir et aider les étudiants à explorer diverses carrières dans les soins de santé et la médecine.",
     "email": "Courriel"
   },

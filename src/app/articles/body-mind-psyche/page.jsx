@@ -15,7 +15,7 @@ title: "The Body, the Mind, and the Psyche - Mental Health with uoLab2Life"
 *Written by Maroun Tarabey*  
 *October 13th, 2025*
 
-![Mental Health Image](https://drpriyankaphysioclinics.com/wp-content/uploads/2023/08/23.png)
+![Mental Health Image](https://alldaymedicalcare.com/wp-content/uploads/2024/08/mental-health-2-1.jpg)
 
 ---
 ## Introduction
@@ -71,7 +71,7 @@ title: "Le corps, l'esprit et la psyché \- La santé mentale avec uoLab2Life"
 *Par Maroun Tarabey*  
 *Le 13 octobre 2025*
 
-![Mental Health Image](https://drpriyankaphysioclinics.com/wp-content/uploads/2023/08/23.png)
+![Mental Health Image](https://alldaymedicalcare.com/wp-content/uploads/2024/08/mental-health-2-1.jpg)
 
 ---
 ## Introduction
@@ -117,9 +117,9 @@ Il est important de se rappeler que, quelle que soit la difficulté, vous n'ête
 
 ## Références
 
-- University of Waterloo (n.d.). Who does what? Types of mental health practitioners. Reçu le 13 octobre 2025 de https://uwaterloo.ca/mechanical-mechatronics-engineering/mme-wellness-program/get-help-now/who-does-what-types-mental-health-practitioners
-- Centre for Addiction and Mental Health (n.d.). Mental Illness and Addiction: Facts and Statistics. Reçu le 13 octobre 2025 de https://www.camh.ca/en/driving-change/the-crisis-is-real/mental-health-statistics
-- Canadian Mental Health Association (2021). Fast Facts about Mental Health and Mental Illness. Reçu le 13 octobre 2025 de  https://cmha.ca/brochure/fast-facts-about-mental-illness/`
+- [University of Waterloo](https://uwaterloo.ca/mechanical-mechatronics-engineering/mme-wellness-program/get-help-now/who-does-what-types-mental-health-practitioners) (s.d.). Who does what? Types of mental health practitioners. Accédé le 13 octobre 2025.
+- [Centre for Addiction and Mental Health](https://www.camh.ca/en/driving-change/the-crisis-is-real/mental-health-statistics) (s.d.). Mental Illness and Addiction: Facts and Statistics. Accédé le 13 octobre 2025.
+- [Canadian Mental Health Association](https://cmha.ca/brochure/fast-facts-about-mental-illness/) (2021). Fast Facts about Mental Health and Mental Illness. Accédé le 13 octobre 2025.`
 
 export default function BodyMindPsychePage() {
   const { locale } = useLanguage()

@@ -3,11 +3,12 @@
 import { Container } from '@/components/home/container'
 import { Heading, Subheading } from '@/components/home/text'
 import { useState } from 'react'
-import { SuccessModal } from '../general-member-sign-up/success-modal'
 import { useTranslation } from '@/contexts/LanguageContext'
+import { useRouter } from 'next/navigation'
 
 export default function InscriptionMembresGenerauxPage() {
   const { t } = useTranslation()
+  const router = useRouter()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,7 +21,6 @@ export default function InscriptionMembresGenerauxPage() {
     events: '',
   })
   const [errors, setErrors] = useState({})
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const validateUOttawaEmail = (email) => {
@@ -164,8 +164,6 @@ export default function InscriptionMembresGenerauxPage() {
     try {
       await new Promise(resolve => setTimeout(resolve, 2000))
       
-      setIsModalOpen(true)
-      
       setFormData({
         firstName: '',
         lastName: '',
@@ -177,6 +175,7 @@ export default function InscriptionMembresGenerauxPage() {
         interest: '',
         events: '',
       })
+      router.push('/inscription-membres-generaux/success')
     } catch (error) {
       console.error('Error submitting form:', error)
       setErrors({ submit: t('memberSignUp.form.errors.submitFailed') || 'Failed to submit application. Please try again.' })
@@ -513,7 +512,6 @@ export default function InscriptionMembresGenerauxPage() {
         </Container>
       </div>
 
-      <SuccessModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
 }

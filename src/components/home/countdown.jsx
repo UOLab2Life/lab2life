@@ -27,7 +27,7 @@ export function Countdown() {
         const { data, error } = await supabase
           .from('Events')
           .select('*')
-          .eq('event_id', 2)
+          .eq('event_id', 3)
           .single()
 
         if (error) {
@@ -92,8 +92,10 @@ export function Countdown() {
     : (t('home.countdown.description') || "Join us for an exciting day of learning more about what our club is all about! Don't forget to come to our table and spin the wheel for a chance to win amazing prizes!")
 
   const eventDate = eventData && eventData.event_date
-    ? formatEventDate(eventData.event_date, null, locale)
-    : (t('home.countdown.date') || 'September 3rd, 2025')
+    ? (locale === 'fr'
+        ? `Le ${formatEventDate(eventData.event_date, null, 'fr')}`
+        : formatEventDate(eventData.event_date, null, 'en'))
+    : (t('home.countdown.date') || (locale === 'fr' ? 'Le 3 septembre 2025' : 'September 3rd, 2025'))
 
   const eventTime = eventData && eventData.event_time && eventData.event_end_time
     ? `${formatEventTime(eventData.event_time, locale)} - ${formatEventTime(eventData.event_end_time, locale)}`
