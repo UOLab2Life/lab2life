@@ -1,6 +1,15 @@
 export const navigation = {
   en: [
     {
+      title: 'Pharmacology',
+      links: [
+        {
+          title: 'The World of Pharmacology, Pharmacy, and Business',
+          href: '/articles/world-pharmacology-pharmacy-business',
+        },
+      ],
+    },
+    {
       title: 'Forensic Science',
       links: [
         {
@@ -115,6 +124,15 @@ export const navigation = {
     },
   ],
   fr: [
+    {
+      title: 'Pharmacologie',
+      links: [
+        {
+          title: 'Le monde de la pharmacologie, de la pharmacie et des affaires',
+          href: '/articles/world-pharmacology-pharmacy-business',
+        },
+      ],
+    },
     {
       title: 'Science judiciaire',
       links: [

@@ -22,8 +22,53 @@ export function LatestArticles() {
             </p>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            
-          <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+            {/* 1. Pharmacology article */}
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+              <img
+                alt={locale === 'fr' ? 'Pharmacologie, Pharmacie et Affaires' : 'Pharmacology, Pharmacy, and Business'}
+                className="aspect-3/2 w-full object-cover"
+                src="https://t3.ftcdn.net/jpg/00/89/56/50/360_F_89565069_3DGtZfY1jzntFsfbffN7o5l1S5YfwYUp.jpg"
+              />
+              <div className="flex flex-1 flex-col p-8">
+                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
+                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {locale === 'fr' ? `Le ${formatEventDate('2026-01-19', null, 'fr')}` : 'January 19th, 2026'}
+                </div>
+                <div className="mt-2 text-lg/7 font-medium">
+                  <a
+                    href={getLocalizedUrl('/articles/world-pharmacology-pharmacy-business', locale)}
+                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
+                  >
+                    <span className="absolute inset-0"></span>
+                    {locale === 'fr'
+                      ? 'Le monde de la pharmacologie, de la pharmacie et des affaires - Une introduction'
+                      : 'The World of Pharmacology, Pharmacy, and Business - an in-depth introduction'}
+                  </a>
+                </div>
+                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
+                  {locale === 'fr'
+                    ? 'Bonjour à tous et bienvenue dans les articles de Lab2Life! Nous espérons que les vacances et le début du nouveau semestre se sont bien passés. En raison des examens, nous avons fait une petite pause en décembre, mais nous revenons plus forts que jamais...'
+                    : 'Welcome back, everyone, to Lab2Life’s articles! We hope that the winter break—and start of the new semester—have both been excellent and smooth for all. Due to exams, we took a short break in December, but we plan to return stronger than ever...'}
+                </div>
+                <div className="mt-6 flex items-center gap-3">
+                  <img
+                    alt="Maroun Tarabey"
+                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
+                    src="/images/members-carousel/maroun-tarabey.jpg"
+                  />
+                  <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Forensic science article */}
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
                 alt="Forensic Science"
                 className="aspect-3/2 w-full object-cover"
@@ -64,10 +109,11 @@ export function LatestArticles() {
                 </div>
               </div>
             </div>
-            
-          <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
+
+            {/* 3. Investigating cells article */}
+            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
               <img
-                alt="Forensic Science"
+                alt="Forensic Science Intro"
                 className="aspect-3/2 w-full object-cover"
                 src="https://i.ibb.co/CsD1zc5f/Screenshot-2025-11-02-131303.png"
               />
@@ -103,48 +149,6 @@ export function LatestArticles() {
                     src="/images/members-carousel/maroun-tarabey.jpg"
                   />
                   <div className="text-base/6 font-medium text-gray-700">Maroun Tarabey</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-[#003e3e]/60 ring-1 ring-black/5">
-              <img
-                alt="Crisis Intervention Workers"
-                className="aspect-3/2 w-full object-cover"
-                src="https://myaolcc.com/wp-content/uploads/2024/07/JUL-10-community-service-worker-training.jpg"
-              />
-              <div className="flex flex-1 flex-col p-8">
-                <div className="flex items-center gap-2 text-sm/5 text-gray-700">
-                  <svg className="h-4 w-4 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {locale === 'fr' ? `Le ${formatEventDate('2025-11-02', null, 'fr')}` : 'November 2nd, 2025'}
-                </div>
-                <div className="mt-2 text-lg/7 font-medium">
-                  <a
-                    href={getLocalizedUrl('/articles/crisis-intervention-workers', locale)}
-                    className="text-[#003e3e] transition-colors hover:text-[#003e3e]/80"
-                  >
-                    <span className="absolute inset-0"></span>
-                    {locale === 'fr' ? 'Quand chaque seconde compte - Comment les intervenants en situation de crise protègent la santé mentale' : 'When Seconds Matter - How Crisis Intervention Workers Protect Mental Health'}
-                  </a>
-                </div>
-                <div className="mt-2 flex-1 text-sm/6 text-gray-500">
-                  {locale === 'fr'
-                    ? 'Pour beaucoup de gens, les crises de santé mentale sont super rares. Mais elles sont présentes dans tous les aspects de la civilisation moderne...'
-                    : 'To many members of the public, mental health crises are substantially rare. However, they are present within all facets of modern civilization...'}
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <img
-                    alt="Anoosha Rehman"
-                    className="aspect-square size-6 rounded-full object-cover ring-1 ring-[#003e3e]/30"
-                    src="/images/members-carousel/anoosha-rehman.jpg"
-                  />
-                  <div className="text-base/6 font-medium text-gray-700">Anoosha Rehman</div>
                 </div>
               </div>
             </div>

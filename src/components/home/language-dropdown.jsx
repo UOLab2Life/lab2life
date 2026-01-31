@@ -32,15 +32,15 @@ export function LanguageDropdown() {
     return (
       <div className="relative">
         <button
-          className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-black/5 text-slate-700 hover:bg-black/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+          className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-transparent text-white hover:bg-white/10 dark:bg-transparent dark:text-white dark:hover:bg-white/10"
           aria-label="Select language"
         >
-          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
           </svg>
-          <span>EN</span>
+          <span className="text-white">EN</span>
           <svg 
-            className="h-3 w-3 transition-transform" 
+            className="h-3 w-3 transition-transform text-white" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -61,15 +61,15 @@ export function LanguageDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-black/5 text-slate-700 hover:bg-black/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+        className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-transparent text-white hover:bg-white/10 dark:bg-transparent dark:text-white dark:hover:bg-white/10"
         aria-label="Select language"
       >
-        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
         </svg>
-        <span>{currentLanguage.name}</span>
+        <span className="text-white">{currentLanguage.name}</span>
         <svg 
-          className={`h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
+          className={`h-3 w-3 transition-transform text-white ${isOpen ? 'rotate-180' : ''}`} 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"

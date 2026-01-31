@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/articles/forensic-scientists-bring-justice', locale)
+  const bannerHref = 'https://forms.gle/CjjKYPTkkD7A5g8y5'
   const bannerText =
     locale === 'fr'
-      ? 'ARTICLE: Les scientifiques légistes mettent la science au service de la justice'
-      : 'ARTICLE: How Forensic Scientists Bring Science Into Justice'
+      ? 'NOUVEAU ÉVÉNEMENT: Pharmacologie Shark Tank'
+      : 'NEW EVENT: Pharmacology Shark Tank'
 
   const defaultBanner = (
     <Link
