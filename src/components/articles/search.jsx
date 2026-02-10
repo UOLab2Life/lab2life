@@ -16,6 +16,7 @@ import {
 } from 'react'
 import Highlighter from 'react-highlight-words'
 
+import { useLanguage } from '@/contexts/LanguageContext'
 import { navigation } from '@/lib/articles/navigation'
 
 function SearchIcon(props) {
@@ -114,8 +115,10 @@ function HighlightQuery({ text, query }) {
 
 function SearchResult({ result, autocomplete, collection, query }) {
   let id = useId()
+  const { locale } = useLanguage()
+  const localizedNavigation = navigation[locale] || []
 
-  let sectionTitle = navigation.find((section) =>
+  let sectionTitle = localizedNavigation.find((section) =>
     section.links.find((link) => link.href === result.url.split('#')[0]),
   )?.title
   let hierarchy = [sectionTitle, result.pageTitle].filter((x) => typeof x === 'string')
