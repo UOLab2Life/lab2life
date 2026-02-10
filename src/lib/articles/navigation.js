@@ -1,8 +1,25 @@
 export const navigation = {
   en: [
     {
+      title: 'Sports Medicine',
+      links: [
+        {
+          title: 'The Field of Sports Medicine',
+          href: '/articles/field-sports-medicine',
+        },
+      ],
+    },
+    {
       title: 'Pharmacology',
       links: [
+        {
+          title: 'The Role of Clinical Pharmacometricians in Modern Medicine',
+          href: '/articles/clinical-pharmacometricians-modern-medicine',
+        },
+        {
+          title: 'A Closer Look at a Career in Toxicology',
+          href: '/articles/science-safety-toxicology',
+        },
         {
           title: 'The World of Pharmacology, Pharmacy, and Business',
           href: '/articles/world-pharmacology-pharmacy-business',
@@ -47,7 +64,7 @@ export const navigation = {
       title: 'Clinical Support',
       links: [
         {
-          title: 'Nuclear Medicine Technologists',
+          title: 'Inside the Role of Nuclear Medicine Technologists',
           href: '/articles/nuclear-medicine-technologists',
         },
         {
@@ -129,8 +146,25 @@ export const navigation = {
   ],
   fr: [
     {
+      title: 'Médecine du sport',
+      links: [
+        {
+          title: 'Le domaine de la médecine du sport',
+          href: '/articles/field-sports-medicine',
+        },
+      ],
+    },
+    {
       title: 'Pharmacologie',
       links: [
+        {
+          title: 'Les pharmacométriciens cliniques dans la médecine moderne',
+          href: '/articles/clinical-pharmacometricians-modern-medicine',
+        },
+        {
+          title: 'Un regard approfondi sur une carrière en toxicologie',
+          href: '/articles/science-safety-toxicology',
+        },
         {
           title: 'Le monde de la pharmacologie, de la pharmacie et des affaires',
           href: '/articles/world-pharmacology-pharmacy-business',

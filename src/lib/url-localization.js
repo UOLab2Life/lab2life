@@ -22,6 +22,9 @@ const urlMappings = {
     '/articles/investigating-cells-crime': '/articles/enqueteurs-cellules-crimes',
     '/articles/forensic-scientists-bring-justice': '/articles/scientifiques-legistes-mettent-justice',
     '/articles/world-pharmacology-pharmacy-business': '/articles/monde-pharmacologie-pharmacie-affaires',
+    '/articles/science-safety-toxicology': '/articles/science-securite-toxicologie',
+    '/articles/clinical-pharmacometricians-modern-medicine': '/articles/pharmacometriciens-clinique-medecine-moderne',
+    '/articles/field-sports-medicine': '/articles/domaine-medecine-sport',
     '/articles/closer-look-forensic-pathology': '/articles/regard-approfondi-pathologie-medico-legale'
   }
 }
@@ -45,6 +48,9 @@ const reverseUrlMappings = {
     '/articles/enqueteurs-cellules-crimes': '/articles/investigating-cells-crime',
     '/articles/scientifiques-legistes-mettent-justice': '/articles/forensic-scientists-bring-justice',
     '/articles/monde-pharmacologie-pharmacie-affaires': '/articles/world-pharmacology-pharmacy-business',
+    '/articles/science-securite-toxicologie': '/articles/science-safety-toxicology',
+    '/articles/pharmacometriciens-clinique-medecine-moderne': '/articles/clinical-pharmacometricians-modern-medicine',
+    '/articles/domaine-medecine-sport': '/articles/field-sports-medicine',
     '/articles/regard-approfondi-pathologie-medico-legale': '/articles/closer-look-forensic-pathology',
     '/articles/regard-approfondi-pathologie-médico-légale': '/articles/closer-look-forensic-pathology'
   }
