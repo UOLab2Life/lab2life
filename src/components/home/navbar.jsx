@@ -178,17 +178,15 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = 'https://forms.gle/CjjKYPTkkD7A5g8y5'
+  const bannerHref = getLocalizedUrl('/articles/field-sports-medicine', locale)
   const bannerText =
     locale === 'fr'
-      ? 'NOUVEAU ÉVÉNEMENT: Pharmacologie Shark Tank'
-      : 'NEW EVENT: Pharmacology Shark Tank'
+      ? 'ARTICLE: Le domaine de la médecine du sport'
+      : 'ARTICLE: The Field of Sports Medicine'
 
   const defaultBanner = (
     <Link
       href={bannerHref}
-      target="_blank"
-      rel="noopener noreferrer"
       className="data-hover:bg-[#99c96f]/30 flex items-center gap-1 rounded-full bg-[#99c96f]/35 px-2 py-0.5 text-xs font-semibold text-white sm:px-3 sm:text-sm/6"
     >
       {shortText ? (

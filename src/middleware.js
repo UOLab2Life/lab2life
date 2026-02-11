@@ -79,6 +79,33 @@ export function middleware(request) {
     return response
   }
 
+  // Rewrite science-safety-toxicology French slug to EN folder path
+  if (pathname === '/articles/science-securite-toxicologie') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/science-safety-toxicology'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
+  // Rewrite clinical-pharmacometricians French slug to EN folder path
+  if (pathname === '/articles/pharmacometriciens-clinique-medecine-moderne') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/clinical-pharmacometricians-modern-medicine'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
+  // Rewrite field-sports-medicine French slug to EN folder path
+  if (pathname === '/articles/domaine-medecine-sport') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/field-sports-medicine'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
   // Rewrite closer-look-forensic-pathology French slug to EN folder path
   if (
     pathname === '/articles/regard-approfondi-pathologie-medico-legale' ||

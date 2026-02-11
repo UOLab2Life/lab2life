@@ -27,8 +27,8 @@ export function Countdown() {
         const { data, error } = await supabase
           .from('Events')
           .select('*')
-          .eq('event_id', 3)
-          .single()
+          .order('event_id', { ascending: false })
+          .limit(1)
 
         if (error) {
           console.error('Error fetching event:', error)
@@ -36,8 +36,8 @@ export function Countdown() {
           return
         }
 
-        if (data) {
-          setEventData(data)
+        if (data && data.length > 0) {
+          setEventData(data[0])
         }
       } catch (err) {
         console.error('Unexpected error:', err)

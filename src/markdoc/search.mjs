@@ -41,6 +41,11 @@ function extractSections(node, sections, isRoot = true) {
   }
 }
 
+function extractEnglishContentFromJsx(source) {
+  let match = source.match(/const\s+englishContent\s*=\s*`([\s\S]*?)`/)
+  return match ? match[1] : null
+}
+
 export default function withSearch(nextConfig = {}) {
   let cache = new Map()
 
@@ -53,8 +58,10 @@ export default function withSearch(nextConfig = {}) {
             let pagesDir = path.join(process.cwd(), 'src/app')
             this.addContextDependency(pagesDir)
 
-            let files = glob.sync('**/page.md', { cwd: pagesDir })
-            let data = files.map((file) => {
+            let markdownFiles = glob.sync('**/page.md', { cwd: pagesDir })
+            let jsxArticleFiles = glob.sync('articles/**/page.jsx', { cwd: pagesDir })
+
+            let mdData = markdownFiles.map((file) => {
               let url = file === 'page.md' ? '/' : `/${file.replace(/\/page\.md$/, '')}`
               let md = fs.readFileSync(path.join(pagesDir, file), 'utf8')
 
@@ -73,17 +80,46 @@ export default function withSearch(nextConfig = {}) {
               return { url, sections }
             })
 
+            let jsxData = jsxArticleFiles
+              .map((file) => {
+                let url = `/${file.replace(/\/page\.jsx$/, '')}`
+                let source = fs.readFileSync(path.join(pagesDir, file), 'utf8')
+                let md = extractEnglishContentFromJsx(source)
+                if (!md) return null
+
+                let sections
+
+                if (cache.get(file)?.[0] === md) {
+                  sections = cache.get(file)[1]
+                } else {
+                  let ast = Markdoc.parse(md)
+                  let title = ast.attributes?.frontmatter?.match(/^title:\s*"?(.+?)"?\s*$/m)?.[1]
+                  sections = [[title, null, []]]
+                  extractSections(ast, sections)
+                  cache.set(file, [md, sections])
+                }
+
+                return { url, sections }
+              })
+              .filter(Boolean)
+
+            // Prefer markdown pages when both representations exist for the same URL.
+            let dataByUrl = new Map()
+            for (let item of jsxData) dataByUrl.set(item.url, item)
+            for (let item of mdData) dataByUrl.set(item.url, item)
+            let data = [...dataByUrl.values()]
+
             // When this file is imported within the application
             // the following module is loaded:
             return `
               import FlexSearch from 'flexsearch'
 
               let sectionIndex = new FlexSearch.Document({
-                tokenize: 'full',
+                tokenize: 'forward',
                 document: {
                   id: 'url',
-                  index: 'content',
-                  store: ['title', 'pageTitle'],
+                  index: ['title', 'pageTitle', 'content'],
+                  store: ['title', 'pageTitle', 'content'],
                 },
                 context: {
                   resolution: 9,
@@ -106,18 +142,68 @@ export default function withSearch(nextConfig = {}) {
               }
 
               export function search(query, options = {}) {
-                let result = sectionIndex.search(query, {
-                  ...options,
-                  enrich: true,
-                })
-                if (result.length === 0) {
+                let normalizedQuery = String(query || '').trim().toLowerCase()
+                if (!normalizedQuery) {
                   return []
                 }
-                return result[0].result.map((item) => ({
-                  url: item.id,
-                  title: item.doc.title,
-                  pageTitle: item.doc.pageTitle,
-                }))
+
+                let requestedLimit = Math.max(1, Number(options.limit ?? 5))
+                let candidateLimit = requestedLimit * 6
+                let scoreById = new Map()
+                let docById = new Map()
+
+                let searches = [
+                  { index: 'title', weight: 7 },
+                  { index: 'pageTitle', weight: 4 },
+                  { index: 'content', weight: 1 },
+                ]
+
+                for (let searchConfig of searches) {
+                  let resultGroups = sectionIndex.search(normalizedQuery, {
+                    ...options,
+                    enrich: true,
+                    suggest: true,
+                    index: searchConfig.index,
+                    limit: candidateLimit,
+                  })
+
+                  for (let group of resultGroups || []) {
+                    let rankedResults = group?.result || []
+                    for (let rank = 0; rank < rankedResults.length; rank++) {
+                      let item = rankedResults[rank]
+                      if (!item?.id || !item?.doc) continue
+
+                      let previousScore = scoreById.get(item.id) || 0
+                      let rrfScore = searchConfig.weight / (rank + 1)
+                      scoreById.set(item.id, previousScore + rrfScore)
+                      docById.set(item.id, item.doc)
+                    }
+                  }
+                }
+
+                // Exact substring boosts improve precision for short queries.
+                for (let [id, doc] of docById.entries()) {
+                  let title = String(doc.title || '').toLowerCase()
+                  let pageTitle = String(doc.pageTitle || '').toLowerCase()
+                  let content = String(doc.content || '').toLowerCase()
+                  let boost = 0
+                  if (title.includes(normalizedQuery)) boost += 20
+                  if (pageTitle.includes(normalizedQuery)) boost += 8
+                  if (content.includes(normalizedQuery)) boost += 2
+                  scoreById.set(id, (scoreById.get(id) || 0) + boost)
+                }
+
+                return [...scoreById.entries()]
+                  .sort((a, b) => b[1] - a[1])
+                  .slice(0, requestedLimit)
+                  .map(([id]) => {
+                    let doc = docById.get(id) || {}
+                    return {
+                      url: id,
+                      title: doc.title,
+                      pageTitle: doc.pageTitle,
+                    }
+                  })
               }
             `
           }),
