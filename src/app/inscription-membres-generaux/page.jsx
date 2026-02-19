@@ -189,7 +189,7 @@ export default function InscriptionMembresGenerauxPage() {
       <div className="py-8 pb-16 sm:py-16 sm:pb-24">
         <Container>
           <div className="mx-auto max-w-6xl text-center">
-            <Heading as="h2" className="mx-auto sm:whitespace-nowrap">
+            <Heading as="h2" className="mx-auto">
               {t('memberSignUp.title') || 'Inscription des membres généraux'}
             </Heading>
 

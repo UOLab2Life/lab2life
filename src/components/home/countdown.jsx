@@ -146,7 +146,7 @@ export function Countdown() {
             {eventDescription}
           </p>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-16">
+          <div className="mt-12 flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16">
             <div className="flex items-center gap-4">
               <svg className="h-8 w-8 text-[#003e3e]" fill="currentColor" viewBox="0 0 20 20">
                 <path

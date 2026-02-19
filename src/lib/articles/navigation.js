@@ -4,6 +4,10 @@ export const navigation = {
       title: 'Sports Medicine',
       links: [
         {
+          title: 'The Work of Athletic Therapists',
+          href: '/articles/work-athletic-therapists',
+        },
+        {
           title: 'The Field of Sports Medicine',
           href: '/articles/field-sports-medicine',
         },
@@ -148,6 +152,10 @@ export const navigation = {
     {
       title: 'Médecine du sport',
       links: [
+        {
+          title: 'Le travail des thérapeutes sportifs',
+          href: '/articles/work-athletic-therapists',
+        },
         {
           title: 'Le domaine de la médecine du sport',
           href: '/articles/field-sports-medicine',

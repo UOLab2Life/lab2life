@@ -25,6 +25,7 @@ const urlMappings = {
     '/articles/science-safety-toxicology': '/articles/science-securite-toxicologie',
     '/articles/clinical-pharmacometricians-modern-medicine': '/articles/pharmacometriciens-clinique-medecine-moderne',
     '/articles/field-sports-medicine': '/articles/domaine-medecine-sport',
+    '/articles/work-athletic-therapists': '/articles/travail-therapeutes-sportifs',
     '/articles/closer-look-forensic-pathology': '/articles/regard-approfondi-pathologie-medico-legale'
   }
 }
@@ -51,6 +52,7 @@ const reverseUrlMappings = {
     '/articles/science-securite-toxicologie': '/articles/science-safety-toxicology',
     '/articles/pharmacometriciens-clinique-medecine-moderne': '/articles/clinical-pharmacometricians-modern-medicine',
     '/articles/domaine-medecine-sport': '/articles/field-sports-medicine',
+    '/articles/travail-therapeutes-sportifs': '/articles/work-athletic-therapists',
     '/articles/regard-approfondi-pathologie-medico-legale': '/articles/closer-look-forensic-pathology',
     '/articles/regard-approfondi-pathologie-médico-légale': '/articles/closer-look-forensic-pathology'
   }

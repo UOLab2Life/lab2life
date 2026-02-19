@@ -54,7 +54,7 @@ Sports medicine is a highly variable yet extremely interesting field that is onl
 const frenchContent = `---
 title: "Les m\u00e9decins sur le terrain: le domaine de la m\u00e9decine du sport"
 ---
-*Written by Maroun Tarabey*  
+*Écrit par Maroun Tarabey*  
 *Le 1er f\u00e9vrier 2026*
 
 ![Doctor adjusting child's knee image](https://www.academyorthopedics.com/wp-content/uploads/2023/03/Sports-Medicine-1024x684.png)
