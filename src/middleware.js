@@ -106,6 +106,15 @@ export function middleware(request) {
     return response
   }
 
+  // Rewrite work-athletic-therapists French slug to EN folder path
+  if (pathname === '/articles/travail-therapeutes-sportifs') {
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = '/articles/work-athletic-therapists'
+    const response = NextResponse.rewrite(rewriteUrl)
+    response.headers.set('x-locale', 'fr')
+    return response
+  }
+
   // Rewrite closer-look-forensic-pathology French slug to EN folder path
   if (
     pathname === '/articles/regard-approfondi-pathologie-medico-legale' ||

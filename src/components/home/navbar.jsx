@@ -178,11 +178,11 @@ function MobileNav() {
 export function Navbar({ showBanner = true, shortText = false }) {
   const { t, locale } = useTranslation()
   
-  const bannerHref = getLocalizedUrl('/articles/field-sports-medicine', locale)
+  const bannerHref = getLocalizedUrl('/articles/work-athletic-therapists', locale)
   const bannerText =
     locale === 'fr'
-      ? 'ARTICLE: Le domaine de la médecine du sport'
-      : 'ARTICLE: The Field of Sports Medicine'
+      ? 'NOUVEAU ARTICLE: Le travail des thérapeutes sportifs'
+      : 'NEW ARTICLE: The Work of Athletic Therapists'
 
   const defaultBanner = (
     <Link

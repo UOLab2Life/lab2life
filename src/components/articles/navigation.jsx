@@ -8,6 +8,7 @@ import { formatEventDate } from '@/lib/date-formatting'
 import { navigation } from '@/lib/articles/navigation'
 
 const articleMetaByHref = {
+  '/articles/work-athletic-therapists': { author: 'Anoosha Rehman', date: '2026-02-16' },
   '/articles/field-sports-medicine': { author: 'Maroun Tarabey', date: '2026-02-01' },
   '/articles/clinical-pharmacometricians-modern-medicine': { author: 'Anoosha Rehman', date: '2026-01-25' },
   '/articles/science-safety-toxicology': { author: 'Lacey Mullin', date: '2026-01-21' },
