@@ -170,6 +170,32 @@ export function PodcastPreview({ mp3FileName = 'episode-6-preview.mp3' }) {
   const { t, locale } = useTranslation()
   const [showAudioPlayer, setShowAudioPlayer] = useState(false)
   const [hasStartedPlaying, setHasStartedPlaying] = useState(false)
+  const [latestEpisodeId, setLatestEpisodeId] = useState(6)
+
+  useEffect(() => {
+    const fetchLatestEpisodeId = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('Episodes')
+          .select('episode_id')
+          .order('episode_id', { ascending: false })
+          .limit(1)
+
+        if (error) {
+          console.error('Error fetching latest episode ID:', error)
+          return
+        }
+
+        if (data && data.length > 0) {
+          setLatestEpisodeId(data[0].episode_id)
+        }
+      } catch (err) {
+        console.error('Unexpected error fetching latest episode ID:', err)
+      }
+    }
+
+    fetchLatestEpisodeId()
+  }, [])
 
   const handleCloseAudioPlayer = () => {
     setShowAudioPlayer(false)
@@ -203,10 +229,10 @@ export function PodcastPreview({ mp3FileName = 'episode-6-preview.mp3' }) {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4">
             <Button
-          href={getLocalizedUrl('/podcasts/6', locale)}
+          href={getLocalizedUrl(`/podcasts/${latestEpisodeId}`, locale)}
           className="mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
         >
-          {t('home.podcastPreview.watchEntireEpisode') || 'Watch Entire Episode'}
+          {locale === 'fr' ? 'Écouter l’épisode complet' : 'Listen to Entire Episode'}
         </Button>
             <a
               href={getLocalizedUrl('/podcasts', locale)}
@@ -255,13 +281,13 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
         const { data, error } = await supabase
           .from('Episodes')
           .select('episode_id, title, description_en, description_fr')
-          .eq('episode_id', 6)
-          .single()
+          .order('episode_id', { ascending: false })
+          .limit(1)
 
         if (error) {
           console.error('Error fetching episode:', error)
-        } else if (data) {
-          setEpisodeData(data)
+        } else if (data && data.length > 0) {
+          setEpisodeData(data[0])
         }
       } catch (err) {
         console.error('Unexpected error:', err)
@@ -274,8 +300,8 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
   }, [])
 
   const episode = {
-    id: 6,
-    title: 'The Psychology of Motivation & Procrastination with Dr. Rylee Oram',
+    id: episodeData?.episode_id || 6,
+    title: episodeData?.title || 'The Psychology of Motivation & Procrastination with Dr. Rylee Oram',
     audio: {
       src: mp3FileName
         ? `/podcast-previews/${mp3FileName}`
@@ -316,8 +342,8 @@ function PodcastPlayerWithSync({ mp3FileName, onPlayStarted, onClose, isPlaying 
         <div className="mb-4 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-xl font-semibold text-[#003e3e] sm:text-2xl">
             {locale === 'fr' 
-              ? `Épisode 6: ${episode.title} (anglais, aperçu)`
-              : `Episode 6: ${episode.title} (Preview)`}
+              ? `Épisode ${episode.id}: ${episode.title} (anglais, aperçu)`
+              : `Episode ${episode.id}: ${episode.title} (Preview)`}
           </h3>
           {!isPlaying && (
             <div className="hidden sm:flex sm:justify-end">
