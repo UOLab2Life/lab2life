@@ -163,7 +163,7 @@ export function LatestArticles() {
             <Button
               href={getLocalizedUrl('/articles', locale)}
               variant="primary"
-              className="!visible mx-auto w-[70%] max-w-sm text-center lg:w-1/3 sm:inline-flex"
+              className="!visible mx-auto w-[70%] max-w-sm px-6 py-2 text-center text-base sm:px-8 sm:py-3 sm:text-lg lg:w-1/3"
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             >
               {locale === 'fr' ? 'Explorer tous les articles' : 'Explore All Articles'}

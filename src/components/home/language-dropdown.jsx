@@ -58,7 +58,7 @@ export function LanguageDropdown() {
   }
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative inline-block" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 rounded-full px-3 py-2 text-base font-semibold transition-all duration-200 bg-transparent text-white hover:bg-white/10 dark:bg-transparent dark:text-white dark:hover:bg-white/10"
@@ -79,7 +79,7 @@ export function LanguageDropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-32 rounded-lg bg-white shadow-lg ring-1 ring-black/5">
+        <div className="absolute right-0 top-full mt-2 w-full rounded-lg bg-white shadow-lg ring-1 ring-black/5">
           {languages.map((language) => (
             <button
               key={language.code}
